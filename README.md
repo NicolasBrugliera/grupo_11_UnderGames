@@ -1,7 +1,12 @@
-# UnderGames
-UnderGames es un eCommerce de juegos clasicos, indies y retro.
+# <p align="center"> UnderGames </p>
 
-UnderGames será LA plataforma para brindar todo lo referido a Indie Games (juegos independientes).
+<p align="center">
+<img src="https://user-images.githubusercontent.com/35201982/169591092-dc8b8bf9-d802-49d0-83cf-054af7c041d0.png" alt="">
+</p>
+
+> Indie Games Infinite Adventures
+
+UnderGames es la plataforma para brindar todo lo referido a Indie Games (juegos independientes).
 
 La oferta en un primer momento es sobre juegos, ya sean pagos o free.
 La idea, además de la venta de los juegos es poder dar visibilidad a futuro, a los desarrolladores de juegos indie, como así también a todo lo relacionado con estos juegos como Concept Art, Ilustración, Música, etc.
@@ -14,7 +19,7 @@ insertarnos en el mercado y dar visibilidad a lo que queremos ofrecer.
 
 ## Equipo de trabajo 
 
--    Santiago Riveira:
+-    Santiago Riveira: QA (Tester) en vías de QA Automation && Front End Dev (React)
 -    Sebastián Alonso:
 -    Nicolás Bugliera:
 -    Patricia Onieva: Buenos Aires, 54 años. Profesional del área de Sistemas, enfocada en Análisis de 
