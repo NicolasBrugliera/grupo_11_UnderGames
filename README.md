@@ -21,7 +21,7 @@ insertarnos en el mercado y dar visibilidad a lo que queremos ofrecer.
 
 -    Santiago Riveira: QA (Tester) en vías de QA Automation && Front End Dev (React)
 -    Sebastián Alonso:
--    Nicolás Bugliera:
+-    Nicolás Bugliera: San Luis Capital, 27 años. Estudiante de desarrollo full stack.
 -    Patricia Onieva: Buenos Aires, 54 años. Profesional del área de Sistemas, enfocada en Análisis de 
      Datos y Bussiness Intelligence. 
 
