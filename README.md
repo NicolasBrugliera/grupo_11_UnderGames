@@ -4,7 +4,7 @@
 <img src="https://user-images.githubusercontent.com/35201982/169591092-dc8b8bf9-d802-49d0-83cf-054af7c041d0.png" alt="">
 </p>
 
-> Indie Games Infinite Adventures
+> Indie Games Infinite Adventures.
 
 UnderGames es la plataforma para brindar todo lo referido a Indie Games (juegos independientes).
 
