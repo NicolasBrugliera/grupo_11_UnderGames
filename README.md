@@ -25,3 +25,6 @@ insertarnos en el mercado y dar visibilidad a lo que queremos ofrecer.
 -    Patricia Onieva: Buenos Aires, 54 años. Profesional del área de Sistemas, enfocada en Análisis de 
      Datos y Bussiness Intelligence. 
 
+***
+### Tablero de Trabajo:
+https://app.clickup.com/25739311/v/b/t/25739311
