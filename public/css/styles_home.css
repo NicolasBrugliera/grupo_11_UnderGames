@@ -1,0 +1,362 @@
+* {
+  box-sizing: border-box;
+  background-color: #353535;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+
+}
+/* Header */
+.navbar_header {
+width: 100%;
+height: 30%;
+background-color: rgb(24, 23, 23);
+overflow: auto;
+display: flex;
+flex-direction: row;
+padding-top: 5px;
+border: 1px grey solid;
+}
+
+.navbar_header a {
+float: left;
+padding: 10px;
+color: white;
+text-decoration: none;
+
+}
+
+.navbar_header a:hover {
+background-color: #000;
+}
+
+.left_bar {
+  width: 60%;
+  justify-content: flex-start;
+  align-items: center;
+  position:relative;
+  top: calc(50% - 10px);
+}
+
+.right_bar {
+  width: 40%;
+  justify-content: flex-end;
+  position:relative;
+  top: calc(60% - 10px);
+}
+.active {
+background-color: #555;
+}
+.logo_header {
+  width: 60px;
+  height: 60px;
+  object-fit: cover;
+  padding: 0;
+  
+
+}
+/* Fin Header */
+
+
+
+.search-box {
+  width: 70%;  
+  padding: .4rem;
+  background-color: grey;
+  border-radius: 20px;
+  margin-top: 30px;
+  border: none;
+  color: #ffffff;
+}
+
+.fa-magnifying-glass{
+  width: 10px;
+  position: relative;
+  margin-top: 35px;
+  color: #ffffff;
+  
+}
+
+/* ----------------------  */
+
+.principal{
+  display: flex;
+  
+}
+
+.column {
+  float: left;
+  padding: 10px;
+  
+}
+
+.left {
+  width: 75%;
+  font-size: x-small;
+}
+
+.right {
+  width: 25%;
+  align-content: stretch;
+  border: 1px gray solid;
+}
+
+.image-left{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.image-right{
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 5px;
+}
+/* Clear floats after the columns */
+.principal:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.gallery{
+  width: 50%;
+  height: 50%;
+  display: flex;
+  flex-direction: row;
+  align-self: flex-start;
+  object-fit:contain;
+  padding: 0px;
+  
+}
+
+.text_gallery{
+  font-size: xx-small;
+  position: relative;
+}
+
+
+
+.text_gallery_right{
+  font-size:xx-small;
+  flex: 1 1 auto;
+  margin: 2px;
+  font-weight: bold;
+}
+/* ----------------------  */
+
+
+.carousel {
+  background: #EEE;
+}
+
+.carousel-cell {
+  /*width: 66%; */
+  height: 300px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+/***********************************************/
+
+.new_releases_home{
+  width: 160px;
+  height: 250px;
+  border: 1px solid rgb(216, 216, 216);
+}
+.image_box_home{
+  position: relative;
+  width: 150px;
+  height: 150px;
+  padding: 2px;
+  margin: 2px;
+  
+} 
+.image_game_home {
+  width: 150px;
+  height: 150px;
+  object-fit:cover;
+  
+}
+
+.image_ppal_home{
+  position: relative;
+  width: 100%;
+  height: 200px;
+  padding: 2px;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  object-fit: cover;
+  
+} 
+
+
+.image_game_ppal_home {
+  max-width: 100%;
+  height: auto;
+  object-fit:cover;
+  
+}
+
+.category_home{
+  font-size: x-small;
+  position: absolute;
+  bottom: 5px;
+  left: 5px;
+  background-color:#000000;
+  color: #ffffff;
+  padding-left: 2px;
+  padding-right: 2px;
+}
+.title_box_home{
+  font-weight: bold ;
+  padding-left: 5px;
+}
+.creator_box_home{
+  font-size: x-small;
+  padding-left: 5px;
+}
+.price_line_home{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.original_price_home{
+  font-size: small;
+  padding-left: 5px;
+}
+.price_w_discount_home{
+  font-size: medium;
+  font-weight: bold;
+}
+.discount_detail_home{
+  font-size: xx-small;
+  font-weight: bold;
+  float: right;
+  border: .5px solid #c7c7c7;
+  margin-right: 5px;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.download_detail_home{
+  font-size: xx-small;
+  font-weight: bold;
+  float: right;
+  border: .5px solid #c7c7c7;
+  margin-right: 5px;
+  text-align: center;
+  padding: 4px;
+  border-radius: 4px;
+}
+
+.banner{
+  width: 100%;
+  padding: auto;
+  object-fit:cover
+
+}
+/**********************************************/
+
+.flickity-page-dots .dot {
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  margin: 0 8px;
+  background: #eee;
+  border-radius: 50%;
+  opacity: .25;
+  cursor: pointer;
+}
+
+/* Profile Creators ****************************************************/
+.card_creator {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  width: 160px;
+  height: auto;
+  margin: auto;
+  text-align: center;
+}
+.title_creator {
+  color: grey;
+  font-size: 16px;
+}
+
+button  {
+border: none;
+outline: 0;
+display: inline-block;
+padding: 8px;
+color: white;
+background-color: #000;
+text-align: center;
+cursor: pointer;
+width: 50%;
+font-size: small;
+font-weight: bold;  
+}
+.btn_creator{
+  font-size: small;
+}
+a {
+  text-decoration: none;
+  font-size: 12px;
+  color: black;
+}
+
+.photo_creator{
+  position: relative;
+  width: 160px;
+  height: 160px;
+  padding: 2px;
+  margin: 2px;
+  border-radius: 50%;
+  
+} 
+/************************************************************/
+
+
+
+/************************************************************/
+
+/* Para sacar o meter thumbnails a la derecha  */
+@media screen and (min-width: 0px) and (max-width: 390px){   /* para sacar la columna a la derecha*/ 
+  .column.left {
+      width: 100%;
+  }
+  .column.right {
+      display: none;
+  }
+
+}
+
+
+@media screen and (min-width: 391px) {
+
+  .column.left {
+      width: 75%;
+  }
+  .column.right {
+      width: 25%;
+      align-content: stretch;
+  }
+  .row:after {
+      content: "";
+      display: table;
+      clear: both;
+  }
+  figure {
+  display: flex;
+  }
+  figcaption {
+  width: 100%;
+  }
+  .image-left {
+  flex-direction: row;
+  justify-content: flex-start;
+  }
+}
+
+
+
