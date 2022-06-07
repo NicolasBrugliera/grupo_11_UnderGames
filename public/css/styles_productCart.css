@@ -174,7 +174,6 @@ img {
 	display: flex;
 
 	width: 85vw;
-	padding-top: 5px;;
 
 
 
@@ -183,7 +182,8 @@ img {
 	flex: 40;
 }
 
-.info1-card-cart, .info2-card-cart {
+.info1-card-cart,
+.info2-card-cart {
 	display: flex;
 	margin: 10px;
 	width: 100%;
@@ -274,7 +274,10 @@ img {
 
 	}
 
+	.info1-card-cart,
+	.info2-card-cart {}
 
+}
 
 @media (min-width: 436px) {
 	* {
@@ -322,5 +325,4 @@ img {
 	.baner {
 		margin: auto;
 	}
-}
 }
