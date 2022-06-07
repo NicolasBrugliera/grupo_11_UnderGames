@@ -1,0 +1,328 @@
+* {
+	box-sizing: border-box;
+	margin: 0px;
+	padding: 0px;
+	margin: auto;
+	border: 0px;
+
+
+	background-color: #353535;
+	color: #ffffff;
+	font-family: 'Roboto', sans-serif;
+
+
+}
+
+/* Header */
+.navbar_header {
+	width: 100%;
+	height: 30%;
+	background-color: rgb(24, 23, 23);
+	overflow: auto;
+	display: flex;
+	flex-direction: row;
+	padding-top: 5px;
+	border: 1px grey solid;
+}
+
+.navbar_header a {
+	float: left;
+	padding: 10px;
+	color: white;
+	text-decoration: none;
+
+}
+
+.navbar_header a:hover {
+	background-color: #000;
+}
+
+.left_bar {
+	width: 60%;
+	justify-content: flex-start;
+	align-items: center;
+	position: relative;
+	top: calc(50% - 10px);
+}
+
+.right_bar {
+	width: 40%;
+	justify-content: flex-end;
+	position: relative;
+	top: calc(60% - 10px);
+}
+
+.active {
+	background-color: #555;
+}
+
+.logo_header {
+	width: 60px;
+	height: 60px;
+	object-fit: cover;
+	padding: 0;
+
+
+}
+
+/* Fin Header */
+
+/*Barra Busqueda*/
+
+.search-box {
+	width: 70%;
+	padding: .4rem;
+	background-color: grey;
+	border-radius: 20px;
+	margin-top: 30px;
+	border: none;
+	color: #ffffff;
+}
+
+.fa-magnifying-glass {
+	width: 10px;
+	position: relative;
+	margin-top: 35px;
+	color: #ffffff;
+
+}
+
+/* ----------------------  */
+
+
+
+
+.main {
+	display: inline-block;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	border: 3px solid black;
+	width: 100%;
+	align-items: flex-start;
+	overflow: hide;
+	min-width: 267px;
+
+}
+
+.flex-container {
+
+	/* margin:auto; quitado 07/06*/
+	/* align-items: center;07/06 */
+	border: 3px solid red;
+	width: 100%;
+	display: flex;
+	flex-direction: row;
+	/* align-items: flex-start; 07/06 */
+	flex: 30;
+	font-size: 16px;
+	text-align: center;
+	margin-bottom: 10px;
+
+
+}
+
+.card {
+	border: 1px solid black;
+
+}
+
+
+.flex-item-1 {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	width: 85vw;
+	height: 25vh;
+	background-color: #f1f1f1;
+	padding: 3px;
+	overflow: hide;
+	max-width: 320px;
+	min-width: 157px;
+	flex: 10;
+
+
+
+}
+
+.title {
+	/* margin:10px; */
+	display: flex;
+	flex-direction: column;
+	font-size: 1rem;
+}
+
+img {
+	width: 100%;
+	min-width: 140px;
+	max-width: 240px;
+	padding-top: 0px;
+
+}
+
+.info-extra {
+	width: 100%;
+	font-size: 0.75rem;
+	margin: 5px;
+	display: flex;
+	flex-direction: row;
+	align-content: center;
+	margin-bottom: 5px;
+
+}
+
+.card-info-cart {
+	display: flex;
+
+	width: 85vw;
+
+
+
+	border: 3px solid yellow;
+
+	flex: 40;
+}
+
+.info1-card-cart,
+.info2-card-cart {
+	display: flex;
+	margin: 10px;
+	width: 100%;
+	height: 100%;
+	flex-direction: column;
+	font-size: 0.80rem;
+
+
+
+}
+
+.flex-item-3 {
+
+	width: 90vw;
+
+	max-width: 240px;
+	border: 3px solid blue;
+	align-self: fixed;
+	text-align: center;
+	top: 0;
+	position: sticky;
+	height: 100vh;
+
+
+	flex: 40;
+}
+
+.sumary-table {
+	font-size: 14px;
+	text-align: center;
+	min-width: 130px;
+
+}
+
+.baner {
+	width: 250px;
+	height: 100vh;
+	top: 0;
+	position: sticky;
+	height: 100vh;
+
+
+
+	max-width: 200px;
+}
+
+.button-card-cart {
+	box-shadow: inset 0px 0px 15px 3px #23395e;
+	background: linear-gradient(to bottom, #2e466e 5%, #415989 100%);
+	background-color: #2e466e;
+	border-radius: 17px;
+	border: 1px solid #1f2f47;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 1rem;
+	padding: 3px 12px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #263666;
+	padding-bottom: 2px;
+
+}
+
+.button-card-cart:hover {
+	background: linear-gradient(to bottom, #415989 5%, #2e466e 100%);
+	background-color: #415989;
+}
+
+.button-card-cart:active {
+	position: relative;
+	top: 1px;
+}
+
+
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media (max-width: 435px) {
+	.flex-container {
+		flex-direction: column;
+		align-content: center;
+		width: 100%;
+
+	}
+
+	.main {
+		width: 100%;
+
+	}
+
+	.info1-card-cart,
+	.info2-card-cart {}
+
+}
+
+@media (min-width: 436px) {
+	* {
+		margin: 0px;
+	}
+
+	.button-card-cart {
+		padding: 6px 19px !important;
+	}
+
+	.main {
+		display: flex;
+		flex-direction: row;
+	}
+
+	.card-info-cart {
+		width: 70px;
+		align-self: center;
+	}
+
+	.flex-item3 {
+		top: 0;
+		position: sticky;
+		height: 100vh;
+	}
+
+	.info1-card-cart,
+	.info2-card-cart {
+		font-size: 1rem;
+
+	}
+
+}
+
+@media screen and (max-width: 700px) {
+	.baner {
+		display: none;
+	}
+}
+
+@media screen and (min-width: 800px) {
+
+	.flex-item-3,
+	.card,
+	.baner {
+		margin: auto;
+	}
+}
