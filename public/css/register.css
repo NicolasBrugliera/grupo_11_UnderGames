@@ -1,0 +1,284 @@
+* {
+    box-sizing: border-box;
+    background-color: #353535;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding:0;
+    height: auto;
+    width: auto;
+}
+
+.reg-body{
+    box-sizing: border-box;
+    background-color: #353535;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+    margin: 0;
+    padding:0;
+    height: 100vh;
+
+}
+
+
+.reg-main{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #000000;
+    height: 100vh;
+}
+
+#reg-h3{
+    text-align: center;
+}
+
+.register-form {
+    width: 85%;
+    height: 80% ;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+}
+.form-ns-styler-register{
+    margin-bottom: 20px;
+    margin-top: 30px;
+    display:flex;
+    justify-content: center;
+}
+
+::placeholder{
+    color:white
+}
+
+#name{
+    margin-right:2vw;
+    width: 35vw;
+    border: 3px solid #1f2227;
+    padding:5px;
+    background-color: black;
+    border-radius: 10px;
+    height: 4.5vh;
+    text-align: center;
+}
+
+
+#surname{
+    margin-left:2vw;
+    width: 35vw;
+    border: 3px solid #1f2227;
+    padding:5px;
+    background-color: black;
+    border-radius: 10px;
+    height: 4.5vh;
+    text-align: center;
+}
+
+#gamertag{
+    width: 45vw;
+    border: 3px solid #1f2227;
+    padding:5px;
+    background-color: black;
+    border-radius: 10px;
+    height: 4.5vh;
+    text-align: center;
+}  
+
+#email{
+    width: 45vw;
+    border: 3px solid #1f2227;
+    padding:5px;
+    background-color: black;
+    border-radius: 10px;
+    height: 4.5vh;
+    text-align: center;
+}  
+
+#password{
+    width: 45vw;
+    border: 3px solid #1f2227;
+    padding:5px;
+    background-color: black;
+    border-radius: 10px;
+    height: 4.5vh;
+    text-align: center;
+}  
+
+#repeted-password{
+    width: 45vw;
+    border: 3px solid #1f2227;
+    padding:5px;
+    background-color: black;
+    margin-bottom: 3vh;
+    border-radius: 10px;
+    height: 4.5vh;
+    text-align: center;
+}  
+
+.form-styler-register{
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+#reg-button{
+    width: 38vw;
+    height: 50px;
+    padding: 1rem;
+    background-color: #0078f1;
+    border: solid 1px white;
+    display:flex;
+    justify-content: center;
+    margin-left: 28%;
+    margin-bottom: 30px;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+}
+
+#reg-button:hover{
+    transform: translate(5px,5px);
+    box-shadow: 0px 0px 20px 5px rgba(100,100,100,1);
+}
+
+.news-styler-register{
+    display:flex;
+    justify-content: center;
+    font-size: 12px;
+    margin-bottom: 5px;
+}
+
+#reg-lbl{
+    margin-left: 3px;
+}
+
+.tos-styler-register{
+    display:flex;
+    justify-content: center;
+    font-size: 12px;
+    margin-bottom: 10px;
+    margin-top:10px
+}
+
+#tos-lbl{
+    margin-left: 3px;
+}
+
+
+.a-reg{
+    color: #0078f1
+}
+
+@media  (max-width: 480px) {
+    .register-form{
+        width: 80%;
+        height: 88%;
+    }
+    
+    ::placeholder{
+        font-size: 12px;
+    }
+    #reg-lbl{
+        font-size: 12px;
+    }
+    #tos-lbl{
+        font-size: 12px;
+    }
+    #reg-h3{
+        font-size: 25px;
+    }
+}
+@media  (min-width: 481px) {
+    ::placeholder{
+        font-size: 14px;
+    }
+#reg-lbl{
+    font-size: 14px;
+}
+#tos-lbl{
+    font-size: 14px;
+}
+}
+
+@media (min-width: 740px){
+    ::placeholder{
+        font-size: 18px;
+    }
+
+#reg-lbl{
+    font-size: 18px;
+}
+#tos-lbl{
+    font-size: 18px;
+}
+#tos{
+    margin-top: 3px;
+    margin-right: 3px;
+}
+#news{
+    margin-top: 3px;
+    margin-right: 3px;
+}
+#tos{
+    margin-top: 3px;
+    margin-right: 3px;
+    transform: scale(1.25)
+}
+#news{
+    margin-top: 3px;
+    margin-right: 3px;
+    transform: scale(1.25)
+}
+#reg-h3{
+    font-size: 40px;
+}
+}
+
+@media (min-width: 1025px){
+    ::placeholder{
+        font-size: 18px;
+    }
+
+#name{
+    width: 20vw;
+}
+#surname{
+    width: 20vw;
+}
+#gamertag{
+    width: 20vw;
+}
+#email{
+    width: 20vw;
+}
+#password{
+    width: 20vw;
+}
+#repeted-password{
+    width: 20vw;
+}
+#reg-button{
+    width: 16vw;
+    margin-left: 34.5vw;
+    margin-bottom: 60px;
+}
+#reg-lbl{
+    font-size: 18px;
+}
+#tos-lbl{
+    font-size: 18px;
+}
+#tos{
+    margin-top: 3px;
+    margin-right: 3px;
+    transform: scale(1.25)
+}
+#news{
+    margin-top: 3px;
+    margin-right: 3px;
+    transform: scale(1.25)
+}
+}
+
+

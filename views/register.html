@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="/css/register.css">
+    </head>
+    <body class="reg-body">
+        <header>
+
+        </header>
+        
+        <main class="reg-main">
+            <form action="/register-user" method="post" class= "register-form" >
+
+                <h3 id="reg-h3">Registrate!</h3>
+
+                <div class="form-ns-styler-register">
+                    <input type="text" name="name" id="name" placeholder="Nombre" required>
+                    <input type="text" name="surname" id="surname" placeholder="Apellido" required>
+                </div>
+
+                <div class="form-styler-register">
+                    <input type="text" name="gamertag" id="gamertag" placeholder="Gamertag" required>
+                </div>
+
+                <div class="form-styler-register">
+                    <input type="email" name="email" id="email" placeholder="E-mail" required>
+                </div>
+
+                <div class="form-styler-register">
+                    <input type="password" name="password" id="password" placeholder="Contraseña" required>
+                </div>
+
+                <div class="form-styler-register">
+                    <input type="password" name="repeted-password" id="repeted-password" placeholder="Repetir contraseña" required>
+                </div>
+                <input type="submit" value= "Registrate" id= "reg-button">
+                <div class="news-styler-register">
+                    <input type="checkbox" name="news" id="news">
+                    <label id="reg-lbl" for="news">Do you want to receive news from UnderGames?</label>
+                </div>
+                
+                <div class="tos-styler-register">
+                   <input type="checkbox" name="tos" id="tos" required>
+                 <label id="tos-lbl" for="tos">  <p> I have read and agree to  <a class="a-reg" href="/terms-of-service">Terms of service</a></p></label>
+                </div>
+
+                </form>
+
+        </main>
+
+        <footer>
+        
+        
+        </footer>
+    </body>
+</html>
+
