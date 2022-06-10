@@ -32,5 +32,5 @@ Comunicarse de manera más fluída y constante. Hacer más uso del Click Up para
 ***
 
 <p align="center">
-  <img src="https://giphy.com/gifs/siliconvalleyhbo-happy-hbo-silicon-valley-mXuPww8oyFUCP22tXi" alt="animated" />
+  <img src="https://media.giphy.com/media/mXuPww8oyFUCP22tXi/giphy.gif" alt="animated" />
 </p>
