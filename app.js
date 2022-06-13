@@ -41,3 +41,14 @@ app.get('/', (req, res)=>{
 		res.sendFile(path.join(__dirname, '/views/register.html'));
 	}
 	)	
+
+	// agrego el header.html y footer.html para probarlos
+	app.get('/header', (req, res)=>{
+		res.sendFile(path.join(__dirname, '/views/header.html'));
+	}
+	)
+	// agrego el header.html para probarlo
+	app.get('/footer', (req, res)=>{
+		res.sendFile(path.join(__dirname, '/views/footer.html'));
+	}
+	)

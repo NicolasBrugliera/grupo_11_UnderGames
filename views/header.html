@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"  /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /> 
+    <title>Under Games</title>
+</head>
+
+
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <img src="/images/logo_1.png" alt="" class="logo_image"> 
+            <a href="#" class="nav-logo">Under Games</a>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="/login" class="fa-solid fa-user fa-xl"></i></a>
+                   <!-- <a href="#" class="nav-link">Login</a> -->
+                </li>
+                <li class="nav-item">
+                    <a href="/productCart"><i class="fa-solid fa-cart-shopping fa-xl"></i></a> 
+                    <!--  <a href="#" class="nav-link">Cart</a> -->
+                </li>
+                <li class="nav-item">
+                    <a href="/under_constr"><i class="fa-solid fa-circle-question fa-xl"></i></a> 
+                       <!-- <a href="#" class="nav-link">FAQ</a>  -->
+                </li>
+                
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+</body>
+
+<script>
+const hamburger = document.querySelector(".hamburger");
+const navMenu = document.querySelector(".nav-menu");
+const navLink = document.querySelectorAll(".nav-link");
+
+hamburger.addEventListener("click", mobileMenu);
+navLink.forEach(n => n.addEventListener("click", closeMenu));
+
+function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+}
+
+function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+}
+
+
+</script>
+</html>
