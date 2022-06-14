@@ -51,13 +51,14 @@
     margin: 0 auto;
     width: 100%;
     max-width: 80%;
+    height: 800px;
 }
 .cart-section__PD {
   width: 100%;
   background-color: #33415c;
   max-width: 30%;
   margin: 0;
-  margin-left: 60%;
+  margin-left: 70%;
   position: sticky;
   top: 20%;
 
@@ -107,15 +108,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  height: auto;
+  height: 80%;
   position: relative;
-  width: 65%;
-  min-width: 30%;
-  max-width: 100%; 
+  width: 60%;
+/*   min-width: 30%; */
+  max-width: 1600px; 
   margin: auto;
   padding-bottom: 1px;
-  bottom: 47vh;
-  right: 20%;
+  bottom: 20vh;
+  right: 15%; 
 
 } 
 
@@ -125,19 +126,35 @@
   list-style: none;
 } 
  
+.wrapper-descripcion__PD{
+  height: 100%;
+  position: relative
+}
 
 
 #descripcion__PD {
-  margin-top:60px;        
+        
   padding: 20px;
   text-align: center;
+  width: 100%;                  
+  max-width: 50%;
+  display: inline-block;
+  position: relative;
+  top: -20px;
+  left: 13%;
 }
 .specifications__PD {
   color: rgba(250, 246, 246, 0.918);
   background-color: #979dac;
   margin: 20px auto; 
+  width: 100%;
+  max-width: 30%;
+  position: relative;
+  text-align: center;
+  right: 10%;
+ 
+  
   }
-
 
 
 ul.slider__PD {
@@ -272,7 +289,7 @@ ul.slider__PD li:target {
   .menu__PD {
     display: flex;
     justify-content: center;
-    margin: auto;
+    margin: 20px auto;
     height: auto;
     padding-top: 59%;
  
@@ -296,15 +313,32 @@ ul.slider__PD li:target {
     border: 2px solid rgb(41, 61, 70); 
      margin:auto;
      padding: 2px; 
-     width: 100%;
+     width: 90%;
      min-width: 22.5vw;
      height: auto;
-     max-width: 120px;
+     max-width: 100px;
    
      aspect-ratio: 16/9;
    }   
 
-
+.wrapper-descripcion__PD{
+  height: 100%;
+}
+   #descripcion__PD {
+      
+    padding: 20px;
+    text-align: center;
+    width: 80%;
+    max-width: 500px;
+  }
+  .specifications__PD {
+    color: rgba(250, 246, 246, 0.918);
+    background-color: #979dac;
+    margin: 20px auto; 
+    text-align: center;
+    width: 90%;
+    max-width: 550px;
+    }
 
    
 
@@ -386,7 +420,17 @@ ul.slider__PD li:target {
      aspect-ratio: 16/9;
    }   
 
-
+   #descripcion__PD {
+    margin-top:60px;        
+    padding: 20px;
+    text-align: center;
+  }
+  .specifications__PD {
+    color: rgba(250, 246, 246, 0.918);
+    background-color: #979dac;
+    margin: 20px auto; 
+    text-align: center;
+    }
 
    
 
@@ -442,7 +486,17 @@ ul.slider__PD li:target {
        }   
 
 
-
+       #descripcion__PD {
+        margin-top:60px;        
+        padding: 20px;
+        text-align: center;
+      }
+      .specifications__PD {
+        color: rgba(250, 246, 246, 0.918);
+        background-color: #979dac;
+        margin: 20px auto; 
+        text-align: center;
+        }
 
 }
  
