@@ -90,7 +90,7 @@ section{
 }
 /* ----------------------  */
 
-.containerMain{
+.mainCart__Cart{
 	/* margin-top: 1em; */
 	display: flex;
 	flex-wrap: wrap;
@@ -106,19 +106,7 @@ section{
 
 
 
-.cardInfo {
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
-	align-items: center;
-	justify-content: space-around;
-	
-	/* border: 2px solid black; */
-	width: 290px;
-	height: 200px;
-}
-
-.containerTitle-img {
+.containerTitleImg__Cart {
 	display: flex;
 	flex-direction: column;
 	text-align: center;
@@ -130,7 +118,7 @@ section{
 	/* border: 2px solid red; */
 }
 
-.containerTitle-img img {
+.containerTitleImg__Cart img {
 	width: 100%;
 	/* flex-direction: flex-start; */
 	object-fit: contain; 
@@ -147,7 +135,7 @@ section{
 
 
 
-.flex-item2 {
+.contItem2__Cart {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
@@ -161,7 +149,7 @@ section{
 
 
 }
-.containerCardGames{
+.containerCardGames__Cart{
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -173,7 +161,7 @@ section{
 	height: auto;
 	flex-grow: 1;
 }
-.gamesCard-Cart{
+.gamesCard__Cart{
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -182,21 +170,19 @@ section{
 }
 
 
-.containerInfoCard {
+.containerInfoCard__Cart {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-around;
-	
-	/* border: 2px solid black; */
+	justify-content: space-around;	
 	width: 258px;
 	height: 190px;
 	align-self: center;
 	flex-grow: 2;
 	margin: 1em 1em 1em 1em;
 }
-.contenedorPredeterminado{
+.contMainSumary__Cart{
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
@@ -216,7 +202,7 @@ section{
 table{
 	width: 180px;
 }
-.containerSumaryCart {
+.contSumary__Cart {
 	display: flex;
 	flex-direction: column;
 	order: 3;
@@ -236,7 +222,7 @@ table{
 	
 }
 
-.sumaryTable-Cart {
+.sumaryTable__Cart {
 	width: 80%;
 	color: white;
 	/* background-color:#5c5b58 ; */
@@ -250,7 +236,7 @@ table{
 }
 
 
-.containerRankingGames-Cart {
+.contRankingGames__Cart {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -269,7 +255,7 @@ table{
 }
 
 
-.RankingGames-Cart {
+.tableRankingGames__Cart {
 	width: 100%;
 	color: white;
 	
@@ -288,7 +274,7 @@ p {
 	color: white;
 }
 
-.info1-card-cart > .info2-card-cart {
+.info1Card__Cart > .info2Card__Cart {
 	font-size: 0.80rem;
 
 }
@@ -296,7 +282,7 @@ p {
 
 
 
-.paymentBtn-Cart {
+.paymentBtn__Cart {
 	box-shadow:inset 0px 0px 0px 0px #97c4fe;
 	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
 	background-color:#3d94f6;
@@ -314,16 +300,16 @@ p {
 	margin-top: 10vh;
 	margin-bottom: 1em;
 }
-.paymentBtn-Cart:hover {
+.paymentBtn__Cart:hover {
 	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
 	background-color:#1e62d0;
 }
-.paymentBtn-Cart:active {
+.paymentBtn__Cart:active {
 	position:relative;
 	top:1px;
 }
 
-.btnCard-Cart {
+.btnCard__Cart {
 	box-shadow: 0px 0px 0px 2px #9fb4f2;
 	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
 	background-color:#7892c2;
@@ -339,11 +325,11 @@ p {
 	text-decoration:none;
 	text-shadow:0px 1px 0px #283966;
 }
-.btnCard-Cart:hover {
+.btnCard__Cart:hover {
 	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
 	background-color:#476e9e;
 }
-.btnCard-Cart:active {
+.btnCard__Cart:active {
 	position:relative;
 	top:1px;
 }
@@ -354,22 +340,22 @@ p {
 
 
 @media screen and (min-width:0px) and (max-width:580px){
-	.gamesCard-Cart, .containerRankingGames-Cart{
-		/* flex-direction: column; */
-	}
-	.containerRankingGames-Cart{
+	/* .gamesCard__Cart, .contRankingGames__Cart{
+		flex-direction: column;
+	} */
+	.contRankingGames__Cart{
 		width: 290px;
 		
 		order:4;
 	}
 
-	.containerCardGames{
+	.containerCardGames__Cart{
 		margin: 1rem;
 		order:-1;
 		
 		
 	}
-	.containerSumaryCart{
+	.contSumary__Cart{
 
 		order:0;
 	}
@@ -382,7 +368,7 @@ p {
 @media screen and (min-width:530px) {
 	
 	
-	.containerTitle-img{
+	.containerTitleImg__Cart{
 		margin-left: 2em;
 	}
 
@@ -391,19 +377,19 @@ p {
 @media screen and (min-width:768px) {
 	
 	
-	.gamesCard-Cart{
+	.gamesCard__Cart{
 		flex-direction: column;
 	}
 
 }
 
 @media screen and (min-width:852px) and (max-width:1168px) {
-	/* .contenedorPredeterminado{
+	/* .contMainSumary__Cart{
 		margin-left:auto;
 		margin-right: auto;
 	} */
 
-	.containerMain{
+	.mainCart__Cart{
 		justify-content: flex-start;
 	}
 	}
@@ -411,7 +397,7 @@ p {
 
 
 @media screen and (min-width:852px) and (max-width:1169px) {
-	.containerRankingGames-Cart{
+	.contRankingGames__Cart{
 		order:8;
 	} 
 
@@ -421,7 +407,7 @@ p {
 
 
 @media screen  and (min-width:1170px){
-	.containerRankingGames-Cart{
+	.contRankingGames__Cart{
 		order:-1;
 	}
 
