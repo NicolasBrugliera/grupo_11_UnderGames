@@ -1,0 +1,20 @@
+* {
+    box-sizing: border-box;
+    background-color: #353535;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  
+#under-constr{
+  width: 300px !important;
+  align-self: center;
+  
+}
+
+#come_back{
+  width: 50px;
+  font-size: 150px;
+  font-weight: bolder;
+  padding-left: 20px !important;
+}

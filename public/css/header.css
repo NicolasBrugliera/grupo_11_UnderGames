@@ -2,7 +2,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  /* background-color: #353535; */
+  background-color: #353535;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
 }
@@ -19,11 +19,14 @@ a {
   border-bottom: .5px solid #999;
 }
 
+
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items:center;
   padding: 1rem 1.5rem 0.5rem 0.5rem;
+  z-index: 100;
+  
 }
 
 .hamburger {
@@ -44,6 +47,7 @@ a {
   display: flex;
   justify-content: space-between;
   align-items: center;
+
 }
 
 .nav-item {
@@ -69,13 +73,10 @@ Fin - No se usan, porque tenemos iconos*/
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
- 
-  
 }
 
 .logo_image{
-  width: 50px;
-  height: 50px;
+  max-width: 60px !important;
   float: left;
 }
 
@@ -83,10 +84,11 @@ Fin - No se usan, porque tenemos iconos*/
   .nav-menu {
       position: fixed;
       left: -100%;
-      top: 5rem;
+      top: 8rem;
       flex-direction: column;
       background-color: #353535;
       width: 100%;
+      height: 190px;
       border-radius: 10px;
       text-align: center;
       transition: 0.3s;
@@ -94,12 +96,15 @@ Fin - No se usan, porque tenemos iconos*/
           0 10px 27px rgba(0, 0, 0, 0.05);
       
   }
-
+  
   .nav-menu.active {
       left: 0;
+      background-color: #353535;
+      z-index: 100;
+      height: 190px;
   }
 
-  .nav-item {
+ .nav-item {
       margin: 1.5rem 0;
   }
 

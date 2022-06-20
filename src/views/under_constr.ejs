@@ -5,17 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ups!</title>
-    <link rel="stylesheet"  href="/css/styles_home.css">
+
+    <%- include('./partials/styles')%>
+
 </head>
 <body>
-    <header>
-        <%- include('partials/header.ejs')  %> 
-      </header>
-    <h1>We are working on this section, come back soon!</h1>
-    <img src="/images/under_constr.png" id="under-constr" width="90%" height="auto">
+    <%- include('./partials/header')%>    
+    <%- include('./partials/search_bar')%> 
 
-    <footer>
-        <%- include('partials/footer.ejs')  %> 
-    </footer>
+<br>
+<br>
+    <p id="come_back">We are working on this section, come back soon!</p>
+    <br>
+    <br>
+    
+    <img src="/images/under_constr.png" id="under-constr">
+
+
+    <%- include('./partials/footer')%>
 </body>
 </html>

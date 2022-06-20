@@ -2,17 +2,14 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    /* background-color: #353535; */
+    background-color: #353535;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
 }
-.bodyFooter{
-  background-color: #353535;
-}
+
 .logo_image_foot{
-    width: 100px;
-    height: 100px;
-    float: left;
+    max-width: 50px !important;
+    float: fixed;
 }
 
 .created_by_foot{
@@ -28,13 +25,13 @@ a{
 
 footer{
     width: 100%;
-    /* position: fixed; */
+    position:relative;
     bottom: 0;
     left: 0;
-    background: #353535;
+    background: #111;
 }
 footer .content_foot{
-    /* max-width: 1350px; */
+    max-width: 1350px;
     margin: auto;
     padding: 20px;
     display: flex;
