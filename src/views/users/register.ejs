@@ -7,9 +7,10 @@
         <link rel="stylesheet" href="/css/register.css">
     </head>
     <body class="reg-body">
+        
         <header>
-
-        </header>
+            <%- include ('../partials/header.ejs')  %>  
+          </header>   
         
         <main class="reg-main">
             <form action="/register-user" method="post" class= "register-form" >
@@ -52,8 +53,7 @@
         </main>
 
         <footer>
-        
-        
+            <%- include ('../partials/footer.ejs')  %>  
         </footer>
     </body>
 </html>

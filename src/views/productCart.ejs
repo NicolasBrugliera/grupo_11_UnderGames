@@ -18,6 +18,12 @@
 
   <body>
     <header>
+      <%- include('partials/header.ejs')  %> 
+    </header>
+
+
+    <!-- <header>
+
 
       <div class="navbar_header">
         <div class="left_bar">
@@ -33,7 +39,11 @@
       </div>
 
 
-    </header>
+    </header> -->
+
+
+
+
     <form class="search-form">
       <input type="text" class="search-box" placeholder="Search                                 ">
       <i class="fa-solid fa-magnifying-glass" style='color: white'></i>
@@ -245,7 +255,7 @@
                 </tr>
 
               </table><br>
-              <div class="paymentsBtn-card-cart"><a href="#" target="_blank" class="paymentBtn-Cart">Check Out</a></div>
+              <div class="paymentsBtn-card-cart"><a href="/under_constr" target="#" class="paymentBtn-Cart">Check Out</a></div>
             </div>
 
 
@@ -268,7 +278,7 @@
                   <p class="title-card-cart">Windows</p><br>
                   <p class="description-card-cart1">Multiplayer</p><br>
                   <p class="description-card-cart2">+18</p><br>
-                  <div class="detailsBtn-Cart"><a href="#" class="btnCard-Cart">Details</a></div>
+                  <div class="detailsBtn-Cart"><a href="/productDetail" class="btnCard-Cart">Details</a></div>
 
 
                 </div>
@@ -277,7 +287,7 @@
                   <p class="price-info-cart">$2000</p><br>
                   <p class="discount-price-cart">50% OFF</p><br>
                   <p class="final-price-cart">$1000</p><br>
-                  <div class="remove-btn-cart"><a href="#" class="btnCard-Cart">Remove</a></div>
+                  <div class="remove-btn-cart"><a href="/under_constr" class="btnCard-Cart">Remove</a></div>
                 </div>
 
 
@@ -298,7 +308,7 @@
                   <p class="title-card-cart">PS 5</p><br>
                   <p class="description-card-cart1">Multiplayer</p><br>
                   <p class="description-card-cart2">+16</p><br>
-                  <div class="detailsBtn-Cart"><a href="#" class="btnCard-Cart">Details</a></div>
+                  <div class="detailsBtn-Cart"><a href="/productDetail" class="btnCard-Cart">Details</a></div>
 
 
                 </div>
@@ -307,7 +317,7 @@
                   <p class="price-info-cart">$160</p><br>
                   <p class="discount-price-cart">50% OFF</p><br>
                   <p class="final-price-cart">$80</p><br>
-                  <div class="remove-btn-cart"><a href="#" class="btnCard-Cart">Remove</a></div>
+                  <div class="remove-btn-cart"><a href="/under_constr" class="btnCard-Cart">Remove</a></div>
                 </div>
 
 
@@ -328,7 +338,7 @@
                   <p class="title-card-cart">Windows</p><br>
                   <p class="description-card-cart1">Multiplayer</p><br>
                   <p class="description-card-cart2">+12</p><br>
-                  <div class="detailsBtn-Cart"><a href="#" class="btnCard-Cart">Details</a></div>
+                  <div class="detailsBtn-Cart"><a href="/productDetail" class="btnCard-Cart">Details</a></div>
 
 
                 </div>
@@ -337,7 +347,7 @@
                   <p class="price-info-cart">$100</p><br>
                   <p class="discount-price-cart">10% OFF</p><br>
                   <p class="final-price-cart">$90</p><br>
-                  <div class="remove-btn-cart"><a href="#" class="btnCard-Cart">Remove</a></div>
+                  <div class="remove-btn-cart"><a href="/under_constr" class="btnCard-Cart">Remove</a></div>
                 </div>
 
 
@@ -360,8 +370,10 @@
 
 
     </section>
-
-
+    <footer>
+      <%- include('partials/footer.ejs')  %> 
+  </footer>
   </body>
+  
 
 </html>

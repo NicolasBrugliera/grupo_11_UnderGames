@@ -17,22 +17,9 @@
 </head>
 <body>
 
-<header>
-    
-<div class="navbar_header">
-    <div class="left_bar">
-    <a class="active" href="/index"><img src="/images/logo_1.png" alt="Under Games" class="logo_header"> Under Games</a> 
-    
-  </div>  
-  <div class="right_bar">
-    <a href="/login" class="fa-solid fa-user fa-xl"></i></a>
-    <a href="/productCart"><i class="fa-solid fa-cart-shopping fa-xl"></i></a> 
-    <a href="/under_constr"><i class="fa-solid fa-circle-question fa-xl"></i></a> 
-  </div>
-  </div>
-  
-  
-  </header>    
+    <header>
+        <%- include('partials/header.ejs')  %> 
+      </header>   
 
 <form class="search-form">
           <input type="text" class="search-box" 
@@ -567,5 +554,8 @@
 <!-- JavaScript -->
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
+<footer>
+    <%- include('partials/footer.ejs')  %> 
+</footer>
 </body>
 </html>
