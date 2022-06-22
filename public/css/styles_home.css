@@ -95,22 +95,22 @@
 
 /***********************************************/
 .new_releases_container{
-  border: 0.5px solid #999;
+  border: 0.5px solid cyan;
   padding: 10px 10px 0px 10px;
 }
 
 .top_sellers_container{
-  border: 0.5px solid #999;
+  border: 0.5px solid green;
   padding: 0px 10px 0px 10px;
 }
 
 .free_container{
-  border: 0.5px solid #999;
+  border: 0.5px solid magenta;
   padding: 0px 10px 0px 10px;
 }
 
 .creators_container{
-  border: 0.5px solid #999;
+  border: 0.5px solid yellow;
   padding: 0px 10px 0px 10px;
 }
 
@@ -216,7 +216,7 @@
 }
 
 #banner {
-  width: 100% !important; 
+  min-width: 100vw !important; 
   min-height: 150px !important; 
   margin: auto;
   align-self: center;

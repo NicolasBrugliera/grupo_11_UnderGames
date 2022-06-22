@@ -1,10 +1,14 @@
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
-  background-color: #353535;
+  margin: 0px;
+  padding: 0px;
+}
+
+#body_header{
+  background-color: #37393b;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
+  
 }
 
 li {
@@ -76,7 +80,7 @@ Fin - No se usan, porque tenemos iconos*/
 }
 
 .logo_image{
-  max-width: 60px !important;
+  max-width: 30px !important;
   float: left;
 }
 
