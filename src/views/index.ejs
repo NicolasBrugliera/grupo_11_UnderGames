@@ -6,69 +6,78 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Under Games</title>
     
-<%- include('./partials/styles')%>
+    <link rel="stylesheet"  href="/css/styles_home.css">
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto&display=swap"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"  /> 
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" /> 
 
 
 </head>
 <body>
 
-<%- include('./partials/header')%>    
-<%- include('./partials/search_bar')%>    
+    <header>
+        <%- include('partials/header.ejs')  %> 
+      </header>   
 
-
-  
-
+<form class="search-form">
+          <input type="text" class="search-box" 
+          placeholder="Search                                 ">
+          <i class="fa-solid fa-magnifying-glass"  style='color: white'></i>      
+      </form>
+<br>    
 
 <div class="principal">
     <div class="column left">  
         <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true }'>
             <div class="carousel-cell">    
               <div class="image_ppal_home">
-                <a href="/productDetail"><img src="/images/image_01.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 1</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
+                <a href="/productDetail"><img src="/images/image_01.jpg" alt="" class="image_game_ppal_home"></a>
+                        <div class="title">Juego 1</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
                 </div>
             </div>
             <div class="carousel-cell">    
                 <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_02.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 2</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
+                  <a href="/productDetail"><img src="/images/image_02.jpg" alt="" class="image_game_ppal_home"></a>
+                        <div class="title">Juego 2</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
                 </div>
             </div>
             <div class="carousel-cell">    
                 <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_03.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 3</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
+                  <a href="/productDetail"><img src="/images/image_03.jpg" alt="" class="image_game_ppal_home"></a>
+                        <div class="title">Juego 3</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
                 </div>
             </div>
             <div class="carousel-cell">    
                 <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_04.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 4</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
+                  <a href="/productDetail"><img src="/images/image_04.jpg" alt="" class="image_game_ppal_home"></a>
+                        <div class="title">Juego 4</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
                 </div>
             </div>
             <div class="carousel-cell">    
                 <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_05.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 5</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
+                  <a href="/productDetail"><img src="/images/image_05.jpg" alt="" class="image_game_ppal_home"></a>
+                        <div class="title">Juego 5</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
                 </div>
             </div>
             <div class="carousel-cell">    
                 <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_06.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 6</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
+                  <a href="/productDetail"><img src="/images/image_06.jpg" alt="" class="image_game_ppal_home"></a>
+                        <div class="title">Juego 6</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
                 </div>
             </div>
             <div class="carousel-cell">    
                 <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_07.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 7</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
+                  <a href="/productDetail"><img src="/images/image_07.jpg" alt="" class="image_game_ppal_home"></a>
+                        <div class="title">Juego 7</div>
+                        <div class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
                 </div>
             </div>
         </div>
@@ -109,10 +118,8 @@
 
 
 
-
-<div class="new_releases_container">
 <h1>New Releases</h1>
-<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
+<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true }'>
 <!-- <div class="container_images_home"> -->
         <!-- imagen 01-->
 <div class="carousel-cell">    
@@ -123,7 +130,7 @@
         </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -143,7 +150,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -163,7 +170,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -183,7 +190,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -203,7 +210,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -216,13 +223,13 @@
 <!--</div>    -->
 </div> 
 
-</div> <!-- End carousel    -->
-</div><!-- End New Releases    -->
+</div>
+<!-- End New Releases    -->
+<br>
+<br>
 
-
-<div class="top_sellers_container">
 <h1>Top Sellers</h1>
-<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false }'>
+<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true }'>
 <!-- <div class="container_images_home"> -->
         <!-- imagen 01-->
 <div class="carousel-cell">    
@@ -233,7 +240,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -253,7 +260,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -273,7 +280,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -293,7 +300,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -313,7 +320,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="price_line_home">
@@ -327,21 +334,21 @@
 </div> 
 
 </div>
-</div> <!-- End Top Sellers    -->
+<!-- End Top Sellers    -->
 
 <br>
 <br>
 <br>
 
 <div>
-    <img src="/images/banner_01.jpg" alt=""  id="banner" >    
+    <img src="public/images/banner_01.jpg" alt=""  class="banner">    
 </div>
 
+<br>
+<br>
 
-
-<div class="free_container">
 <h1>Free</h1>
-<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false}'>
+<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true }'>
 <!-- <div class="container_images_home"> -->
         <!-- imagen 01-->
 <div class="carousel-cell">    
@@ -352,7 +359,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="download_detail_home"><span>Download</span></div>
@@ -367,7 +374,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="download_detail_home"><span>Download</span></div>
@@ -382,7 +389,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="download_detail_home"><span>Download</span></div>
@@ -398,7 +405,7 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="download_detail_home"><span>Download</span></div>
@@ -413,28 +420,29 @@
             </a>
             <div class="category_home">category</div>
         </div>
-        <div id="title_box_home">title_box</div>
+        <div class="title_box_home">title_box</div>
         <div class="creator_box_home">creator_box</div>
         <br>
         <div class="download_detail_home"><span>Download</span></div>
     </div>
 </div>
-
+<!--</div>    -->
 </div> 
 
-</div> <!-- End Free    -->
-
+<!-- End Free    -->
+<br>
+<br>
+<br>
 
 <div>
-    <img src="/images/banner_02.jpg" alt="" id="banner">    
+    <img src="/images/banner_02.jpg" alt=""  class="banner">    
 </div>
 
+<br>
+<br>
 
-
-
-<div class="creators_container">
 <h1>Creators</h1>
-<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false}'>
+<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true }'>
 
         <!-- imagen 01-->
 <div class="carousel-cell">    
@@ -537,17 +545,17 @@
         </div>
         <p><button id="btn_creator">Buy me!</button></p>
     </div>
-</div>  
-</div> 
+</div>   
 
-</div> 
+
 
 
 
 <!-- JavaScript -->
 <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
 
-<%- include('./partials/footer')%>
-
+<footer>
+    <%- include('partials/footer.ejs')  %> 
+</footer>
 </body>
 </html>
