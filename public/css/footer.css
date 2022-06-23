@@ -14,7 +14,7 @@
 
 
 .logo_image_foot{
-    max-width: 10px !important;
+    max-width: 70px;
     float: fixed;
 }
 
@@ -37,7 +37,8 @@ footer{
     background: #111;
 }
 footer .content_foot{
-    max-width: 1350px;
+    /* max-width: 1350px; */
+    width: 100%;
     margin: auto;
     padding: 20px;
     display: flex;

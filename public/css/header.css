@@ -5,7 +5,7 @@
 }
 
 #body_header{
-  background-color: #37393b;
+  background-color: #37393b !important;
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
   
@@ -80,7 +80,7 @@ Fin - No se usan, porque tenemos iconos*/
 }
 
 .logo_image{
-  max-width: 30px !important;
+  max-width: 50px;
   float: left;
 }
 
