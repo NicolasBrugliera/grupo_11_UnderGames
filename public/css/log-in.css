@@ -1,8 +1,5 @@
 * {
     box-sizing: border-box;
-    /* background-color: #353535; */
-    color: #ffffff;
-    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding:0;
     height: auto;
@@ -11,7 +8,6 @@
 
 .login-body{
     box-sizing: border-box;
-    /* background-color: #353535; */
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
     margin: 0;
@@ -20,15 +16,17 @@
     height: 100vh;
 }
 .login-main{
-    display:flex;
+  display:flex;
   align-items: center;
   justify-content: center;
   background-color: #000000;
-    height: 100vh;
+  height: 100vh;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
 }
 
 .log-in-form{
-    width: 85%;
+  width: 85%;
   height: 80% ;
   display: flex;
   align-items: center;
@@ -37,6 +35,10 @@
   margin-top: 40px;
   margin-bottom: 30px;
   border-radius: 20px;
+  background-color: #353535;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
+  
 }
 ::placeholder{
     color:white
@@ -66,6 +68,8 @@
   margin-top: 20px;
   border-radius: 10px;
   transition: transform 0.2s ease;
+  color: #ffffff;
+  font-family: 'Roboto', sans-serif;
 }
 
 #login-button:hover{

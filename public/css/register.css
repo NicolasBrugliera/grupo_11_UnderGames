@@ -1,6 +1,6 @@
 * {
     box-sizing: border-box;
-     background-color: #353535;
+/*      background-color: #353535; */
     /* color: #ffffff;
     font-family: 'Roboto', sans-serif; */
     margin: 0;
@@ -42,6 +42,8 @@
     margin-top: 40px;
     margin-bottom: 30px;
     border-radius: 20px;
+    background-color: #353535;
+  
 }
 .form-ns-styler-register{
     margin-bottom: 20px;
@@ -135,6 +137,8 @@
     margin-bottom: 30px;
     border-radius: 10px;
     transition: transform 0.2s ease;
+    color: #ffffff;
+    font-family: 'Roboto', sans-serif;
 }
 
 #reg-button:hover{

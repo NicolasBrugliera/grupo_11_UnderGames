@@ -1,25 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Under Games</title>
-    
-<%- include('./partials/styles')%>
+    <head>
+        <%- include('partials/head.ejs')  %> 
+        <link rel="stylesheet" href="/css/styles_home.css">
+        <link rel="stylesheet" href="/css/search_bar.css">
+    </head>
 
 
-</head>
-<body>
-
-<%- include('./partials/header')%>    
-<%- include('./partials/search_bar')%>    
-
-
-  
-
-
-<div class="principal">
+        
+<body class="body__index">
+    <%- include('partials/header')%>    
+    <%- include('partials/search_bar')%>   
+ <div class="principal">
     <div class="column left">  
         <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true }'>
             <div class="carousel-cell">    
@@ -241,7 +233,6 @@
             <div class="price_w_discount_home">$1.500</div>
             <div class="discount_detail_home"><span>50%OFF</span></div>
         </div>
-    
     </div>
 </div>    
     <!-- imagen 02-->

@@ -1,11 +1,17 @@
 .search-box {
-    width: 70%;  
-    padding: .4rem;
+    position: relative;
+    width: 100%;
+    max-width: 40%;
+    padding: .7rem;
     background-color: grey;
     border-radius: 20px;
     margin-top: 30px;
     border: none;
     color: #ffffff;
+    margin: auto;
+    display: block;
+    text-decoration: none;
+    top: 8px;
 }
 
 .fa-magnifying-glass{
