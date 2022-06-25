@@ -3,7 +3,7 @@
 	margin: 0px;
 	padding: 0px;
 	font-family: 'Roboto', sans-serif;
-	
+
 
 
 
@@ -74,24 +74,25 @@
 	color: #ffffff;
 
 }
-.search-form{
+
+.search-form {
 	background-color: rgb(18 18 18);
 }
 
 /* ----------------------  */
 
-.mainCart__Cart{
-	
+.mainCart__Cart {
+
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	width: 100%;
 	justify-content: space-around;
-    background-color: rgb(18 18 18);
-	
+	background-color: rgb(18 18 18);
 
-	
-	
+
+
+
 }
 
 
@@ -101,25 +102,25 @@
 	flex-direction: column;
 	text-align: center;
 	margin-bottom: 1em;
-	justify-content: space-around;	
+	justify-content: space-around;
 	min-width: 200px;
 	height: 200px;
-	max-width:17vw;
-	
+	max-width: 17vw;
+
 }
 
 .containerTitleImg__Cart img {
 	width: 100%;
-	
-	object-fit: contain; 
+
+	object-fit: contain;
 	filter: drop-shadow(0 0 5px grey);
-	background-color:rgb(32, 32, 32);
+	background-color: rgb(32, 32, 32);
 	border-radius: 4%;
-	
+
 	align-content: flex-start;
 	max-width: 280px;
-	
-	
+
+
 }
 
 
@@ -135,23 +136,26 @@
 	width: 100%;
 	height: 10%;
 	margin-top: 0.75em;
-	
+
 
 
 }
-.containerCardGames__Cart{
+
+.containerCardGames__Cart {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
-	justify-content:  center;
-	background-color:rgb(32, 32, 32);;
+	justify-content: center;
+	background-color: rgb(32, 32, 32);
+	;
 	border-radius: 4%;
 	margin: 1em;
 	height: auto;
 	flex-grow: 1;
 }
-.gamesCard__Cart{
+
+.gamesCard__Cart {
 	display: flex;
 	flex-wrap: wrap;
 	flex-direction: row;
@@ -165,54 +169,48 @@
 	flex-wrap: wrap;
 	flex-direction: row;
 	align-items: center;
-	justify-content: space-around;	
+	justify-content: space-around;
 	width: 258px;
 	height: 190px;
 	align-self: center;
 	flex-grow: 2;
 	margin: 1em;
 }
-.contMainSumary__Cart{
+
+.contMainSumary__Cart {
 	display: flex;
 	flex-direction: row;
 	flex-wrap: wrap;
 	order: 1;
 	text-align: center;
 	border-radius: 4%;
-	flex-grow: 1;	
+	flex-grow: 1;
 	justify-content: center;
-	
-	
-	
-	
-	
+
 }
-table{
-	width: 180px;
-}
+
+
 .contSumary__Cart {
 	display: flex;
 	flex-direction: column;
 	order: 3;
-	width: 265px;/*CAMBIAR*/
+	width: 265px;
 	background-color: rgb(32, 32, 32);
 	flex-grow: 1;
 	border-radius: 4%;
-	margin: 1em;	
-	
+	margin: 1em;
+
 }
 
 .tableSumary__Cart {
 	width: 92%;
-	max-width: 420px; ;
+	max-width: 420px;
+	;
 	color: white;
 	border-radius: 4%;
 	margin-top: 1em;
-	/* text-align: flex-start; */
-	align-self:center; 
-	
-	
-	
+	align-self: center;
+
 }
 
 
@@ -224,26 +222,23 @@ table{
 	width: 265px;
 	border: 1em;
 	order: 1;
-	margin: 1em;	
-	background-color:rgb(32, 32, 32);
+	margin: 1em;
+	background-color: rgb(32, 32, 32);
 	flex-grow: 1;
-	border-radius:3%;	
+	border-radius: 3%;
 
 }
 
 
 .tableRankingGames__Cart {
 	width: 100%;
-	max-width: 420px; ;
-	color: white;	
+	max-width: 420px;
+	;
+	color: white;
 	border-radius: 4%;
 	margin: 1em;
-	/* display: flex; */
-	
-	
 	justify-content: center;
 	height: fit-content;
-	
 
 }
 
@@ -251,64 +246,65 @@ table{
 	color: white;
 }
 
-.info1Card__Cart > .info2Card__Cart {
+.info1Card__Cart>.info2Card__Cart {
 	font-size: 0.80rem;
 
 }
 
-
-
-
 .paymentBtn__Cart {
-	box-shadow:inset 0px 0px 0px 0px #97c4fe;
-	background:linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-	background-color:#3d94f6;
-	border-radius:15px;
-	border:1px solid #337fed;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Arial;
-	font-size:15px;
-	font-weight:bold;
-	padding:11px 76px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #1a4672;
+	box-shadow: inset 0px 0px 0px 0px #97c4fe;
+	background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	background-color: #3d94f6;
+	border-radius: 15px;
+	border: 1px solid #337fed;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Arial;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 11px 76px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #1a4672;
 	margin-top: 10vh;
 	margin-bottom: 1em;
 }
+
 .paymentBtn__Cart:hover {
-	background:linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-	background-color:#1e62d0;
+	background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+	background-color: #1e62d0;
 }
+
 .paymentBtn__Cart:active {
-	position:relative;
-	top:1px;
+	position: relative;
+	top: 1px;
 }
 
 .btnCard__Cart {
 	box-shadow: 0px 0px 0px 2px #9fb4f2;
-	background:linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
-	background-color:#7892c2;
-	border-radius:10px;
-	border:1px solid #4e6096;
-	display:inline-block;
-	cursor:pointer;
-	color:#ffffff;
-	font-family:Georgia;
-	font-size:15px;
-	font-weight:bold;
-	padding:5px 15px;
-	text-decoration:none;
-	text-shadow:0px 1px 0px #283966;
+	background: linear-gradient(to bottom, #7892c2 5%, #476e9e 100%);
+	background-color: #7892c2;
+	border-radius: 10px;
+	border: 1px solid #4e6096;
+	display: inline-block;
+	cursor: pointer;
+	color: #ffffff;
+	font-family: Georgia;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 5px 15px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #283966;
 }
+
 .btnCard__Cart:hover {
-	background:linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
-	background-color:#476e9e;
+	background: linear-gradient(to bottom, #476e9e 5%, #7892c2 100%);
+	background-color: #476e9e;
 }
+
 .btnCard__Cart:active {
-	position:relative;
-	top:1px;
+	position: relative;
+	top: 1px;
 }
 
 
@@ -316,43 +312,38 @@ table{
 
 
 
-@media screen and (min-width:0px) and (max-width:580px){
-	
-	.contRankingGames__Cart{
+@media screen and (min-width:0px) and (max-width:580px) {
+
+	.contRankingGames__Cart {
 		width: 290px;
-		
-		order:4;
+
+		order: 4;
 	}
 
-	.containerCardGames__Cart{
+	.containerCardGames__Cart {
 		margin: 1rem;
-		order:-1;
-		
-		
-	}
-	.contSumary__Cart{
+		order: -1;
 
-		order:0;
+
 	}
 
+	.contSumary__Cart {
 
-
-
-
+		order: 0;
+	}
 }
+
 @media screen and (min-width:530px) {
-	
-	
-	.containerTitleImg__Cart{
+
+	.containerTitleImg__Cart {
 		margin-left: 2em;
 	}
 
 }
 
 @media screen and (min-width:768px) {
-	
-	
-	.gamesCard__Cart{
+
+	.gamesCard__Cart {
 		flex-direction: column;
 	}
 
@@ -360,32 +351,27 @@ table{
 
 @media screen and (min-width:852px) and (max-width:1168px) {
 
-	.mainCart__Cart{
+	.mainCart__Cart {
 		justify-content: flex-start;
 	}
-	}
+}
 
 
 
 @media screen and (min-width:852px) and (max-width:1169px) {
-	.contRankingGames__Cart{
-		order:8;
-	} 
-
-
-
+	.contRankingGames__Cart {
+		order: 8;
+	}
 }
 
 
 
-@media screen  and (min-width:1170px){
-	.contRankingGames__Cart{
-		order:-1;
+@media screen and (min-width:1170px) {
+	.contRankingGames__Cart {
+		order: -1;
 	}
 
 }
-
-
 
 
 

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/productEdit.css">
+    <link rel="stylesheet" href="/css/search_bar.css">
+
+  </head>
+ 
+<body class="bodyProductEdit">
+    <header>
+        <%- include('partials/header.ejs')  %> 
+        <%- include('partials/search_bar')%> 
+      </header>
+    
+  <div class="formEdit__productEdit">
+    <h3 class="title__productEdit">Carga y Edicion de Juegos</h3>
+    <form method="post" action="/product/create">
+        <div class="contProductEditImg">
+            <img class="productEditImg" src="/images/image_22.jpg" alt="" >
+        </div>
+        <div>
+            <button class="btn__productEdit" type="submit">Cargar img</button>
+            <button class="btn__productEdit" type="submit">Cargar Video</button>
+        </div>
+        <input class="textArea__productEdit" type="text" placeholder="Nombre del producto" value=""/>
+        <br/>
+        
+        <textarea class="textArea__productEdit" placeholder="Descripción" value="product_descr"></textarea>
+        <br />
+       
+        
+        <textarea class="textArea__productEdit" placeholder="Categoría" value="product_categ"></textarea>
+        <br />
+        <input class="textArea__productEdit" type="text" placeholder="Precio" value=""/>
+        <br />
+        <input class="textArea__productEdit" type="text" placeholder="Descuento" value=""/>
+        <br />
+        <div>
+            <button class="btn__productEdit" type="submit">Agregar</button>
+            <button class="btn__productEdit" type="submit">Editar</button>
+        </div>
+    </form>
+  </div>
+    
+  <footer>
+    <%- include('partials/footer.ejs')  %> 
+</footer>
+</body>
+
+
+
+</html>

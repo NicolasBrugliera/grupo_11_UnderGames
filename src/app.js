@@ -14,6 +14,7 @@ const routerProductDetail  = require('./routes/routeProductDetail');
 const routeRegister = require('./routes/routeRegister');
 const routeUnderConstr = require('./routes/routeUnderConstr');
 const routeUser = require('./routes/routeUsers');
+const routeProductEdit = require('./routes/routeProductEdit');
 
 //configuracion
 app.set('view engine', 'ejs');
@@ -26,6 +27,7 @@ app.use('/login', routeLogin);
 app.use('/register', routeRegister);
 app.use('/under_constr', routeUnderConstr);
 app.use('/userList', routeUser);
+app.use('/productEdit', routeProductEdit);
 
 
 

@@ -1,0 +1,62 @@
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+.bodyProductEdit {
+    display: flex;
+    flex-direction: column;
+    background-color: #37393b;
+    font-family: 'Roboto', sans-serif;
+    text-align: center;
+}
+
+.title__productEdit {
+    font-size: 1em;
+    margin-top: 1em;
+    color: white;
+}
+
+.contProductEditImg {
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 1em;
+    justify-content: space-around;
+
+    height: 200px;
+
+    align-items: center;
+}
+
+.textArea__productEdit {
+    width: 15em;
+    height: 2em;
+    margin: 1em;
+}
+
+.formEdit__productEdit {
+
+    border: 4px solid black;
+    margin: 2em;
+    align-self: center;
+
+}
+
+.productEditImg {
+    width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px grey);
+    background-color: rgb(32, 32, 32);
+    border-radius: 4%;
+    text-align: center;
+
+    max-width: 200px;
+
+}
+
+.btn__productEdit {
+    margin: 1em;
+    width: 6.5em;
+}
