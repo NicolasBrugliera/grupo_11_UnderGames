@@ -114,7 +114,7 @@
 	object-fit: contain; 
 	filter: drop-shadow(0 0 5px grey);
 	background-color:rgb(32, 32, 32);
-	border-radius: 3%;
+	border-radius: 4%;
 	
 	align-content: flex-start;
 	max-width: 280px;
@@ -146,7 +146,7 @@
 	align-items: center;
 	justify-content:  center;
 	background-color:rgb(32, 32, 32);;
-	border-radius: 3%;
+	border-radius: 4%;
 	margin: 1em;
 	height: auto;
 	flex-grow: 1;
@@ -197,17 +197,18 @@ table{
 	width: 265px;/*CAMBIAR*/
 	background-color: rgb(32, 32, 32);
 	flex-grow: 1;
-	border-radius: 3%;
+	border-radius: 4%;
 	margin: 1em;	
 	
 }
 
-.sumaryTable__Cart {
-	width: 80%;
+.tableSumary__Cart {
+	width: 92%;
+	max-width: 420px; ;
 	color: white;
 	border-radius: 4%;
 	margin-top: 1em;
-	text-align: flex-start;
+	/* text-align: flex-start; */
 	align-self:center; 
 	
 	
@@ -233,12 +234,13 @@ table{
 
 .tableRankingGames__Cart {
 	width: 100%;
+	max-width: 420px; ;
 	color: white;	
-	border-radius: 3%;
+	border-radius: 4%;
 	margin: 1em;
-	display: flex;
-	flex-wrap: wrap;
-	flex-direction: row;
+	/* display: flex; */
+	
+	
 	justify-content: center;
 	height: fit-content;
 	
@@ -369,6 +371,7 @@ table{
 	.contRankingGames__Cart{
 		order:8;
 	} 
+
 
 
 }
