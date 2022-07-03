@@ -1,0 +1,116 @@
+<html>
+
+  <head>
+    <%- include('partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/style__PL.css">
+    <link rel="stylesheet" href="/css/search_bar.css">
+  </head>
+
+<body id="body__PL">
+  <header>
+    <%- include('partials/header.ejs')  %> 
+    <%- include('partials/search_bar')%> 
+  </header>  
+
+  <div class="main_plist">
+  <br>
+  <h2>Products List </h2>
+  <div id="myBtnContainer_plist">
+    <button class="btn_plist active" onclick="filterSelection('all')"> Show all</button>
+    <button class="btn_plist" onclick="filterSelection('new_releases')"> New Relases</button>
+    <button class="btn_plist" onclick="filterSelection('top_sellers')"> Top Sellers</button>
+    <button class="btn_plist" onclick="filterSelection('free')"> Free</button>
+  </div>
+
+
+  <!-- Portfolio Gallery Grid -->
+  <div class="row_plist">
+
+    <% for(let i= 0; i < products.length; i++){ %>
+      
+            <div class="column_plist <%=products[i].game_group%>">
+            
+            <div class="content_plist">  
+              
+                  <a href="/productDetail/:<%= products[i].id %>">
+                  <img src="<%= products[i].img_1%> " alt="" style="width:100%">
+                  </a>
+                 
+                  <div id="category_plist"><%= products[i].category %></div>
+                  <div id="title_box_plist"><%= products[i].title %></div>
+                  <div id="creator_box_plist"><%= products[i].creator %></div>
+                  <br>
+                  <div class="price_line_plist">
+                      <div class="original_price_plist"><del><%= products[i].original_price %></del></div>
+                      <div class="price_w_discount_plist"> <%= products[i].price_w_discount %> </div>
+                      <br>
+                      <div class="discount_detail_plist"><span><%= products[i].discount %>  %OFF</span></div>
+                      
+                  </div>
+                  <div id="game_group"><span><%=products[i].game_group%></span></div>
+    </div> <!-- end content_plist -->
+    </div> <!-- end column_plist --> 
+  <% } %> 
+    </div> <!-- end row_plist --> 
+      
+
+
+  <script>
+
+filterSelection("all") // Execute the function and show all columns
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column_plist");
+  if (c == "all") c = "";
+  // Add the "show" class (display:block) to the filtered elements, and remove the "show" class from the elements that are not selected
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show_plist");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show_plist");
+  }
+}
+
+// show_plist filtered elements
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {
+      element.className += " " + arr2[i];
+    }
+  }
+}
+
+// Hide elements that are not selected
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer_plist");
+var btns = btnContainer.getElementsByClassName("btn_plist");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+
+</script>  
+
+
+<footer>
+    <%- include('partials/footer.ejs')  %> 
+</footer>
+
+  </body>
+  </html>
