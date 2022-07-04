@@ -11,527 +11,171 @@
 <body class="body__index">
     <%- include('partials/header')%>    
     <%- include('partials/search_bar')%>   
- <div class="principal">
-    <div class="column left">  
-        <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true }'>
-            <div class="carousel-cell">    
-              <div class="image_ppal_home">
-                <a href="/productDetail"><img src="/images/image_01.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 1</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
-                </div>
-            </div>
-            <div class="carousel-cell">    
-                <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_02.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 2</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
-                </div>
-            </div>
-            <div class="carousel-cell">    
-                <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_03.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 3</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
-                </div>
-            </div>
-            <div class="carousel-cell">    
-                <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_04.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 4</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
-                </div>
-            </div>
-            <div class="carousel-cell">    
-                <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_05.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 5</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
-                </div>
-            </div>
-            <div class="carousel-cell">    
-                <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_06.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 6</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
-                </div>
-            </div>
-            <div class="carousel-cell">    
-                <div class="image_ppal_home">
-                  <a href="/productDetail"><img src="/images/image_07.jpg" alt="" id="image_game_ppal_home"></a>
-                        <div id="title_box_home">Juego 7</div>
-                        <div id="text_box_home">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora praesentium explicabo officiis nam, quaerat, a repellat atque autem earum architecto placeat cum voluptatem dignissimos! Ea libero a ipsam accusamus quos?</div>
-                </div>
-            </div>
+
+<div class="principal">
+
+    <div class="col_left_ppal">  <!--slider -->
+
+        <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false}'>
+        <% for(let i= 0; i < products.length; i++){ %>     
+
+        <div class="carousel-cell"> 
+            <div class="container_image_ppal_home">
+                <div id="image_game_ppal_home">
+                        <a href="/productDetail/:<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="70%"></a>
+                </div>     
+                <div id="title_box_home"><%= products[i].title %></div>
+                <div id="text_box_home"><%= products[i].short_descr %></div>
+            </div> <!--container_image_ppal_home -->
+        </div> <!--carousel-cell --> 
+        <% } %>    
+    </div> <!--carousel --> 
+    </div> <!--col_izq_ppal -->
+   
+    <div class="col_right_ppal">
+        <% for(let i= 0; i < 5; i++){ %>  
+    <div class="right_content">    
+            <div class="image-right">
+            <a href="/productDetail/:<%= products[i].id %>"><img src="<%= products[i].img_1%>" width="100%" height="70%"/></a>
         </div>
-    </div>
-
-    <div class="column right">
-        <div class="image-right">
-          <a href="/productDetail"><img src="/images/image_23.jpg" class="gallery"/></a>
-        <p class="text_gallery_right">Lorem ipsum dolor </p>
+        <div class="text_gallery_right0">
+                <div id="text_gallery_right1"><%= products[i].title %></div> 
+                <div id="text_gallery_right2"><%= products[i].one_word_descr %></div>
         </div>
-        
-        <div class="image-right">     
-          <a href="/productDetail"><img src="/images/image_22.jpg" class="gallery" /></a>
-        <p class="text_gallery_right">Lorem ipsum dolor </p>
-        </div>
-
-        <div class="image-right">     
-          <a href="/productDetail"><img src="/images/image_21.jpg" class="gallery" /></a>
-        <p class="text_gallery_right">Lorem ipsum dolor  </p>
-        </div>
-        
-        <div class="image-right">     
-          <a href="/productDetail"><img src="/images/image_20.jpg" class="gallery" /></a>
-        <p class="text_gallery_right">Lorem ipsum dolor  </p>
-        </div>
-
-        <div class="image-right">     
-          <a href="/productDetail"><img src="/images/image_19.jpg" class="gallery" /></a>
-        <p class="text_gallery_right">Lorem ipsum dolor </p>
-        </div>
-</div> <!--column right -->
-
-
-</div>
-
-
-
-
-
+            
+    </div>   <!-- right content-->  
+    <% } %> 
+    </div> <!--column right -->
+</div> <!--principal -->
 
 
 <div class="new_releases_container">
-<h1>New Releases</h1>
-<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
-<!-- <div class="container_images_home"> -->
-        <!-- imagen 01-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-      <div class="image_box_home">
-        <a href="/productDetail">
-        <img src="/images/image_01.jpg" alt="" class="image_game_home" width="150px" height="150px">
-        </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-</div>    
-    <!-- imagen 02-->
+    <h1>New Releases</h1>
+    <h3><a href="/productList">(view all)</a></h3>
+    <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
+        <% for(let i= 0; i < products.length; i++){ %>  
+           <% if (products[i].game_group == "new_releases") { %>
     <div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_15.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
+        <div class="new_releases_home">
+          <div class="image_box_home">
+            
+            <a href="/productDetail/:<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
+            
+            <div id="category_home"><%=products[i].category%></div>
+            </div>
+            <br>
+            <div id="title_box_home"><%= products[i].title %></div>
+            <div id="creator_box_home"><%= products[i].creator %></div>
+           
+            <br>
+            <div class="price_line_home">
+                <div class="original_price_home"><del><%= products[i].original_price %></del></div>
+                <div class="price_w_discount_home"><%= products[i].price_w_discount %></div>
+                <div class="discount_detail_home"><span><%= products[i].discount %>  %OFF</span></div>
+            </div>
+        
         </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-</div>    
-    <!-- imagen 03-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_12.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-</div>
-    <!-- imagen 04-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_06.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-</div>    
-    <!-- imagen 05-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_20.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-<!--</div>    -->
-</div> 
-
+    </div>  <!-- End carousel-cell    -->  
+    <% } %> 
+    <% } %> 
 </div> <!-- End carousel    -->
-</div><!-- End New Releases    -->
-
+</div><!-- End new_releases_container    -->
 
 <div class="top_sellers_container">
-<h1>Top Sellers</h1>
-<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false }'>
-<!-- <div class="container_images_home"> -->
-        <!-- imagen 01-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_10.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    </div>
-</div>    
-    <!-- imagen 02-->
+    <h1>Top Sellers</h1>
+    <h3><a href="/productList">(view all)</a></h3>
+    <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
+        <% for(let i= 0; i < products.length; i++){ %>  
+           <% if (products[i].game_group == "top_sellers") { %>
     <div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_11.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
+        <div class="new_releases_home">
+          <div class="image_box_home">
+            
+            <a href="/productDetail/:<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
+            
+            <div id="category_home"><%=products[i].category%></div>
+            </div>
+            <br>
+            <div id="title_box_home"><%= products[i].title %></div>
+            <div id="creator_box_home"><%= products[i].creator %></div>
+           
+            <br>
+            <div class="price_line_home">
+                <div class="original_price_home"><del><%= products[i].original_price %></del></div>
+                <div class="price_w_discount_home"><%= products[i].price_w_discount %></div>
+                <div class="discount_detail_home"><span><%= products[i].discount %>  %OFF</span></div>
+            </div>
+        
         </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-</div>    
-    <!-- imagen 03-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_14.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-</div>
-    <!-- imagen 04-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_15.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-</div>    
-    <!-- imagen 05-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/productDetail">
-            <img src="/images/image_16.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="price_line_home">
-            <div class="original_price_home"><del>$3.000</del></div>
-            <div class="price_w_discount_home">$1.500</div>
-            <div class="discount_detail_home"><span>50%OFF</span></div>
-        </div>
-    
-    </div>
-<!--</div>    -->
-</div> 
-
-</div>
-</div> <!-- End Top Sellers    -->
-
-<br>
-<br>
-<br>
+    </div>  <!-- End carousel-cell    -->  
+    <% } %> 
+    <% } %> 
+</div> <!-- End carousel    -->
+</div><!-- End top_sellers_container    -->
 
 <div>
     <img src="/images/banner_01.jpg" alt=""  id="banner" >    
 </div>
 
-
-
 <div class="free_container">
-<h1>Free</h1>
-<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false}'>
-<!-- <div class="container_images_home"> -->
-        <!-- imagen 01-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/under_constr">
-            <img src="/images/image_23.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
+    <h1>Free</h1>
+    <h3><a href="/productList">(view all)</a></h3>
+    <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
+        <% for(let i= 0; i < products.length; i++){ %>  
+           <% if (products[i].game_group == "free") { %>
+    <div class="carousel-cell">    
+        <div class="free_home">
+          <div class="image_box_home">
+            
+            <a href="/productDetail/:<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
+            
+            <div id="category_home"><%=products[i].category%></div>
+            </div>
+            <br>
+            <div id="title_box_home"><%= products[i].title %></div>
+            <div id="creator_box_home"><%= products[i].creator %></div>
+           
+            <br>
+            <div class="download_detail_home"><span>Download</span></div>
+        
         </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="download_detail_home"><span>Download</span></div>
-    </div>
-</div>    
-    <!-- imagen 02-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/under_constr">
-            <img src="/images/image_22.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="download_detail_home"><span>Download</span></div>
-    </div>
-</div>    
-    <!-- imagen 03-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/under_constr">
-            <img src="/images/image_21.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="download_detail_home"><span>Download</span></div>
-        </div>
-    </div>
-
-    <!-- imagen 04-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/under_constr">
-            <img src="/images/image_20.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="download_detail_home"><span>Download</span></div>
-    </div>
-</div>    
-    <!-- imagen 05-->
-<div class="carousel-cell">    
-    <div class="new_releases_home">
-        <div class="image_box_home">
-          <a href="/under_constr">
-            <img src="/images/image_19.jpg" alt="" class="image_game_home" width="150px" height="150px">
-            </a>
-            <div class="category_home">category</div>
-        </div>
-        <div id="title_box_home">title_box</div>
-        <div class="creator_box_home">creator_box</div>
-        <br>
-        <div class="download_detail_home"><span>Download</span></div>
-    </div>
-</div>
-
-</div> 
-
-</div> <!-- End Free    -->
+    </div>  <!-- End carousel-cell    -->  
+    <% } %> 
+    <% } %> 
+</div> <!-- End carousel    -->
+</div><!-- End free_container    -->
 
 
 <div>
-    <img src="/images/banner_02.jpg" alt="" id="banner">    
+    <img src="/images/banner_02.jpg" alt=""  id="banner" >    
 </div>
 
 
-
-
 <div class="creators_container">
-<h1>Creators</h1>
-<div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false}'>
-
-        <!-- imagen 01-->
-<div class="carousel-cell">    
-    <div class="card_creator">
-      <a href="/under_constr"><img src="/images/profile_01.png" alt="" class="photo_creator"></a>
-        <h4>@creator01</h4>
-        <div style="margin: 10px 0;">
-        <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>  
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>  
-        <a href="#"><i class="fa-brands fa-facebook"></i></a> 
-        </div>
-        <p><button id="btn_creator">Buy me!</button></p>
-    </div>
-</div> 
-
-        <!-- imagen 02-->
-        <div class="carousel-cell">    
-            <div class="card_creator">
-              <a href="/under_constr"><img src="/images/profile_02.png" alt="" class="photo_creator"></a>
-                <h4>@creator02</h4>
-                <div style="margin: 10px 0;">
-                <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
-                <a href="#"><i class="fa-brands fa-twitter"></i></a>  
-                <a href="#"><i class="fa-brands fa-linkedin"></i></a>  
-                <a href="#"><i class="fa-brands fa-facebook"></i></a> 
-                </div>
-                <p><button id="btn_creator">Buy me!</button></p>
+    <h1>Creators</h1>
+    <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false}'>
+        <% for(let i= 0; i < creators.length; i++){ %>  
+            
+    <div class="carousel-cell">    
+        <div class="card_creator">
+          <a href="/under_constr"><img src="<%= creators[i].creator_pict%>" alt="" class="photo_creator"></a>
+            <h4><%= creators[i].creator%></h4>
+            <div style="margin: 10px 0;">
+            <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>  
+            <a href="#"><i class="fa-brands fa-linkedin"></i></a>  
+            <a href="#"><i class="fa-brands fa-facebook"></i></a> 
             </div>
-        </div> 
-        
-<!-- imagen 03-->
-<div class="carousel-cell">    
-    <div class="card_creator">
-      <a href="/under_constr"><img src="/images/profile_03.gif" alt="" class="photo_creator"></a>
-        <h4>@creator03</h4>
-        <div style="margin: 10px 0;">
-        <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>  
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>  
-        <a href="#"><i class="fa-brands fa-facebook"></i></a> 
+            <p><button id="btn_creator">Buy me!</button></p>
         </div>
-        <p><button id="btn_creator">Buy me!</button></p>
+    </div> 
+    <% } %> 
+    </div> 
+    
     </div>
-</div>         
-        
-<!-- imagen 04-->
-<div class="carousel-cell">    
-    <div class="card_creator">
-      <a href="/under_constr"><img src="/images/profile_04.png" alt="" class="photo_creator"></a>
-        <h4>@creator04</h4>
-        <div style="margin: 10px 0;">
-        <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>  
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>  
-        <a href="#"><i class="fa-brands fa-facebook"></i></a> 
-        </div>
-        <p><button id="btn_creator">Buy me!</button></p>
-    </div>
-</div>         
-<!-- imagen 05-->
-<div class="carousel-cell">    
-    <div class="card_creator">
-      <a href="/under_constr"><img src="/images/profile_05.gif" alt="" class="photo_creator"></a>
-        <h4>@creator05</h4>
-        <div style="margin: 10px 0;">
-        <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>  
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>  
-        <a href="#"><i class="fa-brands fa-facebook"></i></a> 
-        </div>
-        <p><button id="btn_creator">Buy me!</button></p>
-    </div>
-</div>   
-<!-- imagen 06-->
-<div class="carousel-cell">    
-    <div class="card_creator">
-      <a href="/under_constr"><img src="/images/profile_06.jpg" alt="" class="photo_creator"></a>
-        <h4>@creator06</h4>
-        <div style="margin: 10px 0;">
-        <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>  
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>  
-        <a href="#"><i class="fa-brands fa-facebook"></i></a> 
-        </div>
-        <p><button id="btn_creator">Buy me!</button></p>
-    </div>
-</div>   
 
-<!-- imagen 07-->
-<div class="carousel-cell">    
-    <div class="card_creator">
-      <a href="/under_constr"><img src="/images/profile_07.jpg" alt="" class="photo_creator"></a>
-        <h4>@creator07</h4>
-        <div style="margin: 10px 0;">
-        <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
-        <a href="#"><i class="fa-brands fa-twitter"></i></a>  
-        <a href="#"><i class="fa-brands fa-linkedin"></i></a>  
-        <a href="#"><i class="fa-brands fa-facebook"></i></a> 
-        </div>
-        <p><button id="btn_creator">Buy me!</button></p>
-    </div>
-</div>  
-</div> 
 
-</div> 
+
 
 
 

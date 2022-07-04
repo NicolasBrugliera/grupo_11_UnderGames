@@ -1,15 +1,12 @@
 const express = require('express');
 const app = express();
 const router = express.Router();
+const path = require('path');
 
-const controller = require('../controllers/controllerIndex');
+const controllerIndex = require(path.join(__dirname,'../controllers/controllerIndex'));
 
-router.get('/', controller.home);
-
-
-
-
-
-
+router.get('/', controllerIndex.index);
+router.get('/home', controllerIndex.index);
+router.get('/index', controllerIndex.index);
 
 module.exports = router;

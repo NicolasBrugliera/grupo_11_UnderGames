@@ -1,3 +1,42 @@
+form.search-form input[type=text] {
+    padding: 10px;
+    font-size: 15px;
+    float: left;
+    width: 85%;
+    background: grey;
+    border: none;
+    border-radius: 20px 0px 0px 20px;
+    color: white;
+    margin: auto;
+  }
+  
+  form.search-form button {
+    float: left;
+    width: 15%;
+    padding: 10px;
+    background: rgb(78, 75, 75);
+    color: white;
+    font-size: 15px;
+    cursor: pointer;
+    border: none;
+    border-radius: 0px 20px 20px 0px;
+  }
+  
+  form.search-form button:hover {
+    background: rgb(44, 43, 43);
+  }
+  
+  form.search-form::after {
+    content: "";
+    clear: both;
+    display: table;
+  }
+
+
+/*
+
+
+
 .search-box {
     position: relative;
     width: 100%;
@@ -21,3 +60,5 @@
     color: #ffffff;
     z-index: -10;
 }
+
+*/

@@ -7,29 +7,30 @@ const publicPath = path.resolve(__dirname, '../public');
 
 
 //rutas
-const router  = require('./routes/routeIndex');
+const routeIndex  = require('./routes/routeIndex');
 const routeLogin = require('./routes/routeLogin');
 const routeProductCart = require('./routes/routeProductCart');
 const routerProductDetail  = require('./routes/routeProductDetail');
 const routeRegister = require('./routes/routeRegister');
 const routeUnderConstr = require('./routes/routeUnderConstr');
 const routeUser = require('./routes/routeUsers');
-const routeProductEdit = require('./routes/routeProductEdit');
+// const routeProductEdit = require('./routes/routeProductEdit');
 const routeProductList  = require('./routes/routeProductList');
 
 //configuracion
 app.set('view engine', 'ejs');
-app.use(express.static(path.join(__dirname, '../public')));
-app.use('/', router);
-app.use('/index', router);
+app.use(express.static(path.join(__dirname, '../public')));//define la ubicacion de la carpeta vistas
+app.use(routeIndex);
 app.use('/productDetail', routerProductDetail);
+app.use(routeProductList);
 app.use('/productCart', routeProductCart);
 app.use('/login', routeLogin);
 app.use('/register', routeRegister);
 app.use('/under_constr', routeUnderConstr);
 app.use('/userList', routeUser);
-app.use('/productEdit', routeProductEdit);
-app.use(routeProductList);
+// app.use('/productEdit', routeProductEdit);
+//app.use('/products', routeProducts);
+
 
 
 
