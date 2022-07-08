@@ -1,14 +1,14 @@
 const express = require('express');
+const router = express.Router();
+const path = require('path');
+const routerProductDetail = express.Router();
 const app = express();
-const routeProductDetail = express.Router();
 
+//controller require
 const controllerDetail = require('../controllers/controllerProductDetail');
+//const  productEdit  = require('../controllers/controllerProducts');
 
-routeProductDetail.get('/', controllerDetail.productDetail);
+routerProductDetail.get('/:id', controllerDetail.productDetail);
 
-
-
-
-
-module.exports = routeProductDetail;
+module.exports = routerProductDetail;
 

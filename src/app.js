@@ -15,14 +15,15 @@ const routeRegister = require('./routes/routeRegister');
 const routeUnderConstr = require('./routes/routeUnderConstr');
 const routeUser = require('./routes/routeUsers');
 // const routeProductEdit = require('./routes/routeProductEdit');
-const routeProductList  = require('./routes/routeProductList');
+//const routeProducts = require('./routes/routeProducts');
+const routerProductList  = require('./routes/routeProductList');
 
 //configuracion
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, '../public')));//define la ubicacion de la carpeta vistas
 app.use(routeIndex);
-app.use('/productDetail', routerProductDetail);
-app.use(routeProductList);
+app.use('/productDetail',routerProductDetail);
+app.use('/productList',routerProductList);
 app.use('/productCart', routeProductCart);
 app.use('/login', routeLogin);
 app.use('/register', routeRegister);

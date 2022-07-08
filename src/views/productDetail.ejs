@@ -5,186 +5,166 @@
     <link rel="stylesheet" href="/css/style__PD.css">
     <link rel="stylesheet" href="/css/search_bar.css">
   </head>
-<body id="body__PD">
-  <header>
-    <%- include('partials/header.ejs')  %> 
-    <%- include('partials/search_bar')%> 
-  </header>   
-
-       <!-- <section>
-                <div id="nav-bar__PD">
-                  <input id="box__PD" type="text" placeholder="Search Game">
-                  <i id="lupa__PD" class="fa fa-search__PD" aria-hidden="true"></i>
-                </div>
-        </section> -->
-     <div class="supersection">
-      <section class="cart-section__PD">
-            <article>
-              <h1>Evil Dead - The Game</h1>
-              <img src="https://images.igdb.com/igdb/image/upload/t_original/scfx1a.jpg" alt="Product Cover Image">
-            </article>
-            <div class="prize__PD">
-              <p>USD 49.99</p>
-            </div>
-            <div class="discount__PD">
-              30% OFF
-            </div>
-            <a href="/productCart"><button id="cart-button__PD">ADD TO CART</button></a>
-            <div id="tablaCarrito__PD">
-               <table>
-                    <tr>
-                      <td>Developer</td>
-                      <td>Name</td>
-                    </tr>
-                    <tr>
-                      <td>Launch Date</td>
-                      <td>2019-01</td>
-                    </tr>
-                    <tr>
-                      <td>Platform</td>
-                      <td>Windows</td>
-                    </tr>
-              </table>
-              <div>
+  <body id="body__PD">
+    <header>
+      <%- include('partials/header.ejs')  %> 
+      <%- include('partials/search_bar')%> 
+    </header>   
+  
+       <div class="supersection">
+        <section class="cart-section__PD">
+              <article>
+                <h1><%=selectedGame.title%></h1>
+                <img src="<%= selectedGame.img_1%>"  alt="Product Cover Image">
+              </article>
+              <div class="prize__PD">
+                <p><%= selectedGame.original_price %></p>
+              </div>
+              <div class="discount__PD">
+                <%= selectedGame.discount %>  %OFF
+              </div>
+              <a href="/productCart"><button id="cart-button__PD">ADD TO CART</button></a>
+              <div id="tablaCarrito__PD">
+                 <table>
+                      <tr>
+                        <td>Developer</td>
+                        <td><%= selectedGame.creator %></td>
+                      </tr>
+                      <tr>
+                        <td>Launch Date</td>
+                        <td><%= selectedGame.lauch_date %></td>
+                      </tr>
+                      <tr>
+                        <td>Platform</td>
+                        <td><%= selectedGame.platform %></td>
+                      </tr>
+                </table>
+                <div>
+              </section>
             </section>
+  
+                 <!--  SE QUITARAN LOS TAMAÑOS AL MANIPULARSE LUEGO EN CSS - SOLO ESTAN A MODO DE REFERENCIA -->
+                 <!--  <iframe width="350" height="400" src="https://www.youtube.com/embed/mbWPOSxMA5o" frameborder="1" allowfullscreen </iframe> -->
+  
+                  
+            <section> 
+               <div class="container__PD">
+                      <ul class="slider__PD">
+                          <li id="slide1__PD">
+                              <img src="<%= selectedGame.img_2%>"alt="Image 1">
+                          </li>
+  
+                          <li id="slide2__PD">
+                              <img src="<%= selectedGame.img_3%>" alt="Image 2">
+                          </li>
+  
+                          <li id="slide3__PD">
+                              <img src="<%= selectedGame.img_4%>"alt="Image 3">
+                          </li>
+  
+                          <li id="slide4__PD">
+                              <img id="image4" src="<%= selectedGame.img_5%>" alt="Image 4">
+                          </li>
+                          <li id="slide5__PD">
+                              <img id="image5" src="<%= selectedGame.img_1%>" alt="Image 5">
+                          </li>
+                          <li id="video__PD">
+                            <iframe src="<%= selectedGame.video_1%>" frameborder="0"> </iframe>
+                            <!-- <iframe src="<%= selectedGame.video_1%>" frameborder="0"></iframe> -->
+                           </li>
+                      </ul>
+                      
+                      <ul class="menu__PD">
+                        <li>
+                          <a href="#video__PD">
+                              <img id="image5" src="<%= selectedGame.video_1%>"  alt="Video">
+                          </a>
+                        </li>
+                        <li>
+                            <a href="#slide1__PD">
+                              <img src="<%= selectedGame.img_1%>" alt="Image 1">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#slide2__PD">
+                              <img id="image2" src="<%= selectedGame.img_2%>" alt="Image 2">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#slide3__PD">
+                              <img id="image3" src="<%= selectedGame.img_3%>" alt="Image 3">
+                            </a>
+                       </li>
+                       <li>
+                            <a href="#slide4__PD" >
+                                <img id="image4" src="<%= selectedGame.img_4%>"alt="Image 4">
+                            </a>
+                       </li>
+                       <li>
+                            <a href="#slide5__PD" >
+                                <img id="image5" src="<%= selectedGame.img_5%>" alt="Image 5">
+                            </a>
+                       </li>
+                     </ul>
+                  </div>
+               </section> 
+              </div>
+          <div class="wrapper-descripcion__PD">
+          <section id="descripcion__PD">
+          <h3>Description</h3>
+          <input type="checkbox" class="read-more-state" id="more">
+            <p class="read-more-wrap">
+              <%= selectedGame.short_descr%>
+              <span class="read-more-target"> <%= selectedGame.lomg_descr%>
+              </span>
+              </p>
+            <label for="more" class="read-more-trigger"></label>
           </section>
-
-               <!--  SE QUITARAN LOS TAMAÑOS AL MANIPULARSE LUEGO EN CSS - SOLO ESTAN A MODO DE REFERENCIA -->
-               <!--  <iframe width="350" height="400" src="https://www.youtube.com/embed/mbWPOSxMA5o" frameborder="1" allowfullscreen </iframe> -->
-
-                
-          <section> 
-             <div class="container__PD">
-                    <ul class="slider__PD">
-                        <li id="slide1__PD">
-                            <img src="https://images.igdb.com/igdb/image/upload/t_original/scgv98.jpg" alt="Image 1">
-                        </li>
-
-                        <li id="slide2__PD">
-                            <img src="https://images.igdb.com/igdb/image/upload/t_original/scgv97.jpg" alt="Image 2">
-                        </li>
-
-                        <li id="slide3__PD">
-                            <img src="https://images.igdb.com/igdb/image/upload/t_original/scgv96.jpg" alt="Image 3">
-                        </li>
-
-                        <li id="slide4__PD">
-                            <img id="image4" src="https://images.igdb.com/igdb/image/upload/t_original/scgs29.jpg" alt="Image 4">
-                        </li>
-                        <li id="slide5__PD">
-                            <img id="image4" src="https://images.igdb.com/igdb/image/upload/t_original/scagie.jpg" alt="Image 5">
-                        </li>
-                        <li id="video__PD">
-                          <iframe src="https://www.youtube.com/embed/mbWPOSxMA5o" frameborder="0"></iframe>
-                         </li>
-                    </ul>
-                    
-                    <ul class="menu__PD">
-                      <li>
-                        <a href="#video__PD">
-                            <img id="image5" src="https://img.youtube.com/vi/mbWPOSxMA5o/default.jpg" alt="Image 4">
-                        </a>
-                      </li>
-                      <li>
-                          <a href="#slide1__PD">
-                            <img src="https://images.igdb.com/igdb/image/upload/t_original/scgv98.jpg" alt="Image 1">
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#slide2__PD">
-                            <img id="image2" src="https://images.igdb.com/igdb/image/upload/t_original/scgv97.jpg" alt="Image 2">
-                          </a>
-                      </li>
-                      <li>
-                          <a href="#slide3__PD">
-                            <img id="image3" src="https://images.igdb.com/igdb/image/upload/t_original/scgv96.jpg" alt="Image 3">
-                          </a>
-                     </li>
-                     <li>
-                          <a href="#slide4__PD" >
-                              <img id="image4" src="https://images.igdb.com/igdb/image/upload/t_original/scgs29.jpg" alt="Image 4">
-                          </a>
-                     </li>
-                     <li>
-                          <a href="#slide5__PD" >
-                              <img id="image4" src="https://images.igdb.com/igdb/image/upload/t_original/scagie.jpg" alt="Image 5">
-                          </a>
-                     </li>
-                   </ul>
-                </div>
-             </section> 
-            </div>
-        <div class="wrapper-descripcion__PD">
-        <section id="descripcion__PD">
-        <h3>Description</h3>
-        <input type="checkbox" class="read-more-state" id="more">
-          <p class="read-more-wrap">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam iusto placeat aliquam sint error, architecto repellat. Optio nihil pariatur, nobis praesentium temporibus expedita laborum quibusdam totam, iusto doloribus quasi accusantium.
-            Aperiam, doloribus ab. Porro suscipit esse ex doloremque quo voluptatibus officiis possimus vitae ducimus, reiciendis pariatur perspiciatis maiores quisquam repudiandae, dicta cumque laboriosam! Odio ipsam, iste quis numquam odit expedita?
-            Quibusdam iste architecto eligendi repellendus natus minima nihil aliquid quidem cum, odit sequi quae officiis quaerat illum accusamus praesentium! Sunt cum quia, ullam dignissimos aut nobis. Laboriosam voluptatibus inventore neque.
-            Reiciendis aperiam assumenda aut perferendis. Illo ratione ut delec tus 
-            <span class="read-more-target"> Lorem ipsum dolor sit amet  Ipsam magni aspernatur sunt consectetur. Obcaecati dolorum ipsam officia sit inventore soluta doloremque!
-              consectetur adipisicin Eum, porro laudantium. Vel iure tenetur libero neque omnis. Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo dolores unde provident sit voluptate natus voluptatibus, perferendis fuga error consectetur id ad deleniti assumenda repudiandae magnam, 
-              a iste ratione culpa?Lorem ipsum dolor sit amet consectetur adipisicing elit. Impedit maxime temporibus eos labore doloremque repellat maiores odio libero omnis inventore? Debitis incidunt impedit sequi iste error sint repellat aut blanditiis
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Accusamus facere sunt cumque soluta maxime minima saepe architecto voluptatum, nam dolor tempore quaerat ipsum, molestiae iure, ut laboriosam dolorem modi minus.
-            Corrupti ex ut modi veniam earum, obcaecati beatae quaerat nam eius, quidem vitae quo adipisci exercitationem iusto dolorum rerum ipsa error numquam labore. Fuga repudiandae exercitationem error modi porro impedit.
-            Maxime molestias, vel deserunt enim perspiciatis delectus veniam facilis nobis iure laboriosam repellat quisquam quaerat atque distinctio quam quo. At veniam maiores vitae dolores maxime, necessitatibus sequi aliquam exercitationem ab.
-            Natus numquam pariatur voluptatibus aperiam cumque vero tempora in sint iusto, quae nam temporibus totam quidem omnis, ducimus dolorum! Voluptatibus atque facere tempore provident vero dolorem nisi laudantium quasi reprehenderit.
-            Veritatis aut dolore nesciunt ad a at nobis, excepturi maiores. Possimus non magni necessitatibus dolorum modi reprehenderit consequuntur voluptatibus vel quos, quasi debitis est cum minima recusandae dolorem ipsam ducimus.
-            Doloremque porro maxime dolore consequuntur necessitatibus quibusdam alias doloribus ipsam iste et, ex totam laborum voluptatem aliquid veritatis dolorum repellendus sunt modi, id laboriosam, quo non ad odit excepturi! Cumque.
-            Deleniti quas hic assumenda. Saepe illum eaque molestias sint quasi. Excepturi cumque eligendi vel ratione nemo suscipit aut, est laborum inventore eveniet minus temporibus laboriosam impedit iusto. Suscipit, ipsum commodi!
-            Architecto quaerat commodi numquam dolore aspernatur pariatur libero officiis ratione quia ea ut, nostrum expedita natus eius magnam temporibus dignissimos saepe! Vel excepturi eos nulla ut veniam rerum unde minus!
-            Veritatis repellat quae perspiciatis totam vel voluptatibus autem explicabo aliquam inventore, a quam facilis ipsam consequuntur! Voluptate, voluptatem ad! A nam vel necessitatibus maiores eaque labore minima, dignissimos asperiores unde!
-            Veritatis, officiis. Laudantium adipisci nulla, aliquam facere nemo soluta a maiores magni nobis, ullam doloribus cupiditate assumenda id aliquid tenetur. Quo vel totam, perferendis accusantium nostrum sed illo excepturi cum.
-            </span>
-            </p>
-          <label for="more" class="read-more-trigger"></label>
-        </section>
-      </div>
-        <section class="specifications__PD">
-          <h3>Specifications</h3>
-          <table >
-            <tr>
-              <td>Minimum</td>
-              <td>Recommended</td>
-            </tr>
-            <tr>
-              <td>Operating System</td>
-              <td>Operating System</td>
-            </tr>
-            <tr>
-              <td>Windows</td>
-              <td>Windows</td>
-            </tr>
-            <tr>
-              <td>Processor</td>
-              <td>Processor</td>
-            </tr>
-            <tr>
-              <td>Intel I5 3570 (AMD FX-8350)</td>
-              <td>AMD Ryzen™ 5 2600 (Intel i7-4770)</td>
-            </tr>
-            <tr>
-              <td>Storage</td>
-              <td>Storage</td>
-            </tr>
-            <tr>
-              <td>75 Gb</td>
-              <td>90 Gb</td>
-            </tr>
-            <tr>
-              <td>Graphics</td>
-              <td>Graphics</td>
-            </tr>
-            <tr>
-              <td>AMD Radeon RX70</td>
-              <td>AMD Radeon™ RX 590 8GB (NVIDIA GeForce GTX 1060 6GB)</td>
-            </tr>
-      </table>
-        </section>
-        <footer>
-          <%- include('partials/footer.ejs')  %> 
-      </footer>
- 
-</body>
+        </div>
+          <section class="specifications__PD">
+            <h3>Specifications</h3>
+            <table >
+              <tr>
+                <td>Minimum</td>
+                <td>Recommended</td>
+              </tr>
+              <tr>
+                <td>Operating System</td>
+                <td>Operating System</td>
+              </tr>
+              <tr>
+                <td><%= selectedGame.os_min%></td>
+                <td><%= selectedGame.os_rec%></td>
+              </tr>
+              <tr>
+                <td>Processor</td>
+                <td>Processor</td>
+              </tr>
+              <tr>
+                <td><%= selectedGame.processor_min%></td>
+                <td><%= selectedGame.processor_rec%></td>
+              </tr>
+              <tr>
+                <td>Storage</td>
+                <td>Storage</td>
+              </tr>
+              <tr>
+                <td><%= selectedGame.storage_min%></td>
+                <td><%= selectedGame.storage_Rec%></td>
+              </tr>
+              <tr>
+                <td>Graphics</td>
+                <td>Graphics</td>
+              </tr>
+              <tr>
+                <td><%= selectedGame.graphics_min%></td>
+                <td><%= selectedGame.graphics_rec%></td>
+              </tr>
+        </table>
+          </section>
+          <footer>
+            <%- include('partials/footer.ejs')  %> 
+        </footer>
+   
+  </body>
 </html>
