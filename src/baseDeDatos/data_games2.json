@@ -129,14 +129,14 @@
     "title": "Shrek",
     "one_word_descr": "Fantastic!" ,
     "short_descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lectus at magna viverra aliquet. " ,
-	"long_descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lectus at magna viverra aliquet. Sed in turpis eu dui fermentum feugiat sit amet lobortis felis. Maecenas tempus quam consectetur tempor ultricies. Pellentesque dolor elit, facilisis eu purus non, eleifend sagittis tortor. Aenean eu hendrerit lectus, at ullamcorper lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tellus ac orci fringilla imperdiet. Aliquam lacinia egestas dictum. Donec dapibus tortor et metus finibus, quis efficitur nisi fermentum. Quisque luctus nunc in leo tempor placerat. Pellentesque tempus neque lectus, sed varius tortor sodales eu. Integer vel est elementum, viverra urna id, sagittis nulla. Morbi efficitur nibh non iaculis porttitor. Suspendisse in consequat nulla, eget egestas leo. Proin auctor mattis metus at euismod. Aenean gravida tincidunt fermentum. Mauris egestas vel quam eu semper.",
-	"game_group" : "free",
-	"category" : "Strategy", 
-	"creator" : "@creator3",
+	  "long_descr": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi non lectus at magna viverra aliquet. Sed in turpis eu dui fermentum feugiat sit amet lobortis felis. Maecenas tempus quam consectetur tempor ultricies. Pellentesque dolor elit, facilisis eu purus non, eleifend sagittis tortor. Aenean eu hendrerit lectus, at ullamcorper lorem. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas pulvinar tellus ac orci fringilla imperdiet. Aliquam lacinia egestas dictum. Donec dapibus tortor et metus finibus, quis efficitur nisi fermentum. Quisque luctus nunc in leo tempor placerat. Pellentesque tempus neque lectus, sed varius tortor sodales eu. Integer vel est elementum, viverra urna id, sagittis nulla. Morbi efficitur nibh non iaculis porttitor. Suspendisse in consequat nulla, eget egestas leo. Proin auctor mattis metus at euismod. Aenean gravida tincidunt fermentum. Mauris egestas vel quam eu semper.",
+	  "game_group" : "free",
+	  "category" : "Strategy", 
+	  "creator" : "@creator3",
     "original_price": "$6.500",
     "price_w_discount": "$0",
-	"discount": "100",
-	"img_1" : "/images/image_10.jpg"
+	  "discount": "100",
+	  "img_1" : "/images/image_10.jpg"
   }
 
 

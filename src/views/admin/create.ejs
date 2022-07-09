@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/productEdit.css">
+    <link rel="stylesheet" href="/css/search_bar.css">
+
+  </head>
+ 
+<body class="bodyProductEdit">
+    <header>
+        <%- include('partials/header.ejs')  %> 
+        <%- include('partials/search_bar')%> 
+      </header>
+    
+  <div class="formEdit__productEdit">
+    <h3 class="title__productEdit">Carga Juegos</h3>
+    <form method="post" action="/product/create" enctype="multipart/form-data">
+
+
+
+
+        <div class="contProductEditImg">
+            <img class="productEditImg" src="/images/image_22.jpg" alt="" >
+        </div>
+        <div>
+            <button class="btn__productEdit" type="file" name="image" >Cargar img</button>
+            <button class="btn__productEdit" type="submit">Cargar Video</button>
+        </div>
+        <input class="textArea__productEdit" type="text" name="title" placeholder="Title" value=""  />
+        <input class="textArea__productEdit" type="text" name="one_word_descr" placeholder="One Word Description" value=""  />
+        <input class="textArea__productEdit" type="text" name="short_descr" placeholder="Short Description" value=""  />
+        <input class="textArea__productEdit" type="text" name="long_descr" placeholder="Long Description" value=""  />
+        <input class="textArea__productEdit" type="text" name="game_group" placeholder="Game Status Payment" value=""  />
+        <input class="textArea__productEdit" type="text" name="category" placeholder="Category" value=""  />
+        <input class="textArea__productEdit" type="text" name="creator" placeholder="Creator" value=""  />
+        <input class="textArea__productEdit" type="text" name="original_price" placeholder="Original Price" value=""  />
+        <input class="textArea__productEdit" type="text" name="price_w_discount" placeholder="Price With Discount" value=""  />
+        <input class="textArea__productEdit" type="text" name="discount" placeholder="Discount" value=""  />
+
+        <br/>
+        
+        <textarea class="textArea__productEdit" placeholder="Descripción" value="product_descr"></textarea>
+        <br />
+       
+        
+        <textarea class="textArea__productEdit" placeholder="Categoría" value="product_categ"></textarea>
+        <br />
+        <input class="textArea__productEdit" type="text" placeholder="Precio" value=""/>
+        <br />
+        <input class="textArea__productEdit" type="text" placeholder="Descuento" value=""/>
+        <br />
+        <div>
+            <button class="btn__productEdit" type="submit">Agregar</button>
+            <button class="btn__productEdit" type="submit">Editar</button>
+        </div>
+    </form>
+  </div>
+    
+  <footer>
+    <%- include('partials/footer.ejs')  %> 
+</footer>
+</body>
+
+
+
+</html>
