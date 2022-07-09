@@ -1,7 +1,6 @@
 /*GET users listing. */
 
 const express = require('express');
-const app = express();
 const route = express.Router();
 const path = require('path')
 const multer = require('multer')
@@ -29,8 +28,8 @@ const storage = multer.diskStorage({
 
 //rutas
 route.get('/', controllerAdmin.adminList);
-route.get('/admin/create', controllerAdmin.create)
-route.post('/admin/create', upload.single('image'), controllerAdmin.save)
+route.get('/create', controllerAdmin.create)
+route.post('/create', upload.single('image'), controllerAdmin.save)
 
 
 
