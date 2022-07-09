@@ -21,13 +21,13 @@ const controllerAdmin = {
         data_games2.push(lastGame);
         
         let newGame = {
-            id: lastGame.id + 1,
-            title: req.body.title,
+            id: Number(lastGame.id) + 1,
+            title: req.body.title, 
             one_word_descr: req.body.one_word_descr,
             short_descr: req.body.short_descr,
             long_descr: req.body.long_descr,
             game_group: req.body.game_group,
-            category:req.body.category,
+            category: req.body.category,
             creator: req.body.creator,
             original_price: req.body.original_price,
             price_w_discount: req.body.price_w_discount,
@@ -37,9 +37,10 @@ const controllerAdmin = {
 
         data_games2.push(newGame);
         let newGameSave = JSON.stringify(data_games2,null,2);
-        fs.writeFileSync(path.join(dirname,'../baseDeDatos/data_games2.json'), newGameSave);
+        fs.writeFileSync(path.join(__dirname,'../baseDeDatos/data_games2.json'), newGameSave);
         res.redirect('/admin');
-        console.log(newGame);
+        console.log(newGame); 
+      /*   console.log(req.file) */
     }
 
 }

@@ -10,26 +10,25 @@ const controllerAdmin = require(path.join(__dirname,'../controllers/controllerAd
 
 
 //Subir archivo mediante Multer  (nombre archivo , ruta donde guardar)
-const storage = multer.diskStorage({
+ const storage = multer.diskStorage({
 
     destination: function (req, file, cb) {
       cb(null, path.join(__dirname,'../../public/images/games'))
     },
 
     filename: function (req, file, cb) {
-      const uniqueSuffix = 'img-' + Date.now() + '-' + Math.round(Math.random() * 1E9) + path.extname(file.originalname) 
-      cb(null, file.fieldname + '-' + uniqueSuffix)
+        cb(null, 'img-'+ Date.now()+path.extname(file.originalname))
     }
   })
   
-  const upload = multer({storage})
+  const upload = multer({storage}) 
 
 ////////////////////////////////////////////////////////////////
 
 //rutas
 route.get('/', controllerAdmin.adminList);
 route.get('/create', controllerAdmin.create)
-route.post('/create', upload.single('image'), controllerAdmin.save)
+route.post('/create',  upload.single('image'), controllerAdmin.save)
 
 
 
