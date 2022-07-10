@@ -5,6 +5,7 @@
     <%- include('../partials/head.ejs')  %> 
     <link rel="stylesheet" href="/css/style_admin.css">
     <link rel="stylesheet" href="/css/search_bar.css">
+    
 </head>
 <body class="bodyAdmin__admin"></body>
     <header>
@@ -33,24 +34,37 @@
                   
                   <thead>
                     <tr>
-                      <th scope="col">Id</th>
-                      <th scope="col">Nombre</th>
-                      <th scope="col">Ver</th>
-                      <th scope="col">Editar</th>
-                      <th scope="col">Borrar</th>
+                      <th class="styleTable__admin">Id</th>
+                      <th class="styleTable__admin">Nombre</th>
+                      <th class="styleTable__admin">Ver</th>
+                      <th class="styleTable__admin">Editar</th>
+                      <th class="styleTable__admin">Borrar</th>
                     </tr>
                   </thead>
                   <tbody>
-                    <% data_games2.forEach(data_games2 => { %>
-                    <tr>
-                      <td><%= data_games2.id %> </td>
-                      <td><%= data_games2.title %> </td>
-
-                      <td><a href="/administrar/detail/<%= data_games2.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
-                      <td><a href="/administrar/edit/<%= data_games2.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
-                      <td><a href="/administrar/delete/<%= data_games2.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
-                    </tr>
-                    <% }); %>
+                    <% data_games2.forEach(data_games2=> { %>
+                      <tr>
+                        <td class="styleTable__admin">
+                          <%= data_games2.id %>
+                        </td>
+                        <td class="styleTable__admin">
+                          <%= data_games2.title %>
+                        </td>
+                    
+                        <td class="styleTable__admin"><a href="/administrar/detail/<%= data_games2.id%> ">
+                            <ion-icon name="eye-outline"></ion-icon>
+                          </a></td>
+                        <td class="styleTable__admin"><a href="/administrar/edit/<%= data_games2.id%> ">
+                            <ion-icon name="pencil-outline"></ion-icon>
+                          </a></td>
+                        <td class="styleTable__admin"><a href="/administrar/delete/<%= data_games2.id%>">
+                            <ion-icon name="trash-outline"></ion-icon>
+                            
+                            
+                                                  
+                          </a></td>
+                      </tr>
+                      <% }); %>
                   </tbody>
               </table>  
             </article>       
