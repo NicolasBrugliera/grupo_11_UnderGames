@@ -32,7 +32,7 @@
                       </tr>
                       <tr>
                         <td>Launch Date</td>
-                        <td><%= selectedGame.lauch_date %></td>
+                        <td><%= selectedGame.launch_date %></td>
                       </tr>
                       <tr>
                         <td>Platform</td>
@@ -51,33 +51,32 @@
                <div class="container__PD">
                       <ul class="slider__PD">
                           <li id="slide1__PD">
-                              <img src="<%= selectedGame.img_2%>"alt="Image 1">
+                              <img src="<%= selectedGame.img_1%>"alt="Image 1">
                           </li>
   
                           <li id="slide2__PD">
-                              <img src="<%= selectedGame.img_3%>" alt="Image 2">
+                              <img src="<%= selectedGame.img_2%>" alt="Image 2">
                           </li>
   
                           <li id="slide3__PD">
-                              <img src="<%= selectedGame.img_4%>"alt="Image 3">
+                              <img src="<%= selectedGame.img_3%>"alt="Image 3">
                           </li>
   
                           <li id="slide4__PD">
-                              <img id="image4" src="<%= selectedGame.img_5%>" alt="Image 4">
+                              <img id="image4" src="<%= selectedGame.img_4%>" alt="Image 4">
                           </li>
                           <li id="slide5__PD">
-                              <img id="image5" src="<%= selectedGame.img_1%>" alt="Image 5">
+                              <img id="image5" src="<%= selectedGame.img_5%>" alt="Image 5">
                           </li>
                           <li id="video__PD">
                             <iframe src="<%= selectedGame.video_1%>" frameborder="0"> </iframe>
-                            <!-- <iframe src="<%= selectedGame.video_1%>" frameborder="0"></iframe> -->
-                           </li>
+                            
                       </ul>
                       
                       <ul class="menu__PD">
                         <li>
                           <a href="#video__PD">
-                              <img id="image5" src="<%= selectedGame.video_1%>"  alt="Video">
+                              <img id="image5" src="<%= selectedGame.miniatura%>"  alt="Video">
                           </a>
                         </li>
                         <li>
@@ -115,7 +114,7 @@
           <input type="checkbox" class="read-more-state" id="more">
             <p class="read-more-wrap">
               <%= selectedGame.short_descr%>
-              <span class="read-more-target"> <%= selectedGame.lomg_descr%>
+              <span class="read-more-target"> <%= selectedGame.long_descr%>
               </span>
               </p>
             <label for="more" class="read-more-trigger"></label>
