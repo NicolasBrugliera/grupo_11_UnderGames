@@ -3,52 +3,55 @@
 
 <head>
     <%- include('../partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/style_admin.css">
+    <link rel="stylesheet" href="/css/search_bar.css">
 </head>
+<body class="bodyAdmin__admin"></body>
+    <header>
+        <%- include ('../partials/header.ejs')  %> 
+        <%- include('../partials/search_bar')%> 
+    </header>
 
-<header>
-    <%- include ('../partials/header.ejs')  %> 
-</header>
 
 
-
-    <body>
-        <main class="container-fluid">
+    
+        <main class="cont__admin">
  
           <!--Administrador de productos-->
           <br>
           <section class="row">
             <article class="col-12 ">
-              <h2 class="display-4 text-white bg-info text-center pt-2">Administrador de Productos</h2>
+              <h2 class="adminH2__admin">Administrador de Productos</h2>
             </article>
             <article class="col-12">
-              <a href="/administrar/create"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a>
+              <button class="btnCreate__Create"><a href="/admin/create"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a></button>
             </article>
 
             <article class="col-12" >
-            <table class="table">
+            <table class="tableAdmin__Admin">
                 <thead>
-                  <tr>
-            <thead>
-              <tr>
-                <th scope="col">Id</th>
-                <th scope="col">Nombre</th>
-                <th scope="col">Ver</th>
-                <th scope="col">Editar</th>
-                <th scope="col">Borrar</th>
-              </tr>
-            </thead>
-                <tbody>
-                  <% data_games2.forEach(data_games2 => { %>
-                  <tr>
-                    <td><%= data_games2.id %> </td>
-                    <td><%= data_games2.title %> </td>
+                  
+                  <thead>
+                    <tr>
+                      <th scope="col">Id</th>
+                      <th scope="col">Nombre</th>
+                      <th scope="col">Ver</th>
+                      <th scope="col">Editar</th>
+                      <th scope="col">Borrar</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <% data_games2.forEach(data_games2 => { %>
+                    <tr>
+                      <td><%= data_games2.id %> </td>
+                      <td><%= data_games2.title %> </td>
 
-                    <td><a href="/administrar/detail/<%= data_games2.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
-                    <td><a href="/administrar/edit/<%= data_games2.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
-                    <td><a href="/administrar/delete/<%= data_games2.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
-                  </tr>
-                  <% }); %>
-                </tbody>
+                      <td><a href="/administrar/detail/<%= data_games2.id%> "> <ion-icon name="eye-outline"></ion-icon></a></td>
+                      <td><a href="/administrar/edit/<%= data_games2.id%> "> <ion-icon name="pencil-outline"></ion-icon></a></td>
+                      <td><a href="/administrar/delete/<%= data_games2.id%>"><ion-icon name="trash-outline"></ion-icon></a></td>
+                    </tr>
+                    <% }); %>
+                  </tbody>
               </table>  
             </article>       
           </section>

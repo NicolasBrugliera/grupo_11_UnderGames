@@ -138,19 +138,6 @@
     "price_w_discount": "$0",
     "discount": "100",
     "img_1": "/images/image_10.jpg"
-  },
-  {
-    "id": 11,
-    "title": "CCC",
-    "one_word_descr": "bbbbbbbbb",
-    "short_descr": "bbbbbb",
-    "long_descr": "bbbbb",
-    "game_group": "bbbbb",
-    "category": "bbb",
-    "creator": "bbbbbb",
-    "original_price": "bbbb",
-    "price_w_discount": "bbbbb",
-    "discount": "bbbbb",
-    "img_1": "img-1657406375632.jpg"
   }
+  
 ]

@@ -19,6 +19,7 @@ const controllerAdmin = require(path.join(__dirname,'../controllers/controllerAd
     filename: function (req, file, cb) {
         cb(null, 'img-'+ Date.now()+path.extname(file.originalname))
     }
+    
   })
   
   const upload = multer({storage}) 
