@@ -32,13 +32,13 @@ const controllerAdmin = {
             original_price: req.body.original_price,
             price_w_discount: req.body.price_w_discount,
             discount: req.body.discount,
-            img_1: req.files['img_1'][0],  /* req.file.filename,  */
-            img_2: req.files['img_2'][1],
-            img_3: req.files['img_3'][2],
-            img_4: req.files['img_4'][3],
-            img_5: req.files['img_5'][4],
-            video_1: req.body.filename,
-            miniatura: req.body.filename,
+            img_1: req.files.img_1[0].filename,
+            img_2: req.files.img_2[0].filename,
+            img_3: req.files.img_3[0].filename,
+            img_4: req.files.img_4[0].filename,
+            img_5: req.files.img_5[0].filename,
+            video_1: req.body.video_1,
+            miniatura: req.body.miniatura,
             launch_date:req.body.launch_date,
             platform: req.body.platform,
             os_min: req.body.os_min,            
@@ -57,8 +57,9 @@ const controllerAdmin = {
         let newGameSave = JSON.stringify(data_games3,null,2);
         fs.writeFileSync(path.join(__dirname,'../baseDeDatos/data_games3.json'), newGameSave);
         res.redirect('/admin');
-        /* console.log(newGame);  */
-       console.log(req.file) 
+      
+       console.log(req.files) 
+       console.log(req.body) 
     }
 
 }
