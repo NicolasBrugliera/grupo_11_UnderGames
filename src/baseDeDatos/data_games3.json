@@ -151,7 +151,38 @@
     "storage_min": "",
     "storage_rec": "",
     "graphics_min": "",
-	"graphics_rec": "",
-	"age": "16+"
-}
+    "graphics_rec": "",
+    "age": "16+"
+  },
+  {
+    "id": 6,
+    "title": "THE WITCHER ",
+    "one_word_descr": "EXCELENT",
+    "short_descr": "JUEGAZO DE LA PUTA MADRE",
+    "long_descr": "SSSSSSSSSSSSSSSS",
+    "game_group": "SSSSSSSSSSS",
+    "category": "SSSSSSSSSS",
+    "creator": "SSSSSSSS",
+    "original_price": "SSSSSS",
+    "price_w_discount": "SSSSSSS",
+    "discount": "SSSSS",
+    "img_1": "/images/1657600164900-466817986.jpg",
+    "img_2": "/images/1657600164900-366050204.jpg",
+    "img_3": "/images/1657600164900-411355765.jpg",
+    "img_4": "/images/1657600164900-761884209.jpg",
+    "img_5": "/images/1657600164901-780534795.jpg",
+    "video_1": "https://www.youtube.com/watch?v=XHrskkHf958",
+    "miniatura": "https://img.youtube.com/vi/XHrskkHf958/mqdefault.jpg",
+    "launch_date": "10/06/2022",
+    "platform": "osx",
+    "os_min": "",
+    "os_rec": "",
+    "processor_min": "",
+    "processor_rec": "",
+    "storage_min": "",
+    "storage_rec": "",
+    "graphics_min": "",
+    "graphics_rec": "",
+    "age": ""
+  }
 ]
