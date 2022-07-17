@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/style_create.css">
+    <link rel="stylesheet" href="/css/search_bar.css">
+
+  </head>
+ 
+<body class="bodyCreate">
+    <header>
+        <%- include('../partials/header.ejs')  %> 
+        <%- include('../partials/search_bar')%> 
+      </header>
+    
+  <div class="formCreate__create">
+
+    <h3 class="title__create">Actualizar </h3> 
+    <h1 class="title__create"> <%= gameToEdit.title%> </h1>
+
+    <img class="imgCreate_Create" src="<%= gameToEdit.img_1 %>" alt="" >
+    <form action="/admin/edit/<%= gameToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <div>
+          <!--  <button class="btn__productEdit" type="file" name="image" >Cargar img</button>  -->
+          <!--  <button class="btn__productEdit" type="submit">Cargar Video</button> -->
+        </div>
+        <div class="contTxtCreate__create">
+          <input class="textArea__Create" type="text" name="title" placeholder="Title" value=""  /> 
+          <input class="textArea__Create" type="text" name="one_word_descr" placeholder="One Word Description" value=""  />
+          <input class="textArea__Create" type="text" name="short_descr" placeholder="Short Description" value=""  />
+          <input class="textArea__Create" type="text" name="long_descr" placeholder="Long Description" value=""  />
+          <input class="textArea__Create" type="text" name="game_group" placeholder="Game Status Payment" value=""  />
+          <input class="textArea__Create" type="text" name="category" placeholder="Category" value=""  />
+          <input class="textArea__Create" type="text" name="creator" placeholder="Creator" value=""  />
+          <input class="textArea__Create" type="text" name="original_price" placeholder="Original Price" value=""  />
+          <input class="textArea__Create" type="text" name="price_w_discount" placeholder="Price With Discount" value=""  />
+          <input class="textArea__Create" type="text" name="discount" placeholder="Discount" value=""  />
+
+<!--           <input class="textArea__Create" type="file" name="img_1" placeholder="image 1" value="1"  accept= ".jpg, .jpeg .png"/>
+          <input class="textArea__Create" type="file" name="img_2" placeholder="image 2" value="2"  accept= ".jpg, .jpeg .png"/>    
+          <input class="textArea__Create" type="file" name="img_3" placeholder="image 3" value="3"  accept= ".jpg, .jpeg .png"/>
+          <input class="textArea__Create" type="file" name="img_4" placeholder="image 4" value="4"  accept= ".jpg, .jpeg .png"/>
+          <input class="textArea__Create" type="file" name="img_5" placeholder="image 5" value="5"  accept= ".jpg, .jpeg .png"/> -->
+
+          <input type="hidden"  name="oldImage1"  value="<%= gameToEdit.img_1%>" >
+          <input class="textArea__Create" type="file" name="img_1" placeholder="image 1" value="1"  accept= ".jpg, .jpeg .png"/>
+          
+          <input type="hidden"  name="oldImage2"  value="<%= gameToEdit.img_2%>" />
+          <input class="textArea__Create" type="file" name="img_2" placeholder="image 2" value="2"  accept= ".jpg, .jpeg .png"/>  
+ 
+          <input type="hidden"  name="oldImage3"  value="<%= gameToEdit.img_3%>" />
+          <input class="textArea__Create" type="file" name="img_3" placeholder="image 3" value="3"  accept= ".jpg, .jpeg .png"/>
+
+          <input type="hidden"  name="oldImage4"  value="<%= gameToEdit.img_4%>" >
+          <input class="textArea__Create" type="file" name="img_4" placeholder="image 4" value="4"  accept= ".jpg, .jpeg .png"/>
+   
+          <input type="hidden"  name="oldImage5"  value="<%= gameToEdit.img_5%>" >
+          <input class="textArea__Create" type="file" name="img_5" placeholder="image 5" value="5"  accept= ".jpg, .jpeg .png"/>
+
+   
+      
+
+
+          <input class="textArea__Create" type="text" name="video_1" placeholder="URL" value=""  /> 
+          <input class="textArea__Create" type="text" name="miniatura" placeholder="miniatura" value="" /> 
+          <input class="textArea__Create" type="text" name="launch_date" placeholder="Launch Date" value=""  />
+          <input class="textArea__Create" type="text" name="platform" placeholder="platform" value=""  />
+          <input class="textArea__Create" type="text" name="os_min" placeholder="os_min" value=""  />
+          <input class="textArea__Create" type="text" name="os_rec" placeholder="os_rec" value=""  />
+          <input class="textArea__Create" type="text" name="processor_min" placeholder="processor_min" value=""  />
+          <input class="textArea__Create" type="text" name="processor_rec" placeholder="processor_rec" value=""  />
+          <input class="textArea__Create" type="text" name="storage_min" placeholder="storage_min" value=""  />
+          <input class="textArea__Create" type="text" name="storage_rec" placeholder="storage_rec" value=""  />
+          <input class="textArea__Create" type="text" name="graphics_min" placeholder="graphics_min" value=""  />
+          <input class="textArea__Create" type="text" name="graphics_rec" placeholder="graphics_rec" value=""  />
+          <input class="textArea__Create" type="text" name="age" placeholder="age" value=""  />
+        </div>
+        <br/>
+
+            <button class="btn__create" type="submit">Actualizar</button>
+           
+        </div>
+    </form>
+  </div>
+    
+  <footer>
+    <%- include('../partials/footer.ejs')  %> 
+</footer>
+</body>
+
+
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/style_create.css">
+    <link rel="stylesheet" href="/css/search_bar.css">
+
+  </head>
+ 
+<body class="bodyCreate">
+    <header>
+        <%- include('../partials/header.ejs')  %> 
+        <%- include('../partials/search_bar')%> 
+      </header>
+    
+  <div class="formCreate__create">
+
+    <h3 class="title__create">Borrar</h3> 
+    <h1 class="title__create"> <%= gameDeleteID.title%> </h1>
+
+    <img class="imgCreate_Create" src="<%= gameDeleteID.img_1 %>" alt="" >
+    <form action="/admin/delete/<%= gameDeleteID.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+
+   
+        <div>
+          <!--  <button class="btn__productEdit" type="file" name="image" >Cargar img</button>  -->
+          <!--  <button class="btn__productEdit" type="submit">Cargar Video</button> -->
+        </div>
+
+        </div>
+        <br/>
+
+            <button class="btn__create" type="submit">Borrar</button>
+            <button class="btn__create" type="submit">Cancelar</button>
+           
+        </div>
+    </form>
+  </div>
+    
+  <footer>
+    <%- include('../partials/footer.ejs')  %> 
+</footer>
+</body>
+
+
+
+</html>

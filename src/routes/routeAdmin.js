@@ -34,8 +34,16 @@ const storage = multer.diskStorage({
 
 //rutas
 route.get('/', controllerAdmin.adminList);
+
 route.get('/create', controllerAdmin.create)  
 route.post('/create', multipleUpload, controllerAdmin.save)
+
+route.get('/edit/:id', controllerAdmin.edit)
+route.put('/edit/:id', multipleUpload, controllerAdmin.update)
+
+route.get('/delete/:id', controllerAdmin.destroy)
+route.delete('/delete/:id', controllerAdmin.destroy)
+
 
 
 

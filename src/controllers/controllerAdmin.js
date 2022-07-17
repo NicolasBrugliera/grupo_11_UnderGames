@@ -58,9 +58,66 @@ const controllerAdmin = {
         fs.writeFileSync(path.join(__dirname,'../baseDeDatos/data_games3.json'), newGameSave);
         res.redirect('/admin');
       
-       console.log(req.files) 
-       console.log(req.body) 
+
+    }, 
+
+    edit: (req, res)=>{
+        let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
+
+        const gameID = req.params.id
+        const gameToEdit = data_games3.find( game => game.id == gameID)
+        res.render(path.join(__dirname, '../views/admin/edit'), {gameToEdit})
+
+    },
+
+    update: (req,res)=>{
+        let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
+        req.body.id = req.params.id
+        // Si no se actualiza una de la imágenes en el formulario de modificación, continúa mostrándose (oldImage) el anterior. En la vista figura en formulario oculto (hidden)
+        // si en el body.img_1 llega un archivo desde multer (req.files) entonces que suba el que viene en esa posición, sino que siga mostrando lo que figura (oldImage)
+        
+        //(por ahora no está funcionando se deben actualizar todas las fotos)
+
+       // console.log('req.files ' + req.files.img_1[0].filename)
+        req.body.img_1 = req.files ? req.files.img_1[0].filename : req.body.oldImage1
+        req.body.img_2 = req.files ? req.files.img_2[0].filename : req.body.oldImage2
+        req.body.img_3 = req.files ? req.files.img_3[0].filename : req.body.oldImage3
+        req.body.img_4 = req.files ? req.files.img_4[0].filename : req.body.oldImage4 
+        req.body.img_5 = req.files ? req.files.img_5[0].filename : req.body.oldImage5   
+         
+/*      req.body.img_1 = req.files ? req.files[0].filename : req.body.oldImage1
+        req.body.img_2 = req.files ? req.files[0].filename : req.body.oldImage2
+        req.body.img_3 = req.files ? req.files[0].filename : req.body.oldImage3
+        req.body.img_4 = req.files ? req.files[0].filename : req.body.oldImage4
+        req.body.img_5 = req.files ? req.files[0].filename : req.body.oldImage5 */
+
+        let gamesUpdate = data_games3.map( games => {
+            if(games.id == req.body.id){
+                return games = req.body
+            }
+            return games
+        })
+
+        let gameActualizar = JSON.stringify(gamesUpdate, null, 2)
+        fs.writeFileSync(path.join(__dirname,'../baseDeDatos/data_games3.json'), gameActualizar);
+
+        res.redirect('/admin')
+    }, 
+
+    destroy:(req, res)=> {
+        let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
+        const gameDeleteID = req.params.id;
+        const gamesFinal = data_games3.filter(game => game.id != gameDeleteID) // genero un body de ids que existen except el elegido
+        const gamesToSave = JSON.stringify(gamesFinal, null, 2) // Guardo en el Json todas las motos menos la que filtré que es la elegida para borrar. 
+        fs.writeFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json'), gamesToSave) 
+
+        res.redirect('/admin')
+
+
     }
+
+
+
 
 }
 
