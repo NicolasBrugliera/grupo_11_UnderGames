@@ -76,20 +76,12 @@ const controllerAdmin = {
         // Si no se actualiza una de la imágenes en el formulario de modificación, continúa mostrándose (oldImage) el anterior. En la vista figura en formulario oculto (hidden)
         // si en el body.img_1 llega un archivo desde multer (req.files) entonces que suba el que viene en esa posición, sino que siga mostrando lo que figura (oldImage)
         
-        //(por ahora no está funcionando se deben actualizar todas las fotos)
-
-       // console.log('req.files ' + req.files.img_1[0].filename)
-        req.body.img_1 = req.files ? req.files.img_1[0].filename : req.body.oldImage1
-        req.body.img_2 = req.files ? req.files.img_2[0].filename : req.body.oldImage2
-        req.body.img_3 = req.files ? req.files.img_3[0].filename : req.body.oldImage3
-        req.body.img_4 = req.files ? req.files.img_4[0].filename : req.body.oldImage4 
-        req.body.img_5 = req.files ? req.files.img_5[0].filename : req.body.oldImage5   
+        req.body.img_1 = req.files.img_1 ? req.files.img_1[0].filename : req.body.oldImage1
+        req.body.img_2 = req.files.img_2 ? req.files.img_2[0].filename : req.body.oldImage2
+        req.body.img_3 = req.files.img_3 ? req.files.img_3[0].filename : req.body.oldImage3
+        req.body.img_4 = req.files.img_4 ? req.files.img_4[0].filename : req.body.oldImage4 
+        req.body.img_5 = req.files.img_5 ? req.files.img_5[0].filename : req.body.oldImage5   
          
-/*      req.body.img_1 = req.files ? req.files[0].filename : req.body.oldImage1
-        req.body.img_2 = req.files ? req.files[0].filename : req.body.oldImage2
-        req.body.img_3 = req.files ? req.files[0].filename : req.body.oldImage3
-        req.body.img_4 = req.files ? req.files[0].filename : req.body.oldImage4
-        req.body.img_5 = req.files ? req.files[0].filename : req.body.oldImage5 */
 
         let gamesUpdate = data_games3.map( games => {
             if(games.id == req.body.id){
