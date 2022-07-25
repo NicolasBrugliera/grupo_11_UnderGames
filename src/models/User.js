@@ -1,12 +1,14 @@
 // 4. Editar la información de un usuario
 
 const fs = require('fs');
+const path = require('path')
 
 const User = {
-	fileName: 'baseDeDatos/users.json',
+	fileName: path.join(__dirname,'../baseDeDatos/users.json') ,
 
 	getData: function () {
 		return JSON.parse(fs.readFileSync(this.fileName, 'utf-8'));
+		
 	},
 
 	generateId: function () {
