@@ -1,0 +1,24 @@
+[
+ {
+  "id": 1,
+  "name": "Patricia",
+  "surname": "Onieva",
+  "email": "patricia.onieva@gmail.com",
+  "gamertag": "pato",
+  "password": "$2a$10$aFvZla38BA8MS251sOTuRu1l09bo/CpZDxmC18NwECRPVDeGT0J42",
+  "repeted-password": "123456",
+  "tos": "on",
+  "avatar": "1658682662796_img.png"
+ },
+ {
+  "id": 2,
+  "name": "Admin",
+  "surname": "UG",
+  "email": "undergamesarg@gmail.com",
+  "gamertag": "ADMIN",
+  "password": "$2a$10$WJuMUnB9IsB3CO7HiSY4jeB4xd6WGozj/NLTp5EAyaOnUYfy35t/a",
+  "repeted-password": "123456",
+  "tos": "on",
+  "avatar": "1658691494694_img.png"
+ }
+]

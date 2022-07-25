@@ -1,23 +1,42 @@
 <div id="body_header">
 <header class="header">
         <nav class="navbar">
-            <a href="/"> <img src="/images/logo_1.png" alt="" class="logo_image"></a>
+            <a href="/"> <img src="/images/logo_1.png" alt="Login" class="logo_image"></a>
             <a href="/" class="nav-logo">Under Games</a>
             <ul class="nav-menu">
-                <li class="nav-item">
-                    <a href="/admin">ADMIN</i></a> 
-                </li>
-                <li class="nav-item">
-                    <a href="/login" class="fa-solid fa-user fa-xl"></i></a> 
-                </li>
+                <% if (locals.isLogged) {  %>
+                    <li>
+                            <div class="dropdown">
+                                <button type="button"> 
+                                    <img src="/images/avatars/<%= locals.userLogged.avatar %>" class="avatar_image" alt="" width="50px" height="50px"/>
+                                    <a href="#"></a>
+                                    <i class="fa fa-caret-down"></i>
+                                </button>
+                                <%= locals.userLogged.name %>
+                                    <ul class="dropdown-content">
+                                        <a href="/users/profile">Profile</a>
+                                        <li><hr></li>
+                                        <a href="/users/logout">Logout</a>
+                                    </ul>
+                            </div> 
+                        </li> 
+                    <li><a href="../productCart" class="fa-solid fa-cart-shopping fa-xl"></a></li>
+                    <li><a href="../under_constr" class="fa-solid fa-circle-question fa-xl"></a></li>
 
-                <li class="nav-item">
-                    <a href="/productCart"><i class="fa-solid fa-cart-shopping fa-xl"></i></a> 
-                </li>
-                <li class="nav-item">
-                    <a href="/under_constr"><i class="fa-solid fa-circle-question fa-xl"></i></a> 
+                    <% if (locals.userLogged.email == "undergamesarg@gmail.com") {  %>
+                    <li><a href="/admin" class="fa-solid fa-toolbox fa-xl"></a></li>
+                    <% } else { %>
+                        <br>
+                    <% } %>
                 </li>
                 
+                <% } else { %>
+                <li class="nav-item">
+                        <li><a href="/users/login" class="fa-solid fa-user fa-xl"></a></li>
+                        <br>
+                        <li><a href="../under_constr" class="fa-solid fa-circle-question fa-xl"></a></li>
+                </li>    
+                <% } %>
             </ul>
             <div class="hamburger">
                 <span class="bar"></span>
