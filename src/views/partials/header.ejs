@@ -20,8 +20,9 @@
                                     </ul>
                             </div> 
                         </li> 
-                    <li><a href="../productCart" class="fa-solid fa-cart-shopping fa-xl"></a></li>
-                    <li><a href="../under_constr" class="fa-solid fa-circle-question fa-xl"></a></li>
+                    <li><a href="../productCart" class="fa-solid fa-cart-shopping fa-xl" alt="Cart"></a></li>
+                    <li><a href="../productList" class="fa-solid fa-clipboard-list  fa-xl" akt="Product List"></a></li>
+                    <li><a href="../under_constr" class="fa-solid fa-circle-question fa-xl" alt="FAQ"></a></li>
 
                     <% if (locals.userLogged.email == "undergamesarg@gmail.com") {  %>
                     <li><a href="/admin" class="fa-solid fa-toolbox fa-xl"></a></li>
@@ -32,13 +33,16 @@
                 
                 <% } else { %>
                 <li class="nav-item">
-                        <li><a href="/users/login" class="fa-solid fa-user fa-xl"></a></li>
-                        <br>
-                        <li><a href="../under_constr" class="fa-solid fa-circle-question fa-xl"></a></li>
+                        <li><a href="/users/login" class="fa-solid fa-user fa-xl" alt="Login"></a></li>
+                        
+                        <li><a href="../productList" class="fa-solid fa-clipboard-list  fa-xl" alt="Product List"></a></li>
+                      
+                        <li><a href="../under_constr" class="fa-solid fa-circle-question fa-xl" alt="FAQ"></a></li>
                 </li>    
                 <% } %>
             </ul>
             <div class="hamburger">
+                <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>
                 <span class="bar"></span>

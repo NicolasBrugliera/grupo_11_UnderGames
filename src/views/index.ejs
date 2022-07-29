@@ -51,7 +51,7 @@
 
 <div class="new_releases_container">
     <h1>New Releases</h1>
-    <h3><a href="/productList">(view all)</a></h3>
+    
     <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
         <% for(let i= 0; i < products.length; i++){ %>  
            <% if (products[i].game_group == "new_releases") { %>
@@ -83,7 +83,7 @@
 
 <div class="top_sellers_container">
     <h1>Top Sellers</h1>
-    <h3><a href="/productList">(view all)</a></h3>
+    
     <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
         <% for(let i= 0; i < products.length; i++){ %>  
            <% if (products[i].game_group == "top_sellers") { %>
@@ -119,7 +119,7 @@
 
 <div class="free_container">
     <h1>Free</h1>
-    <h3><a href="/productList">(view all)</a></h3>
+    
     <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
         <% for(let i= 0; i < products.length; i++){ %>  
            <% if (products[i].game_group == "free") { %>

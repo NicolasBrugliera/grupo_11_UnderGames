@@ -91,6 +91,10 @@ Fin - No se usan, porque tenemos iconos*/
   float: left;
 }
 
+.fa-solid{
+  padding: 5px;
+}
+
 /*******Para el menu desplegable de Profile y Logout********************/
 
 .dropdown {
