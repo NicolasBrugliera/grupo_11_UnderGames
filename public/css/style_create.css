@@ -37,6 +37,34 @@
     text-align: center;
     max-width: 300px;
 }
+
+.imgDelete{
+    width: 100%;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px grey);
+    background-color: rgb(32, 32, 32);
+    border-radius: 4%;
+    text-align: center;
+   
+}
+
+.imgEdit_Edit{
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    object-fit: contain;
+    filter: drop-shadow(0 0 5px grey);
+    background-color: rgb(32, 32, 32);
+    border-radius: 4%;
+    text-align: center;
+    max-width: 200px;
+}
+.Edit_Edit{
+    font-family: 'Roboto', sans-serif;
+    color: #ddd;
+    margin: 5px;
+    letter-spacing: .5px;
+}
+
 .contTxtCreate__create{
     display: flex;
     flex-direction: column;
@@ -49,11 +77,19 @@
 }
 
 .formCreate__create {
-
     border: 4px solid black;
     margin: 2em;
     align-self: center;
+}
 
+.formDelete {
+    width: 100%;
+    max-width: 40%;
+    margin: auto;
+    object-fit: fill;
+    border-radius: 5px;
+    margin: 2em;
+    align-self: center;
 }
 
 .productEditImg {
@@ -86,6 +122,53 @@
 	margin-top: 1vh;
 	margin-bottom: 1em;
 }
+
+.btn__cxl{
+    margin: auto;
+    width: 100%;
+    max-width: 40%;
+    box-shadow: inset 0px 0px 0px 0px #97c4fe;
+	background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+	background-color: #3d94f6;
+	border-radius: 15px;
+	border: 1px solid #337fed;
+	display: inline-block;
+	cursor: pointer;
+	color: #eee;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 11px 76px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #1a4672;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+
+.btn__delete{
+    margin: auto;
+    width: 100%;
+    max-width: 40%;
+    box-shadow: inset 0px 0px 0px 0px #97c4fe;
+	background: linear-gradient(to bottom, #b37133 5%, #db331d 100%);
+	background-color: #c29a51;
+	border-radius: 15px;
+	border: 1px solid #fa0101;
+	display: inline-block;
+	cursor: pointer;
+	color: #eee;
+	font-family: 'Roboto', sans-serif;
+	font-size: 15px;
+	font-weight: bold;
+	padding: 11px 76px;
+	text-decoration: none;
+	text-shadow: 0px 1px 0px #726748;
+	margin-top: 1em;
+	margin-bottom: 1em;
+}
+
+
 .btn__create:hover {
 	background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
 	background-color: #1e62d0;
@@ -95,3 +178,13 @@
 	position: relative;
 	top: 1px;
 }
+
+p.tableAdmin_Error {
+    position: relative;
+    color: rgb(230, 120, 120);
+    font-weight: bold;
+    bottom: 10px;
+  
+
+
+}  

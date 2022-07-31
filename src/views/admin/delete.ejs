@@ -13,25 +13,21 @@
         <%- include('../partials/search_bar')%> 
       </header>
     
-  <div class="formCreate__create">
+  <div class="formDelete">
 
-    <h3 class="title__create">Borrar</h3> 
-    <h1 class="title__create"> <%= gameDeleteID.title%> </h1>
+    <h3 class="title__create">Delete</h3> 
+    <h1 class="title__create"> <%= gameToDelete.title%> </h1>
 
-    <img class="imgCreate_Create" src="<%= gameDeleteID.img_1 %>" alt="" >
-    <form action="/admin/delete/<%= gameDeleteID.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+    <img class="imgDelete" src="<%= gameToDelete.img_1 %>" alt="" >
+    <form action="/admin/delete/<%= gameToDelete.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
 
-   
-        <div>
-          <!--  <button class="btn__productEdit" type="file" name="image" >Cargar img</button>  -->
-          <!--  <button class="btn__productEdit" type="submit">Cargar Video</button> -->
-        </div>
 
         </div>
-        <br/>
 
-            <button class="btn__create" type="submit">Borrar</button>
-            <button class="btn__create" type="submit">Cancelar</button>
+
+            <button class="btn__delete" type="submit">Borrar</button>
+            <button class="btn__cxl" onclick="location.href='/admin/'" type=”button”>Cancelar</button>
+              
            
         </div>
     </form>
