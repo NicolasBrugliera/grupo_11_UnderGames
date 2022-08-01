@@ -20,55 +20,57 @@
  
           <!--Administrador de productos-->
           <br>
-          <section class="row">
-            <article class="col-12 ">
-              <h2 class="adminH2__admin">Administrador de Productos</h2>
-            </article>
-            <article class="col-12">
-              <button class="btnCreate__Create"><a href="/admin/create"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a></button>
-            </article>
-
-            <article class="col-12" >
-            <table class="tableAdmin__Admin">
-                <thead>
-                  
+          <div class="contMain__Admin">
+            <section class="row">
+              <article class="col-12 ">
+                <h2 class="adminH2__admin">Administrador de Productos</h2>
+              </article>
+              <article class="col-12">
+                <button class="btnCreate__Create"><a href="/admin/create"><ion-icon name="add-circle-outline"></ion-icon>Agregar</a></button>
+              </article>
+  
+              <article class="col-12" >
+              <table class="tableAdmin__Admin">
                   <thead>
-                    <tr>
-                      <th class="styleTable__admin">Id</th>
-                      <th class="styleTable__admin">Nombre</th>
-                      <th class="styleTable__admin">Ver</th>
-                      <th class="styleTable__admin">Editar</th>
-                      <th class="styleTable__admin">Borrar</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    <% data_games3.forEach(data_games3=> { %>
-                      <tr>
-                        <td class="styleTable__admin">
-                          <%= data_games3.id %>
-                        </td>
-                        <td class="styleTable__admin">
-                          <%= data_games3.title %>
-                        </td>
                     
-                        <td class="styleTable__admin"><a href="/productDetail/<%= data_games3.id%> ">
-                          <ion-icon name="eye-outline"></ion-icon>
-                        </a></td>
-                      <td class="styleTable__admin"><a href="/admin/edit/<%= data_games3.id%> ">
-                          <ion-icon name="pencil-outline"></ion-icon>
-                        </a></td>
-                      <td class="styleTable__admin"><a href="/admin/delete/<%= data_games3.id%>">
-                          <ion-icon name="trash-outline"></ion-icon>
-                          
-                            
-                                                  
-                          </a></td>
+                    <thead>
+                      <tr>
+                        <th class="styleTable__admin">Id</th>
+                        <th class="styleTable__admin">Name</th>
+                        <th class="styleTable__admin">Detail</th>
+                        <th class="styleTable__admin">Edit</th>
+                        <th class="styleTable__admin">Delete</th>
                       </tr>
-                      <% }); %>
-                  </tbody>
-              </table>  
-            </article>       
-          </section>
+                    </thead>
+                    <tbody>
+                      <% data_games3.forEach(data_games3=> { %>
+                        <tr>
+                          <td class="styleTable__admin">
+                            <%= data_games3.id %>
+                          </td>
+                          <td class="styleTable__admin">
+                            <%= data_games3.title %>
+                          </td>
+                      
+                          <td class="styleTable__admin"><a href="/productDetail/<%= data_games3.id%> ">
+                            <ion-icon name="eye-outline"></ion-icon>
+                          </a></td>
+                        <td class="styleTable__admin"><a href="/admin/edit/<%= data_games3.id%> ">
+                            <ion-icon name="pencil-outline"></ion-icon>
+                          </a></td>
+                        <td class="styleTable__admin"><a href="/admin/delete/<%= data_games3.id%>">
+                            <ion-icon name="trash-outline"></ion-icon>
+                            
+                              
+                                                    
+                            </a></td>
+                        </tr>
+                        <% }); %>
+                    </tbody>
+                </table>  
+              </article>       
+            </section>
+          </div>
           <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
         </main>
       </body>

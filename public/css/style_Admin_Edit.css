@@ -2,100 +2,120 @@
     box-sizing: border-box;
     margin: 0px;
     padding: 0px;
-    
+
 }
 
-.bodyCreate {
+.bodyEdit {
     display: flex;
     flex-direction: column;
     background-color: #37393b;
     font-family: 'Roboto', sans-serif;
     text-align: center;
 }
-.Image_Upload__Create{
+
+.Image_Upload_Admin_Edit {
     color: white;
     margin-top: 1em;
+    margin-bottom: 0.75em;
     font-size: 1.5em;
 }
-.title__Description__Create{
+
+.title__Description__Admin__Edit {
     color: white;
     margin-top: 1em;
     font-size: 1.5em;
 
 }
-.title__Requirements__Create{
+
+.title__Requirements__Admin_Edit {
     color: white;
     margin-top: 1em;
     font-size: 1.5em;
 }
-.title__create {
+
+.title_Admin_Edit {
     font-size: 2em;
+    margin-top: 1em;
+    color: white;
+    margin: 10px 10px 5px 10px;
+    text-align: center;
+
+}
+
+.title_Admin_Edit_1 {
+    font-size: 1.5em;
     margin-top: 1em;
     color: white;
     margin: 10px;
     text-align: center;
 }
 
-.contCreateImg__create {
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 1em;
-    /* justify-content: space-around; */
-    /* height: 200px; */
-    align-items: center;
-}
-.imgCreate_Create{
+.img_Admin_Edit {
+
     width: 100%;
     object-fit: contain;
     filter: drop-shadow(0 0 5px grey);
     background-color: rgb(32, 32, 32);
     border-radius: 4%;
     text-align: center;
-    max-width: 300px;
+    max-width: 400px;
+
 }
-.contTxtCreate__create{
+
+.contCreateImg__create {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 3em;
+    margin-top: 1em;
+    align-items: center;
+}
+
+.contTxt_Admin_Edit {
     display: flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: space-around;
-     /* align-content: center;  */
-    /* align-items: center; */
     text-align: center;
 }
-.textArea__Create {
+
+.textArea_Admin_Edit {
     width: 17em;
     height: 2.5em;
     margin: 1em;
     align-self: center;
     text-align: center;
 }
-.formCreate__create {
+
+.form_Admin_Edit {
     display: flex;
     flex-direction: column;
     background-color: rgb(20, 20, 20);
-    /* border: 4px solid black; */
     margin: 2em;
 
 }
-.con1__create{
-    border-radius:4%;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;    
-    width: 350px; 
-    background-color: rgb(42, 42, 42);
-}
-.con2__create{
-    border-radius:4%;
+
+.con1_Admin_Edit {
+    border-radius: 4%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 350px; 
+    width: 350px;
+    background-color: rgb(42, 42, 42);
+    align-items: center;
+}
+
+.con2_Admin_Edit {
+    border-radius: 4%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 350px;
     background-color: rgb(42, 42, 42);
 
 }
-.con3__create{
-    border-radius:4%;
+
+.con3_Admin_Edit {
+    border-radius: 4%;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -114,7 +134,7 @@
    
 } */
 
-/* .imgEdit_Edit{
+.imgEdit_Edit {
     width: 100%;
     aspect-ratio: 16 / 9;
     object-fit: contain;
@@ -123,20 +143,16 @@
     border-radius: 4%;
     text-align: center;
     max-width: 200px;
-} */
-/* .Edit_Edit{
+}
+
+.Edit_Edit {
     font-family: 'Roboto', sans-serif;
     color: #ddd;
     margin: 5px;
     letter-spacing: .5px;
-} */
+}
 
-/* .contTxtCreate__create{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
-.textArea__Create {
+.textArea_Admin_Edit {
     width: 17em;
     height: 2.5em;
     margin: 1em;
@@ -147,9 +163,9 @@
 .formCreate__create {
     display: flex;
     flex-direction: column;
-    background-color: rgb(20, 20, 20);    
+    background-color: rgb(20, 20, 20);
     margin: 2em;
-    
+
 }
 
 .formDelete {
@@ -174,87 +190,86 @@
 
 }
 
-.btn__create{
+.btn_Admin_Edit {
     box-shadow: inset 0px 0px 0px 0px #97c4fe;
-	background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-	background-color: #3d94f6;
-	border-radius: 15px;
-	border: 1px solid #337fed;
-	display: inline-block;
-	cursor: pointer;
-	color: #ffffff;
-	font-family: Arial;
-	font-size: 25px;
-	font-weight: bold;
-	padding: 11px 90px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #1a4672;
-	margin-top: 1vh;
-	margin-bottom: 2em;
+    background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color: #3d94f6;
+    border-radius: 15px;
+    border: 1px solid #337fed;
+    display: inline-block;
+    cursor: pointer;
+    color: #ffffff;
+    font-family: Arial;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 11px 90px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1a4672;
+    margin-top: 1vh;
+    margin-bottom: 2em;
+    margin-top: 2em;
 }
 
-.btn__cxl{
+.btn__cxl {
     margin: auto;
     width: 100%;
     max-width: 40%;
     box-shadow: inset 0px 0px 0px 0px #97c4fe;
-	background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
-	background-color: #3d94f6;
-	border-radius: 15px;
-	border: 1px solid #337fed;
-	display: inline-block;
-	cursor: pointer;
-	color: #eee;
-	font-family: 'Roboto', sans-serif;
-	font-size: 15px;
-	font-weight: bold;
-	padding: 11px 76px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #1a4672;
-	margin-top: 1em;
-	margin-bottom: 1em;
+    background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
+    background-color: #3d94f6;
+    border-radius: 15px;
+    border: 1px solid #337fed;
+    display: inline-block;
+    cursor: pointer;
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 11px 76px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #1a4672;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 
-.btn__delete{
+.btn__delete {
     margin: auto;
     width: 100%;
     max-width: 40%;
     box-shadow: inset 0px 0px 0px 0px #97c4fe;
-	background: linear-gradient(to bottom, #b37133 5%, #db331d 100%);
-	background-color: #c29a51;
-	border-radius: 15px;
-	border: 1px solid #fa0101;
-	display: inline-block;
-	cursor: pointer;
-	color: #eee;
-	font-family: 'Roboto', sans-serif;
-	font-size: 15px;
-	font-weight: bold;
-	padding: 11px 76px;
-	text-decoration: none;
-	text-shadow: 0px 1px 0px #726748;
-	margin-top: 1em;
-	margin-bottom: 1em;
+    background: linear-gradient(to bottom, #b37133 5%, #db331d 100%);
+    background-color: #c29a51;
+    border-radius: 15px;
+    border: 1px solid #fa0101;
+    display: inline-block;
+    cursor: pointer;
+    color: #eee;
+    font-family: 'Roboto', sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 11px 76px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #726748;
+    margin-top: 1em;
+    margin-bottom: 1em;
 }
 
 
-.btn__create:hover {
-	background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
-	background-color: #1e62d0;
+.btn_Admin_Edit:hover {
+    background: linear-gradient(to bottom, #1e62d0 5%, #3d94f6 100%);
+    background-color: #1e62d0;
 }
 
-.btn__create:active {
-	position: relative;
-	top: 1px;
+.btn_Admin_Edit:active {
+    position: relative;
+    top: 1px;
 }
 
-p.tableAdmin_Error {
+p.table_Admin_Edit_Error {
     position: relative;
     color: rgb(230, 120, 120);
     font-weight: bold;
     bottom: 10px;
 
-
-
-}  
+}

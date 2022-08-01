@@ -14,7 +14,7 @@
       </header>
     
   <div class="formCreate__create">
-    <h3 class="title__create">Carga Juegos</h3>
+    <h3 class="title__create">Upload Games</h3>
 
 
 
@@ -26,13 +26,39 @@
 
 
         <div class="contCreateImg__create">
-            <img class="imgCreate_Create" src="/images/image_22.jpg" alt="" >
+            <!-- <img class="imgCreate_Create" src="/images/image_22.jpg" alt="" > -->
         </div>
         <div>
           <!--  <button class="btn__productEdit" type="file" name="image" >Cargar img</button>  -->
           <!--  <button class="btn__productEdit" type="submit">Cargar Video</button> -->
         </div>
         <div class="contTxtCreate__create">
+          <div class="con1__create">
+            <h3 class="Image_Upload__Create">Image upload</h3>
+            <input class="textArea__Create" type="file" name="img_1" placeholder="image 1"  accept= ".jpg, .jpeg .png" value=""/> 
+            <% if(locals.errors && errors.img_1){ %>
+              <p class="tableAdmin_Error"><%= errors.img_1.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="file" name="img_2" placeholder="image 2" accept= ".jpg, .jpeg .png"  value=""/> 
+            <% if(locals.errors && errors.img_2){ %>
+              <p class="tableAdmin_Error"><%= errors.img_2.msg  %>  </p>
+            <% } %>   
+            <input class="textArea__Create" type="file" name="img_3" placeholder="image 3" accept= ".jpg, .jpeg .png"  value=""/>  
+            <% if(locals.errors && errors.img_3){ %>
+              <p class="tableAdmin_Error"><%= errors.img_3.msg  %> </p>
+            <% } %>
+            <input class="textArea__Create" type="file" name="img_4" placeholder="image 4" accept= ".jpg, .jpeg .png"  value=""/> 
+            <% if(locals.errors && errors.img_4){ %>
+              <p class="tableAdmin_Error"><%= errors.img_4.msg  %> </p>
+            <% } %>
+            <input class="textArea__Create" type="file" name="img_5" placeholder="image 5" accept= ".jpg, .jpeg .png"  value=""/> 
+            <% if(locals.errors && errors.img_5){ %>
+              <p class="tableAdmin_Error"><%= errors.img_5.msg  %>  </p>
+            <% } %>
+            </div>
+          
+          <div class="con2__create">
+            <h3 class="title__Description__Create">Description</h3>
           <input class="textArea__Create" type="text" name="title" placeholder="Title" value="<%= locals.oldData ? locals.oldData.title : null %>"/>
           <% if(locals.errors && errors.title){ %>
             <p class="tableAdmin_Error"><%= errors.title.msg  %>  </p>
@@ -74,28 +100,6 @@
           <% if(locals.errors && errors.discount){ %>
             <p class="tableAdmin_Error"><%= errors.discount.msg  %>  </p>
           <% } %>
-
-          <input class="textArea__Create" type="file" name="img_1" placeholder="image 1"  accept= ".jpg, .jpeg .png" value=""/> 
-          <% if(locals.errors && errors.img_1){ %>
-            <p class="tableAdmin_Error"><%= errors.img_1.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="file" name="img_2" placeholder="image 2" accept= ".jpg, .jpeg .png"  value=""/> 
-          <% if(locals.errors && errors.img_2){ %>
-            <p class="tableAdmin_Error"><%= errors.img_2.msg  %>  </p>
-          <% } %>   
-          <input class="textArea__Create" type="file" name="img_3" placeholder="image 3" accept= ".jpg, .jpeg .png"  value=""/>  
-          <% if(locals.errors && errors.img_3){ %>
-            <p class="tableAdmin_Error"><%= errors.img_3.msg  %> </p>
-          <% } %>
-          <input class="textArea__Create" type="file" name="img_4" placeholder="image 4" accept= ".jpg, .jpeg .png"  value=""/> 
-          <% if(locals.errors && errors.img_4){ %>
-            <p class="tableAdmin_Error"><%= errors.img_4.msg  %> </p>
-          <% } %>
-          <input class="textArea__Create" type="file" name="img_5" placeholder="image 5" accept= ".jpg, .jpeg .png"  value=""/> 
-          <% if(locals.errors && errors.img_5){ %>
-            <p class="tableAdmin_Error"><%= errors.img_5.msg  %>  </p>
-          <% } %>
-
           <input class="textArea__Create" type="text" name="video_1" placeholder="Youtube Video ID" value="<%= locals.oldData ? locals.oldData.video_1 : null%>"/> 
           <% if(locals.errors && errors.video_1){ %>
             <p class="tableAdmin_Error"><%= errors.video_1.msg  %>  </p>
@@ -104,50 +108,55 @@
           <% if(locals.errors && errors.miniatura){ %>
             <p class="tableAdmin_Error"><%= errors.miniatura.msg  %>  </p>
           <% } %>
-          <input class="textArea__Create" type="date" name="launch_date" placeholder="Launch Date" value="<%= locals.oldData ? locals.oldData.launch_date : null%>"/>
-          <% if(locals.errors && errors.launch_date){ %>
-            <p class="tableAdmin_Error"><%= errors.launch_date.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="platform" placeholder="¨Platform/s" value="<%= locals.oldData ? locals.oldData.platform : null%>"/>
-          <% if(locals.errors && errors.platform){ %>
-            <p class="tableAdmin_Error"><%= errors.platform.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="os_min" placeholder="OS Minimun Requirement" value="<%= locals.oldData ? locals.oldData.os_min : null%>"/>
-          <% if(locals.errors && errors.os_min){ %>
-            <p class="tableAdmin_Error"><%= errors.os_min.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="os_rec" placeholder="OS Recommended Requirement" value="<%= locals.oldData ? locals.oldData.os_rec : null%>"/>
-          <% if(locals.errors && errors.os_rec){ %>
-            <p class="tableAdmin_Error"><%= errors.os_rec.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="processor_min" placeholder="Processor Minimum Requirement" value="<%= locals.oldData ? locals.oldData.processor_min : null%>"/>
-          <% if(locals.errors && errors.processor_min){ %>
-            <p class="tableAdmin_Error"><%= errors.processor_min.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="processor_rec" placeholder="Processor Recommended Requirement" value="<%= locals.oldData ? locals.oldData.processor_rec : null%>"/>
-          <% if(locals.errors && errors.processor_rec){ %>
-            <p class="tableAdmin_Error"><%= errors.processor_rec.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="storage_min" placeholder="Storage Minimum Requirement" value="<%= locals.oldData ? locals.oldData.storage_min : null%>"/>
-          <% if(locals.errors && errors.storage_min){ %>
-            <p class="tableAdmin_Error"><%= errors.storage_min.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="storage_rec" placeholder="Storage Recommended Requirement" value="<%= locals.oldData ? locals.oldData.storage_rec : null%>"/>
-          <% if(locals.errors && errors.storage_rec){ %>
-            <p class="tableAdmin_Error"><%= errors.storage_rec.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="graphics_min" placeholder="Graphics Minimum Requirement" value="<%= locals.oldData ? locals.oldData.graphics_min : null%>"/>
-          <% if(locals.errors && errors.graphics_min){ %>
-            <p class="tableAdmin_Error"><%= errors.graphics_min.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="graphics_rec" placeholder="Graphics Recommended Requirement" value="<%= locals.oldData ? locals.oldData.graphics_rec : null%>"/>
-          <% if(locals.errors && errors.graphics_rec){ %>
-            <p class="tableAdmin_Error"><%= errors.graphics_rec.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
-          <% if(locals.errors && errors.age){ %>
-            <p class="tableAdmin_Error"><%= errors.age.msg  %>  </p>
-          <% } %>
+          </div>
+          <div class="con3__create">
+            <h3 class="title__Requirements__Create">Requirements</h3>
+            <input class="textArea__Create" type="date" name="launch_date" placeholder="Launch Date" value="<%= locals.oldData ? locals.oldData.launch_date : null%>"/>
+            <% if(locals.errors && errors.launch_date){ %>
+              <p class="tableAdmin_Error"><%= errors.launch_date.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="platform" placeholder="¨Platform/s" value="<%= locals.oldData ? locals.oldData.platform : null%>"/>
+            <% if(locals.errors && errors.platform){ %>
+              <p class="tableAdmin_Error"><%= errors.platform.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="os_min" placeholder="OS Minimun Requirement" value="<%= locals.oldData ? locals.oldData.os_min : null%>"/>
+            <% if(locals.errors && errors.os_min){ %>
+              <p class="tableAdmin_Error"><%= errors.os_min.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="os_rec" placeholder="OS Recommended Requirement" value="<%= locals.oldData ? locals.oldData.os_rec : null%>"/>
+            <% if(locals.errors && errors.os_rec){ %>
+              <p class="tableAdmin_Error"><%= errors.os_rec.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="processor_min" placeholder="Processor Minimum Requirement" value="<%= locals.oldData ? locals.oldData.processor_min : null%>"/>
+            <% if(locals.errors && errors.processor_min){ %>
+              <p class="tableAdmin_Error"><%= errors.processor_min.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="processor_rec" placeholder="Processor Recommended Requirement" value="<%= locals.oldData ? locals.oldData.processor_rec : null%>"/>
+            <% if(locals.errors && errors.processor_rec){ %>
+              <p class="tableAdmin_Error"><%= errors.processor_rec.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="storage_min" placeholder="Storage Minimum Requirement" value="<%= locals.oldData ? locals.oldData.storage_min : null%>"/>
+            <% if(locals.errors && errors.storage_min){ %>
+              <p class="tableAdmin_Error"><%= errors.storage_min.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="storage_rec" placeholder="Storage Recommended Requirement" value="<%= locals.oldData ? locals.oldData.storage_rec : null%>"/>
+            <% if(locals.errors && errors.storage_rec){ %>
+              <p class="tableAdmin_Error"><%= errors.storage_rec.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="graphics_min" placeholder="Graphics Minimum Requirement" value="<%= locals.oldData ? locals.oldData.graphics_min : null%>"/>
+            <% if(locals.errors && errors.graphics_min){ %>
+              <p class="tableAdmin_Error"><%= errors.graphics_min.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="graphics_rec" placeholder="Graphics Recommended Requirement" value="<%= locals.oldData ? locals.oldData.graphics_rec : null%>"/>
+            <% if(locals.errors && errors.graphics_rec){ %>
+              <p class="tableAdmin_Error"><%= errors.graphics_rec.msg  %>  </p>
+            <% } %>
+            <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
+            <% if(locals.errors && errors.age){ %>
+              <p class="tableAdmin_Error"><%= errors.age.msg  %>  </p>
+            <% } %>
+          </div>
+        
         </div>
         <br/>
 

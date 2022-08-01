@@ -1,167 +1,252 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <%- include('../partials/head.ejs')  %> 
-    <link rel="stylesheet" href="/css/style_create.css">
+
+<head>
+  <%- include('../partials/head.ejs') %>
+    <link rel="stylesheet" href="/css/style_Admin_Edit.css">
     <link rel="stylesheet" href="/css/search_bar.css">
 
-  </head>
- 
-<body class="bodyCreate">
-    <header>
-        <%- include('../partials/header.ejs')  %> 
-        <%- include('../partials/search_bar')%> 
-      </header>
-    
-  <div class="formCreate__create">
+</head>
 
-    <h3 class="title__create">Actualizar </h3> 
-    <h1 class="title__create"> <%=  gameToEdit.title%> </h1>
+<body class="bodyEdit">
+  <header>
+    <%- include('../partials/header.ejs') %>
+      <%- include('../partials/search_bar')%>
+  </header>
 
-    <img class="imgCreate_Create" src="<%= gameToEdit.img_1 %>" alt="" >
+  <div class="form_Admin_Edit">
+
+    <h3 class="title_Admin_Edit">Edit Section </h3>
+    <h1 class="title_Admin_Edit_1">
+      <%= gameToEdit.title%>
+    </h1>
+
+    <div class="contCreateImg__create">
+      <img class="img_Admin_Edit" src="<%= gameToEdit.img_1 %>" alt="">
+    </div>
     <form action="/admin/edit/<%= gameToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
-        <div>
 
-        </div>
-        <div class="contTxtCreate__create">
-          <input class="textArea__Create" type="text" name="title" placeholder="Title" value="<%= gameToEdit.title %>"/> 
-          <% if(locals.errors && errors.title){ %>
-            <p class="tableAdmin_Error"><%= errors.title.msg%></p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="one_word_descr" placeholder="One Word Description" value="<%=gameToEdit.one_word_descr%>"/>
-          <% if(locals.errors && errors.one_word_descr){ %>
-            <p class="tableAdmin_Error"><%= errors.one_word_descr.msg %></p>
-          <% } %>
-           <input class="textArea__Create" type="text" name="short_descr" placeholder="Short Description" value="<%= gameToEdit.short_descr%>"/>
-          <% if(locals.errors && errors.short_descr){ %>
-            <p class="tableAdmin_Error"><%= errors.short_descr.msg%></p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="long_descr" placeholder="Long Description" value="<%= gameToEdit.long_descr%>"/>
-          <% if(locals.errors && errors.long_descr){ %>
-            <p class="tableAdmin_Error"><%= errors.long_descr.msg%></p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="game_group" placeholder="Game Status Payment" value="<%= gameToEdit.game_group%>"/>
-          <% if(locals.errors && errors.game_group){ %>
-            <p class="tableAdmin_Error"><%= errors.game_group.msg%></p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="category" placeholder="Category" value="<%= gameToEdit.category%>"/>
-          <% if(locals.errors && errors.category){ %>
-            <p class="tableAdmin_Error"><%= errors.category.msg%></p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="creator" placeholder="Creator" value="<%= gameToEdit.creator%>"/>
-          <% if(locals.errors && errors.creator){ %>
-            <p class="tableAdmin_Error"><%= errors.creator.msg%></p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="original_price" placeholder="Original Price" value="<%= gameToEdit.original_price%>"/>
-          <% if(locals.errors && errors.original_price){ %>
-            <p class="tableAdmin_Error"><%= errors.original_price.msg%></p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="price_w_discount" placeholder="Price With Discount" value="<%= gameToEdit.price_w_discount%>"/>
-          <% if(locals.errors && errors.price_w_discount){ %>
-            <p class="tableAdmin_Error"><%= errors.price_w_discount.msg%></p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="discount" placeholder="Discount" value="<%= gameToEdit.discount%>"/>
-          <% if(locals.errors && errors.discount){ %>
-            <p class="tableAdmin_Error"><%= errors.discount.msg%></p>
-          <% } %>
-
-
-
-          <input type="hidden"  name="oldImage1"  value="<%= gameToEdit.img_1 %>"/>
+      <div class="contTxt_Admin_Edit">
+        <div class="con1_Admin_Edit">
+          <h3 class="Image_Upload_Admin_Edit">Image Edit</h3>
+          <input type="hidden" name="oldImage1" value="<%= gameToEdit.img_1 %>" />
           <p class="Edit_Edit">Current Image 1</p>
-          <img class="imgEdit_Edit" src="<%= gameToEdit.img_1 %>" alt="" >
-          <input class="textArea__Create" type="file" name="img_1" placeholder="image 1" value="img_1"  accept= ".jpg, .jpeg .png"/>
+          <img class="imgEdit_Edit" src="<%= gameToEdit.img_1 %>" alt="">
+          <input class="textArea_Admin_Edit" type="file" name="img_1" placeholder="image 1" value="img_1"
+            accept=".jpg, .jpeg .png" />
 
-          
-           <input type="hidden"  name="oldImage2"  value="<%= gameToEdit.img_2 %>"/>
+
+          <input type="hidden" name="oldImage2" value="<%= gameToEdit.img_2 %>" />
           <p class="Edit_Edit">Current Image 2</p>
-          <img class="imgEdit_Edit" src="<%= gameToEdit.img_2 %>" alt="" >
-          <input class="textArea__Create" type="file" name="img_2" placeholder="image 2" value="2"  accept= ".jpg, .jpeg .png"/>  
- 
-        <input type="hidden"  name="oldImage3"  value="<%= gameToEdit.img_2 %>"/>
+          <img class="imgEdit_Edit" src="<%= gameToEdit.img_2 %>" alt="">
+          <input class="textArea_Admin_Edit" type="file" name="img_2" placeholder="image 2" value="2"
+            accept=".jpg, .jpeg .png" />
+
+          <input type="hidden" name="oldImage3" value="<%= gameToEdit.img_2 %>" />
           <p class="Edit_Edit">Current Image 3</p>
-          <img class="imgEdit_Edit" src="<%= gameToEdit.img_3 %>" alt="" >
-          <input class="textArea__Create" type="file" name="img_3" placeholder="image 3" value="3"  accept= ".jpg, .jpeg .png"/>
+          <img class="imgEdit_Edit" src="<%= gameToEdit.img_3 %>" alt="">
+          <input class="textArea_Admin_Edit" type="file" name="img_3" placeholder="image 3" value="3"
+            accept=".jpg, .jpeg .png" />
 
-          <input type="hidden"  name="oldImage4"  value="<%= gameToEdit.img_4 %>" />
+          <input type="hidden" name="oldImage4" value="<%= gameToEdit.img_4 %>" />
           <p class="Edit_Edit">Current Image 4</p>
-          <img class="imgEdit_Edit" src="<%= gameToEdit.img_4 %>" alt="" >
-          <input class="textArea__Create" type="file" name="img_4" placeholder="image 4" value="4"  accept= ".jpg, .jpeg .png"/>
-   
-          <input type="hidden"  name="oldImage5"  value="<%= gameToEdit.img_5 %>"/>
+          <img class="imgEdit_Edit" src="<%= gameToEdit.img_4 %>" alt="">
+          <input class="textArea_Admin_Edit" type="file" name="img_4" placeholder="image 4" value="4"
+            accept=".jpg, .jpeg .png" />
+
+          <input type="hidden" name="oldImage5" value="<%= gameToEdit.img_5 %>" />
           <p class="Edit_Edit">Current Image 5</p>
-          <img class="imgEdit_Edit" src="<%= gameToEdit.img_5 %>" alt="" >
-          <input class="textArea__Create" type="file" name="img_5" placeholder="image 5" value="5"  accept= ".jpg, .jpeg .png"/> 
-
-
-
-
-
-          <input class="textArea__Create" type="text" name="video_1" placeholder="Youtube Video ID" value="<%= gameToEdit.video_1%>"/> 
-          <% if(locals.errors && errors.video_1){ %>
-            <p class="tableAdmin_Error"><%= errors.video_1.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= gameToEdit.miniatura%>"/> 
-          <% if(locals.errors && errors.miniatura){ %>
-            <p class="tableAdmin_Error"><%= errors.miniatura.msg  %>  </p>
-          <% } %>
-
-           <input class="textArea__Create" type="date" name="launch_date" placeholder="Launch Date" value="<%= gameToEdit.launch_date%>"/>
-          <% if(locals.errors && errors.launch_date){ %>
-            <p class="tableAdmin_Error"><%= errors.launch_date.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="platform" placeholder="¨Platform/s" value="<%= gameToEdit.platform%>"/>
-          <% if(locals.errors && errors.platform){ %>
-            <p class="tableAdmin_Error"><%= errors.platform.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="os_min" placeholder="OS Minimun Requirement" value="<%= gameToEdit.os_min%>"/>
-          <% if(locals.errors && errors.os_min){ %>
-            <p class="tableAdmin_Error"><%= errors.os_min.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="os_rec" placeholder="OS Recommended Requirement" value="<%= gameToEdit.os_rec%>"/>
-          <% if(locals.errors && errors.os_rec){ %>
-            <p class="tableAdmin_Error"><%= errors.os_rec.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="processor_min" placeholder="Processor Minimum Requirement" value="<%= gameToEdit.processor_min%>"/>
-          <% if(locals.errors && errors.processor_min){ %>
-            <p class="tableAdmin_Error"><%= errors.processor_min.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="processor_rec" placeholder="Processor Recommended Requirement" value="<%= gameToEdit.processor_rec%>"/>
-          <% if(locals.errors && errors.processor_rec){ %>
-            <p class="tableAdmin_Error"><%= errors.processor_rec.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="storage_min" placeholder="Storage Minimum Requirement" value="<%= gameToEdit.storage_min%>"/>
-          <% if(locals.errors && errors.storage_min){ %>
-            <p class="tableAdmin_Error"><%= errors.storage_min.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="storage_rec" placeholder="Storage Recommended Requirement" value="<%= gameToEdit.storage_rec%>"/>
-          <% if(locals.errors && errors.storage_rec){ %>
-            <p class="tableAdmin_Error"><%= errors.storage_rec.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="graphics_min" placeholder="Graphics Minimum Requirement" value="<%= gameToEdit.graphics_min%>"/>
-          <% if(locals.errors && errors.graphics_min){ %>
-            <p class="tableAdmin_Error"><%= errors.graphics_min.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="graphics_rec" placeholder="Graphics Recommended Requirement"  value="<%= gameToEdit.graphics_rec%>"/>
-          <% if(locals.errors && errors.graphics_rec){ %>
-            <p class="tableAdmin_Error"><%= errors.graphics_rec.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= gameToEdit.age%>"/>
-          <% if(locals.errors && errors.age){ %>
-            <p class="tableAdmin_Error"><%= errors.age.msg  %>  </p>
-          <% } %>
-        </div> 
-        
-
-            <button class="btn__create" type="submit">Actualizar</button>
-           
+          <img class="imgEdit_Edit" src="<%= gameToEdit.img_5 %>" alt="">
+          <input class="textArea_Admin_Edit" type="file" name="img_5" placeholder="image 5" value="5"
+            accept=".jpg, .jpeg .png" />
         </div>
-    </form>
+
+
+        <div class="con2_Admin_Edit">
+          <h3 class="title__Description__Admin__Edit">Description Edit</h3>
+          <input class="textArea_Admin_Edit" type="text" name="title" placeholder="Title"
+            value="<%= gameToEdit.title %>" />
+          <% if(locals.errors && errors.title){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.title.msg%>
+            </p>
+            <% } %>
+              <input class="textArea_Admin_Edit" type="text" name="one_word_descr" placeholder="One Word Description"
+                value="<%=gameToEdit.one_word_descr%>" />
+              <% if(locals.errors && errors.one_word_descr){ %>
+                <p class="table_Admin_Edit_Error">
+                  <%= errors.one_word_descr.msg %>
+                </p>
+                <% } %>
+                  <input class="textArea_Admin_Edit" type="text" name="short_descr" placeholder="Short Description"
+                    value="<%= gameToEdit.short_descr%>" />
+                  <% if(locals.errors && errors.short_descr){ %>
+                    <p class="table_Admin_Edit_Error">
+                      <%= errors.short_descr.msg%>
+                    </p>
+                    <% } %>
+                      <input class="textArea_Admin_Edit" type="text" name="long_descr" placeholder="Long Description"
+                        value="<%= gameToEdit.long_descr%>" />
+                      <% if(locals.errors && errors.long_descr){ %>
+                        <p class="table_Admin_Edit_Error">
+                          <%= errors.long_descr.msg%>
+                        </p>
+                        <% } %>
+                          <input class="textArea_Admin_Edit" type="text" name="game_group"
+                            placeholder="Game Status Payment" value="<%= gameToEdit.game_group%>" />
+                          <% if(locals.errors && errors.game_group){ %>
+                            <p class="table_Admin_Edit_Error">
+                              <%= errors.game_group.msg%>
+                            </p>
+                            <% } %>
+                              <input class="textArea_Admin_Edit" type="text" name="category" placeholder="Category"
+                                value="<%= gameToEdit.category%>" />
+                              <% if(locals.errors && errors.category){ %>
+                                <p class="table_Admin_Edit_Error">
+                                  <%= errors.category.msg%>
+                                </p>
+                                <% } %>
+                                  <input class="textArea_Admin_Edit" type="text" name="creator" placeholder="Creator"
+                                    value="<%= gameToEdit.creator%>" />
+                                  <% if(locals.errors && errors.creator){ %>
+                                    <p class="table_Admin_Edit_Error">
+                                      <%= errors.creator.msg%>
+                                    </p>
+                                    <% } %>
+                                      <input class="textArea_Admin_Edit" type="text" name="original_price"
+                                        placeholder="Original Price" value="<%= gameToEdit.original_price%>" />
+                                      <% if(locals.errors && errors.original_price){ %>
+                                        <p class="table_Admin_Edit_Error">
+                                          <%= errors.original_price.msg%>
+                                        </p>
+                                        <% } %>
+                                          <input class="textArea_Admin_Edit" type="text" name="price_w_discount"
+                                            placeholder="Price With Discount"
+                                            value="<%= gameToEdit.price_w_discount%>" />
+                                          <% if(locals.errors && errors.price_w_discount){ %>
+                                            <p class="table_Admin_Edit_Error">
+                                              <%= errors.price_w_discount.msg%>
+                                            </p>
+                                            <% } %>
+                                              <input class="textArea_Admin_Edit" type="text" name="discount"
+                                                placeholder="Discount" value="<%= gameToEdit.discount%>" />
+                                              <% if(locals.errors && errors.discount){ %>
+                                                <p class="table_Admin_Edit_Error">
+                                                  <%= errors.discount.msg%>
+                                                </p>
+                                                <% } %>
+                                                  <input class="textArea_Admin_Edit" type="text" name="video_1"
+                                                    placeholder="Youtube Video ID" value="<%= gameToEdit.video_1%>" />
+                                                  <% if(locals.errors && errors.video_1){ %>
+                                                    <p class="table_Admin_Edit_Error">
+                                                      <%= errors.video_1.msg %>
+                                                    </p>
+                                                    <% } %>
+                                                      <input class="textArea_Admin_Edit" type="text" name="miniatura"
+                                                        placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg"
+                                                        value="<%= gameToEdit.miniatura%>" />
+                                                      <% if(locals.errors && errors.miniatura){ %>
+                                                        <p class="table_Admin_Edit_Error">
+                                                          <%= errors.miniatura.msg %>
+                                                        </p>
+                                                        <% } %>
+        </div>
+
+        <div class="con3_Admin_Edit">
+          <h3 class="title__Requirements__Admin_Edit">Requirements Edit</h3>
+          <input class="textArea_Admin_Edit" type="date" name="launch_date" placeholder="Launch Date"
+            value="<%= gameToEdit.launch_date%>" />
+          <% if(locals.errors && errors.launch_date){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.launch_date.msg %>
+            </p>
+            <% } %>
+              <input class="textArea_Admin_Edit" type="text" name="platform" placeholder="¨Platform/s"
+                value="<%= gameToEdit.platform%>" />
+              <% if(locals.errors && errors.platform){ %>
+                <p class="table_Admin_Edit_Error">
+                  <%= errors.platform.msg %>
+                </p>
+                <% } %>
+                  <input class="textArea_Admin_Edit" type="text" name="os_min" placeholder="OS Minimun Requirement"
+                    value="<%= gameToEdit.os_min%>" />
+                  <% if(locals.errors && errors.os_min){ %>
+                    <p class="table_Admin_Edit_Error">
+                      <%= errors.os_min.msg %>
+                    </p>
+                    <% } %>
+                      <input class="textArea_Admin_Edit" type="text" name="os_rec" placeholder="OS Recommended Requirement"
+                        value="<%= gameToEdit.os_rec%>" />
+                      <% if(locals.errors && errors.os_rec){ %>
+                        <p class="table_Admin_Edit_Error">
+                          <%= errors.os_rec.msg %>
+                        </p>
+                        <% } %>
+                          <input class="textArea_Admin_Edit" type="text" name="processor_min"
+                            placeholder="Processor Minimum Requirement" value="<%= gameToEdit.processor_min%>" />
+                          <% if(locals.errors && errors.processor_min){ %>
+                            <p class="table_Admin_Edit_Error">
+                              <%= errors.processor_min.msg %>
+                            </p>
+                            <% } %>
+                              <input class="textArea_Admin_Edit" type="text" name="processor_rec"
+                                placeholder="Processor Recommended Requirement" value="<%= gameToEdit.processor_rec%>" />
+                              <% if(locals.errors && errors.processor_rec){ %>
+                                <p class="table_Admin_Edit_Error">
+                                  <%= errors.processor_rec.msg %>
+                                </p>
+                                <% } %>
+                                  <input class="textArea_Admin_Edit" type="text" name="storage_min"
+                                    placeholder="Storage Minimum Requirement" value="<%= gameToEdit.storage_min%>" />
+                                  <% if(locals.errors && errors.storage_min){ %>
+                                    <p class="table_Admin_Edit_Error">
+                                      <%= errors.storage_min.msg %>
+                                    </p>
+                                    <% } %>
+                                      <input class="textArea_Admin_Edit" type="text" name="storage_rec"
+                                        placeholder="Storage Recommended Requirement" value="<%= gameToEdit.storage_rec%>" />
+                                      <% if(locals.errors && errors.storage_rec){ %>
+                                        <p class="table_Admin_Edit_Error">
+                                          <%= errors.storage_rec.msg %>
+                                        </p>
+                                        <% } %>
+                                          <input class="textArea_Admin_Edit" type="text" name="graphics_min"
+                                            placeholder="Graphics Minimum Requirement" value="<%= gameToEdit.graphics_min%>" />
+                                          <% if(locals.errors && errors.graphics_min){ %>
+                                            <p class="table_Admin_Edit_Error">
+                                              <%= errors.graphics_min.msg %>
+                                            </p>
+                                            <% } %>
+                                              <input class="textArea_Admin_Edit" type="text" name="graphics_rec"
+                                                placeholder="Graphics Recommended Requirement"
+                                                value="<%= gameToEdit.graphics_rec%>" />
+                                              <% if(locals.errors && errors.graphics_rec){ %>
+                                                <p class="table_Admin_Edit_Error">
+                                                  <%= errors.graphics_rec.msg %>
+                                                </p>
+                                                <% } %>
+                                                  <input class="textArea_Admin_Edit" type="text" name="age"
+                                                    placeholder="Age Restriction" value="<%= gameToEdit.age%>" />
+                                                  <% if(locals.errors && errors.age){ %>
+                                                    <p class="table_Admin_Edit_Error">
+                                                      <%= errors.age.msg %>
+                                                    </p>
+                                                    <% } %>
+        </div>
+
+
+      </div>
+
+
+      <button class="btn_Admin_Edit" type="submit">Actualizar</button>
+
   </div>
-    
+  </form>
+  </div>
+
   <footer>
-    <%- include('../partials/footer.ejs')  %> 
-</footer>
+    <%- include('../partials/footer.ejs') %>
+  </footer>
 </body>
 
 

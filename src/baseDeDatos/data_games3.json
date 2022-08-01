@@ -1,6 +1,10 @@
 [
   {
-    "id": "1",
+    "oldImage1": "/images/Sonic-Origins06262022-123719-73351.jpg",
+    "oldImage2": "/images/Sonic-Origins06262022-123721-25816.jpg",
+    "oldImage3": "/images/Sonic-Origins06262022-123721-25816.jpg",
+    "oldImage4": "/images/Sonic-Origins06262022-123723-38305.jpg",
+    "oldImage5": "/images/Sonic-Origins06262022-123725-45498.jpg",
     "title": "Sonic Origins - Sonic the Hedgehog series",
     "one_word_descr": "",
     "short_descr": "Relive the classic collected adventures of Sonic the Hedgehog, Sonic the Hedgehog 2, Sonic 3 & Knuckles, and Sonic CD in the newly remastered Sonic Origins! ",
@@ -11,14 +15,9 @@
     "original_price": "$10.000",
     "price_w_discount": "$8.500",
     "discount": "15",
-    "img_1": "/images/Sonic-Origins06262022-123719-73351.jpg",
-    "img_2": "/images/Sonic-Origins06262022-123721-25816.jpg",
-    "img_3": "/images/Sonic-Origins06262022-123722-97252.jpg",
-    "img_4": "/images/Sonic-Origins06262022-123723-38305.jpg",
-    "img_5": "/images/Sonic-Origins06262022-123725-45498.jpg",
     "video_1": "https://www.youtube.com/embed/TCGDPMdHN0Q",
     "miniatura": "https://img.youtube.com/vi/TCGDPMdHN0Q/mqdefault.jpg",
-    "launch_date": "23/06/2022",
+    "launch_date": "",
     "platform": "PC & Console",
     "os_min": "",
     "os_rec": "",
@@ -28,7 +27,13 @@
     "storage_rec": "",
     "graphics_min": "",
     "graphics_rec": "",
-    "age": "10+"
+    "age": "10+",
+    "id": "1",
+    "img_1": "/images/Sonic-Origins06262022-123719-73351.jpg",
+    "img_2": "/images/Sonic-Origins06262022-123721-25816.jpg",
+    "img_3": "/images/Sonic-Origins06262022-123721-25816.jpg",
+    "img_4": "/images/Sonic-Origins06262022-123723-38305.jpg",
+    "img_5": "/images/Sonic-Origins06262022-123725-45498.jpg"
   },
   {
     "id": "2",
