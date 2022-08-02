@@ -28,23 +28,20 @@
                  <table>
                       <tr>
                         <td>Developer</td>
-                        <td><%= selectedGame.creator %></td>
+                        <td class="specs_titles_PD" ><%= selectedGame.creator %></td>
                       </tr>
                       <tr>
                         <td>Launch Date</td>
-                        <td><%= selectedGame.launch_date %></td>
+                        <td class="specs_titles_PD" ><%= selectedGame.launch_date %></td>
                       </tr>
                       <tr>
-                        <td>Platform</td>
-                        <td><%= selectedGame.platform %></td>
+                        <td id="platform_PD">Platform</td>
+                        <td class="specs_titles_PD" ><%= selectedGame.platform %></td>
                       </tr>
                 </table>
                 <div>
               </section>
             </section>
-  
-                 <!--  SE QUITARAN LOS TAMAÑOS AL MANIPULARSE LUEGO EN CSS - SOLO ESTAN A MODO DE REFERENCIA -->
-                 <!--  <iframe width="350" height="400" src="https://www.youtube.com/embed/mbWPOSxMA5o" frameborder="1" allowfullscreen </iframe> -->
   
                   
             <section> 
@@ -121,11 +118,11 @@
           </section>
         </div>
           <section class="specifications__PD">
-            <h3>Specifications</h3>
+            <h3 id="specs_PD">Specifications</h3>
             <table >
               <tr>
-                <td>Minimum</td>
-                <td>Recommended</td>
+                <td class="min_rec_PD">Minimum</td>
+                <td class="min_rec_PD">Recommended</td>
               </tr>
               <tr>
                 <td>Operating System</td>
@@ -149,7 +146,7 @@
               </tr>
               <tr>
                 <td><%= selectedGame.storage_min%></td>
-                <td><%= selectedGame.storage_Rec%></td>
+                <td><%= selectedGame.storage_rec%></td>
               </tr>
               <tr>
                 <td>Graphics</td>
