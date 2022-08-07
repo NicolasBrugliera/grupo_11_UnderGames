@@ -26,130 +26,39 @@
           <div class="contRankingGames__Cart">
 
 
-            <table class="tableRankingGames__Cart" border="1px">
-              <tr>
-                <td>UnderGames</td>
-                <td>Plataforma</td>
-                <td><center>Top Rank</center></td>
-              </tr>
-
-
-              <tr>
-                <td>
-                  Game
-                </td>
-                <td>Ps 5</td>
-                <td>
-                  <center>1</center>
-                </td>
-
-
-              </tr>
-              <td>
-                Game
-              </td>
-              <td>Windows</td>
-              <td>
-                <center>2</center>
-              </td>
-
-
-              <tr>
-              </tr>
-
-              <td>
-                Game
-              </td>
-              <td>Ps 4</td>
-              <td>
-                <center>3</center>
-              </td>
-
-
-              <tr>
-                <td>
-                  Game
-                </td>
-                <td>Game Cube</td>
-                <td>
-                  <center>4</center>
-                </td>
-
-
-              </tr>
-              <tr>
-                <td>
-                  Game
-                </td>
-                <td>Windows</td>
-                <td>
-                  <center>5</center>
-                </td>
-
-
-              </tr>
-              <tr>
-                <td>
-                  Game
-                </td>
-                <td>Windows</td>
-                <td>
-                  <center>6</center>
-                </td>
-
-
-              </tr>
-              <tr>
-                <td>
-                  Game
-                </td>
-                <td>Ps 5</td>
-                <td>
-                  <center>7</center>
-                </td>
-
-
-              </tr>
-              <tr>
-                <td>
-                  Game
-                </td>
-                <td>Super Nintendo</td>
-                <td>
-                  <center>8</center>
-                </td>
-
-
-              </tr>
-              <tr>
-                <td>
-                  Game
-                </td>
-                <td>Ps 5</td>
-                <td>
-                  <center>9</center>
-                </td>
-
-
-              </tr>
-              <tr>
-                <td>
-                  Game
-                </td>
-                <td>Ps 5</td>
-                <td>
-                  <center>10</center>
-                </td>
-
-
-              </tr>
-
-            </table>
+            
+            <table class="tableRankingGames__Cart" border ="10px">
+            
+            <tbody>
+              
+              <td class="styleTable__productCart">Rank</td>
+                <td class="styleTable__productCart">UnderGames</td>
+                <td class="styleTable__productCart">Platform</td>
+                <td class="styleTable__productCart">Price</td>
+              <% for(let i=0; i < 8; i++) { %>
+                <tr>
+                  <td class="styleTable__productCart">
+                    <%= data_games3[i].id %>
+                  </td>
+                  <td class="styleTableProductCart1">
+                    <a href="/productDetail/<%= data_games3[i].id%> "target="_blank"><%= data_games3[i].title %><i class="btn-icon fa-solid fa-arrow-right"></i></a>
+                    
+                  </td>
+                  <td class="styleTable__productCart2">
+                    <%= data_games3[i].platform %>
+                  </td>
+                  <td class="styleTable__productCart">
+                    <%= data_games3[i].price_w_discount %>
+                  </td>
+                </tr>
+                <% } %>
+            </tbody>
+                  </table>
           </div>
           <div class="contMainSumary__Cart">
             <div class="contSumary__Cart">
 
-              <table class="tableSumary__Cart" border="1px">
+              <table class="tableSumary__Cart" border ="10px">
                 <tr>
                   <td>
                     Sumary Cart

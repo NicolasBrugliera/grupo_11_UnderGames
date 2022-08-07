@@ -123,8 +123,24 @@
 	align-self: center;
 
 }
+.styleTable__productCart{
+	text-align: center;
+	
+}
+.styleTableProductCart1{
+	max-width: 120px;
+}
+.styleTableProductCart1 :hover{
+	
+	color:#3f37c9;
+	text-align: center;
+	
 
-
+}
+.styleTable__productCart2{
+	text-align: center;
+	max-width: 3em;
+}
 .contRankingGames__Cart {
 	display: flex;
 	flex-wrap: wrap;
@@ -148,7 +164,7 @@
 	border-radius: 4%;
 	margin: 1em;
 	justify-content: center;
-	height: fit-content;
+	height: fit-content;	
 
 }
 
