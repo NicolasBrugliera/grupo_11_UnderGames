@@ -15,8 +15,8 @@
   <div class="main_plist">
   <br>
   <h2>Products List </h2>
-  <div id="myBtnContainer_plist">
-    <button class="btn_plist active" onclick="filterSelection('all')"> Show all</button>
+  <div class="myBtnContainer_plist">
+    <button class="btn_plist" onclick="filterSelection('all')"> Show all</button>
     <button class="btn_plist" onclick="filterSelection('new_releases')"> New Relases</button>
     <button class="btn_plist" onclick="filterSelection('top_sellers')"> Top Sellers</button>
     <button class="btn_plist" onclick="filterSelection('free')"> Free</button>
@@ -32,7 +32,7 @@
             
             <div class="content_plist">  
               
-                  <a href="/productDetail/:<%= products[i].id %>">
+                  <a href="/productDetail/<%= products[i].id %>">
                   <img src="<%= products[i].img_1%> " alt="" style="width:100%">
                   </a>
                  
@@ -50,8 +50,8 @@
                   <div id="game_group"><span><%=products[i].game_group%></span></div>
     </div> <!-- end content_plist -->
     </div> <!-- end column_plist --> 
-  <% } %> 
-    </div> <!-- end row_plist --> 
+    <% } %> 
+  </div> <!-- end row_plist --> 
       
 
 
