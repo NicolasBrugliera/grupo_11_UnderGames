@@ -81,14 +81,36 @@ const controllerAdmin = {
 
     update: (req,res)=>{
 
-/*       const resultValidations = validationResult(req)
+/*       
+    const resultValidations = validationResult(req)
+      const gameId = req.params.id
         if(resultValidations.errors.length > 0){
-            return  res.render(path.join(__dirname, '../views/admin/create'), {
+            return  res.render(path.join(__dirname, '../views/admin/edit/' + {gameToEdit}), {
             errors: resultValidations.mapped(),
             oldData: req.body
             })
             
-        } */
+        }  */
+
+/*  const resultValidations = validationResult(req)
+        const gameId = req.params.id
+        if(resultValidations.errors.length > 0){
+            return  res.render(path.join(__dirname, '../views/admin/edit/' + gameId), {
+            errors: resultValidations.mapped(),
+            oldData: req.body
+            })
+            
+        }  */
+
+/*   const resultValidations = validationResult(req)
+        const gameId = req.params.id
+        if(resultValidations.errors.length > 0){
+            return  res.render(path.join(__dirname, '../views/admin/edit/'),{gameToEdit}, {
+            errors: resultValidations.mapped(),
+            oldData: req.body
+            })
+            
+        }  */
  
 
         let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))

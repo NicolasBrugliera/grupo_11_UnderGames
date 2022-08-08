@@ -144,6 +144,10 @@
     text-align: center;
 }
 
+.textArea__Create > .combo-form_titles_create{
+    color: #db331d;
+}
+
 .formCreate__create {
     display: flex;
     flex-direction: column;
@@ -249,12 +253,17 @@
 	top: 1px;
 }
 
-p.tableAdmin_Error {
+p.tableAdmin_Error{
     position: relative;
     color: rgb(230, 120, 120);
     font-weight: bold;
     bottom: 10px;
-
-
-
 }  
+
+.combo-form_titles_create{
+    position: relative;
+    color:#c5ccd3;
+    font-size:medium;
+    top: 10px;
+
+}

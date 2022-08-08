@@ -51,7 +51,7 @@ const validateForm = [
       body("one_word_descr").notEmpty().withMessage('One Word Description field must be complete').isLength({ min: 4 }).withMessage('Please choose a word with at least 4 words'),
       body("short_descr").notEmpty().withMessage('Short Description field must be complete').isLength({ min: 20 }, { min: 100 }).withMessage('Must contain from 20 to 100 letter words').bail(),
       body("long_descr").notEmpty().withMessage('Long Description field must be complete').isLength({ min: 800 }, { min: 1200 }).withMessage('Must contain from 800 to 1200 letter words').bail(),
-      body("game_group").notEmpty().withMessage('Type of Suscription field must be complete'),
+      body("game_group").notEmpty().withMessage('Game Group field must be complete'),
       body("category").notEmpty().withMessage('Category field must be complete'),
       body("creator").notEmpty().withMessage('Creator field must be complete'),
       body("original_price").notEmpty().withMessage('Original Price field must be complete'),
@@ -79,7 +79,7 @@ const validateForm = [
         let acceptedExtensions = [".png", ".jpeg", ".jpg"]
         if (!file) {
             throw new Error("Choose an Image with: " + acceptedExtensions + " extensions")
-        }else if(file.size > (2560 * 1440 * 10)){
+        }else if(file.size > (10 * 1024 * 1024)){
             fs.unlink(file.path, (err) => {
                 if (err) {
                     console.log(err)
@@ -96,7 +96,7 @@ const validateForm = [
       let acceptedExtensions = [".png", ".jpeg", ".jpg"]
       if (!file) {
           throw new Error("Choose an Image with: " + acceptedExtensions + " extensions")
-      }else if(file.size > (2560 * 1440 * 10)){
+      }else if(file.size > (10 * 1024 * 1024)){
           fs.unlink(file.path, (err) => {
               if (err) {
                   console.log(err)
@@ -112,7 +112,7 @@ const validateForm = [
       let acceptedExtensions = [".png", ".jpeg", ".jpg"]
       if (!file) {
           throw new Error("Choose an Image with: " + acceptedExtensions + " extensions")
-      }else if(file.size < (1920 * 1080 * 10)){
+      }else if(file.size < (10 * 1024 * 1024)){
           fs.unlink(file.path, (err) => {
               if (err) {
                   console.log(err)
@@ -129,7 +129,7 @@ const validateForm = [
     let acceptedExtensions = [".png", ".jpeg", ".jpg"]
     if (!file) {
         throw new Error("Choose an Image with: " + acceptedExtensions + " extensions")
-    }else if(file.size < (1920 * 1080 * 10)){
+    }else if(file.size < (10 * 1024 * 1024)){
         fs.unlink(file.path, (err) => {
             if (err) {
                 console.log(err)
@@ -145,7 +145,7 @@ const validateForm = [
     let acceptedExtensions = [".png", ".jpeg", ".jpg"]
     if (!file) {
         throw new Error("Choose an Image with: " + acceptedExtensions + " extensions")
-    }else if(file.size < (1920 * 1080 * 10)){
+    }else if(file.size < (10 * 1024 * 1024)){
         fs.unlink(file.path, (err) => {
             if (err) {
                 console.log(err)

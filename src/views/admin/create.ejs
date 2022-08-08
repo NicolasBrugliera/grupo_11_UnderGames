@@ -15,16 +15,7 @@
     
   <div class="formCreate__create">
     <h3 class="title__create">Upload Games</h3>
-
-
-
-
-
     <form method="POST" action="/admin/create" enctype="multipart/form-data">
-
-
-
-
         <div class="contCreateImg__create">
             <!-- <img class="imgCreate_Create" src="/images/image_22.jpg" alt="" > -->
         </div>
@@ -35,23 +26,23 @@
         <div class="contTxtCreate__create">
           <div class="con1__create">
             <h3 class="Image_Upload__Create">Image upload</h3>
-            <input class="textArea__Create" type="file" name="img_1" placeholder="image 1"  accept= ".jpg, .jpeg .png" value=""/> 
+            <input class="textArea__Create" type="file" name="img_1" placeholder="image 1"  accept= ".jpg, .jpeg .png" value="" /> 
             <% if(locals.errors && errors.img_1){ %>
               <p class="tableAdmin_Error"><%= errors.img_1.msg  %>  </p>
             <% } %>
-            <input class="textArea__Create" type="file" name="img_2" placeholder="image 2" accept= ".jpg, .jpeg .png"  value=""/> 
+            <input class="textArea__Create" type="file" name="img_2" placeholder="image 2" accept= ".jpg, .jpeg .png"  value="" /> 
             <% if(locals.errors && errors.img_2){ %>
               <p class="tableAdmin_Error"><%= errors.img_2.msg  %>  </p>
             <% } %>   
-            <input class="textArea__Create" type="file" name="img_3" placeholder="image 3" accept= ".jpg, .jpeg .png"  value=""/>  
+            <input class="textArea__Create" type="file" name="img_3" placeholder="image 3" accept= ".jpg, .jpeg .png"  value="" />  
             <% if(locals.errors && errors.img_3){ %>
               <p class="tableAdmin_Error"><%= errors.img_3.msg  %> </p>
             <% } %>
-            <input class="textArea__Create" type="file" name="img_4" placeholder="image 4" accept= ".jpg, .jpeg .png"  value=""/> 
+            <input class="textArea__Create" type="file" name="img_4" placeholder="image 4" accept= ".jpg, .jpeg .png"  value="" /> 
             <% if(locals.errors && errors.img_4){ %>
               <p class="tableAdmin_Error"><%= errors.img_4.msg  %> </p>
             <% } %>
-            <input class="textArea__Create" type="file" name="img_5" placeholder="image 5" accept= ".jpg, .jpeg .png"  value=""/> 
+            <input class="textArea__Create" type="file" name="img_5" placeholder="image 5" accept= ".jpg, .jpeg .png"  value="" /> 
             <% if(locals.errors && errors.img_5){ %>
               <p class="tableAdmin_Error"><%= errors.img_5.msg  %>  </p>
             <% } %>
@@ -76,14 +67,46 @@
           <% if(locals.errors && errors.long_descr){ %>
             <p class="tableAdmin_Error"><%= errors.long_descr.msg  %>  </p>
           <% } %>
-          <input class="textArea__Create" type="text" name="game_group" placeholder="Type of Suscription" value="<%= locals.oldData ? locals.oldData.game_group : null%>"/>
-          <% if(locals.errors && errors.game_group){ %>
-            <p class="tableAdmin_Error"><%= errors.game_group.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="category" placeholder="Category" value="<%= locals.oldData ? locals.oldData.category : null%>"/>
-          <% if(locals.errors && errors.category){ %>
-            <p class="tableAdmin_Error"><%= errors.category.msg  %>  </p>
-          <% } %>
+
+          <label class="combo-form_titles_create" for="game_group">Game Group</label>
+              <select name="game_group" class="textArea__Create" >
+              <option value=""> Choose Game Group </option>
+              <%      
+              let group = ['Top Sellers', 'New Releases', 'Free'];
+              %>
+              <% for (const oneGroup of group) { %>
+                <option 
+                  value="<%= oneGroup  %>"
+                  <%= locals.oldData && (oneGroup  === oldData.game_group) ? 'selected'  : null %> 
+                > <%= oneGroup %> </option>
+              <% } %>
+            </select> 
+            <% if (locals.errors && errors.game_group) { %>  
+              <p class="tableAdmin_Error">
+                <%= errors.game_group.msg %>
+              </p>
+            <% } %> 
+
+        <label class="combo-form_titles_create" for="category">Category</label>
+            <select name="category" class="textArea__Create" >
+            <option value=""> Choose Category </option>
+            <%      
+            let categories = ['Action', 'Action-Adventure', 'Fight', 'Role-Playing', 'Simulation', 'Strategy', 'Sports', 'Puzzle', 'Idle'];  
+            %>
+            <% for (const oneCategory of categories) { %>
+              <option 
+                value="<%= oneCategory  %>"
+                <%= locals.oldData && (oneCategory  === oldData.category) ? 'selected'  : null %> 
+              > <%= oneCategory %> </option>
+            <% } %>
+          </select> 
+          <% if (locals.errors && errors.category) { %>  
+            <p class="tableAdmin_Error">
+              <%= errors.category.msg %>
+            </p>
+          <% } %> 
+
+
           <input class="textArea__Create" type="text" name="creator" placeholder="Creator" value="<%= locals.oldData ? locals.oldData.creator : null%>"/>
           <% if(locals.errors && errors.creator){ %>
             <p class="tableAdmin_Error"><%= errors.creator.msg  %>  </p>
@@ -104,53 +127,199 @@
           <% if(locals.errors && errors.video_1){ %>
             <p class="tableAdmin_Error"><%= errors.video_1.msg  %>  </p>
           <% } %>
-          <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= locals.oldData ? locals.oldData.miniatura : null%>"/> 
+
+
+
+
+         <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= locals.oldData ? locals.oldData.miniatura : null%>"/> 
           <% if(locals.errors && errors.miniatura){ %>
             <p class="tableAdmin_Error"><%= errors.miniatura.msg  %>  </p>
           <% } %>
-          </div>
+          </div> 
+
           <div class="con3__create">
             <h3 class="title__Requirements__Create">Requirements</h3>
+            <label class="combo-form_titles_create" for="launch_date">Launch Date</label>
             <input class="textArea__Create" type="date" name="launch_date" placeholder="Launch Date" value="<%= locals.oldData ? locals.oldData.launch_date : null%>"/>
             <% if(locals.errors && errors.launch_date){ %>
               <p class="tableAdmin_Error"><%= errors.launch_date.msg  %>  </p>
             <% } %>
-            <input class="textArea__Create" type="text" name="platform" placeholder="¨Platform/s" value="<%= locals.oldData ? locals.oldData.platform : null%>"/>
-            <% if(locals.errors && errors.platform){ %>
-              <p class="tableAdmin_Error"><%= errors.platform.msg  %>  </p>
+
+
+
+            <label class="combo-form_titles_create" for="platform">Platforms</label>
+              <select name="platform" class="textArea__Create" >
+              <option value=""> Choose a Platform </option>
+              <%      
+              let platforms = ['PC','Playstation Series & PC', 'XBox Series & PC', 'Nintendo & PC', 'All Platforms'];
+              %>
+              <% for (const onePlatform of platforms) { %>
+                <option 
+                  value="<%= onePlatform %>"
+                  <%= locals.oldData && (onePlatform === oldData.platform) ? 'selected'  : null %> 
+                > <%= onePlatform %> </option>
+              <% } %>
+            </select> 
+            <% if (locals.errors && errors.platform) { %>  
+              <p class="tableAdmin_Error">
+                <%= errors.platform.msg %>
+              </p>
+            <% } %> 
+
+ 
+            <label class="combo-form_titles_create" for="os_min">OS Minimum Requirement</label>
+            <select name="os_min" class="textArea__Create" >
+              <option value=""> Choose an Operating System </option>
+              <%      
+              let systems = ['Windows XP', 'Windows Vista', 'Windows 7', 'Windows 10'];
+              %>
+              <% for (const oneSystem of systems) { %>
+                <option 
+                  value="<%= oneSystem %>"
+                  <%= locals.oldData && (oneSystem === oldData.os_min) ? 'selected'  : null %> 
+                > <%= oneSystem %> </option>
+              <% } %>
+            </select> 
+            <% if (locals.errors && errors.os_min) { %>  
+              <p class="tableAdmin_Error">
+                <%= errors.os_min.msg %>
+              </p>
+            <% } %> 
+
+            <label class="combo-form_titles_create" for="os_rec">OS Recommended Requirement</label>
+            <select name="os_rec" class="textArea__Create" >
+              <option value=""> Choose an Operating System </option>
+              <% for (const oneSystem of systems) { %>
+                <option 
+                  value="<%= oneSystem %>"
+                  <%= locals.oldData && (oneSystem === oldData.os_rec) ? 'selected'  : null %> 
+                > <%= oneSystem %> </option>
+              <% } %>
+            </select> 
+            <% if (locals.errors && errors.os_rec) { %>  
+              <p class="tableAdmin_Error">
+                <%= errors.os_rec.msg %>
+              </p>
+            <% } %> 
+
+              
+            <label class="combo-form_titles_create" for="processor_min">Minimum Processor</label>
+              <select name="processor_min" class="textArea__Create" >
+                <option value=""> Choose a Processor</option>
+                <%      
+                let processors = ['Intel Pentium','Intel Celeron','Intel i3','Intel i5', ' Intel i7','AMD Phenom','AMD FX', 'AMD Ryzen 3,','AMD Ryzen 5', 'AMD Ryzen 7'];
+                %>
+                <% for (const oneProcessor of processors) { %>
+                  <option 
+                    value="<%= oneProcessor %>"
+                    <%= locals.oldData && (oneProcessor === oldData.processor_min) ? 'selected' : null %> 
+                  > <%= oneProcessor %> </option>
+                <% } %>
+              </select> 
+              <% if (locals.errors && errors.processor_min) { %>  
+                <p class="tableAdmin_Error">
+                  <%= errors.processor_min.msg %>
+                </p>
+              <% } %>
+
+            <label class="combo-form_titles_create" for="processor_rec">Processor Recommended</label>
+              <select name="processor_rec" class="textArea__Create" >
+                <option value=""> Choose a Processor </option>
+                <% for (const oneProcessor of processors) { %>
+                  <option 
+                    value="<%= oneProcessor %>"
+                    <%= locals.oldData && (oneProcessor === oldData.processor_rec) ? 'selected'  : null %> 
+                  > <%= oneProcessor %> </option>
+                <% } %>
+              </select> 
+              <% if (locals.errors && errors.processor_rec) { %>  
+                <p class="tableAdmin_Error">
+                  <%= errors.processor_rec.msg %>
+                </p>
+              <% } %>
+	
+              <label class="combo-form_titles_create" for="storage_min">Recommended Minimum Storage</label>
+                <select name="storage_min" class="textArea__Create" >
+                  <option value=""> Choose Minimum Recommended Storage </option>
+                  <%      
+                  let storage = ['2 Gb','4 Gb', '8 Gb','16 Gb', '32 Gb','64 Gb'];
+                  %>
+                  <% for (const oneStorage of storage) { %>
+                    <option 
+                      value="<%= oneStorage %>"
+                      <%= locals.oldData && (oneStorage === oldData.storage_min) ? 'selected'  : null %> 
+                    > <%= oneStorage %> </option>
+                  <% } %>
+                </select> 
+                <% if (locals.errors && errors.storage_min) { %>  
+                  <p class="tableAdmin_Error">
+                    <%= errors.storage_min.msg %>
+                  </p>
+                <% } %>
+
+
+            <label class="combo-form_titles_create" for="storage_rec">Recommended Storage</label>
+              <select name="storage_rec" class="textArea__Create" >
+                <option value=""> Choose Recommended Storage </option>
+                <% for (const oneStorage of storage) { %>
+                  <option 
+                    value="<%= oneStorage %>"
+                    <%= locals.oldData && (oneStorage === oldData.storage_rec) ? 'selected'  : null %> 
+                  > <%= oneStorage %> </option>
+                <% } %>
+              </select> 
+              <% if (locals.errors && errors.storage_rec) { %>  
+                <p class="tableAdmin_Error">
+                  <%= errors.storage_rec.msg %>
+                </p>
+              <% } %>
+
+
+
+
+
+
+
+            <label class="combo-form_titles_create" for="graphics_min">Graphics Minimum Requirement</label>
+            <select name="graphics_min" class="textArea__Create" >
+              <option value=""> Choose a Graphic Card</option>
+              <%      
+              let graphics = ['Nvidia GTX 8XX', 'Nvidia GTX 9XX', 'Nvidia GTX 10XX',
+                              'Nvidia GTX 16XX','Nvidia GTX 20XX','Nvidia GTX 30XX',
+                              'Radeon RX 2XX', 'Radeon RX 3XX','Radeon RX 5XX',
+                              'Radeon RX 5XXX','Radeon RX 6XXX',];
+              %>
+              <% for (const oneGraphic of graphics) { %>
+                <option 
+                  value="<%= oneGraphic %>"
+                  <%= locals.oldData && (oneGraphic === oldData.graphics_min) ? 'selected' : null %> 
+                > <%= oneGraphic %> </option>
+              <% } %>
+            </select> 
+            <% if (locals.errors && errors.graphics_min) { %>  
+              <p class="tableAdmin_Error">
+                <%= errors.graphics_min.msg %>
+              </p>
             <% } %>
-            <input class="textArea__Create" type="text" name="os_min" placeholder="OS Minimun Requirement" value="<%= locals.oldData ? locals.oldData.os_min : null%>"/>
-            <% if(locals.errors && errors.os_min){ %>
-              <p class="tableAdmin_Error"><%= errors.os_min.msg  %>  </p>
+
+
+            <label class="combo-form_titles_create" for="graphics_rec">Recommended Graphics</label>
+            <select name="graphics_rec" class="textArea__Create" >
+              <option value=""> Choose a Graphic Card</option>   
+              <% for (const oneGraphic of graphics) { %>
+                <option 
+                  value="<%= oneGraphic %>"
+                  <%= locals.oldData && (oneGraphic === oldData.graphics_rec) ? 'selected' : null %> 
+                > <%= oneGraphic %> </option>
+              <% } %>
+            </select> 
+            <% if (locals.errors && errors.graphics_rec) { %>  
+              <p class="tableAdmin_Error">
+                <%= errors.graphics_rec.msg %>
+              </p>
             <% } %>
-            <input class="textArea__Create" type="text" name="os_rec" placeholder="OS Recommended Requirement" value="<%= locals.oldData ? locals.oldData.os_rec : null%>"/>
-            <% if(locals.errors && errors.os_rec){ %>
-              <p class="tableAdmin_Error"><%= errors.os_rec.msg  %>  </p>
-            <% } %>
-            <input class="textArea__Create" type="text" name="processor_min" placeholder="Processor Minimum Requirement" value="<%= locals.oldData ? locals.oldData.processor_min : null%>"/>
-            <% if(locals.errors && errors.processor_min){ %>
-              <p class="tableAdmin_Error"><%= errors.processor_min.msg  %>  </p>
-            <% } %>
-            <input class="textArea__Create" type="text" name="processor_rec" placeholder="Processor Recommended Requirement" value="<%= locals.oldData ? locals.oldData.processor_rec : null%>"/>
-            <% if(locals.errors && errors.processor_rec){ %>
-              <p class="tableAdmin_Error"><%= errors.processor_rec.msg  %>  </p>
-            <% } %>
-            <input class="textArea__Create" type="text" name="storage_min" placeholder="Storage Minimum Requirement" value="<%= locals.oldData ? locals.oldData.storage_min : null%>"/>
-            <% if(locals.errors && errors.storage_min){ %>
-              <p class="tableAdmin_Error"><%= errors.storage_min.msg  %>  </p>
-            <% } %>
-            <input class="textArea__Create" type="text" name="storage_rec" placeholder="Storage Recommended Requirement" value="<%= locals.oldData ? locals.oldData.storage_rec : null%>"/>
-            <% if(locals.errors && errors.storage_rec){ %>
-              <p class="tableAdmin_Error"><%= errors.storage_rec.msg  %>  </p>
-            <% } %>
-            <input class="textArea__Create" type="text" name="graphics_min" placeholder="Graphics Minimum Requirement" value="<%= locals.oldData ? locals.oldData.graphics_min : null%>"/>
-            <% if(locals.errors && errors.graphics_min){ %>
-              <p class="tableAdmin_Error"><%= errors.graphics_min.msg  %>  </p>
-            <% } %>
-            <input class="textArea__Create" type="text" name="graphics_rec" placeholder="Graphics Recommended Requirement" value="<%= locals.oldData ? locals.oldData.graphics_rec : null%>"/>
-            <% if(locals.errors && errors.graphics_rec){ %>
-              <p class="tableAdmin_Error"><%= errors.graphics_rec.msg  %>  </p>
-            <% } %>
+
+            <label class="combo-form_titles_create" for="age">Age Restriction</label>
             <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
             <% if(locals.errors && errors.age){ %>
               <p class="tableAdmin_Error"><%= errors.age.msg  %>  </p>
@@ -160,8 +329,8 @@
         </div>
         <br/>
 
-            <button class="btn__create" type="submit">Agregar</button>
-            <!-- <button class="btn__productEdit" type="submit">Editar</button> -->
+            <button class="btn__create" type="submit">Add Game</button>
+            
         </div>
     </form>
   </div>

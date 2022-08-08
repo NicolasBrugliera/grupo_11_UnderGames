@@ -152,13 +152,13 @@
     letter-spacing: .5px;
 }
 
-.textArea_Admin_Edit {
+/* .textArea_Admin_Edit {
     width: 17em;
     height: 2.5em;
     margin: 1em;
     align-self: center;
     text-align: center;
-}
+} */
 
 .formCreate__create {
     display: flex;
@@ -272,4 +272,11 @@ p.table_Admin_Edit_Error {
     font-weight: bold;
     bottom: 10px;
 
+}
+
+.combo-form_titles_edit {
+    position: relative;
+    color:#c5ccd3;
+    font-size:medium;
+    top: 10px;
 }

@@ -5,13 +5,12 @@
   <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/style_Admin_Edit.css">
     <link rel="stylesheet" href="/css/search_bar.css">
-
 </head>
 
 <body class="bodyEdit">
   <header>
     <%- include('../partials/header.ejs') %>
-      <%- include('../partials/search_bar')%>
+    <%- include('../partials/search_bar')%>
   </header>
 
   <div class="form_Admin_Edit">
@@ -62,7 +61,7 @@
         </div>
 
 
-        <div class="con2_Admin_Edit">
+      <div class="con2_Admin_Edit">
           <h3 class="title__Description__Admin__Edit">Description Edit</h3>
           <input class="textArea_Admin_Edit" type="text" name="title" placeholder="Title"
             value="<%= gameToEdit.title %>" />
@@ -70,90 +69,124 @@
             <p class="table_Admin_Edit_Error">
               <%= errors.title.msg%>
             </p>
+          <% } %>
+
+          <input class="textArea_Admin_Edit" type="text" name="one_word_descr" placeholder="One Word Description"
+            value="<%=gameToEdit.one_word_descr%>" />
+          <% if(locals.errors && errors.one_word_descr){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.one_word_descr.msg %>
+            </p>
+          <% } %>
+
+          <input class="textArea_Admin_Edit" type="text" name="short_descr" placeholder="Short Description"
+            value="<%= gameToEdit.short_descr%>" />
+          <% if(locals.errors && errors.short_descr){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.short_descr.msg%>
+            </p>
+          <% } %>
+
+
+          <input class="textArea_Admin_Edit" type="text" name="long_descr" placeholder="Long Description"
+            value="<%= gameToEdit.long_descr%>" />
+          <% if(locals.errors && errors.long_descr){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.long_descr.msg%>
+            </p>
+          <% } %>
+
+          <label class="combo-form_titles_edit" for="game_group">Game Group</label>
+            <select name="game_group" class="textArea_Admin_Edit" >
+            <option value=""> Choose Game Group </option>
+            <%      
+            let group = ['Top Sellers', 'New Releases', 'Free'];
+            %>
+            <% for (const oneGroup of group) { %>
+              <option value="<%= oneGroup  %>"
+                <%= oneGroup  === gameToEdit.game_group ? 'selected'  : gameToEdit.game_group %> 
+              > <%= oneGroup %> </option>
             <% } %>
-              <input class="textArea_Admin_Edit" type="text" name="one_word_descr" placeholder="One Word Description"
-                value="<%=gameToEdit.one_word_descr%>" />
-              <% if(locals.errors && errors.one_word_descr){ %>
-                <p class="table_Admin_Edit_Error">
-                  <%= errors.one_word_descr.msg %>
-                </p>
-                <% } %>
-                  <input class="textArea_Admin_Edit" type="text" name="short_descr" placeholder="Short Description"
-                    value="<%= gameToEdit.short_descr%>" />
-                  <% if(locals.errors && errors.short_descr){ %>
-                    <p class="table_Admin_Edit_Error">
-                      <%= errors.short_descr.msg%>
-                    </p>
-                    <% } %>
-                      <input class="textArea_Admin_Edit" type="text" name="long_descr" placeholder="Long Description"
-                        value="<%= gameToEdit.long_descr%>" />
-                      <% if(locals.errors && errors.long_descr){ %>
-                        <p class="table_Admin_Edit_Error">
-                          <%= errors.long_descr.msg%>
-                        </p>
-                        <% } %>
-                          <input class="textArea_Admin_Edit" type="text" name="game_group"
-                            placeholder="Game Status Payment" value="<%= gameToEdit.game_group%>" />
-                          <% if(locals.errors && errors.game_group){ %>
-                            <p class="table_Admin_Edit_Error">
-                              <%= errors.game_group.msg%>
-                            </p>
-                            <% } %>
-                              <input class="textArea_Admin_Edit" type="text" name="category" placeholder="Category"
-                                value="<%= gameToEdit.category%>" />
-                              <% if(locals.errors && errors.category){ %>
-                                <p class="table_Admin_Edit_Error">
-                                  <%= errors.category.msg%>
-                                </p>
-                                <% } %>
-                                  <input class="textArea_Admin_Edit" type="text" name="creator" placeholder="Creator"
-                                    value="<%= gameToEdit.creator%>" />
-                                  <% if(locals.errors && errors.creator){ %>
-                                    <p class="table_Admin_Edit_Error">
-                                      <%= errors.creator.msg%>
-                                    </p>
-                                    <% } %>
-                                      <input class="textArea_Admin_Edit" type="text" name="original_price"
-                                        placeholder="Original Price" value="<%= gameToEdit.original_price%>" />
-                                      <% if(locals.errors && errors.original_price){ %>
-                                        <p class="table_Admin_Edit_Error">
-                                          <%= errors.original_price.msg%>
-                                        </p>
-                                        <% } %>
-                                          <input class="textArea_Admin_Edit" type="text" name="price_w_discount"
-                                            placeholder="Price With Discount"
-                                            value="<%= gameToEdit.price_w_discount%>" />
-                                          <% if(locals.errors && errors.price_w_discount){ %>
-                                            <p class="table_Admin_Edit_Error">
-                                              <%= errors.price_w_discount.msg%>
-                                            </p>
-                                            <% } %>
-                                              <input class="textArea_Admin_Edit" type="text" name="discount"
-                                                placeholder="Discount" value="<%= gameToEdit.discount%>" />
-                                              <% if(locals.errors && errors.discount){ %>
-                                                <p class="table_Admin_Edit_Error">
-                                                  <%= errors.discount.msg%>
-                                                </p>
-                                                <% } %>
-                                                  <input class="textArea_Admin_Edit" type="text" name="video_1"
-                                                    placeholder="Youtube Video ID" value="<%= gameToEdit.video_1%>" />
-                                                  <% if(locals.errors && errors.video_1){ %>
-                                                    <p class="table_Admin_Edit_Error">
-                                                      <%= errors.video_1.msg %>
-                                                    </p>
-                                                    <% } %>
-                                                      <input class="textArea_Admin_Edit" type="text" name="miniatura"
-                                                        placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg"
-                                                        value="<%= gameToEdit.miniatura%>" />
-                                                      <% if(locals.errors && errors.miniatura){ %>
-                                                        <p class="table_Admin_Edit_Error">
-                                                          <%= errors.miniatura.msg %>
-                                                        </p>
-                                                        <% } %>
+            </select> 
+            <% if(locals.errors && errors.game_group){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= errors.game_group.msg%>
+              </p>
+            <% } %>
+
+          <label class="combo-form_titles_edit" for="category">Category</label>
+            <select name="category" class="textArea_Admin_Edit" >
+            <option value=""> Choose Category </option>
+            <%      
+            let categories = ['Action', 'Action-Adventure', 'Fight', 'Role-Playing', 'Simulation', 'Strategy', 'Sports', 'Puzzle', 'Idle'];  
+            %>
+            <% for (const oneCategory of categories) { %>
+              <option value="<%= oneCategory  %>"
+                <%= oneCategory  === gameToEdit.category ? 'selected'  : gameToEdit.category %> 
+              > <%= oneCategory %> </option>
+            <% } %>
+            </select> 
+            <% if(locals.errors && errors.category){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= errors.category.msg%>
+              </p>
+            <% } %>
+
+
+          <input class="textArea_Admin_Edit" type="text" name="creator" placeholder="Creator"
+            value="<%= gameToEdit.creator%>" />
+          <% if(locals.errors && errors.creator){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.creator.msg%>
+            </p>
+          <% } %>
+
+
+          <input class="textArea_Admin_Edit" type="text" name="original_price"
+            placeholder="Original Price" value="<%= gameToEdit.original_price%>" />
+          <% if(locals.errors && errors.original_price){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.original_price.msg%>
+            </p>
+          <% } %>
+
+          <input class="textArea_Admin_Edit" type="text" name="price_w_discount"
+            placeholder="Price With Discount"
+            value="<%= gameToEdit.price_w_discount%>" />
+          <% if(locals.errors && errors.price_w_discount){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.price_w_discount.msg%>
+            </p>
+            <% } %>
+
+          <input class="textArea_Admin_Edit" type="text" name="discount"
+            placeholder="Discount" value="<%= gameToEdit.discount%>" />
+          <% if(locals.errors && errors.discount){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.discount.msg%>
+            </p>
+            <% } %>
+
+          <input class="textArea_Admin_Edit" type="text" name="video_1"
+            placeholder="Youtube Video ID" value="<%= gameToEdit.video_1%>" />
+          <% if(locals.errors && errors.video_1){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.video_1.msg %>
+            </p>
+            <% } %>
+
+          <input class="textArea_Admin_Edit" type="text" name="miniatura"
+            placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg"
+            value="<%= gameToEdit.miniatura%>" />
+          <% if(locals.errors && errors.miniatura){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.miniatura.msg %>
+            </p>
+            <% } %>
         </div>
 
-        <div class="con3_Admin_Edit">
-          <h3 class="title__Requirements__Admin_Edit">Requirements Edit</h3>
+      <div class="con3_Admin_Edit">
+        <h3 class="title__Requirements__Admin_Edit">Requirements Edit</h3>
           <input class="textArea_Admin_Edit" type="date" name="launch_date" placeholder="Launch Date"
             value="<%= gameToEdit.launch_date%>" />
           <% if(locals.errors && errors.launch_date){ %>
@@ -161,80 +194,174 @@
               <%= errors.launch_date.msg %>
             </p>
             <% } %>
-              <input class="textArea_Admin_Edit" type="text" name="platform" placeholder="¨Platform/s"
-                value="<%= gameToEdit.platform%>" />
-              <% if(locals.errors && errors.platform){ %>
-                <p class="table_Admin_Edit_Error">
-                  <%= errors.platform.msg %>
-                </p>
-                <% } %>
-                  <input class="textArea_Admin_Edit" type="text" name="os_min" placeholder="OS Minimun Requirement"
-                    value="<%= gameToEdit.os_min%>" />
-                  <% if(locals.errors && errors.os_min){ %>
-                    <p class="table_Admin_Edit_Error">
-                      <%= errors.os_min.msg %>
-                    </p>
-                    <% } %>
-                      <input class="textArea_Admin_Edit" type="text" name="os_rec" placeholder="OS Recommended Requirement"
-                        value="<%= gameToEdit.os_rec%>" />
-                      <% if(locals.errors && errors.os_rec){ %>
-                        <p class="table_Admin_Edit_Error">
-                          <%= errors.os_rec.msg %>
-                        </p>
-                        <% } %>
-                          <input class="textArea_Admin_Edit" type="text" name="processor_min"
-                            placeholder="Processor Minimum Requirement" value="<%= gameToEdit.processor_min%>" />
-                          <% if(locals.errors && errors.processor_min){ %>
-                            <p class="table_Admin_Edit_Error">
-                              <%= errors.processor_min.msg %>
-                            </p>
-                            <% } %>
-                              <input class="textArea_Admin_Edit" type="text" name="processor_rec"
-                                placeholder="Processor Recommended Requirement" value="<%= gameToEdit.processor_rec%>" />
-                              <% if(locals.errors && errors.processor_rec){ %>
-                                <p class="table_Admin_Edit_Error">
-                                  <%= errors.processor_rec.msg %>
-                                </p>
-                                <% } %>
-                                  <input class="textArea_Admin_Edit" type="text" name="storage_min"
-                                    placeholder="Storage Minimum Requirement" value="<%= gameToEdit.storage_min%>" />
-                                  <% if(locals.errors && errors.storage_min){ %>
-                                    <p class="table_Admin_Edit_Error">
-                                      <%= errors.storage_min.msg %>
-                                    </p>
-                                    <% } %>
-                                      <input class="textArea_Admin_Edit" type="text" name="storage_rec"
-                                        placeholder="Storage Recommended Requirement" value="<%= gameToEdit.storage_rec%>" />
-                                      <% if(locals.errors && errors.storage_rec){ %>
-                                        <p class="table_Admin_Edit_Error">
-                                          <%= errors.storage_rec.msg %>
-                                        </p>
-                                        <% } %>
-                                          <input class="textArea_Admin_Edit" type="text" name="graphics_min"
-                                            placeholder="Graphics Minimum Requirement" value="<%= gameToEdit.graphics_min%>" />
-                                          <% if(locals.errors && errors.graphics_min){ %>
-                                            <p class="table_Admin_Edit_Error">
-                                              <%= errors.graphics_min.msg %>
-                                            </p>
-                                            <% } %>
-                                              <input class="textArea_Admin_Edit" type="text" name="graphics_rec"
-                                                placeholder="Graphics Recommended Requirement"
-                                                value="<%= gameToEdit.graphics_rec%>" />
-                                              <% if(locals.errors && errors.graphics_rec){ %>
-                                                <p class="table_Admin_Edit_Error">
-                                                  <%= errors.graphics_rec.msg %>
-                                                </p>
-                                                <% } %>
-                                                  <input class="textArea_Admin_Edit" type="text" name="age"
-                                                    placeholder="Age Restriction" value="<%= gameToEdit.age%>" />
-                                                  <% if(locals.errors && errors.age){ %>
-                                                    <p class="table_Admin_Edit_Error">
-                                                      <%= errors.age.msg %>
-                                                    </p>
-                                                    <% } %>
+
+
+
+        <label class="combo-form_titles_edit" for="platform">Category</label>
+            <select name="platform" class="textArea_Admin_Edit" >
+            <option value=""> Choose Platform </option>
+            <%      
+            let platforms = ['PC','Playstation Series & PC', 'XBox Series & PC', 'Nintendo & PC', 'All Platforms'];
+            %>
+            <% for (const onePlatform of platforms) { %>
+              <option value="<%= onePlatform  %>"
+                <%= onePlatform  === gameToEdit.platform ? 'selected'  : gameToEdit.platform %> 
+              > <%= onePlatform %> </option>
+            <% } %>
+            </select> 
+            <% if(locals.errors && errors.platform){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= errors.platform.msg%>
+              </p>
+            <% } %>
+
+      <label class="combo-form_titles_edit" for="os_min">OS Minimun Requirement</label>
+          <select name="os_min" class="textArea_Admin_Edit" >
+          <option value=""> Choose OS Minimum Requirement </option>
+          <%      
+          let systems = ['Windows XP', 'Windows Vista', 'Windows 7', 'Windows 10'];
+          %>
+          <% for (const oneSystem of systems) { %>
+            <option value="<%= oneSystem  %>"
+              <%= oneSystem  === gameToEdit.os_min ? 'selected'  : gameToEdit.os_min %> 
+            > <%= oneSystem %> </option>
+          <% } %>
+          </select> 
+          <% if(locals.errors && errors.os_min){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.os_min.msg%>
+            </p>
+          <% } %>
+
+      <label class="combo-form_titles_edit" for="os_rec">OS Recommended</label>
+          <select name="os_rec" class="textArea_Admin_Edit" >
+          <option value=""> Choose Recommended OS</option>
+          <% for (const oneSystem of systems) { %>
+            <option value="<%= oneSystem  %>"
+              <%= oneSystem  === gameToEdit.os_rec ? 'selected'  : gameToEdit.os_rec %> 
+            > <%= oneSystem %> </option>
+          <% } %>
+          </select> 
+          <% if(locals.errors && errors.os_rec){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.os_rec.msg%>
+            </p>
+          <% } %>
+
+      <label class="combo-form_titles_edit" for="processor_min">Minimum Processor</label>
+          <select name="processor_min" class="textArea_Admin_Edit" >
+          <option value=""> Choose Minimum Processor Requirement </option>
+          <%      
+          let processors = ['Intel Pentium','Intel Celeron','Intel i3','Intel i5', ' Intel i7',
+                            'AMD Phenom','AMD FX', 'AMD Ryzen 3,','AMD Ryzen 5', 'AMD Ryzen 7'];
+          %>
+          <% for (const oneProcessor of processors) { %>
+            <option value="<%= oneProcessor  %>"
+              <%= oneProcessor  === gameToEdit.processor_min ? 'selected'  : gameToEdit.processor_min %> 
+            > <%= oneProcessor %> </option>
+          <% } %>
+          </select> 
+          <% if(locals.errors && errors.processor_min){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.processor_min.msg%>
+            </p>
+          <% } %>
+
+      <label class="combo-form_titles_edit" for="processor_rec">Recommended Processor</label>
+        <select name="processor_rec" class="textArea_Admin_Edit" >
+        <option value=""> Choose Recommended Processor</option>
+        <% for (const oneProcessor of processors) { %>
+          <option value="<%= oneProcessor  %>"
+            <%= oneProcessor  === gameToEdit.processor_rec ? 'selected'  : gameToEdit.processor_rec %> 
+          > <%= oneProcessor %> </option>
+        <% } %>
+        </select> 
+        <% if(locals.errors && errors.processor_rec){ %>
+          <p class="table_Admin_Edit_Error">
+            <%= errors.processor_rec.msg%>
+          </p>
+        <% } %>
+
+        <label class="combo-form_titles_edit" for="storage_min">Recommended Minimum Storage</label>
+          <select name="storage_min" class="textArea_Admin_Edit" >
+          <option value=""> Choose Recommended Minimum Storage </option>
+          <%      
+          let storage = ['2 Gb','4 Gb', '8 Gb','16 Gb', '32 Gb','64 Gb'];
+          %>
+          <% for (const oneStorage of storage) { %>
+            <option value="<%= oneStorage  %>"
+              <%= oneStorage  === gameToEdit.storage_min ? 'selected'  : gameToEdit.storage_min %> 
+            > <%= oneStorage %> </option>
+          <% } %>
+          </select> 
+          <% if(locals.errors && errors.storage_min){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.storage_min.msg%>
+            </p>
+          <% } %>
+
+
+        <label class="combo-form_titles_edit" for="storage_rec">Recommended Storage</label>
+          <select name="storage_rec" class="textArea_Admin_Edit" >
+          <option value=""> Choose Recommended Storage </option>
+          <% for (const oneStorage of storage) { %>
+            <option value="<%= oneStorage  %>"
+              <%= oneStorage  === gameToEdit.storage_rec ? 'selected'  : gameToEdit.storage_rec %> 
+            > <%= oneStorage %> </option>
+          <% } %>
+          </select> 
+          <% if(locals.errors && errors.storage_rec){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.storage_rec.msg%>
+            </p>
+          <% } %>
+
+        <label class="combo-form_titles_edit" for="graphics_min">Graphics Minimum Requirement</label>
+          <select name="graphics_min" class="textArea_Admin_Edit" >
+          <option value=""> Choose Graphics Minimum Requirement </option>
+          <%      
+          let graphics = ['Nvidia GTX 8XX', 'Nvidia GTX 9XX', 'Nvidia GTX 10XX',
+                        'Nvidia GTX 16XX','Nvidia GTX 20XX','Nvidia GTX 30XX',
+                        'Radeon RX 2XX', 'Radeon RX 3XX','Radeon RX 5XX',
+                        'Radeon RX 5XXX','Radeon RX 6XXX',];
+          %>
+          <% for (const oneGraphic of graphics) { %>
+            <option value="<%= oneGraphic  %>"
+              <%= oneGraphic  === gameToEdit.graphics_min ? 'selected'  : gameToEdit.graphics_min %> 
+            > <%= oneGraphic %> </option>
+          <% } %>
+          </select> 
+          <% if(locals.errors && errors.graphics_min){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.graphics_min.msg%>
+            </p>
+          <% } %>
+
+
+          <label class="combo-form_titles_edit" for="graphics_rec">Recommended Graphics</label>
+            <select name="graphics_rec" class="textArea_Admin_Edit" >
+            <option value=""> Choose Recommended Graphics </option>
+            <% for (const oneGraphic of graphics) { %>
+              <option value="<%= oneGraphic  %>"
+                <%= oneGraphic  === gameToEdit.graphics_rec ? 'selected'  : gameToEdit.graphics_rec %> 
+              > <%= oneGraphic %> </option>
+            <% } %>
+            </select> 
+            <% if(locals.errors && errors.graphics_rec){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= errors.graphics_rec.msg%>
+              </p>
+            <% } %>
+
+
+          <input class="textArea_Admin_Edit" type="text" name="age"
+            placeholder="Age Restriction" value="<%= gameToEdit.age%>" />
+            <% if(locals.errors && errors.age){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.age.msg %>
+            </p>
+            <% } %>
         </div>
-
-
       </div>
 
 
