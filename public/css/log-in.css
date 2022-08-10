@@ -48,12 +48,13 @@
     width: 20vw;
     border: 3px solid #1f2227;
     padding:5px;
-    background-color:azure;
+    background-color:black;
     border-radius: 10px;
     height: 4.5vh;
     margin-top: 20px;
     margin-bottom: 20px;
     text-align: center;
+    color: white
 }
 
 #login-button{
