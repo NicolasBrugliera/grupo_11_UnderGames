@@ -70,9 +70,10 @@
                 </div>
 
                 <div class="form-styler-register">
-                    <label><b>Imagen de perfil:</b></label>
+                    <label id="reg-img-prof-txt"><b>Imagen de perfil:</b></label>
                     <br>  <!--validar formato y diseño-->
                     <input 
+                        id="upload-img-btn"
                         type="file" 
                         name="avatar"
                         class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
