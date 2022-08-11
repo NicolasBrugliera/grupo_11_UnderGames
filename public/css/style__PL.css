@@ -16,21 +16,17 @@
     align-self: center;
     
   }
-.column_plist Free show_plist{
-  margin: 10px;
-  align-items: center;
-}
+
 .myBtnContainer_plist{  
  display: flex;
-  flex-wrap: wrap;  
-  align-self: center;
-}
-.btn_plist {
-
-
+  flex-wrap: wrap;
+  min-width: 350px;  
+  justify-content: center;
   
+}
+.btn_plist {  
   width: 300px;
-  min-width: 100px;
+  min-width: 300px;
 
   padding: 0.5rem;
   background-color: #0078f1;
@@ -43,6 +39,7 @@
   font-size: small;
   text-align: center;
   cursor: pointer;
+  filter: drop-shadow(0 0 5px grey);
 
 }
   .btn_plist:hover{
@@ -66,7 +63,7 @@
     width: 100%;
     margin: 5px;
     align-items: center;
-      
+    justify-content: center;
     
   }
   
@@ -82,9 +79,9 @@
     display:flex;/*ok*/
     flex-direction: row;
     margin: 10px;
-    flex-wrap: wrap;
-    align-content: center;
-    align-items: center;
+    flex-wrap: wrap;    
+    justify-content: center;
+    width: 100%;
   }
   
   /* Add padding BETWEEN each column (if you want) */
@@ -97,10 +94,11 @@
   /* Create three equal columns that floats next to each other */
   .column_plist {
     /* float: left; */
-    width: 550px;
+    width: 500px;
     display: none; 
     align-self: center;
     align-items: center; 
+    margin: 1vw;
     /*Hide columns by default */
   }
   
@@ -110,33 +108,44 @@
    align-items: center;
     clear: both;
   }
-  
+
   /* Content */
   .content_plist {
-    width: 80%;
+    width: 100%;
+    min-width: 320px;
      display: flex; 
     flex-direction: column; 
     flex-wrap: wrap;
     margin: 10px;
-    padding: 5px;
+    /* padding: 2px; */
     color: white;
-    font-size: xx-small;
+    font-size: medium;
     border: .5px solid #999;
-   
-  
-  }
+    
+
+
+}
+
+
+h2 {
+  color: white;
+  text-shadow: 3px 3px 5px #000000;
+  font-size: 2vw;
+  filter: drop-shadow(0 0 5px grey);
+}
+.content_plist :hover  {filter: opacity(.5);}
   
   /* The "show" class is added to the filtered elements */
   .show_plist {
     display: flex;
-    flex-direction: row;
+    flex-direction: row;    
   }
   
 
 
 
   #category_plist{
-    font-size: x-small;
+    font-size:smaller;
     /*position: absolute;*/
     bottom: 5px;
     left: 5px;
@@ -150,14 +159,17 @@
   #title_box_plist{
     font-weight: bold ;
     padding-left: 5px;
+    align-self: center;
+    font-size: medium;
   }
+
   #text_box_plist{
     font-weight: lighter ;
     padding-left: 5px;
   }
   
   #creator_box_plist{
-    font-size: x-small;
+    font-size:smaller;
     padding-left: 5px;
   }
   .price_line_plist{
@@ -167,7 +179,7 @@
     
   }
   .original_price_plist{
-    font-size: xx-small;
+    font-size: smaller;
     padding: 2px;
     font-weight: lighter;
   }
@@ -178,7 +190,7 @@
   
   }
   .discount_detail_plist{
-    font-size: 6px;
+    font-size: smaller;
     font-weight: bold;
     float:right;
     border: .5px solid #c7c7c7;
@@ -193,5 +205,5 @@
   border: .5px solid gray;
   border-radius: 3px;
   background-color: gray;
-  font-size: xx-small;
+  font-size: smaller;
 }
