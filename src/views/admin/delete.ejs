@@ -2,12 +2,12 @@
 <html lang="en">
   <head>
     <%- include('../partials/head.ejs')  %> 
-    <link rel="stylesheet" href="/css/style__AdminDelete">
+    <link rel="stylesheet" href="/css/style_create.css">
     <link rel="stylesheet" href="/css/search_bar.css">
 
   </head>
  
-<body class="bodyDelete">
+<body class="bodyCreate">
     <header>
         <%- include('../partials/header.ejs')  %> 
         <%- include('../partials/search_bar')%> 
@@ -15,7 +15,7 @@
     
   <div class="formDelete">
     <h3 class="title__create">Delete</h3> 
-    <h1 class="title__create"> <%= gameToDelete.title%></h1>
+    <h1 class="title__create"> <%= gameToDelete.title%> </h1>
 
     <img class="imgDelete" src="<%= gameToDelete.img_1 %>" alt="" >
     <form action="/admin/delete/<%= gameToDelete.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
