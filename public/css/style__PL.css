@@ -39,8 +39,8 @@
 }
 
 .btn_plist:hover {
-  transform: translate(5px, 5px);
-  box-shadow: 0px 0px 20px 5px rgba(100, 100, 100, 1);
+  transform: translate(5px, 3px);
+  box-shadow: 0px 0px 5px 3px rgba(100, 100, 100, 1);
 
 }
 
@@ -55,6 +55,7 @@
 .cont_img_productList {
   display: block;
   overflow: hidden;
+  
 
 }
 
@@ -101,7 +102,7 @@
 /* Create three equal columns that floats next to each other */
 .column_plist {
   /* float: left; */
-  width: 400px;
+  width: 300px;
   display: none;
   align-self: center;
   align-items: center;
@@ -124,7 +125,8 @@
   margin: 10px;
   color: white;
   font-size: medium;
-  background-color: rgb(32, 32, 32);
+  background: rgb(18,18,18);
+background: linear-gradient(180deg, rgba(18,18,18,1) 60%, rgba(64,57,57,1) 94%);
   border-radius: 4%;
 
 
@@ -134,8 +136,8 @@
 .pList_Title {
   color: white;
   text-shadow: 3px 3px 5px #000000;
-  font-size: 3vw;
-  filter: drop-shadow(0 0 5px grey);
+  font-size: 2vw;
+  filter: drop-shadow(0 0 3px grey);
 }
 
 
@@ -206,8 +208,9 @@
   align-items: center;
   text-align: center;
   /* padding-top: 2px; */
-  background-color: rgb(0, 116, 228);  
-  border-radius: 10%;
+  /* background: rgb(18,18,18); */
+background: linear-gradient(180deg, rgb(40, 39, 119)50%, rgb(56, 68, 148) 94%);
+  border-radius: 5%;
 
 }
 
