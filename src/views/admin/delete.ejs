@@ -14,28 +14,21 @@
       </header>
     
   <div class="formDelete">
-
     <h3 class="title__create">Delete</h3> 
     <h1 class="title__create"> <%= gameToDelete.title%> </h1>
 
     <img class="imgDelete" src="<%= gameToDelete.img_1 %>" alt="" >
     <form action="/admin/delete/<%= gameToDelete.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
-
-
-        </div>
-
-
-            <button class="btn__delete" type="submit">Borrar</button>
-            <button class="btn__cxl" onclick="location.href='/admin/'" type=”button”>Cancelar</button>
-              
-           
+        <div>
+          <button class="btn__delete" type="submit">Delete</button>
+          <button class="btn__cxl" type="button" onclick="history.back()">Cancel</button> 
         </div>
     </form>
   </div>
     
   <footer>
     <%- include('../partials/footer.ejs')  %> 
-</footer>
+  </footer>
 </body>
 
 
