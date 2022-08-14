@@ -13,7 +13,7 @@ form.search-form input[type=text] {
   form.search-form button {
     float: left;
     width: 15%;
-    padding: 10px;
+    padding: 6px;
     background: rgb(78, 75, 75);
     color: white;
     font-size: 15px;
