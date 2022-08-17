@@ -19,7 +19,7 @@
         <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false}'>
         <% for(let i= 0; i < products.length; i++){ %>     
 
-        <div class="carousel-cell"> 
+        <div class="carousel-cell-top"> 
             <div class="container_image_ppal_home">
                 <div id="image_game_ppal_home">
                         <a href="/productDetail/<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="70%"></a>
@@ -156,7 +156,7 @@
     <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true , "pageDots": false}'>
         <% for(let i= 0; i < creators.length; i++){ %>  
             
-    <div class="carousel-cell">    
+    <div class="carousel-cell-creators">    
         <div class="card_creator">
           <a href="/under_constr"><img src="<%= creators[i].creator_pict%>" alt="" class="photo_creator"></a>
             <h4><%= creators[i].creator%></h4>
