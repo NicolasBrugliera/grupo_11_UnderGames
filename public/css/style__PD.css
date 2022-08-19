@@ -186,6 +186,10 @@ border-radius: 10px;
 background-color: #aaaaaa88;
 }
 
+p.read-more-wrap {
+  font-size: 1.2rem;
+}
+
 .specifications__PD {
 display: flex;
 flex-direction: column;

@@ -5,6 +5,7 @@
   <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/style_Admin_Edit.css">
     <link rel="stylesheet" href="/css/search_bar.css">
+    <script src="/js/textAreaCounters.js"></script>
 </head>
 
 <body class="bodyEdit">
@@ -63,6 +64,7 @@
 
       <div class="con2_Admin_Edit">
           <h3 class="title__Description__Admin__Edit">Description Edit</h3>
+          <label class="combo-form_titles_edit" for="title">Title</label>
           <input class="textArea_Admin_Edit" type="text" name="title" placeholder="Title"
             value="<%= gameToEdit.title %>" />
           <% if(locals.errors && errors.title){ %>
@@ -71,6 +73,7 @@
             </p>
           <% } %>
 
+          <label class="combo-form_titles_edit" for="one_word_descr">One Word Description</label>
           <input class="textArea_Admin_Edit" type="text" name="one_word_descr" placeholder="One Word Description"
             value="<%=gameToEdit.one_word_descr%>" />
           <% if(locals.errors && errors.one_word_descr){ %>
@@ -79,22 +82,36 @@
             </p>
           <% } %>
 
-          <input class="textArea_Admin_Edit" type="text" name="short_descr" placeholder="Short Description"
-            value="<%= gameToEdit.short_descr%>" />
+          <label class="combo-form_titles_edit" for="short_desc">Short Description</label>
+          <textarea minlength="20" maxlength="100" class="textArea2__Create_shortDesc" type="text" name="short_descr" rows="4" cols="40" placeholder="Please write a description from 20 to 100 words" value=""><%= gameToEdit.short_descr%></textarea>
+          <div id="the-count__Create_shortDesc">
+            <span id="minimum_shortDesc"></span>
+            <span id="current_shortDesc">0</span>
+            <span>/</span>
+            <span id="maximum_shortDesc">100</span>
+          </div> 
           <% if(locals.errors && errors.short_descr){ %>
             <p class="table_Admin_Edit_Error">
               <%= errors.short_descr.msg%>
             </p>
           <% } %>
 
-
-          <input class="textArea_Admin_Edit" type="text" name="long_descr" placeholder="Long Description"
-            value="<%= gameToEdit.long_descr%>" />
+          <label class="combo-form_titles_edit" for="long_desc">Long Description</label>
+          <textarea   minlength="100" maxlength="300" class="textArea2__Create" type="text" name="long_descr" rows="8" cols="40" placeholder="Please write a description from 100 to 300 words"><%= gameToEdit.long_descr%></textarea>
+          <div id="the-count__Create">
+            <span id="minimum"></span>
+            <span id="current">0</span>
+            <span>/</span>
+            <span id="maximum">300</span>
+          </div> 
           <% if(locals.errors && errors.long_descr){ %>
             <p class="table_Admin_Edit_Error">
               <%= errors.long_descr.msg%>
             </p>
           <% } %>
+
+
+
 
           <label class="combo-form_titles_edit" for="game_group">Game Group</label>
             <select name="game_group" class="textArea_Admin_Edit" >
@@ -114,7 +131,7 @@
               </p>
             <% } %>
 
-          <label class="combo-form_titles_edit" for="category">Category</label>
+         <label class="combo-form_titles_edit" for="category">Category</label>
             <select name="category" class="textArea_Admin_Edit" >
             <option value=""> Choose Category </option>
             <%      
@@ -132,7 +149,7 @@
               </p>
             <% } %>
 
-
+        <label class="combo-form_titles_edit" for="creator">Creator</label>
           <input class="textArea_Admin_Edit" type="text" name="creator" placeholder="Creator"
             value="<%= gameToEdit.creator%>" />
           <% if(locals.errors && errors.creator){ %>
@@ -141,7 +158,7 @@
             </p>
           <% } %>
 
-
+      <label class="combo-form_titles_edit" for="original_price">Price</label>
           <input class="textArea_Admin_Edit" type="text" name="original_price"
             placeholder="Original Price" value="<%= gameToEdit.original_price%>" />
           <% if(locals.errors && errors.original_price){ %>
@@ -150,6 +167,7 @@
             </p>
           <% } %>
 
+      <label class="combo-form_titles_edit" for="price_w_discount">Price With Discount</label>
           <input class="textArea_Admin_Edit" type="text" name="price_w_discount"
             placeholder="Price With Discount"
             value="<%= gameToEdit.price_w_discount%>" />
@@ -159,6 +177,7 @@
             </p>
             <% } %>
 
+      <label class="combo-form_titles_edit" for="discount">Discount</label>  
           <input class="textArea_Admin_Edit" type="text" name="discount"
             placeholder="Discount" value="<%= gameToEdit.discount%>" />
           <% if(locals.errors && errors.discount){ %>
@@ -175,6 +194,7 @@
             </p>
             <% } %>
 
+      <label class="combo-form_titles_edit" for="video_1">Youtube Video</label>
           <input class="textArea_Admin_Edit" type="text" name="miniatura"
             placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg"
             value="<%= gameToEdit.miniatura%>" />
@@ -353,7 +373,7 @@
               </p>
             <% } %>
 
-
+        <label class="combo-form_titles_edit" for="Age Restriction">Age Restriction</label>
           <input class="textArea_Admin_Edit" type="text" name="age"
             placeholder="Age Restriction" value="<%= gameToEdit.age%>" />
             <% if(locals.errors && errors.age){ %>
@@ -365,7 +385,7 @@
       </div>
 
 
-      <button class="btn_Admin_Edit" type="submit">Actualizar</button>
+      <button class="btn_Admin_Edit" type="submit">Save Changes</button>
 
   </div>
   </form>

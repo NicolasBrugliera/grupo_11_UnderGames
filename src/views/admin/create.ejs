@@ -8,9 +8,10 @@
   </head>
  
 <body class="bodyCreate">
-    <header>
+      <header>
         <%- include('../partials/header.ejs')  %> 
         <%- include('../partials/search_bar')%> 
+        <script src="/js/textAreaCounters.js"></script>
       </header>
     
   <div class="formCreate__create">
@@ -49,24 +50,51 @@
             </div>
           
           <div class="con2__create">
+            
             <h3 class="title__Description__Create">Description</h3>
+            <label class="combo-form_titles_create" for="title">Title</label>
           <input class="textArea__Create" type="text" name="title" placeholder="Title" value="<%= locals.oldData ? locals.oldData.title : null %>"/>
           <% if(locals.errors && errors.title){ %>
             <p class="tableAdmin_Error"><%= errors.title.msg  %>  </p>
           <% } %>
 
+
+          <label class="combo-form_titles_create" for="one_word_descr">One Word Description</label>
           <input class="textArea__Create" type="text" name="one_word_descr" placeholder="One Word Description" value="<%= locals.oldData ? locals.oldData.one_word_descr : null%>"/>
           <% if(locals.errors && errors.one_word_descr){ %>
             <p class="tableAdmin_Error"><%= errors.one_word_descr.msg  %>  </p>
-          <% } %>
-          <input class="textArea__Create" type="text" name="short_descr" placeholder="Short Description" value="<%= locals.oldData ? locals.oldData.short_descr : null%>"/>
+          <% } %>          
           <% if(locals.errors && errors.short_descr){ %>
             <p class="tableAdmin_Error"><%= errors.short_descr.msg  %>  </p>
           <% } %>
-          <input class="textArea__Create" type="text" name="long_descr" placeholder="Long Description" value="<%= locals.oldData ? locals.oldData.long_descr : null%>"/>
-          <% if(locals.errors && errors.long_descr){ %>
-            <p class="tableAdmin_Error"><%= errors.long_descr.msg  %>  </p>
-          <% } %>
+
+
+       
+        <label class="combo-form_titles_create" for="short_desc">Short Description</label>
+        <textarea   minlength="20" maxlength="100" class="textArea2__Create_shortDesc" type="text" name="short_descr" rows="4" cols="40" placeholder="Please write a description from 20 to 100 words"><%= locals.oldData ? locals.oldData.short_descr : null %></textarea>
+        <div id="the-count__Create_shortDesc">
+          <span id="minimum_shortDesc"></span>
+          <span id="current_shortDesc">0</span>
+          <span>/</span>
+          <span id="maximum_shortDesc">100</span>
+        </div> 
+        <% if(locals.errors && errors.short_descr){ %>
+          <p class="tableAdmin_Error"><%= errors.short_descr.msg%></p>
+        <% } %>
+ 
+        <label class="combo-form_titles_create" for="long_desc">Long Description</label>
+        <textarea   minlength="100" maxlength="300" class="textArea2__Create" type="text" name="long_descr" rows="8" cols="40" placeholder="Please write a description from 100 to 300 words"><%= locals.oldData ? locals.oldData.long_descr : null %></textarea>
+        <div id="the-count__Create">
+          <span id="minimum"></span>
+          <span id="current">0</span>
+          <span>/</span>
+          <span id="maximum">300</span>
+        </div> 
+        <% if(locals.errors && errors.long_descr){ %>
+          <p class="tableAdmin_Error"><%= errors.long_descr.msg%></p>
+        <% } %>
+ 
+
 
           <label class="combo-form_titles_create" for="game_group">Game Group</label>
               <select name="game_group" class="textArea__Create" >
@@ -106,23 +134,32 @@
             </p>
           <% } %> 
 
-
+          <label class="combo-form_titles_create" for="creator">Creator</label>
           <input class="textArea__Create" type="text" name="creator" placeholder="Creator" value="<%= locals.oldData ? locals.oldData.creator : null%>"/>
           <% if(locals.errors && errors.creator){ %>
             <p class="tableAdmin_Error"><%= errors.creator.msg  %>  </p>
           <% } %>
+
+          <label class="combo-form_titles_create" for="original_price">Price</label>
           <input class="textArea__Create" type="text" name="original_price" placeholder="Original Price" value="<%= locals.oldData ? locals.oldData.original_price : null%>"/>
           <% if(locals.errors && errors.original_price){ %>
             <p class="tableAdmin_Error"><%= errors.original_price.msg  %>  </p>
           <% } %>
+
+          <label class="combo-form_titles_create" for="price_w_discount">Price With Discount</label>
           <input class="textArea__Create" type="text" name="price_w_discount" placeholder="Price With Discount" value="<%= locals.oldData ? locals.oldData.price_w_discount : null%>"/>
           <% if(locals.errors && errors.price_w_discount){ %>
             <p class="tableAdmin_Error"><%= errors.price_w_discount.msg  %>  </p>
           <% } %>
+
+          
+          <label class="combo-form_titles_create" for="discount">Discount</label>
           <input class="textArea__Create" type="text" name="discount" placeholder="Discount" value="<%= locals.oldData ? locals.oldData.discount : null%>"/>
           <% if(locals.errors && errors.discount){ %>
             <p class="tableAdmin_Error"><%= errors.discount.msg  %>  </p>
           <% } %>
+
+          <label class="combo-form_titles_create" for="video_1">Youtube Video</label>
           <input class="textArea__Create" type="text" name="video_1" placeholder="Youtube Video ID" value="<%= locals.oldData ? locals.oldData.video_1 : null%>"/> 
           <% if(locals.errors && errors.video_1){ %>
             <p class="tableAdmin_Error"><%= errors.video_1.msg  %>  </p>
@@ -130,7 +167,7 @@
 
 
 
-
+         <label class="combo-form_titles_create" for="miniatura">Thumbnail from Video</label>
          <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= locals.oldData ? locals.oldData.miniatura : null%>"/> 
           <% if(locals.errors && errors.miniatura){ %>
             <p class="tableAdmin_Error"><%= errors.miniatura.msg  %>  </p>
