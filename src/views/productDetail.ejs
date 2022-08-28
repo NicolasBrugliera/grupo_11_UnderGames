@@ -28,7 +28,7 @@
                  <table>
                       <tr>
                         <td>Developer</td>
-                        <td class="specs_titles_PD" ><%= selectedGame.creator %></td>
+                        <td class="specs_titles_PD" ><%= selectedGame.creators %></td>
                       </tr>
                       <tr>
                         <td>Launch Date</td>
@@ -36,7 +36,7 @@
                       </tr>
                       <tr>
                         <td id="platform_PD">Platform</td>
-                        <td class="specs_titles_PD" ><%= selectedGame.platform %></td>
+                        <td class="specs_titles_PD" ><%= selectedGame.platform.platform_descr %></td>
                       </tr>
                 </table>
                 <div>
@@ -129,32 +129,32 @@
                 <td>Operating System</td>
               </tr>
               <tr>
-                <td><%= selectedGame.os_min%></td>
-                <td><%= selectedGame.os_rec%></td>
+                <td><%= selectedGame.os_min.os_min%></td>
+                <td><%= selectedGame.os_rec.os_rec%></td>
               </tr>
               <tr>
                 <td>Processor</td>
                 <td>Processor</td>
               </tr>
               <tr>
-                <td><%= selectedGame.processor_min%></td>
-                <td><%= selectedGame.processor_rec%></td>
+                <td><%= selectedGame.processor_min.processor_min%></td>
+                <td><%= selectedGame.processor_rec.processor_rec%></td>
               </tr>
               <tr>
                 <td>Storage</td>
                 <td>Storage</td>
               </tr>
               <tr>
-                <td><%= selectedGame.storage_min%></td>
-                <td><%= selectedGame.storage_rec%></td>
+                <td><%= selectedGame.storage_min.storage_min%></td>
+                <td><%= selectedGame.storage_rec.storage_rec%></td>
               </tr>
               <tr>
                 <td>Graphics</td>
                 <td>Graphics</td>
               </tr>
               <tr>
-                <td><%= selectedGame.graphics_min%></td>
-                <td><%= selectedGame.graphics_rec%></td>
+                <td><%= selectedGame.graphics_min.graphics_min%></td>
+                <td><%= selectedGame.graphics_rec.graphics_rec%></td>
               </tr>
         </table>
           </section>
