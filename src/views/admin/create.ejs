@@ -60,16 +60,12 @@
 
 
           <label class="combo-form_titles_create" for="one_word_descr">One Word Description</label>
-          <input class="textArea__Create" type="text" name="one_word_descr" placeholder="One Word Description" value="<%= locals.oldData ? locals.oldData.one_word_descr : null%>"/>
+          <input class="textArea__Create" type="text" name="one_word_descr" placeholder="One Word Description" 
+          value="<%= locals.oldData ? locals.oldData.one_word_descr : null%>"/>
           <% if(locals.errors && errors.one_word_descr){ %>
             <p class="tableAdmin_Error"><%= errors.one_word_descr.msg  %>  </p>
           <% } %>          
-          <% if(locals.errors && errors.short_descr){ %>
-            <p class="tableAdmin_Error"><%= errors.short_descr.msg  %>  </p>
-          <% } %>
-
-
-       
+        
         <label class="combo-form_titles_create" for="short_desc">Short Description</label>
         <textarea   minlength="20" maxlength="100" class="textArea2__Create_shortDesc" type="text" name="short_descr" rows="4" cols="40" placeholder="Please write a description from 20 to 100 words"><%= locals.oldData ? locals.oldData.short_descr : null %></textarea>
         <div id="the-count__Create_shortDesc">
@@ -96,272 +92,188 @@
  
 
 
-          <label class="combo-form_titles_create" for="game_group">Game Group</label>
-              <select name="game_group" class="textArea__Create" >
-              <option value=""> Choose Game Group </option>
-              <%      
-              let group = ['Top Sellers', 'New Releases', 'Free'];
-              %>
-              <% for (const oneGroup of group) { %>
-                <option 
-                  value="<%= oneGroup  %>"
-                  <%= locals.oldData && (oneGroup  === oldData.game_group) ? 'selected'  : null %> 
-                > <%= oneGroup %> </option>
-              <% } %>
-            </select> 
-            <% if (locals.errors && errors.game_group) { %>  
-              <p class="tableAdmin_Error">
-                <%= errors.game_group.msg %>
-              </p>
-            <% } %> 
-
-        <label class="combo-form_titles_create" for="category">Category</label>
-            <select name="category" class="textArea__Create" >
-            <option value=""> Choose Category </option>
-            <%      
-            let categories = ['Action', 'Action-Adventure', 'Fight', 'Role-Playing', 'Simulation', 'Strategy', 'Sports', 'Puzzle', 'Idle'];  
-            %>
-            <% for (const oneCategory of categories) { %>
-              <option 
-                value="<%= oneCategory  %>"
-                <%= locals.oldData && (oneCategory  === oldData.category) ? 'selected'  : null %> 
-              > <%= oneCategory %> </option>
-            <% } %>
-          </select> 
-          <% if (locals.errors && errors.category) { %>  
-            <p class="tableAdmin_Error">
-              <%= errors.category.msg %>
-            </p>
+        <label class="combo-form_titles_create" for="game_group">Game Group</label>
+        <select name="game_group" class="textArea__Create" > 
+        <option value="<%= locals.oldData ? locals.oldData.game_group : null%>" disabled selected> Choose Game Group </option>
+          <% allGameGroups.forEach(game_group => { %>
+          <option value="<%= game_group.id_game_group %>"><%= game_group.game_group %></option>
+          <% }) %>
+        </select>
+          <% if(locals.errors && errors.game_group){ %>
+          <p class="tableAdmin_Error"><%= errors.game_group.msg  %>  </p>
           <% } %> 
 
-          <label class="combo-form_titles_create" for="creator">Creator</label>
-          <input class="textArea__Create" type="text" name="creator" placeholder="Creator" value="<%= locals.oldData ? locals.oldData.creator : null%>"/>
-          <% if(locals.errors && errors.creator){ %>
-            <p class="tableAdmin_Error"><%= errors.creator.msg  %>  </p>
-          <% } %>
 
-          <label class="combo-form_titles_create" for="original_price">Price</label>
+
+        <label class="combo-form_titles_create" for="category">Category</label>
+          <select name="category" class="textArea__Create" > 
+          <option value="<%= locals.oldData ? locals.oldData.category : null%>" disabled selected> Choose Category </option>
+            <% allCategories.forEach(category => { %>
+            <option value="<%= category.id_category %>"><%= category.category %></option>
+            <% }) %>
+          </select>
+            <% if(locals.errors && errors.category){ %>
+            <p class="tableAdmin_Error"><%= errors.category.msg  %>  </p>
+            <% } %> 
+
+
+        <label class="combo-form_titles_create" for="creator">Creator</label>
+          <select name="creator" class="textArea__Create" > 
+          <option value="<%= locals.oldData ? locals.oldData.creator : null%>" disabled selected> Choose Creator </option>
+            <% allCreators.forEach(creator => { %>
+            <option value="<%= creator.id_creators %>"><%= creator.nickname %></option>
+            <% }) %>
+        </select>
+          <% if(locals.errors && errors.creator){ %>
+          <p class="tableAdmin_Error"><%= errors.creator.msg  %>  </p>
+          <% } %> 
+
+        <label class="combo-form_titles_create" for="original_price">Price</label>
           <input class="textArea__Create" type="text" name="original_price" placeholder="Original Price" value="<%= locals.oldData ? locals.oldData.original_price : null%>"/>
           <% if(locals.errors && errors.original_price){ %>
             <p class="tableAdmin_Error"><%= errors.original_price.msg  %>  </p>
           <% } %>
 
-          <label class="combo-form_titles_create" for="price_w_discount">Price With Discount</label>
+        <label class="combo-form_titles_create" for="price_w_discount">Price With Discount</label>
           <input class="textArea__Create" type="text" name="price_w_discount" placeholder="Price With Discount" value="<%= locals.oldData ? locals.oldData.price_w_discount : null%>"/>
           <% if(locals.errors && errors.price_w_discount){ %>
             <p class="tableAdmin_Error"><%= errors.price_w_discount.msg  %>  </p>
           <% } %>
 
-          
-          <label class="combo-form_titles_create" for="discount">Discount</label>
+        <label class="combo-form_titles_create" for="discount">Discount</label>
           <input class="textArea__Create" type="text" name="discount" placeholder="Discount" value="<%= locals.oldData ? locals.oldData.discount : null%>"/>
           <% if(locals.errors && errors.discount){ %>
             <p class="tableAdmin_Error"><%= errors.discount.msg  %>  </p>
           <% } %>
 
-          <label class="combo-form_titles_create" for="video_1">Youtube Video</label>
+        <label class="combo-form_titles_create" for="video_1">Youtube Video</label>
           <input class="textArea__Create" type="text" name="video_1" placeholder="Youtube Video ID" value="<%= locals.oldData ? locals.oldData.video_1 : null%>"/> 
           <% if(locals.errors && errors.video_1){ %>
             <p class="tableAdmin_Error"><%= errors.video_1.msg  %>  </p>
           <% } %>
 
-
-
-         <label class="combo-form_titles_create" for="miniatura">Thumbnail from Video</label>
-         <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= locals.oldData ? locals.oldData.miniatura : null%>"/> 
+        <label class="combo-form_titles_create" for="miniatura">Thumbnail from Video</label>
+          <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= locals.oldData ? locals.oldData.miniatura : null%>"/> 
           <% if(locals.errors && errors.miniatura){ %>
             <p class="tableAdmin_Error"><%= errors.miniatura.msg  %>  </p>
           <% } %>
           </div> 
 
-          <div class="con3__create">
-            <h3 class="title__Requirements__Create">Requirements</h3>
-            <label class="combo-form_titles_create" for="launch_date">Launch Date</label>
+    <div class="con3__create">
+    <h3 class="title__Requirements__Create">Requirements</h3>
+    
+          <label class="combo-form_titles_create" for="launch_date">Launch Date</label>
             <input class="textArea__Create" type="date" name="launch_date" placeholder="Launch Date" value="<%= locals.oldData ? locals.oldData.launch_date : null%>"/>
             <% if(locals.errors && errors.launch_date){ %>
               <p class="tableAdmin_Error"><%= errors.launch_date.msg  %>  </p>
             <% } %>
 
+          <label class="combo-form_titles_create" for="platform">Platforms</label>
+            <select name="platform" class="textArea__Create" > 
+              <option value="<%= locals.oldData ? locals.oldData.platform : null%>" disabled selected> Choose Platform </option>
+              <% allPlatforms.forEach(platform => { %>
+              <option value="<%= platform.id_platforms %>"><%= platform.platform_descr %></option>
+              <% }) %>
+            </select>
+          <% if(locals.errors && errors.platform){ %>
+          <p class="tableAdmin_Error"><%= errors.platform.msg  %>  </p>
+          <% } %> 
+
+          <label class="combo-form_titles_create" for="os_min">OS Minimum Requirement</label>
+            <select name="os_min" class="textArea__Create" > 
+              <option value="<%= locals.oldData ? locals.oldData.os_min : null%>" disabled selected> Choose an Operating System </option>
+              <% allOsmin.forEach(os_min => { %>
+              <option value="<%= os_min.id_os_min %>"><%= os_min.os_min %></option>
+              <% }) %>
+            </select>
+          <% if(locals.errors && errors.os_min){ %>
+          <p class="tableAdmin_Error"><%= errors.os_min.msg  %>  </p>
+          <% } %> 
+
+          <label class="combo-form_titles_create" for="os_rec">OS Recommended Requirement</label>
+          <select name="os_rec" class="textArea__Create" > 
+            <option value="<%= locals.oldData ? locals.oldData.os_rec : null%>" disabled selected> Choose an Operating System </option>
+            <% allOsrec.forEach(os_rec => { %>
+            <option value="<%= os_rec.id_os_rec %>"><%= os_rec.os_rec %></option>
+            <% }) %>
+          </select>
+          <% if(locals.errors && errors.os_rec){ %>
+          <p class="tableAdmin_Error"><%= errors.os_rec.msg  %>  </p>
+          <% } %> 
+
+          <label class="combo-form_titles_create" for="processor_min">Minimum Processor</label>
+          <select name="processor_min" class="textArea__Create" > 
+            <option value="<%= locals.oldData ? locals.oldData.processor_min : null%>" disabled selected> Choose a Processor </option>
+            <% allProcessormin.forEach(processor_min => { %>
+            <option value="<%= processor_min.id_processor_min %>"><%= processor_min.processor_min %></option>
+            <% }) %>
+          </select>
+          <% if(locals.errors && errors.processor_min){ %>
+            <p class="tableAdmin_Error"><%= errors.processor_min.msg  %>  </p>
+          <% } %> 
+
+          <label class="combo-form_titles_create" for="processor_rec">Processor Recommended</label>
+          <select name="processor_rec" class="textArea__Create" > 
+            <option value="<%= locals.oldData ? locals.oldData.processor_rec : null%>" disabled selected> Choose a Processor </option>
+            <% allProcessorec.forEach(processor_rec => { %>
+            <option value="<%= processor_rec.id_processor_rec %>"><%= processor_rec.processor_rec %></option>
+            <% }) %>
+          </select>
+          <% if(locals.errors && errors.processor_rec){ %>
+            <p class="tableAdmin_Error"><%= errors.processor_rec.msg  %>  </p>
+          <% } %> 
+            
+          <label class="combo-form_titles_create" for="storage_min">Recommended Minimum Storage</label>
+          <select name="storage_min" class="textArea__Create" > 
+            <option value="<%= locals.oldData ? locals.oldData.storage_min : null%>" disabled selected> Choose Minimum Recommended Storage </option>
+            <% allStoragemin.forEach(storage_min => { %>
+            <option value="<%= storage_min.id_storage_min %>"><%= storage_min.storage_min %></option>
+            <% }) %>
+          </select>
+          <% if(locals.errors && errors.storage_min){ %>
+            <p class="tableAdmin_Error"><%= errors.storage_min.msg  %>  </p>
+          <% } %> 
+
+        <label class="combo-form_titles_create" for="storage_rec">Recommended Storage</label>
+        <select name="storage_rec" class="textArea__Create" > 
+          <option value="<%= locals.oldData ? locals.oldData.storage_rec : null%>" disabled selected> Choose Recommended Storage </option>
+          <% allStoragerec.forEach(storage_rec => { %>
+          <option value="<%= storage_rec.id_storage_rec %>"><%= storage_rec.storage_rec %></option>
+          <% }) %>
+        </select>
+        <% if(locals.errors && errors.storage_rec){ %>
+          <p class="tableAdmin_Error"><%= errors.storage_rec.msg  %>  </p>
+        <% } %> 
 
 
-            <label class="combo-form_titles_create" for="platform">Platforms</label>
-              <select name="platform" class="textArea__Create" >
-              <option value=""> Choose a Platform </option>
-              <%      
-              let platforms = ['PC','Playstation Series & PC', 'XBox Series & PC', 'Nintendo & PC', 'All Platforms'];
-              %>
-              <% for (const onePlatform of platforms) { %>
-                <option 
-                  value="<%= onePlatform %>"
-                  <%= locals.oldData && (onePlatform === oldData.platform) ? 'selected'  : null %> 
-                > <%= onePlatform %> </option>
-              <% } %>
-            </select> 
-            <% if (locals.errors && errors.platform) { %>  
-              <p class="tableAdmin_Error">
-                <%= errors.platform.msg %>
-              </p>
-            <% } %> 
+        <label class="combo-form_titles_create" for="graphics_min">Graphics Minimum Requirement</label>
+        <select name="graphics_min" class="textArea__Create" > 
+        <option value="<%= locals.oldData ? locals.oldData.graphics_min : null%>" disabled selected> Choose a Graphic Card </option>
+          <% allGraphicsmin.forEach(graphics_min => { %>
+          <option value="<%= graphics_min.id_graphics_min %>"><%= graphics_min.graphics_min %></option>
+          <% }) %>
+        </select>
+          <% if(locals.errors && errors.graphics_min){ %>
+          <p class="tableAdmin_Error"><%= errors.graphics_min.msg  %>  </p>
+          <% } %> 
 
- 
-            <label class="combo-form_titles_create" for="os_min">OS Minimum Requirement</label>
-            <select name="os_min" class="textArea__Create" >
-              <option value=""> Choose an Operating System </option>
-              <%      
-              let systems = ['Windows XP', 'Windows Vista', 'Windows 7', 'Windows 10'];
-              %>
-              <% for (const oneSystem of systems) { %>
-                <option 
-                  value="<%= oneSystem %>"
-                  <%= locals.oldData && (oneSystem === oldData.os_min) ? 'selected'  : null %> 
-                > <%= oneSystem %> </option>
-              <% } %>
-            </select> 
-            <% if (locals.errors && errors.os_min) { %>  
-              <p class="tableAdmin_Error">
-                <%= errors.os_min.msg %>
-              </p>
-            <% } %> 
-
-            <label class="combo-form_titles_create" for="os_rec">OS Recommended Requirement</label>
-            <select name="os_rec" class="textArea__Create" >
-              <option value=""> Choose an Operating System </option>
-              <% for (const oneSystem of systems) { %>
-                <option 
-                  value="<%= oneSystem %>"
-                  <%= locals.oldData && (oneSystem === oldData.os_rec) ? 'selected'  : null %> 
-                > <%= oneSystem %> </option>
-              <% } %>
-            </select> 
-            <% if (locals.errors && errors.os_rec) { %>  
-              <p class="tableAdmin_Error">
-                <%= errors.os_rec.msg %>
-              </p>
-            <% } %> 
-
-              
-            <label class="combo-form_titles_create" for="processor_min">Minimum Processor</label>
-              <select name="processor_min" class="textArea__Create" >
-                <option value=""> Choose a Processor</option>
-                <%      
-                let processors = ['Intel Pentium','Intel Celeron','Intel i3','Intel i5', ' Intel i7','AMD Phenom','AMD FX', 'AMD Ryzen 3,','AMD Ryzen 5', 'AMD Ryzen 7'];
-                %>
-                <% for (const oneProcessor of processors) { %>
-                  <option 
-                    value="<%= oneProcessor %>"
-                    <%= locals.oldData && (oneProcessor === oldData.processor_min) ? 'selected' : null %> 
-                  > <%= oneProcessor %> </option>
-                <% } %>
-              </select> 
-              <% if (locals.errors && errors.processor_min) { %>  
-                <p class="tableAdmin_Error">
-                  <%= errors.processor_min.msg %>
-                </p>
-              <% } %>
-
-            <label class="combo-form_titles_create" for="processor_rec">Processor Recommended</label>
-              <select name="processor_rec" class="textArea__Create" >
-                <option value=""> Choose a Processor </option>
-                <% for (const oneProcessor of processors) { %>
-                  <option 
-                    value="<%= oneProcessor %>"
-                    <%= locals.oldData && (oneProcessor === oldData.processor_rec) ? 'selected'  : null %> 
-                  > <%= oneProcessor %> </option>
-                <% } %>
-              </select> 
-              <% if (locals.errors && errors.processor_rec) { %>  
-                <p class="tableAdmin_Error">
-                  <%= errors.processor_rec.msg %>
-                </p>
-              <% } %>
-	
-              <label class="combo-form_titles_create" for="storage_min">Recommended Minimum Storage</label>
-                <select name="storage_min" class="textArea__Create" >
-                  <option value=""> Choose Minimum Recommended Storage </option>
-                  <%      
-                  let storage = ['2 Gb','4 Gb', '8 Gb','16 Gb', '32 Gb','64 Gb'];
-                  %>
-                  <% for (const oneStorage of storage) { %>
-                    <option 
-                      value="<%= oneStorage %>"
-                      <%= locals.oldData && (oneStorage === oldData.storage_min) ? 'selected'  : null %> 
-                    > <%= oneStorage %> </option>
-                  <% } %>
-                </select> 
-                <% if (locals.errors && errors.storage_min) { %>  
-                  <p class="tableAdmin_Error">
-                    <%= errors.storage_min.msg %>
-                  </p>
-                <% } %>
-
-
-            <label class="combo-form_titles_create" for="storage_rec">Recommended Storage</label>
-              <select name="storage_rec" class="textArea__Create" >
-                <option value=""> Choose Recommended Storage </option>
-                <% for (const oneStorage of storage) { %>
-                  <option 
-                    value="<%= oneStorage %>"
-                    <%= locals.oldData && (oneStorage === oldData.storage_rec) ? 'selected'  : null %> 
-                  > <%= oneStorage %> </option>
-                <% } %>
-              </select> 
-              <% if (locals.errors && errors.storage_rec) { %>  
-                <p class="tableAdmin_Error">
-                  <%= errors.storage_rec.msg %>
-                </p>
-              <% } %>
-
-
-
-
-
-
-
-            <label class="combo-form_titles_create" for="graphics_min">Graphics Minimum Requirement</label>
-            <select name="graphics_min" class="textArea__Create" >
-              <option value=""> Choose a Graphic Card</option>
-              <%      
-              let graphics = ['Nvidia GTX 8XX', 'Nvidia GTX 9XX', 'Nvidia GTX 10XX',
-                              'Nvidia GTX 16XX','Nvidia GTX 20XX','Nvidia GTX 30XX',
-                              'Radeon RX 2XX', 'Radeon RX 3XX','Radeon RX 5XX',
-                              'Radeon RX 5XXX','Radeon RX 6XXX',];
-              %>
-              <% for (const oneGraphic of graphics) { %>
-                <option 
-                  value="<%= oneGraphic %>"
-                  <%= locals.oldData && (oneGraphic === oldData.graphics_min) ? 'selected' : null %> 
-                > <%= oneGraphic %> </option>
-              <% } %>
-            </select> 
-            <% if (locals.errors && errors.graphics_min) { %>  
-              <p class="tableAdmin_Error">
-                <%= errors.graphics_min.msg %>
-              </p>
-            <% } %>
-
-
-            <label class="combo-form_titles_create" for="graphics_rec">Recommended Graphics</label>
-            <select name="graphics_rec" class="textArea__Create" >
-              <option value=""> Choose a Graphic Card</option>   
-              <% for (const oneGraphic of graphics) { %>
-                <option 
-                  value="<%= oneGraphic %>"
-                  <%= locals.oldData && (oneGraphic === oldData.graphics_rec) ? 'selected' : null %> 
-                > <%= oneGraphic %> </option>
-              <% } %>
-            </select> 
-            <% if (locals.errors && errors.graphics_rec) { %>  
-              <p class="tableAdmin_Error">
-                <%= errors.graphics_rec.msg %>
-              </p>
-            <% } %>
-
-            <label class="combo-form_titles_create" for="age">Age Restriction</label>
-            <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
-            <% if(locals.errors && errors.age){ %>
+        <label class="combo-form_titles_create" for="graphics_rec">Recommended Graphics</label>
+        <select name="graphics_rec" class="textArea__Create" > 
+          <option value="<%= locals.oldData ? locals.oldData.graphics_rec : null%>" disabled selected> Choose a Graphic Card </option>
+          <% allGraphicsrec.forEach(graphics_rec => { %>
+          <option value="<%= graphics_rec.id_graphics_rec %>"><%= graphics_rec.graphics_rec %></option>
+          <% }) %>
+        </select>
+        <% if(locals.errors && errors.graphics_rec){ %>
+        <p class="tableAdmin_Error"><%= errors.graphics_rec.msg  %>  </p>
+        <% } %> 
+        
+        <label class="combo-form_titles_create" for="age">Age Restriction</label>
+        <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
+          <% if(locals.errors && errors.age){ %>
               <p class="tableAdmin_Error"><%= errors.age.msg  %>  </p>
-            <% } %>
-          </div>
+        <% } %>
+        </div>
         
         </div>
         <br/>

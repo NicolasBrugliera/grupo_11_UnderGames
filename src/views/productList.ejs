@@ -17,9 +17,9 @@
   <h2 class="pList_Title">Game List </h2>
   <div class="myBtnContainer_plist">
     <button class="btn_plist" onclick="filterSelection('all')"> Show all</button>
-    <button class="btn_plist" onclick="filterSelection('new_releases')"> New Relases</button>
-    <button class="btn_plist" onclick="filterSelection('top_sellers')"> Top Sellers</button>
-    <button class="btn_plist" onclick="filterSelection('free')"> Free</button>
+    <button class="btn_plist" onclick="filterSelection(1)"> New Relases</button>
+    <button class="btn_plist" onclick="filterSelection(2)"> Top Sellers</button>
+    <button class="btn_plist" onclick="filterSelection(3)"> Free</button>
   </div>
 
 
@@ -28,11 +28,11 @@
 
     <% for(let i= 0; i < products.length; i++){ %>
       
-            <div class="column_plist <%=products[i].game_group%>">
+            <div class="column_plist <%=products[i].id_game_group%>">
             
             <div class="content_plist">  
               
-                  <a href="/productDetail/<%= products[i].id %>">
+                  <a href="/productDetail/<%= products[i].id_game %>">
                   <div class="cont_img_productList">
                     <img src="<%= products[i].img_1%> " alt="" style="width:100%">
                   </div>

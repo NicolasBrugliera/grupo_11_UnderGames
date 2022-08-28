@@ -22,7 +22,7 @@
         <div class="carousel-cell-top"> 
             <div class="container_image_ppal_home">
                 <div id="image_game_ppal_home">
-                        <a href="/productDetail/<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="70%"></a>
+                        <a href="/productDetail/<%= products[i].id_game %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="70%"></a>
                 </div>     
                 <div id="title_box_home"><%= products[i].title %></div>
                 <div id="text_box_home"><%= products[i].short_descr %></div>
@@ -36,7 +36,7 @@
         <% for(let i= 0; i < 5; i++){ %>  
     <div class="right_content">    
             <div class="image-right">
-            <a href="/productDetail/<%= products[i].id %>"><img src="<%= products[i].img_1%>" width="100%" height="70%"/></a>
+            <a href="/productDetail/<%= products[i].id_game %>"><img src="<%= products[i].img_1%>" width="100%" height="70%"/></a>
         </div>
         <div class="text_gallery_right0">
                 <div id="text_gallery_right1"><%= products[i].title %></div> 
@@ -54,12 +54,12 @@
     
     <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
         <% for(let i= 0; i < products.length; i++){ %>  
-           <% if (products[i].game_group == "new_releases") { %>
+           <% if (products[i].id_game_group == 1) { %>
     <div class="carousel-cell">    
         <div class="new_releases_home">
           <div class="image_box_home">
             
-            <a href="/productDetail/<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
+            <a href="/productDetail/<%= products[i].id_game %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
             
             <div id="category_home"><%=products[i].category%></div>
             </div>
@@ -86,12 +86,12 @@
     
     <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
         <% for(let i= 0; i < products.length; i++){ %>  
-           <% if (products[i].game_group == "top_sellers") { %>
+           <% if (products[i].id_game_group == 2) { %>
     <div class="carousel-cell">    
         <div class="new_releases_home">
           <div class="image_box_home">
             
-            <a href="/productDetail/<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
+            <a href="/productDetail/<%= products[i].id_game %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
             
             <div id="category_home"><%=products[i].category%></div>
             </div>
@@ -122,12 +122,12 @@
     
     <div class="carousel" data-flickity='{"freeScroll": true, "wrapAround":true, "pageDots": false }'>
         <% for(let i= 0; i < products.length; i++){ %>  
-           <% if (products[i].game_group == "free") { %>
+           <% if (products[i].id_game_group == 3) { %>
     <div class="carousel-cell">    
         <div class="free_home">
           <div class="image_box_home">
             
-            <a href="/productDetail/<%= products[i].id %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
+            <a href="/productDetail/<%= products[i].id_game %>"><img src="<%= products[i].img_1%> " alt=""  width="100%" height="100%"></a>
             
             <div id="category_home"><%=products[i].category%></div>
             </div>
@@ -158,8 +158,8 @@
             
     <div class="carousel-cell-creators">    
         <div class="card_creator">
-          <a href="/under_constr"><img src="<%= creators[i].creator_pict%>" alt="" class="photo_creator"></a>
-            <h4><%= creators[i].creator%></h4>
+          <a href="/under_constr"><img src="<%= creators[i].creator_avatar%>" alt="" class="photo_creator"></a>
+            <h4><%= creators[i].nickname%></h4>
             <div style="margin: 10px 0;">
             <a href="#"><i class="fa-brands fa-dribbble"></i></a> 
             <a href="#"><i class="fa-brands fa-twitter"></i></a>  

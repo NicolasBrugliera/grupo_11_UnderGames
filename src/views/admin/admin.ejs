@@ -43,22 +43,22 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <% data_games3.forEach(data_games3=> { %>
+                      <% games.forEach(games=> { %>
                         <tr>
                           <td class="styleTable__admin">
-                            <%= data_games3.id %>
+                            <%= games.id_game %>
                           </td>
                           <td class="styleTable__admin">
-                            <%= data_games3.title %>
+                            <%= games.title %>
                           </td>
                       
-                          <td class="styleTable__admin"><a href="/productDetail/<%= data_games3.id%> ">
+                          <td class="styleTable__admin"><a href="/productDetail/<%= games.id_game%> ">
                             <ion-icon name="eye-outline"></ion-icon>
                           </a></td>
-                        <td class="styleTable__admin"><a href="/admin/edit/<%= data_games3.id%> ">
+                        <td class="styleTable__admin"><a href="/admin/edit/<%= games.id_game%> ">
                             <ion-icon name="pencil-outline"></ion-icon>
                           </a></td>
-                        <td class="styleTable__admin"><a href="/admin/delete/<%= data_games3.id%>">
+                        <td class="styleTable__admin"><a href="/admin/delete/<%= games.id_game%>">
                             <ion-icon name="trash-outline"></ion-icon>
                             
                               

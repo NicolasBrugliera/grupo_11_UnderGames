@@ -24,7 +24,7 @@
     <div class="contCreateImg__create">
       <img class="img_Admin_Edit" src="<%= gameToEdit.img_1 %>" alt="">
     </div>
-    <form action="/admin/edit/<%= gameToEdit.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form action="/admin/edit/<%= gameToEdit.id_game%>?_method=PUT" method="POST" enctype="multipart/form-data">
 
       <div class="contTxt_Admin_Edit">
         <div class="con1_Admin_Edit">
@@ -113,7 +113,7 @@
 
 
 
-          <label class="combo-form_titles_edit" for="game_group">Game Group</label>
+<!--           <label class="combo-form_titles_edit" for="game_group">Game Group</label>
             <select name="game_group" class="textArea_Admin_Edit" >
             <option value=""> Choose Game Group </option>
             <%      
@@ -129,34 +129,61 @@
               <p class="table_Admin_Edit_Error">
                 <%= errors.game_group.msg%>
               </p>
-            <% } %>
+            <% } %> -->
 
-         <label class="combo-form_titles_edit" for="category">Category</label>
+
+            <label class="combo-form_titles_edit" for="game_group">Game Group</label>
+            <select name="game_group" class="textArea_Admin_Edit" >
+            <option value=""> Choose Game Group </option>
+            <% allGameGroups.forEach(function (game_group) { %>
+<!-- <option value="<%= game_group.game_group %>" <%= locals.oldData && (game_group  === oldData.game_group) ? 'selected'  : null %> > <%= game_group.game_group %> </option> -->
+<option value="<%= game_group.id_game_group %>" <% if (gameToEdit.id_game_group == game_group.id_game_group) { %>
+                <%= 'selected' %><% }; %>>
+                <%= game_group.game_group %></option>
+            <% }) %>
+          </select> 
+          <% if (locals.errors && errors.game_group) { %>  
+            <p class="tableAdmin_Error"> <%= errors.game_group.msg %> </p>
+          <% } %> 
+           
+
+          <label class="combo-form_titles_edit" for="category">Game Category</label>
             <select name="category" class="textArea_Admin_Edit" >
             <option value=""> Choose Category </option>
-            <%      
-            let categories = ['Action', 'Action-Adventure', 'Fight', 'Role-Playing', 'Simulation', 'Strategy', 'Sports', 'Puzzle', 'Idle'];  
-            %>
-            <% for (const oneCategory of categories) { %>
-              <option value="<%= oneCategory  %>"
-                <%= oneCategory  === gameToEdit.category ? 'selected'  : gameToEdit.category %> 
-              > <%= oneCategory %> </option>
-            <% } %>
-            </select> 
-            <% if(locals.errors && errors.category){ %>
-              <p class="table_Admin_Edit_Error">
-                <%= errors.category.msg%>
-              </p>
-            <% } %>
+            <% allCategories.forEach(function (category) { %>
+            <option value="<%= category.id_category %>" 
+              <% if (gameToEdit.id_category == category.id_category) { %><%= 'selected' %><% }; %>>
+              <%= category.category %></option>
+            <% }) %>
+          </select> 
+          <% if (locals.errors && errors.category) { %>  
+            <p class="tableAdmin_Error"> <%= errors.category.msg %> </p>
+          <% } %> 
 
-        <label class="combo-form_titles_edit" for="creator">Creator</label>
+       <!--  <label class="combo-form_titles_edit" for="creator">Creator</label>
           <input class="textArea_Admin_Edit" type="text" name="creator" placeholder="Creator"
             value="<%= gameToEdit.creator%>" />
           <% if(locals.errors && errors.creator){ %>
             <p class="table_Admin_Edit_Error">
               <%= errors.creator.msg%>
             </p>
-          <% } %>
+          <% } %>  -->
+
+          <label class="combo-form_titles_edit" for="category">Creator</label>
+          <select name="category" class="textArea_Admin_Edit" >
+          <option value=""> Creator </option>
+          <% allCreators.forEach(function (creator) { %>
+          <option value="<%= creator.id_creators %>" 
+            <% if (gameToEdit.id_creators == creator.id_creators) { %><%= 'selected' %><% }; %>>
+            <%= creator.nickname %></option>
+          <% }) %>
+        </select> 
+        <% if (locals.errors && errors.creator) { %>  
+          <p class="tableAdmin_Error"> <%= errors.creator.msg %> </p>
+        <% } %> 
+
+
+
 
       <label class="combo-form_titles_edit" for="original_price">Price</label>
           <input class="textArea_Admin_Edit" type="text" name="original_price"
@@ -217,7 +244,7 @@
 
 
 
-        <label class="combo-form_titles_edit" for="platform">Category</label>
+       <!--  <label class="combo-form_titles_edit" for="platform">Category</label>
             <select name="platform" class="textArea_Admin_Edit" >
             <option value=""> Choose Platform </option>
             <%      
@@ -233,145 +260,133 @@
               <p class="table_Admin_Edit_Error">
                 <%= errors.platform.msg%>
               </p>
-            <% } %>
+            <% } %> -->
 
-      <label class="combo-form_titles_edit" for="os_min">OS Minimun Requirement</label>
+            <label class="combo-form_titles_edit" for="platform">Platform</label>
+            <select name="platform" class="textArea_Admin_Edit" >
+            <option value=""> Choose Platform </option>
+            <% allPlatforms.forEach(function (platform) { %>
+            <option value="<%= platform.id_platforms %>" 
+              <% if (gameToEdit.id_platforms === platform.id_platforms) { %><%= 'selected' %><% }; %>>
+              <%= platform.platform_descr %></option>
+            <% }) %>
+          </select> 
+          <% if (locals.errors && errors.platform) { %>  
+            <p class="tableAdmin_Error"> <%= errors.platform.msg %> </p>
+          <% } %> 
+
+          <label class="combo-form_titles_edit" for="os_min">OS Minimun Requirement</label>
           <select name="os_min" class="textArea_Admin_Edit" >
           <option value=""> Choose OS Minimum Requirement </option>
-          <%      
-          let systems = ['Windows XP', 'Windows Vista', 'Windows 7', 'Windows 10'];
-          %>
-          <% for (const oneSystem of systems) { %>
-            <option value="<%= oneSystem  %>"
-              <%= oneSystem  === gameToEdit.os_min ? 'selected'  : gameToEdit.os_min %> 
-            > <%= oneSystem %> </option>
-          <% } %>
-          </select> 
-          <% if(locals.errors && errors.os_min){ %>
-            <p class="table_Admin_Edit_Error">
-              <%= errors.os_min.msg%>
-            </p>
-          <% } %>
-
-      <label class="combo-form_titles_edit" for="os_rec">OS Recommended</label>
-          <select name="os_rec" class="textArea_Admin_Edit" >
-          <option value=""> Choose Recommended OS</option>
-          <% for (const oneSystem of systems) { %>
-            <option value="<%= oneSystem  %>"
-              <%= oneSystem  === gameToEdit.os_rec ? 'selected'  : gameToEdit.os_rec %> 
-            > <%= oneSystem %> </option>
-          <% } %>
-          </select> 
-          <% if(locals.errors && errors.os_rec){ %>
-            <p class="table_Admin_Edit_Error">
-              <%= errors.os_rec.msg%>
-            </p>
-          <% } %>
-
-      <label class="combo-form_titles_edit" for="processor_min">Minimum Processor</label>
-          <select name="processor_min" class="textArea_Admin_Edit" >
-          <option value=""> Choose Minimum Processor Requirement </option>
-          <%      
-          let processors = ['Intel Pentium','Intel Celeron','Intel i3','Intel i5', ' Intel i7',
-                            'AMD Phenom','AMD FX', 'AMD Ryzen 3,','AMD Ryzen 5', 'AMD Ryzen 7'];
-          %>
-          <% for (const oneProcessor of processors) { %>
-            <option value="<%= oneProcessor  %>"
-              <%= oneProcessor  === gameToEdit.processor_min ? 'selected'  : gameToEdit.processor_min %> 
-            > <%= oneProcessor %> </option>
-          <% } %>
-          </select> 
-          <% if(locals.errors && errors.processor_min){ %>
-            <p class="table_Admin_Edit_Error">
-              <%= errors.processor_min.msg%>
-            </p>
-          <% } %>
-
-      <label class="combo-form_titles_edit" for="processor_rec">Recommended Processor</label>
-        <select name="processor_rec" class="textArea_Admin_Edit" >
-        <option value=""> Choose Recommended Processor</option>
-        <% for (const oneProcessor of processors) { %>
-          <option value="<%= oneProcessor  %>"
-            <%= oneProcessor  === gameToEdit.processor_rec ? 'selected'  : gameToEdit.processor_rec %> 
-          > <%= oneProcessor %> </option>
-        <% } %>
+          <% allOsmin.forEach(function (os_min) { %>
+          <option value="<%= os_min.id_os_min %>" 
+            <% if (gameToEdit.id_os_min === os_min.id_os_min) { %><%= 'selected' %><% }; %>>
+            <%= os_min.os_min %></option>
+          <% }) %>
         </select> 
-        <% if(locals.errors && errors.processor_rec){ %>
-          <p class="table_Admin_Edit_Error">
-            <%= errors.processor_rec.msg%>
-          </p>
-        <% } %>
-
-        <label class="combo-form_titles_edit" for="storage_min">Recommended Minimum Storage</label>
-          <select name="storage_min" class="textArea_Admin_Edit" >
-          <option value=""> Choose Recommended Minimum Storage </option>
-          <%      
-          let storage = ['2 Gb','4 Gb', '8 Gb','16 Gb', '32 Gb','64 Gb'];
-          %>
-          <% for (const oneStorage of storage) { %>
-            <option value="<%= oneStorage  %>"
-              <%= oneStorage  === gameToEdit.storage_min ? 'selected'  : gameToEdit.storage_min %> 
-            > <%= oneStorage %> </option>
-          <% } %>
-          </select> 
-          <% if(locals.errors && errors.storage_min){ %>
-            <p class="table_Admin_Edit_Error">
-              <%= errors.storage_min.msg%>
-            </p>
-          <% } %>
+        <% if (locals.errors && errors.os_min) { %>  
+          <p class="tableAdmin_Error"> <%= errors.os_min.msg %> </p>
+        <% } %> 
 
 
-        <label class="combo-form_titles_edit" for="storage_rec">Recommended Storage</label>
-          <select name="storage_rec" class="textArea_Admin_Edit" >
-          <option value=""> Choose Recommended Storage </option>
-          <% for (const oneStorage of storage) { %>
-            <option value="<%= oneStorage  %>"
-              <%= oneStorage  === gameToEdit.storage_rec ? 'selected'  : gameToEdit.storage_rec %> 
-            > <%= oneStorage %> </option>
-          <% } %>
-          </select> 
-          <% if(locals.errors && errors.storage_rec){ %>
-            <p class="table_Admin_Edit_Error">
-              <%= errors.storage_rec.msg%>
-            </p>
-          <% } %>
 
-        <label class="combo-form_titles_edit" for="graphics_min">Graphics Minimum Requirement</label>
-          <select name="graphics_min" class="textArea_Admin_Edit" >
-          <option value=""> Choose Graphics Minimum Requirement </option>
-          <%      
-          let graphics = ['Nvidia GTX 8XX', 'Nvidia GTX 9XX', 'Nvidia GTX 10XX',
-                        'Nvidia GTX 16XX','Nvidia GTX 20XX','Nvidia GTX 30XX',
-                        'Radeon RX 2XX', 'Radeon RX 3XX','Radeon RX 5XX',
-                        'Radeon RX 5XXX','Radeon RX 6XXX',];
-          %>
-          <% for (const oneGraphic of graphics) { %>
-            <option value="<%= oneGraphic  %>"
-              <%= oneGraphic  === gameToEdit.graphics_min ? 'selected'  : gameToEdit.graphics_min %> 
-            > <%= oneGraphic %> </option>
-          <% } %>
-          </select> 
-          <% if(locals.errors && errors.graphics_min){ %>
-            <p class="table_Admin_Edit_Error">
-              <%= errors.graphics_min.msg%>
-            </p>
-          <% } %>
+        <label class="combo-form_titles_edit" for="os_rec">OS Recommended</label>
+          <select name="os_rec" class="textArea_Admin_Edit" >
+          <option value=""> Choose Recommended OS </option>
+          <% allOsrec.forEach(function (os_rec) { %>
+          <option value="<%= os_rec.id_os_rec %>" 
+            <% if (gameToEdit.id_os_rec == os_rec.id_os_rec) { %><%= 'selected' %><% }; %>>
+            <%= os_rec.os_rec %></option>
+          <% }) %>
+        </select> 
+        <% if (locals.errors && errors.os_rec) { %>  
+          <p class="tableAdmin_Error"> <%= errors.os_rec.msg %> </p>
+        <% } %> 
+
+        <label class="combo-form_titles_edit" for="processor_min">Minimum Processor</label>
+        <select name="processor_min" class="textArea_Admin_Edit" >
+        <option value=""> Choose Minimum Processor Requirement </option>
+        <% allProcessormin.forEach(function (processor_min) { %>
+        <option value="<%= processor_min.id_processor_min %>" 
+          <% if (gameToEdit.id_processor_min == processor_min.id_processor_min) { %><%= 'selected' %><% }; %>>
+          <%= processor_min.processor_min %></option>
+        <% }) %>
+      </select> 
+      <% if (locals.errors && errors.processor_min) { %>  
+        <p class="tableAdmin_Error"> <%= errors.processor_min.msg %> </p>
+      <% } %> 
+
+    
+
+      <label class="combo-form_titles_edit" for="processor_rec">Processor Recommended</label>
+        <select name="processor_rec" class="textArea_Admin_Edit" >
+        <option value=""> Choose Recommended Processor </option>
+        <% allProcessorec.forEach(function (processor_rec) { %>
+        <option value="<%= processor_rec.id_processor_rec %>" 
+          <% if (gameToEdit.id_processor_rec == processor_rec.id_processor_rec) { %><%= 'selected' %><% }; %>>
+          <%= processor_rec.processor_rec %></option>
+        <% }) %>
+      </select> 
+      <% if (locals.errors && errors.processor_rec) { %>  
+        <p class="tableAdmin_Error"> <%= errors.processor_rec.msg %> </p>
+      <% } %> 
+ 
+<label class="combo-form_titles_edit" for="storage_min">Recommended Minimum Storage</label>
+<select name="storage_min" class="textArea_Admin_Edit" >
+<option value=""> Choose Minimum Storage Requirement </option>
+<% allStoragemin.forEach(function (storage_min) { %>
+<option value="<%= storage_min.id_storage_min %>" 
+  <% if (gameToEdit.id_storage_min == storage_min.id_storage_min) { %><%= 'selected' %><% }; %>>
+  <%= storage_min.storage_min %></option>
+<% }) %>
+</select> 
+<% if (locals.errors && errors.storage_min) { %>  
+<p class="tableAdmin_Error"> <%= errors.storage_min.msg %> </p>
+<% } %> 
 
 
-          <label class="combo-form_titles_edit" for="graphics_rec">Recommended Graphics</label>
-            <select name="graphics_rec" class="textArea_Admin_Edit" >
-            <option value=""> Choose Recommended Graphics </option>
-            <% for (const oneGraphic of graphics) { %>
-              <option value="<%= oneGraphic  %>"
-                <%= oneGraphic  === gameToEdit.graphics_rec ? 'selected'  : gameToEdit.graphics_rec %> 
-              > <%= oneGraphic %> </option>
-            <% } %>
-            </select> 
-            <% if(locals.errors && errors.graphics_rec){ %>
-              <p class="table_Admin_Edit_Error">
-                <%= errors.graphics_rec.msg%>
-              </p>
-            <% } %>
+
+<label class="combo-form_titles_edit" for="storage_rec">Recommended Storage</label>
+<select name="storage_rec" class="textArea_Admin_Edit" >
+<option value=""> Choose Recommended Storage </option>
+<% allStoragerec.forEach(function (storage_rec) { %>
+<option value="<%= storage_rec.id_storage_rec %>" 
+  <% if (gameToEdit.id_storage_rec == storage_rec.id_storage_rec) { %><%= 'selected' %><% }; %>>
+  <%= storage_rec.storage_rec %></option>
+<% }) %>
+</select> 
+<% if (locals.errors && errors.storage_rec) { %>  
+<p class="tableAdmin_Error"> <%= errors.storage_rec.msg %> </p>
+<% } %> 
+
+        
+<label class="combo-form_titles_edit" for="graphics_min">Graphics Minimum Requirement</label>
+<select name="graphics_min" class="textArea_Admin_Edit" >
+<option value=""> Choose Graphics Minimum Requirement </option>
+<% allGraphicsmin.forEach(function (graphics_min) { %>
+<option value="<%= graphics_min.id_graphics_min %>" 
+  <% if (gameToEdit.id_graphics_min == graphics_min.id_graphics_min) { %><%= 'selected' %><% }; %>>
+  <%= graphics_min.graphics_min %></option>
+<% }) %>
+</select> 
+<% if (locals.errors && errors.graphics_min) { %>  
+<p class="tableAdmin_Error"> <%= errors.graphics_min.msg %> </p>
+<% } %> 
+
+
+
+<label class="combo-form_titles_edit" for="graphics_rec">Recommended Graphics</label>
+<select name="graphics_rec" class="textArea_Admin_Edit" >
+<option value=""> Choose Recommended Graphics </option>
+<% allGraphicsrec.forEach(function (graphics_rec) { %>
+<option value="<%= graphics_rec.id_graphics_rec %>" 
+  <% if (gameToEdit.id_graphics_rec == graphics_rec.id_graphics_rec) { %><%= 'selected' %><% }; %>>
+  <%= graphics_rec.graphics_rec %></option>
+<% }) %>
+</select> 
+<% if (locals.errors && errors.graphics_rec) { %>  
+<p class="tableAdmin_Error"> <%= errors.graphics_rec.msg %> </p>
+<% } %> 
 
         <label class="combo-form_titles_edit" for="Age Restriction">Age Restriction</label>
           <input class="textArea_Admin_Edit" type="text" name="age"
@@ -394,6 +409,9 @@
   <footer>
     <%- include('../partials/footer.ejs') %>
   </footer>
+
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 

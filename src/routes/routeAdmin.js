@@ -169,6 +169,7 @@ route.get('/', controllerAdmin.adminList);
 route.get('/create', controllerAdmin.create)  
 route.post('/create', multipleUpload, validateForm, controllerAdmin.save)
 
+
 route.get('/edit/:id', controllerAdmin.edit)
 route.put('/edit/:id', multipleUpload, validateForm, controllerAdmin.update)
 

@@ -4,7 +4,7 @@
   "description": "<p align=\"center\">\r <img src=\"https://user-images.githubusercontent.com/35201982/169591092-dc8b8bf9-d802-49d0-83cf-054af7c041d0.png\" alt=\"\">\r </p>",
   "main": "app.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node src/app.js"
   },
   "keywords": [],
   "author": "",
@@ -12,13 +12,17 @@
   "dependencies": {
     "bcryptjs": "^2.4.3",
     "cookie-parser": "^1.4.6",
+    "dotenv": "^16.0.1",
     "ejs": "^3.1.8",
     "express": "^4.18.1",
     "express-session": "^1.17.3",
     "express-validator": "^6.14.2",
     "method-override": "^3.0.0",
     "multer": "^1.4.5-lts.1",
-    "nodemon": "^2.0.19"
+    "mysql2": "^2.3.3",
+    "nodemon": "^2.0.19",
+    "sequelize": "^6.21.4",
+    "sweetalert2": "^11.4.28"
   },
   "repository": {
     "type": "git",
