@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <%- include('../partials/head.ejs')  %> 
+    <link rel="stylesheet" href="/css/style_create.css">
+    <link rel="stylesheet" href="/css/search_bar.css">
+
+  </head>
+ 
+<body class="bodyCreate">
+    <header>
+        <%- include('../partials/header.ejs')  %> 
+        <%- include('../partials/search_bar')%> 
+      </header>
+    
+  <div class="formDelete">
+    <h3 class="title__create">Are you sure you want to delete this user?:</h3> 
+    <h1 class="title__create"> <%= userToDelete.name%> </h1>
+
+    <img class="imgDelete" src="/images/avatars/<%= userToDelete.avatar %>"  alt="" >
+    
+    <form action="/users/delete/<%= userToDelete.id_users %>?_method=DELETE" method="POST" enctype="multipart/form-data">
+        <div>
+          <button class="btn__delete" type="submit">Delete</button>
+          <button class="btn__cxl" type="button" onclick="history.back()">Cancel</button> 
+        </div>
+    </form>
+  </div>
+    
+  <footer>
+    <%- include('../partials/footer.ejs')  %> 
+  </footer>
+</body>
+
+
+
+</html>

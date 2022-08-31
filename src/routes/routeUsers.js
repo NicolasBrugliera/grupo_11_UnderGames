@@ -28,4 +28,12 @@ router.get('/profile/', authMiddleware, controllerUser.profile);
 // Logout
 router.get('/logout/', controllerUser.logout);
 
+// Edit de Usuario 
+router.get('/edit/:id', controllerUser.edit);
+router.put('/edit/:id', controllerUser.update);
+
+// Delete de Usuario 
+router.get('/delete/:id', controllerUser.viewDestroy);
+router.delete('/delete/:id', controllerUser.destroy);
+
 module.exports = router;

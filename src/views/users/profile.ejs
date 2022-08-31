@@ -16,11 +16,18 @@
 	<div class="container" style="margin-top: 40px;">
 		<div class="row">
 			<div class="col-md-3">
-				<h2>Hi <%= user.name %> </h2>
+				<h2>Hi <%= user.name %> </h2> 
+
+				<li><a href="/users/edit/<%= user.id_users%> " class="fa-solid fa-pencil fa-xl" alt="Edit"></a></li>
+				<li><a href="/users/delete/<%= user.id_users%>" class="fa-solid fa-trash-can  fa-xl" alt="Delete"></a></li>
+
 				<img src="/images/avatars/<%= user.avatar %> " >
 				<br>
 				<br>
 				<div class="alert alert-success"><%= user.email %> </div>
+
+				
+				
 			</div>
 		</div>
 	</div>
