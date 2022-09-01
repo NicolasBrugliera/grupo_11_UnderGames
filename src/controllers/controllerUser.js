@@ -58,7 +58,7 @@ const controller = {
 			)
 			/* ver el tema de repeted_password, si es necesario, quizás no se deba guardar, con la validación  */
 		.then(()=> {
-			return res.redirect(path.resolve(__dirname, '../views/users/login'))})
+			return res.render(path.resolve(__dirname, '../views/users/login'))})
 		.catch(error => res.send(error))
 	},
 
