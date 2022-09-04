@@ -4,6 +4,8 @@ const { validationResult } = require('express-validator')
 const db = require('../database/models');
 
 
+
+
 const controllerAdmin = {
 
     adminList: (req, res) => {
@@ -19,10 +21,6 @@ const controllerAdmin = {
                 res.render(path.join(__dirname, '../views/admin/admin'),{games:games})
             })
         
-        
-        
-        //let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
-        //res.render(path.join(__dirname, '../views/admin/admin'), {data_games3})
 
     }, 
     create:(req, res) => {
@@ -52,10 +50,6 @@ const controllerAdmin = {
                 allProcessorec, allStoragemin, allStoragerec, allGraphicsmin, allGraphicsrec}
             )})
         .catch(error => res.send(error))
-        
-
-        //let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
-        //res.render(path.join(__dirname, '../views/admin/create'),  {data_games3} )
 
     },
     save: (req,res) =>{
@@ -65,6 +59,13 @@ const controllerAdmin = {
                     errors: resultValidations.mapped(),
                     oldData: req.body
                     })}; 
+
+       //CONVIERTE CUALQUIER URL DE YOUTUBE Y EXTRAE EL VIDEO ID (CODIGO DE VIDEO) y los guarda en sendos video_1 y miniatura
+        url = req.body.video_1
+        url= url.split(/(shorts\/|vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+        id = (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
+        video_1 = 'https://www.youtube.com/embed/'+id 
+        miniatura = 'https://img.youtube.com/vi/'+id+'/mqdefault.jpg'
 
         db.Game
             .create(
@@ -84,8 +85,8 @@ const controllerAdmin = {
                 img_3: req.files.img_3[0].filename,
                 img_4: req.files.img_4[0].filename,
                 img_5: req.files.img_5[0].filename, 
-                video_1: req.body.video_1,
-                miniatura: req.body.miniatura,
+                video_1: 'https://www.youtube.com/embed/'+id, 
+                miniatura : 'https://img.youtube.com/vi/'+id+'/mqdefault.jpg',
                 launch_date:req.body.launch_date,
                 id_platforms: req.body.platform,
                 id_os_min: req.body.os_min,            
@@ -97,15 +98,15 @@ const controllerAdmin = {
                 id_graphics_min: req.body.graphics_min,
                 id_graphics_rec: req.body.graphics_rec,
                 age: req.body.age
+                
                 }
                 )
                 .then(()=> {
-                    
-                    return res.redirect('/admin')})            
+                 return res.redirect('/admin')})            
                 .catch(error => res.send(error))
 
-            
     }, 
+    
 
     edit: (req, res)=>{
         let id_game = req.params.id;
@@ -146,44 +147,16 @@ const controllerAdmin = {
             
         .catch(error => res.send(error))
     
-        /* let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
-        const gameId = req.params.id
-        gameToEdit = data_games3.find( element => element.id == gameId)
-        res.render(path.join(__dirname, '../views/admin/edit'), {gameToEdit}) */
     },
 
     update: (req,res)=>{
 
-/*       
-    const resultValidations = validationResult(req)
-      const gameId = req.params.id
-        if(resultValidations.errors.length > 0){
-            return  res.render(path.join(__dirname, '../views/admin/edit/' + {gameToEdit}), {
-            errors: resultValidations.mapped(),
-            oldData: req.body
-            })
-            
-        }  */
-
-/*  const resultValidations = validationResult(req)
-        const gameId = req.params.id
-        if(resultValidations.errors.length > 0){
-            return  res.render(path.join(__dirname, '../views/admin/edit/' + gameId), {
-            errors: resultValidations.mapped(),
-            oldData: req.body
-            })
-            
-        }  */
-
-/*   const resultValidations = validationResult(req)
-        const gameId = req.params.id
-        if(resultValidations.errors.length > 0){
-            return  res.render(path.join(__dirname, '../views/admin/edit/'),{gameToEdit}, {
-            errors: resultValidations.mapped(),
-            oldData: req.body
-            })
-            
-        }  */
+        //CONVIERTE CUALQUIER URL DE YOUTUBE Y EXTRAE EL VIDEO ID (CODIGO DE VIDEO) y los guarda en sendos video_1 y miniatura
+        url = req.body.video_1
+        url= url.split(/(shorts\/|vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+        id = (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
+        video_1 = 'https://www.youtube.com/embed/'+id 
+        miniatura = 'https://img.youtube.com/vi/'+id+'/mqdefault.jpg'
  
 
         let id_game = req.params.id;
@@ -205,8 +178,8 @@ const controllerAdmin = {
                 img_3: req.body.img_3 = req.files.img_3 ? req.files.img_3[0].filename : req.body.oldImage3,
                 img_4: req.body.img_4 = req.files.img_4 ? req.files.img_4[0].filename : req.body.oldImage4,
                 img_5: req.body.img_5 = req.files.img_5 ? req.files.img_5[0].filename : req.body.oldImage5, 
-                video_1: req.body.video_1,
-                miniatura: req.body.miniatura,
+                video_1: 'https://www.youtube.com/embed/'+id, 
+                miniatura : 'https://img.youtube.com/vi/'+id+'/mqdefault.jpg',
                 launch_date:req.body.launch_date,
                 id_platforms: req.body.platform,
                 id_os_min: req.body.os_min,            
@@ -229,35 +202,6 @@ const controllerAdmin = {
             return res.redirect('/admin')})            
         .catch(error => res.send(error))
 
-
-
-/* 
-
-        let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
-        req.body.id = req.params.id 
-
-        // Si no se actualiza una de la imágenes en el formulario de modificación, continúa mostrándose (oldImage) el anterior. En la vista figura en formulario oculto (hidden)
-        // si en el body.img_1 llega un archivo desde multer (req.files) entonces que suba el que viene en esa posición, sino que siga mostrando lo que figura (oldImage)
-
-        req.body.img_1 = req.files.img_1 ? req.files.img_1[0].filename : req.body.oldImage1
-        req.body.img_2 = req.files.img_2 ? req.files.img_2[0].filename : req.body.oldImage2
-        req.body.img_3 = req.files.img_3 ? req.files.img_3[0].filename : req.body.oldImage3
-        req.body.img_4 = req.files.img_4 ? req.files.img_4[0].filename : req.body.oldImage4 
-        req.body.img_5 = req.files.img_5 ? req.files.img_5[0].filename : req.body.oldImage5  
-        
-
-        let gamesUpdate = data_games3.map( games => {
-            if(games.id == req.body.id){
-                return games = req.body
-            }
-            return games
-        })
-
-       
-
-        let gameActualizar = JSON.stringify(gamesUpdate, null, 2)
-        fs.writeFileSync(path.join(__dirname,'../baseDeDatos/data_games3.json'), gameActualizar);
-        res.redirect('/admin') */
     }, 
 
     viewDestroy:(req,res)=>{
@@ -269,10 +213,6 @@ const controllerAdmin = {
             res.render(path.join(__dirname, '../views/admin/delete'), {gameToDelete})})
         .catch(error => res.send(error))
 
-        /* let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
-        const gameId = req.params.id
-        const gameToDelete = data_games3.find( element => element.id == gameId)
-        res.render(path.join(__dirname, '../views/admin/delete'), {gameToDelete}) */
 
     },
 
@@ -284,19 +224,8 @@ const controllerAdmin = {
             return res.redirect('/admin')})
         .catch(error => res.send(error)) 
        
-    
-        /* let data_games3 = JSON.parse(fs.readFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json')))
-        const gameDeleteID = req.params.id;
-        const gamesFinal = data_games3.filter(game => game.id != gameDeleteID) // genera body de ids que existen excepto el elegido
-        const gamesToSave = JSON.stringify(gamesFinal, null, 2) // Guardo en el Json todas las motos menos la que filtré que es la elegida para borrar. 
-        fs.writeFileSync(path.join(__dirname, '../baseDeDatos/data_games3.json'), gamesToSave) 
-
-        res.redirect('/admin') */
-
-
     }
 
 }
-
 
 module.exports = controllerAdmin

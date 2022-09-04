@@ -160,14 +160,6 @@
             <p class="tableAdmin_Error"> <%= errors.category.msg %> </p>
           <% } %> 
 
-       <!--  <label class="combo-form_titles_edit" for="creator">Creator</label>
-          <input class="textArea_Admin_Edit" type="text" name="creator" placeholder="Creator"
-            value="<%= gameToEdit.creator%>" />
-          <% if(locals.errors && errors.creator){ %>
-            <p class="table_Admin_Edit_Error">
-              <%= errors.creator.msg%>
-            </p>
-          <% } %>  -->
 
           <label class="combo-form_titles_edit" for="category">Creator</label>
           <select name="category" class="textArea_Admin_Edit" >
@@ -213,23 +205,16 @@
             </p>
             <% } %>
 
+        <label class="combo-form_titles_edit" for="video_1">Youtube URL</label>
           <input class="textArea_Admin_Edit" type="text" name="video_1"
-            placeholder="Youtube Video ID" value="<%= gameToEdit.video_1%>" />
+            placeholder="Youtube URL" value="<%= gameToEdit.video_1%>" />
           <% if(locals.errors && errors.video_1){ %>
             <p class="table_Admin_Edit_Error">
               <%= errors.video_1.msg %>
             </p>
             <% } %>
 
-      <label class="combo-form_titles_edit" for="video_1">Youtube Video</label>
-          <input class="textArea_Admin_Edit" type="text" name="miniatura"
-            placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg"
-            value="<%= gameToEdit.miniatura%>" />
-          <% if(locals.errors && errors.miniatura){ %>
-            <p class="table_Admin_Edit_Error">
-              <%= errors.miniatura.msg %>
-            </p>
-            <% } %>
+
         </div>
 
       <div class="con3_Admin_Edit">

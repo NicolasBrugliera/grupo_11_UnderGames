@@ -147,13 +147,13 @@
           <% } %>
 
         <label class="combo-form_titles_create" for="video_1">Youtube Video</label>
-          <input class="textArea__Create" type="text" name="video_1" placeholder="Youtube Video ID" value="<%= locals.oldData ? locals.oldData.video_1 : null%>"/> 
+          <input class="textArea__Create" type="text" name="video_1" placeholder="Youtube URL" value="<%= locals.oldData ? locals.oldData.video_1 : null%>"/> 
           <% if(locals.errors && errors.video_1){ %>
             <p class="tableAdmin_Error"><%= errors.video_1.msg  %>  </p>
           <% } %>
 
-        <label class="combo-form_titles_create" for="miniatura">Thumbnail from Video</label>
-          <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= locals.oldData ? locals.oldData.miniatura : null%>"/> 
+        <label class="combo-form_titles_create" for="miniatura"></label>
+         <!--  <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= locals.oldData ? locals.oldData.miniatura : null%>"/>  -->
           <% if(locals.errors && errors.miniatura){ %>
             <p class="tableAdmin_Error"><%= errors.miniatura.msg  %>  </p>
           <% } %>

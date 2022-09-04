@@ -79,7 +79,8 @@ right: 40px;
 .cart-section__PD img {
   width: 100%;
   max-width: 95%;
-  margin: 10px 0 10px
+  margin: 10px 0 10px;
+  aspect-ratio: 16/9;
 }
 
 .cart-section__PD div {
@@ -382,6 +383,8 @@ ul.slider__PD li:target {
 
 
 }
+
+
 
 .container__PD {
   display: flex;

@@ -33,7 +33,7 @@ const storage = multer.diskStorage({
         req.fileError = "File format not valid";
     }
 }
-  
+ 
  const upload = multer({storage}, {fileFilter}) 
  const multipleUpload = upload.fields(
   [
@@ -56,9 +56,7 @@ const validateForm = [
       body("creator").notEmpty().withMessage('Creator field must be complete'),
       body("original_price").notEmpty().withMessage('Original Price field must be complete'),
       body("price_w_discount").notEmpty().withMessage('Price with Discount field must be complete'),
-
       body("video_1").notEmpty().withMessage('Please enter Youtube video code or link'),
-      body("miniatura").notEmpty().withMessage('Please enter Youtube video code or link'),
       body("launch_date").notEmpty().withMessage('Launch Date field must be complete'),
       body("platform").notEmpty().withMessage('Platform/s field must be complete'),
       body("os_min").notEmpty().withMessage('Minimum OS field must be complete'),
