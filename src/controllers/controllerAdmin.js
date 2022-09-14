@@ -43,7 +43,8 @@ const controllerAdmin = {
             promProcessorMin, promProcessorRec, promStorageMin, promStorageRec, promGraphicsMin, promGraphicsRec])
         .then(([allGames, allCreators, allGameGroups, allCategories, allPlatforms, allOsmin, allOsrec, 
             allProcessormin, allProcessorec,  allStoragemin, allStoragerec, allGraphicsmin, allGraphicsrec]) => {
-
+    
+             
                 return res.render(path.join(__dirname, '../views/admin/create'),
             {allGames, allCreators, allGameGroups, 
                 allCategories, allPlatforms, allOsmin, allOsrec, allProcessormin, 
@@ -54,19 +55,87 @@ const controllerAdmin = {
     },
     save: (req,res) =>{
         const resultValidations = validationResult(req)
+        
                 if(resultValidations.errors.length > 0){
-                    return  res.render(path.join(__dirname, '../views/admin/create'), {
-                    errors: resultValidations.mapped(),
+
+                    let promGames = db.Game.findAll();
+                    let promCreators = db.Creator.findAll();
+                    let promGameGroups = db.Game_group.findAll();
+                    let promCategories = db.Category.findAll();
+                    let promPlatforms = db.Platform.findAll();
+                    let promOsMin = db.Os_min.findAll();
+                    let promOsRec = db.Os_rec.findAll();
+                    let promProcessorMin = db.Processor_min.findAll();
+                    let promProcessorRec = db.Processor_rec.findAll();
+                    let promStorageMin = db.Storage_min.findAll();
+                    let promStorageRec = db.Storage_rec.findAll();
+                    let promGraphicsMin = db.Graphics_min.findAll();
+                    let promGraphicsRec = db.Graphics_rec.findAll();
+
+                    Promise
+                    .all([promGames, promCreators, promGameGroups, promCategories, promPlatforms, promOsMin, promOsRec, 
+                        promProcessorMin, promProcessorRec, promStorageMin, promStorageRec, promGraphicsMin, promGraphicsRec])
+                    .then(([allGames, allCreators, allGameGroups, allCategories, allPlatforms, allOsmin, allOsrec, 
+                        allProcessormin, allProcessorec,  allStoragemin, allStoragerec, allGraphicsmin, allGraphicsrec]) => {
+
+                
+            return res.render(path.join(__dirname, '../views/admin/create'),{
+
+                    errors: resultValidations.mapped(),  
+                    allGames, allCreators, allGameGroups, 
+                    allCategories, allPlatforms, allOsmin, allOsrec, allProcessormin, 
+                    allProcessorec, allStoragemin, allStoragerec, allGraphicsmin, allGraphicsrec,
+                    
                     oldData: req.body
-                    })}; 
 
-       //CONVIERTE CUALQUIER URL DE YOUTUBE Y EXTRAE EL VIDEO ID (CODIGO DE VIDEO) y los guarda en sendos video_1 y miniatura
-        url = req.body.video_1
-        url= url.split(/(shorts\/|vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
-        id = (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
-        video_1 = 'https://www.youtube.com/embed/'+id 
-        miniatura = 'https://img.youtube.com/vi/'+id+'/mqdefault.jpg'
+                    })
+                })
+                .catch(error => res.send(error))
+                } else {
 
+                //CONVIERTE CUALQUIER URL DE YOUTUBE Y EXTRAE EL VIDEO ID (CODIGO DE VIDEO) y los guarda en video_1 y miniatura
+                    url = req.body.video_1
+                    url= url.split(/(shorts\/|vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
+                    id = (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
+                    video_1 = 'https://www.youtube.com/embed/'+id 
+                    miniatura = 'https://img.youtube.com/vi/'+id+'/mqdefault.jpg'
+
+                    let promGames = db.Game.findAll();
+                    let promCreators = db.Creator.findAll();
+                    let promGameGroups = db.Game_group.findAll();
+                    let promCategories = db.Category.findAll();
+                    let promPlatforms = db.Platform.findAll();
+                    let promOsMin = db.Os_min.findAll();
+                    let promOsRec = db.Os_rec.findAll();
+                    let promProcessorMin = db.Processor_min.findAll();
+                    let promProcessorRec = db.Processor_rec.findAll();
+                    let promStorageMin = db.Storage_min.findAll();
+                    let promStorageRec = db.Storage_rec.findAll();
+                    let promGraphicsMin = db.Graphics_min.findAll();
+                    let promGraphicsRec = db.Graphics_rec.findAll();
+
+                    Promise
+                    .all([promGames, promCreators, promGameGroups, promCategories, promPlatforms, promOsMin, promOsRec, 
+                        promProcessorMin, promProcessorRec, promStorageMin, promStorageRec, promGraphicsMin, promGraphicsRec])
+                    .then(([allGames, allCreators, allGameGroups, allCategories, allPlatforms, allOsmin, allOsrec, 
+                        allProcessormin, allProcessorec,  allStoragemin, allStoragerec, allGraphicsmin, allGraphicsrec]) => {
+
+                
+            return res.render(path.join(__dirname, '../views/admin/create'),{
+
+                   
+                    allGames, allCreators, allGameGroups, 
+                    allCategories, allPlatforms, allOsmin, allOsrec, allProcessormin, 
+                    allProcessorec, allStoragemin, allStoragerec, allGraphicsmin, allGraphicsrec,
+                    
+                    oldData: req.body
+
+                    })
+                })
+                .catch(error => res.send(error))
+
+
+                    
         db.Game
             .create(
                 {
@@ -98,14 +167,14 @@ const controllerAdmin = {
                 id_graphics_min: req.body.graphics_min,
                 id_graphics_rec: req.body.graphics_rec,
                 age: req.body.age
-                
-                }
-                )
+                })
                 .then(()=> {
                  return res.redirect('/admin')})            
                 .catch(error => res.send(error))
+            } 
 
     }, 
+
     
 
     edit: (req, res)=>{
