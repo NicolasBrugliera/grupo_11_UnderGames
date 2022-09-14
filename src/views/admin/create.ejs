@@ -178,6 +178,27 @@
               <p class="tableAdmin_Error"><%= errors.launch_date.msg  %>  </p>
             <% } %>
 
+            <label class="combo-form_titles_create" for="platform">Platform</label>
+            <% if(locals.oldData){ %> 
+              <select name="platform" class="textArea__Create" > 
+                <option value="" disabled selected> Choose Platform </option>
+                  <% allPlatforms.forEach(platform => { %>
+                  <option  <% if (platform.id_platforms == locals.oldData.platform) { %><%= 'selected' %><% }; %>  value="<%= platform.id_platforms %>"><%= platform.platform_descr %></option>
+                  <% }) %>
+                </select>
+            <%  } else { %> 
+              <select name="platform" class="textArea__Create" > 
+                <option value="" disabled selected> Choose Platform </option>
+                  <% allPlatforms.forEach(platform => { %>
+                  <option value="<%= platform.id_platforms %>"><%= platform.platform_descr %></option>
+                  <% }) %>
+                </select>
+            <% } %> 
+            <% if(locals.errors && errors.platform){ %>
+              <p class="tableAdmin_Error"><%= errors.platform.msg  %></p>
+            <% } %> 
+    
+
     
             <label class="combo-form_titles_create" for="os_min">OS Minimum Requirements</label>
             <% if(locals.oldData){ %> 
@@ -325,6 +346,29 @@
             <p class="tableAdmin_Error"><%= errors.graphics_min.msg  %></p>
           <% } %> 
 
+
+            
+          <label class="combo-form_titles_create" for="graphics_rec">Graphics Recommended </label>
+          <% if(locals.oldData){ %> 
+            <select name="graphics_rec" class="textArea__Create" > 
+            <option value="" disabled selected> Choose Minimum Requirements</option>
+              <% allGraphicsrec.forEach(graphics_rec => { %>
+              <option  <% if (graphics_rec.id_graphics_rec == locals.oldData.graphics_rec) { %><%= 'selected' %><% }; %>  value="<%= graphics_rec.id_graphics_rec %>"><%= graphics_rec.graphics_rec %></option>
+              <% }) %>
+            </select>
+          <%  } else { %> 
+            <select name="graphics_rec" class="textArea__Create" > 
+            <option value="" disabled selected> Choose Graphics Recommended </option>
+              <% allGraphicsrec.forEach(graphics_rec => { %>
+              <option value="<%= graphics_rec.id_graphics_rec %>"><%= graphics_rec.graphics_rec %></option>
+              <% }) %>
+            </select>
+          <% } %> 
+          <% if(locals.errors && errors.graphics_rec){ %>
+            <p class="tableAdmin_Error"><%= errors.graphics_rec.msg  %></p>
+          <% } %> 
+
+
         
         <label class="combo-form_titles_create" for="age">Age Restriction</label>
         <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
@@ -334,8 +378,6 @@
         </div>
         
         </div>
-       
-
             <button class="btn__create" type="submit">Add Game</button>
             
         </div>

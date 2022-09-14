@@ -21,7 +21,7 @@ const { body } = require('express-validator');
 	body("storage_rec").notEmpty().withMessage('Recommended Storage field must be complete'),
 	body("graphics_min").notEmpty().withMessage('Minimum Graphics field must be complete'),
 	body("graphics_rec").notEmpty().withMessage('Recommended Graphics field must be complete'),  
-	body("age").isInt().withMessage('Must be a number'), 
+	body("age").isInt().withMessage('Age field cannot be empty and must be a number'),
 	
 	
 

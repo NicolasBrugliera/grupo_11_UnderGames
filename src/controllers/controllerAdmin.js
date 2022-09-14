@@ -2,6 +2,7 @@ const path = require('path')
 const fs = require('fs')
 const { validationResult } = require('express-validator')
 const db = require('../database/models');
+const { title } = require('process');
 
 
 
@@ -94,58 +95,24 @@ const controllerAdmin = {
                 } else {
 
                 //CONVIERTE CUALQUIER URL DE YOUTUBE Y EXTRAE EL VIDEO ID (CODIGO DE VIDEO) y los guarda en video_1 y miniatura
+                    
                     url = req.body.video_1
                     url= url.split(/(shorts\/|vi\/|v=|\/v\/|youtu\.be\/|\/embed\/)/);
                     id = (url[2] !== undefined) ? url[2].split(/[^0-9a-z_\-]/i)[0] : url[0];
                     video_1 = 'https://www.youtube.com/embed/'+id 
                     miniatura = 'https://img.youtube.com/vi/'+id+'/mqdefault.jpg'
 
-                    let promGames = db.Game.findAll();
-                    let promCreators = db.Creator.findAll();
-                    let promGameGroups = db.Game_group.findAll();
-                    let promCategories = db.Category.findAll();
-                    let promPlatforms = db.Platform.findAll();
-                    let promOsMin = db.Os_min.findAll();
-                    let promOsRec = db.Os_rec.findAll();
-                    let promProcessorMin = db.Processor_min.findAll();
-                    let promProcessorRec = db.Processor_rec.findAll();
-                    let promStorageMin = db.Storage_min.findAll();
-                    let promStorageRec = db.Storage_rec.findAll();
-                    let promGraphicsMin = db.Graphics_min.findAll();
-                    let promGraphicsRec = db.Graphics_rec.findAll();
-
-                    Promise
-                    .all([promGames, promCreators, promGameGroups, promCategories, promPlatforms, promOsMin, promOsRec, 
-                        promProcessorMin, promProcessorRec, promStorageMin, promStorageRec, promGraphicsMin, promGraphicsRec])
-                    .then(([allGames, allCreators, allGameGroups, allCategories, allPlatforms, allOsmin, allOsrec, 
-                        allProcessormin, allProcessorec,  allStoragemin, allStoragerec, allGraphicsmin, allGraphicsrec]) => {
-
-                
-            return res.render(path.join(__dirname, '../views/admin/create'),{
-
-                   
-                    allGames, allCreators, allGameGroups, 
-                    allCategories, allPlatforms, allOsmin, allOsrec, allProcessormin, 
-                    allProcessorec, allStoragemin, allStoragerec, allGraphicsmin, allGraphicsrec,
-                    
-                    oldData: req.body
-
-                    })
-                })
-                .catch(error => res.send(error))
-
-
                     
         db.Game
-            .create(
-                {
+            .create({
+
                 title: req.body.title, 
                 one_word_descr: req.body.one_word_descr,
                 short_descr: req.body.short_descr,
                 long_descr: req.body.long_descr,
                 id_game_group: req.body.game_group,
                 id_category: req.body.category,
-                id_creator: req.body.creator,
+                //id_creator: req.body.creator,
                 original_price: req.body.original_price,
                 price_w_discount: req.body.price_w_discount,
                 discount: req.body.discount,
@@ -168,10 +135,13 @@ const controllerAdmin = {
                 id_graphics_rec: req.body.graphics_rec,
                 age: req.body.age
                 })
+              
                 .then(()=> {
+               
+              
                  return res.redirect('/admin')})            
                 .catch(error => res.send(error))
-            } 
+            }  
 
     }, 
 
