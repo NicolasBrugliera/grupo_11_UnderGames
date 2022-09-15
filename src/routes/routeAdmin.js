@@ -5,6 +5,7 @@ const multer = require('multer');
 const fs = require('fs')
 
 const validations = require('../middlewares/validateProductsMiddleware');
+const { fields } = require('../middlewares/multerMiddleware');
 //import validations from '../middlewares/validateProductsMiddleware'
 
 const controllerAdmin = require(path.join(__dirname,'../controllers/controllerAdmin'));
@@ -20,31 +21,26 @@ const storage = multer.diskStorage({
       //importante usar Math Random para subidas múltiples 
         cb(null, '/images/games/' + 'game-image-' + Date.now() + Math.round(Math.random() * 10e10) + path.extname(file.originalname)) 
     }
+    
+
+    
   })
 
-  const fileFilter = (req, file, cb) => {
-    if ((file.mimetype).includes("jpeg") || (file.mimetype).includes("png") || (file.mimetype).includes("jpg")) {
-      
-        cb(null, true);
-    }
-    else {
-       
-        cb(null, false)
-        req.fileError = "File format not valid";
-    }
-}
- 
- const upload = multer({storage}) 
- const multipleUpload = upload.fields(
-  [
-    {name: 'img_1', maxCount: 1}, 
-    {name: 'img_2', maxCount: 1}, 
-    {name: 'img_3', maxCount: 1},
-    {name: 'img_4', maxCount: 1},
-    {name: 'img_5', maxCount: 1}
-  ]) 
-
-
+//multer valida que ninguno de los fields ingrese un archivo que no sea imagen y que esta no sea mayor a 1 Mb
+  const multipleUpload = multer({
+    storage, 
+    limits: {fileSize: 1000000, files: 5}, // determina el tamaño aceptado 1000000 bytes = 1 Mb
+    fileFilter: function(req, file, cb){
+      let type = file.mimetype.startsWith('image/');
+      type ? cb(null, true) : cb ( new Error('no es un archivo imagen')) // si es de tipo imagen retorna el callback de multer como true, sino error
+    }}
+    ).fields([
+      {name: 'img_1', maxCount: 1}, 
+      {name: 'img_2', maxCount: 1}, 
+      {name: 'img_3', maxCount: 1},
+      {name: 'img_4', maxCount: 1},
+      {name: 'img_5', maxCount: 1}
+    ])
 
 
 //rutas
