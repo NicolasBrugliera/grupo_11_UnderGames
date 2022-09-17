@@ -81,11 +81,13 @@ Fin - No se usan, porque tenemos iconos*/
   font-size: 1.5rem;
   font-weight: 500;
   color: white;
+
 }
 
 .logo_image{
   max-width: 50px;
   float: left;
+  border-radius: 50%;
 }
 
 .avatar_image{

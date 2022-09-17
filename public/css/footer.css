@@ -16,6 +16,7 @@
 .logo_image_foot{
     max-width: 70px;
     float: fixed;
+    border-radius: 50%;
 }
 
 .created_by_foot{

@@ -5,7 +5,7 @@
   }
   
   #body_profile{
-    background-color: #37393b !important;
+    background-color: #2b2c2e !important;
     color: #ffffff;
     font-family: 'Roboto', sans-serif;
     
@@ -37,3 +37,266 @@
   .tab-content>.tab-pane{
     display:none
 }  
+.userName{
+  text-align: center;
+  font-size: 3.5rem;
+  border-bottom: solid white 2px;
+  padding: 4px;
+  
+}
+.profileImg{
+  width: 30%;
+  border-radius: 15px;
+  border: 0.5px solid white;
+  margin: 2% 2% 2% 2%;
+  background-color: black;
+  
+}
+.divProfImgGt{
+  border: white 2px solid;
+  border-radius: 15px;
+  background-color: #0d6efd;
+  width: 30%;
+  display: flex;
+  flex-direction: row;
+  margin-left: 34.5%;
+  margin-top: 3%;
+
+}
+.gamertag{
+  font-size: 210%;
+  margin-top: 7%;
+  margin-left: 6%;
+
+}
+
+.divItemPencil{
+  background-color: #0d6efd;
+  border: 0.5px solid white;
+  border-radius: 15px;
+  height: 90px;
+  width: 90px;
+  margin: 4% 2% 2% 2% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.divItemCan{
+  background-color: #0d6efd;
+  border: 0.5px solid white;
+  border-radius: 15px;
+  height: 90px;
+  width: 90px;
+  margin: 4% 2% 2% 2% ;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.divItems{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.footer{
+  margin-top: 3.3%;
+}
+.row{
+  border: solid 2px white;
+  border-radius: 15px;
+  background-color: black;
+  padding: 4%;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+
+.userEditName{
+  text-align: center;
+  font-size: 200%;
+  padding: 2%;
+}
+.formEditUser{
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  font-size: 200%;
+}
+#casillero{
+  padding: 4%;
+  border: #1f2227 solid 3px;
+  border-radius: 5px;
+  background-color: black;
+  color: white;
+}
+::placeholder{
+  color: white;
+}
+
+.editSubmin{
+    padding: 1rem;
+    padding-bottom: 2rem;
+    padding-left: 3rem;
+    padding-right: 3rem;
+    background-color: #0078f1;
+    border: solid 1px white;
+    border-radius: 10px;
+    transition: transform 0.2s ease;
+    color: #ffffff;
+    height: 10px;
+    margin-bottom: 40%;
+    margin-left: 10px;
+  }
+
+.editSubmin:hover{
+  transform: translate(5px,5px);
+  box-shadow: 0px 0px 20px 5px rgba(100,100,100,1);
+  cursor: pointer;
+}
+
+.footerEdit{
+  margin-top: 7%;
+}
+
+@media  (max-width: 480px){
+.divProfImgGt{
+  width: 90%;
+  margin: 15px ;
+}
+.gamertag{
+  font-size: 130%;
+}
+.userName{
+  font-size: 1.3rem;
+}
+}
+@media  (min-width: 481px){
+  .divProfImgGt{
+    width: 90%;
+    margin:  15px 15px 15px 6%;
+  }
+  .gamertag{
+    font-size: 130%;
+  }
+  .userName{
+    font-size: 1.8rem;
+  }
+}
+
+@media  (min-width: 740px)  {
+  .divProfImgGt{
+    width: 90%;
+    margin:  15px 15px 15px 6%;
+  }
+  .userName{
+    font-size: 1.3rem;
+  }
+  }
+
+  @media (min-width: 1025px){
+    .divProfImgGt{
+      border: white 2px solid;
+      border-radius: 15px;
+      background-color: #0d6efd;
+      width: 70%;
+      display: flex;
+      flex-direction: row;
+      margin-left: 15.5%;
+      margin-top: 3%;
+    
+    }
+    .gamertag{
+      font-size: 210%;
+      margin-top: 7%;
+      margin-left: 6%;
+    
+    }
+    .userName{
+      text-align: center;
+      font-size: 3.5rem;
+      border-bottom: solid white 2px;
+      padding: 4px;
+      
+    }
+  }
+  @media (min-width: 1440px) {
+    .userName{
+      text-align: center;
+      font-size: 3.5rem;
+      border-bottom: solid white 2px;
+      padding: 4px;
+      
+    }
+    .profileImg{
+      width: 30%;
+      border-radius: 15px;
+      border: 0.5px solid white;
+      margin: 2% 2% 2% 2%;
+      background-color: black;
+      
+    }
+    .divProfImgGt{
+      border: white 2px solid;
+      border-radius: 15px;
+      background-color: #0d6efd;
+      width: 30%;
+      display: flex;
+      flex-direction: row;
+      margin-left: 34.5%;
+      margin-top: 3%;
+    
+    }
+    .gamertag{
+      font-size: 190%;
+      margin-top: 7%;
+      margin-left: 6%;
+    
+    }
+    
+    .divItemPencil{
+      background-color: #0d6efd;
+      border: 0.5px solid white;
+      border-radius: 15px;
+      height: 90px;
+      width: 90px;
+      margin: 4% 2% 2% 2% ;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    .divItemCan{
+      background-color: #0d6efd;
+      border: 0.5px solid white;
+      border-radius: 15px;
+      height: 90px;
+      width: 90px;
+      margin: 4% 2% 2% 2% ;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+    
+    .divItems{
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+    
+    .footer{
+      margin-top: 3.3%;
+    }
+    .row{
+      border: solid 2px white;
+      border-radius: 15px;
+      background-color: black;
+      padding: 4%;
+      margin-left: 15%;
+      margin-right: 15%;
+    }
+  }

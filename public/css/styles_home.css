@@ -215,8 +215,7 @@ border-radius: 10%;
   width: 270px;
   height: 300px;
   border: 0.5px solid lightgray;
-  
- 
+  border-radius: 10%;
 }
 
 /*  */
@@ -368,7 +367,7 @@ a {
 /**********MEDIA QUERY*****************/
 
 /* Para sacar o meter thumbnails a la derecha  */
-@media screen and (min-width: 0px) and (max-width: 420px){   /* para sacar la columna a la derecha*/ 
+@media screen and (min-width: 0px) and (max-width: 480px){   /* para sacar la columna a la derecha*/ 
   .col_left_ppal {
       width: 90%;
       margin-left: 5%;
