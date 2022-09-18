@@ -31,6 +31,7 @@ window.onload = function(){
     let storage_rec = document.querySelector('[name="storage_rec"]')
     let graphics_min = document.querySelector('[name="graphics_min"]')
     let graphics_rec = document.querySelector('[name="graphics_rec"]')
+    let age = document.querySelector('[name="age"]')
   
 
 
@@ -233,6 +234,14 @@ window.onload = function(){
     } else {
         graphics_rec.classList.add('is-valid_create')
         graphics_rec.classList.remove('is-invalid_create')
+    }
+    /// VALIDACION Gráficos Recomendados
+    if (age.value == "") {
+        errors.push('El campo edad no puede estar vacio!')
+        age.classList.add('is-invalid_create')
+    } else {
+        age.classList.add('is-valid_create')
+        age.classList.remove('is-invalid_create')
     }
 
     let ulErrors = document.querySelector('.errors');

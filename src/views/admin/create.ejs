@@ -372,7 +372,7 @@
 
         
         <label class="combo-form_titles_create" for="age">Age Restriction</label>
-        <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
+        <input min="1" max="120" class="textArea__Create" type="number" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
           <% if(locals.errors && errors.age){ %>
               <p class="tableAdmin_Error"><%= errors.age.msg  %>  </p>
         <% } %>
