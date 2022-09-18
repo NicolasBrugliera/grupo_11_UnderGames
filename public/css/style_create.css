@@ -35,7 +35,8 @@
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 2.2px;
-    color: #c5ccd3;
+    color: white; 
+    border-bottom: solid white 2px;
 }
 
 .contCreateImg__create {
@@ -70,8 +71,25 @@
     margin: 1em;
     align-self: center;
     text-align: center;
-    background-color:#c5ccd3;
+    background-color:black;
+    border-radius: 3px;
+    border: white solid 1px;
+    color: white;
+}
+
+.textArea__Create::placeholder{
+    color: white;
+}
+
+.textArea__Create::-webkit-file-upload-button{
+    background-color: #0078f1;
+    color: white;
     border-radius: 4px;
+    border: #ffffff solid 1px;
+    padding: 2px;
+    cursor: pointer;
+    margin-top: 5px;
+    margin-left: 5px;
 }
 .formCreate__create {
     display: flex;
@@ -79,9 +97,9 @@
     background-color: rgb(20, 20, 20);
     /* border: 4px solid black; */
     margin: 2em;
-
+    border-radius: 15px;
+    border: white solid 1px;
 }
-
 .con1__create h3, 
 .con2__create h3, 
 .con3__create h3 {
@@ -91,29 +109,34 @@
 }
 
 .con1__create {
-    border-radius:4px;
+    border-radius:5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;    
     width: 350px; 
     background-color: rgb(42, 42, 42);
+    border: white solid 1px;
+    height: 90vh;
 }
 .con2__create{
-    border-radius:4px;
+    border-radius:5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 350px; 
     background-color: rgb(42, 42, 42);
-
+    border: white solid 1px;
+    height: 90vh;
 }
 .con3__create{
-    border-radius:4px;
+    border-radius:5px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     width: 350px;
     background-color: rgb(42, 42, 42);
+    border: white solid 1px;
+    height: 90vh;
 }
 
 
@@ -158,6 +181,7 @@
     margin: 1em;
     align-self: center;
     text-align: center;
+    border: white solid 1px;
 }
 
 .textArea__Create > .combo-form_titles_create{
@@ -167,9 +191,8 @@
 .formCreate__create {
     display: flex;
     flex-direction: column;
-    background-color: rgb(20, 20, 20);    
+    background-color:black;    
     margin: 2em;
-    
 }
 
 .formDelete {
@@ -199,7 +222,7 @@
 	background: linear-gradient(to bottom, #3d94f6 5%, #1e62d0 100%);
 	background-color: #3d94f6;
 	border-radius: 15px;
-	border: 1px solid #337fed;
+	border: 1px solid white;
 	display: inline-block;
 	cursor: pointer;
 	color: #ffffff;
@@ -301,7 +324,7 @@ p.tableAdmin_Error{
 
 .combo-form_titles_create{
     position: relative;
-    color:#c5ccd3;
+    color:#ffffff;
     font-size:medium;
     top: 10px;
     letter-spacing: 1px;
@@ -310,11 +333,20 @@ p.tableAdmin_Error{
 
 .textArea2__Create, .textArea2__Create_shortDesc {
     margin: 1em; 
-    background-color:#c5ccd3;
+    background-color:black;
     border-radius: 4px;
     border: none;
     outline: none;
     padding: 5px;
+    border: white solid 1px;
+    color: white;
+}
+.textArea2__Create_shortDesc::placeholder{
+    color: white;
+}
+
+.textArea2__Create::placeholder{
+    color: white;
 }
 
 #the-count__Create,   #the-count__Create_shortDesc  {
@@ -323,7 +355,7 @@ p.tableAdmin_Error{
     position: relative;
     bottom: 10px;
     left: 130px;
-    color:#eee;
+    color:#ffffff;
     padding: 5px;
   }
 
@@ -337,22 +369,29 @@ p.tableAdmin_Error{
 }
 
 .text-ok__Create {
-    color: #eee;
+    color: #ffffff;
 }
 
 .is-valid_create {
  
-border: #84f1a5 4px solid
+border: #15b800 1.5px solid
 }
 
 .is-invalid_create {
     
-    border: #dd7e52 4px solid
+    border: red 1.5px solid
 }
 
-.errors {
+.errors.alert-warning_create {
     margin: auto;
     text-align: center;
+    background-color: black;
+    border: white solid 1.5px;
+    border-radius: 15px;
+    color: red;
+    margin-bottom: 10px;
+    width: 34rem;
+
 }
 
 .alert-warning_create{
@@ -361,8 +400,9 @@ border: #84f1a5 4px solid
     text-align: center;
     border-radius: 10px;
     }
-   
-   
+h3{
+    color: white;
+}
 
 @media screen and (max-width: 768px) {
     .title__create{
