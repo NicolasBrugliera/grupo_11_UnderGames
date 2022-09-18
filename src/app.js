@@ -44,6 +44,9 @@ const routeAdmin = require('./routes/routeAdmin')
 const routeProductEdit = require('./routes/routeProductEdit');
 //const routeProducts = require('./routes/routeProducts');
 const routerProductList  = require('./routes/routeProductList');
+const apiRouteUsers = require('./routes/apiRouteUsers') ;
+const apiRouteProducts = require('./routes/apiRouteProducts') ;
+
 
 app.listen(process.env.PORT || 3000, function() {
 	console.log('Server Levantado en Port 3000');
@@ -63,7 +66,8 @@ app.use('/admin', routeAdmin)
 app.use('/productEdit', routeProductEdit);
 //app.use('/products', routeProducts);
 
-
+app.use("/api/users", apiRouteUsers);
+app.use("/api/products", apiRouteProducts);
 
 
 
