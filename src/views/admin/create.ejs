@@ -10,19 +10,19 @@
 <body class="bodyCreate">
       <header>
         <%- include('../partials/header.ejs')  %> 
-        <%- include('../partials/search_bar')%> 
         <script src="/js/textAreaCounters.js"></script>
       </header>
     
   <div class="formCreate__create">
     <h3 class="title__create">Upload Games</h3>
-    <form method="POST" action="/admin/create" enctype="multipart/form-data">
+    <form class="form" method="POST" action="/admin/create" enctype="multipart/form-data">
         <div class="contCreateImg__create">
             <!-- <img class="imgCreate_Create" src="/images/image_22.jpg" alt="" > -->
         </div>
-        <div>
-          <!--  <button class="btn__productEdit" type="file" name="image" >Cargar img</button>  -->
-          <!--  <button class="btn__productEdit" type="submit">Cargar Video</button> -->
+        <div class="errors">
+          <ul>
+            
+          </ul>
         </div>
         <div class="contTxtCreate__create">
           <div class="con1__create">
@@ -371,7 +371,7 @@
 
         
         <label class="combo-form_titles_create" for="age">Age Restriction</label>
-        <input class="textArea__Create" type="text" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
+        <input min="1" max="120" class="textArea__Create" type="number" name="age" placeholder="Age Restriction" value="<%= locals.oldData ? locals.oldData.age : null%>"/>
           <% if(locals.errors && errors.age){ %>
               <p class="tableAdmin_Error"><%= errors.age.msg  %>  </p>
         <% } %>
@@ -387,6 +387,8 @@
   <footer>
     <%- include('../partials/footer.ejs')  %> 
 </footer>
+<script src="/js/producsFrontValidate.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 

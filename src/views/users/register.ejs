@@ -14,6 +14,7 @@
             <form method="POST" action="/users/register" enctype="multipart/form-data" class= "register-form" >
 
                 <h3 id="reg-h3">Registrate!</h3>
+                <ul class="errores"></ul>
 
                 <div class="form-ns-styler-register">
                     <input type="text" name="name" id="name" placeholder="Nombre" required
@@ -101,7 +102,9 @@
         </main>
 
         <footer>
-            <%- include ('../partials/footer.ejs')  %>  
+            <%- include ('../partials/footer.ejs')  %>
+            <script src="/js/userValidate.js"></script>
+            <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>    
         </footer>
     </body>
 </html>

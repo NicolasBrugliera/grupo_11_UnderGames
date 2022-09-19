@@ -198,6 +198,12 @@
     padding: 2px;
     cursor: pointer;
 }
+.errores{
+    margin-top: 1em;
+    text-align: center;
+    color: rgb(151, 108, 130);
+}
+
 
 
 @media  (max-width: 480px) {
