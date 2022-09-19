@@ -9,9 +9,13 @@
 </head>
 <body class="bodyAdmin__admin"></body>
     <header>
+      <div class="headerAdmin">
         <%- include ('../partials/header.ejs')  %> 
+      </div>
+      <div class="navbarAdmin">
         <%- include('../partials/search_bar')%> 
-    </header>
+      </div>
+      </header>
 
 
 
@@ -70,15 +74,15 @@
                 </table>  
               </article>       
             </section>
+            <div class="footerAdmin">
+            <%- include ('../partials/footer.ejs')  %>  
+          </div>
           </div>
           <script src="https://unpkg.com/ionicons@5.2.3/dist/ionicons.js"></script>
         </main>
       </body>
     </html>
-
-
-    <footer>
-        <%- include ('../partials/footer.ejs')  %>  
+    <footer >
     </footer>
 </body>
 </html>

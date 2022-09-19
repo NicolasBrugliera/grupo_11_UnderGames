@@ -105,7 +105,7 @@
 .con3__create h3 {
     letter-spacing: 2.2px;
     text-transform: uppercase;
-    color:#c5ccd3
+    color:white
 }
 
 .con1__create {
@@ -127,6 +127,7 @@
     background-color: rgb(42, 42, 42);
     border: white solid 1px;
     height: 90vh;
+    margin-bottom: 2rem;
 }
 .con3__create{
     border-radius:5px;
@@ -140,7 +141,7 @@
 }
 
 
- .imgDelete{
+.imgDelete{
     width: 100%;
     max-width: 60%;
     min-width: 200px;
@@ -150,31 +151,8 @@
     background-color: rgb(32, 32, 32);
     border-radius: 4%;
     text-align: center;
-   
 } 
 
-/* .imgEdit_Edit{
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    object-fit: contain;
-    filter: drop-shadow(0 0 5px grey);
-    background-color: rgb(32, 32, 32);
-    border-radius: 4%;
-    text-align: center;
-    max-width: 200px;
-} */
-/* .Edit_Edit{
-    font-family: 'Roboto', sans-serif;
-    color: #ddd;
-    margin: 5px;
-    letter-spacing: .5px;
-} */
-
-/* .contTxtCreate__create{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-} */
 .textArea__Create {
     width: 17em;
     height: 2.5em;
@@ -349,12 +327,16 @@ p.tableAdmin_Error{
     color: white;
 }
 
+.textArea__Create::-webkit-calendar-picker-indicator{
+    filter: invert(1);
+}
+
 #the-count__Create,   #the-count__Create_shortDesc  {
     padding: 0.1rem 0 0 0;
     font-size: 12px;
     position: relative;
     bottom: 10px;
-    left: 130px;
+    left: 100px;
     color:#ffffff;
     padding: 5px;
   }
@@ -403,15 +385,7 @@ border: #15b800 1.5px solid
 h3{
     color: white;
 }
-
-@media screen and (max-width: 768px) {
-    .title__create{
-        font-size: 1.5em;
-    }
-}
-
-
-@media screen and (max-width: 360px) {
+@media (min-width: 0px) and (max-width: 480px) {
     .formDelete {
         width: 100%;
         max-width: 100%;
@@ -421,8 +395,76 @@ h3{
         margin: 2em;
         align-self: center;
     }
-
+    .errors.alert-warning_create{
+        width: 18rem;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .con3__create{
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+        width: 85%;
+        height: 1000px;
+    }
+    .con2__create{
+        margin-top: 2rem;
+        width: 85%;;
+        height: 1000px;
+    }
+    .con1__create{
+        margin-top: 2rem;
+        width: 85%;
+    }
+    .textArea2__Create{
+        height: 300px;
+    }
+    .textArea2__Create_shortDesc{
+        height: 150px;
+    }
+    .footerCreate{
+        width: 100%;
+    }
+    .formCreate__create{
+    }
 }
-    
-    
-    
+@media (min-width: 481px) and (max-width: 763px) {
+    .title__create{
+        font-size: 1.5em;
+    }
+    .con3__create{
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+        width: 85%;
+    }
+    .con2__create{
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+        width: 100%;
+        height: 1000px;
+        width: 85%;
+    }
+    .con1__create{
+        margin-bottom: 3rem;
+        margin-top: 2rem;
+        width: 85%;
+}
+.errors.alert-warning_create{
+    width: 24rem;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+}
+@media  (min-width: 764px) and (max-width: 1025px){
+    .con3__create{
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+    }
+    .con2__create{
+        margin-top: 2rem;
+        height: 1000px;
+    }
+    .con1__create{
+        margin-top: 2rem;
+        height: 1000px;
+    }
+}
