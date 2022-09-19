@@ -7,7 +7,7 @@ const apiControllerUser = {
 		list: (req, res)=>{
 			db.User.findAll({
 				attributes: ['id_users', 'name', 'email', [sequelize.fn('concat', (req.protocol + "://"+ req.get('Host') ) , "/api/users/detail/" , sequelize.col('id_users')), 'url']]
-			})
+			}) 
 			
 			.then(users => {
 				let response = {
