@@ -1,12 +1,12 @@
 const { name } = require('ejs');
 const db = require('../database/models');
-/*const { concat } = require('../middlewares/validateRegisterMiddleware');*/
+
 const sequelize = db.sequelize;
 
 const apiControllerUser = {
 		list: (req, res)=>{
 			db.User.findAll({
-				attributes: ['id_users', 'name', 'email', [sequelize.fn('concat', (req.protocol + "://"+ req.get('Host') ) , "/api/users/detail/" , sequelize.col('id_users')), 'url']]
+				attributes: [['id_users', 'id'] , 'name', 'email', [sequelize.fn('concat', (req.protocol + "://"+ req.get('Host') ) , "/api/users/detail/" , sequelize.col('id_users')), 'detail']]
 			}) 
 			
 			.then(users => {
@@ -14,9 +14,9 @@ const apiControllerUser = {
 					info: {
 						status: 200,
 						total: users.length, 
-						url: "api/users/list"
+						url: (req.protocol + "://"+ req.get('Host')  + "api/users/list")
 						},
-					data: {
+					data: { count: users.length, 
 							users 
 
 						},
@@ -27,7 +27,7 @@ const apiControllerUser = {
 				let response = {
 					info: {
 						status: 404,
-						url: "api/users/list", 
+						url: req.protocol + "://"+ req.get('Host')  + "api/users/list", 
 						error: e
 			},
 			}
@@ -35,18 +35,29 @@ const apiControllerUser = {
 		})
 		},
 		detail: (req, res)=>{
-			db.User.findByPk(req.params.id ,      /* src="/images/avatars/<%= user.avatar %> " > */
-			{attributes: ['id_users', 'name', 'email', [sequelize.fn('concat', (req.protocol + "://"+ req.get('Host') ) , "/images/avatars/" , sequelize.col('avatar')), 'url']]})
+			db.User.findByPk(req.params.id ,      
+			{attributes: [['id_users', 'id'], 'name', 'email', [sequelize.fn('concat', (req.protocol + "://"+ req.get('Host') ) , "/images/avatars/" , sequelize.col('avatar')), 'detail']]})
 				.then(user => {
 				let response = {
 					info:{
 						status: 200,
-						url: "api/users/detail/" + req.params.id  
+						url: req.protocol + "://"+ req.get('Host')  + "api/users/detail/" + req.params.id  
 					},
 					data: user
 				}
 				res.json(response)
 			})
+			.catch(e => {
+				let response = {
+					info: {
+						status: 404,
+						url: req.protocol + "://"+ req.get('Host')  + "api/users/detail/" + req.params.id  ,
+						error: e
+			},
+			}
+				res.json(response)
+		})
+			
 	}}
 
 	module.exports = apiControllerUser;
