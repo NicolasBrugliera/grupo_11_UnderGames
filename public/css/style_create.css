@@ -364,6 +364,17 @@ border: #15b800 1.5px solid
     border: red 1.5px solid
 }
 
+.swal2-popup.swal2-modal.swal2-icon-error.swal2-show{
+    color: white;
+    background-color: black;
+    border: white solid 1px;
+}
+.swal2-confirm.swal2-styled{
+    background-color: #0078f1 !important;
+    border: 1px white solid !important;
+    box-shadow: 0px 0px 0px 0px transparent !important;
+}
+
 .errors.alert-warning_create {
     margin: auto;
     text-align: center;
@@ -424,7 +435,9 @@ h3{
     .footerCreate{
         width: 100%;
     }
-    .formCreate__create{
+    .swal2-popup.swal2-modal.swal2-icon-error.swal2-show{
+        width: 70%;
+        height: 70%;
     }
 }
 @media (min-width: 481px) and (max-width: 763px) {
