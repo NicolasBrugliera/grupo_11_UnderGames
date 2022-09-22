@@ -199,16 +199,12 @@ border-radius: 10%;
   height: 300px;
   border: 0.5px solid lightgray;
   border-radius: 10%;
-  
- 
 }
 
 .top_sellers_home{
   width: 270px;
   height: 300px;
-  border: 0.5px solid lightgray;
-  
- 
+  border: 0.5px solid lightgray; 
 }
 
 .free_home{
@@ -408,6 +404,18 @@ a {
       margin-left: 20px;
       margin-right: 20px;
       margin-bottom: 75px;
+    }
+    .nRh1{
+      text-align: center;
+    }
+    .tSh1{
+      text-align: center;
+    }
+    .fh1{
+      text-align: center;
+    }
+    .ch1{
+      text-align: center;
     }
 }
 

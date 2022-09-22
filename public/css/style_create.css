@@ -116,7 +116,7 @@
     width: 350px; 
     background-color: rgb(42, 42, 42);
     border: white solid 1px;
-    height: 90vh;
+    height: 100vh;
 }
 .con2__create{
     border-radius:5px;
@@ -126,7 +126,7 @@
     width: 350px; 
     background-color: rgb(42, 42, 42);
     border: white solid 1px;
-    height: 90vh;
+    height: 100vh;
     margin-bottom: 2rem;
 }
 .con3__create{
@@ -137,7 +137,7 @@
     width: 350px;
     background-color: rgb(42, 42, 42);
     border: white solid 1px;
-    height: 90vh;
+    height: 100vh;
 }
 
 
@@ -307,6 +307,12 @@ p.tableAdmin_Error{
     top: 10px;
     letter-spacing: 1px;
 
+}
+.textArea2__Create{
+    height: 600px;
+}
+.textArea2__Create_shortDesc{
+    height: 400px;
 }
 
 .textArea2__Create, .textArea2__Create_shortDesc {
