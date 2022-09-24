@@ -16,7 +16,7 @@
     font-family: 'Roboto', sans-serif;
     margin: 0;
     padding:0;
-    height: 100vh;
+    /* height: 90vh; */
 
 }
 
@@ -26,7 +26,7 @@
     align-items: center;
     justify-content: center;
     background-color: #000000;
-    height: 100vh;
+    /* height: 100vh; */
 }
 
 #reg-h3{
@@ -35,7 +35,7 @@
 
 .register-form {
     width: 85%;
-    height: 90% ;
+    height: 100% ;
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -198,13 +198,48 @@
     padding: 2px;
     cursor: pointer;
 }
-.errores{
-    margin-top: 1em;
-    text-align: center;
-    color: rgb(151, 108, 130);
+
+
+.is-valid_registerUser{
+
+    border: #15b800 1.5px solid !important
 }
 
+.is-invalid_registerUser {
 
+    border: red 1.5px solid !important
+}
+.swal2-popup.swal2-modal.swal2-icon-error.swal2-show {
+    color: white;
+    background-color: black;
+    border: white solid 1px;
+}
+
+.swal2-confirm.swal2-styled {
+    background-color: #0078f1 !important;
+    border: 1px white solid !important;
+    box-shadow: 0px 0px 0px 0px transparent !important;
+}
+.errors.alert-warning_register {
+    margin: auto;
+    text-align: center;
+    background-color: black;
+    border: white solid 1.5px;
+    border-radius: 15px;
+    color: red !important;
+    margin-bottom: 10px;
+    width: 34rem;
+    margin-top: 1em;
+    padding: 1em;
+    max-width:95%;
+
+}
+.alert-warning_register {
+    color: #842029;
+    background-color: #F8D7DA;
+    text-align: center;
+    border-radius: 10px;
+}
 
 @media  (max-width: 480px) {
     .register-form{

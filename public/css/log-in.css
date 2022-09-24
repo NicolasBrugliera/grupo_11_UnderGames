@@ -85,11 +85,62 @@
   font-size: 40px;
   margin-bottom: 50px;
 }
+.text-warning_login{
+  color: #fb8500;
+}
+
+.text-danger_login {
+  color: #e4314f;
+}
+
+.text-ok_login {
+  color: #ffffff;
+}
+
+.is-valid_login {
+
+border: #15b800 1.5px solid !important
+}
+
+.is-invalid_login {
+  
+  border: red 1.5px solid !important
+}
+
+.swal2-popup.swal2-modal.swal2-icon-error.swal2-show{
+  color: white;
+  background-color: black;
+  border: white solid 1px;
+}
+.swal2-confirm.swal2-styled{
+  background-color: #0078f1 !important;
+  border: 1px white solid !important;
+  box-shadow: 0px 0px 0px 0px transparent !important;
+}
+
+.errors.alert-warning_login {
+  margin: auto;
+  text-align: center;
+  background-color: black;
+  border: white solid 1.5px;
+  border-radius: 15px;
+  color: red !important;
+  width: auto;
+  padding: 1em 2em;
+
+}
+
+.alert-warning_login{
+  color:#842029;
+  background-color: #F8D7DA;
+  text-align: center;
+  border-radius: 10px;
+  }
 
 @media  (max-width: 480px) {
   .h3-login{
     font-size: 30px;
-    margin-bottom: 35px;
+    margin-bottom: 25px;
   }
   #login-button{
     width: 40vw;
