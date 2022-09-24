@@ -42,8 +42,8 @@ window.onload = function () {
         }
         
         //validacion password length
-        if (password.value.length <= 7 ) {
-            errors.push('La contraseña deben tener 8 caracteres como minimo')
+        if (password.value.length <= 5 ) {
+            errors.push('La contraseña deben tener 6 caracteres como minimo')
             password.classList.add('is-invalid_login')
         }
         

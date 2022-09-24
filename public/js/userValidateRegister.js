@@ -88,8 +88,8 @@ window.onload = function () {
             password.classList.remove('is-invalid_registerUser')
         }
         //validacion password length
-        if (password.value.length <= 7 || repetedpassword.value.length <= 7 ) {
-            errors.push('Las contraseñas deben tener 8 caracteres como minimo!')
+        if (password.value.length <= 5 || repetedpassword.value.length <= 5 ) {
+            errors.push('Las contraseñas deben tener 6 caracteres como minimo!')
             password.classList.add('is-invalid_registerUser')
         }
         
