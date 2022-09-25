@@ -1,4 +1,5 @@
 window.onload = function(){
+   
 
     let form = document.querySelector('.form')
         form.title.focus()
@@ -11,9 +12,9 @@ window.onload = function(){
     let img_1 = document.querySelector('[name="img_1"]')
     let img_2 = document.querySelector('[name="img_2"]')
     let img_3 = document.querySelector('[name="img_3"]')
-    let img_4 = document.querySelector('[name="img_4"]')
-    let img_5 = document.querySelector('[name="img_5"]')
-  
+    let img_4= document.querySelector('[name="img_4"]')
+    let img_5= document.querySelector('[name="img_5"]')
+
     let title = document.querySelector('[name="title"]')
     let one_word_descr = document.querySelector('[name="one_word_descr"]')
     let short_descr = document.querySelector('[name="short_descr"]')
@@ -31,7 +32,7 @@ window.onload = function(){
     let storage_rec = document.querySelector('[name="storage_rec"]')
     let graphics_min = document.querySelector('[name="graphics_min"]')
     let graphics_rec = document.querySelector('[name="graphics_rec"]')
-    let age = document.querySelector('[name="age"]')
+    //let age = document.querySelector('[name="age"]')
   
 
 
@@ -235,19 +236,13 @@ window.onload = function(){
         graphics_rec.classList.add('is-valid_create')
         graphics_rec.classList.remove('is-invalid_create')
     }
-    /// VALIDACION Gráficos Recomendados
-    if (age.value == "") {
-        errors.push('El campo edad no puede estar vacio!')
-        age.classList.add('is-invalid_create')
-    } else {
-        age.classList.add('is-valid_create')
-        age.classList.remove('is-invalid_create')
-    }
+
 
     let ulErrors = document.querySelector('.errors');
     ulErrors.classList.add('alert-warning_create')
     ulErrors.innerHTML = '';
     if (errors.length > 0) {
+        console.log(errors)
         ulErrors.innerHTML = '';
         Swal.fire({
             icon: 'error',

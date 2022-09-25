@@ -365,7 +365,17 @@ p.tableAdmin_Error{
 border: #15b800 1.5px solid
 }
 
+.is-valid_edit {
+ 
+border: #15b800 1.5px solid
+}
+
 .is-invalid_create {
+    
+    border: red 1.5px solid
+}
+
+.is-invalid_edit {
     
     border: red 1.5px solid
 }
@@ -398,8 +408,9 @@ border: #15b800 1.5px solid
     background-color: #F8D7DA;
     text-align: center;
     border-radius: 10px;
-    }
-h3{
+}
+
+h3 {
     color: white;
 }
 @media (min-width: 0px) and (max-width: 480px) {

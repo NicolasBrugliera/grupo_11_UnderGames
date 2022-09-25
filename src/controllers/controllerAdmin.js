@@ -25,19 +25,20 @@ const controllerAdmin = {
 
     }, 
     create:(req, res) => {
-        let promGames = db.Game.findAll();
-        let promCreators = db.Creator.findAll();
-        let promGameGroups = db.Game_group.findAll();
-        let promCategories = db.Category.findAll();
-        let promPlatforms = db.Platform.findAll();
-        let promOsMin = db.Os_min.findAll();
-        let promOsRec = db.Os_rec.findAll();
-        let promProcessorMin = db.Processor_min.findAll();
-        let promProcessorRec = db.Processor_rec.findAll();
-        let promStorageMin = db.Storage_min.findAll();
-        let promStorageRec = db.Storage_rec.findAll();
-        let promGraphicsMin = db.Graphics_min.findAll();
-        let promGraphicsRec = db.Graphics_rec.findAll();
+
+            let promGames = db.Game.findAll();
+            let promCreators = db.Creator.findAll();
+            let promGameGroups = db.Game_group.findAll();
+            let promCategories = db.Category.findAll();
+            let promPlatforms = db.Platform.findAll();
+            let promOsMin = db.Os_min.findAll();
+            let promOsRec = db.Os_rec.findAll();
+            let promProcessorMin = db.Processor_min.findAll();
+            let promProcessorRec = db.Processor_rec.findAll();
+            let promStorageMin = db.Storage_min.findAll();
+            let promStorageRec = db.Storage_rec.findAll();
+            let promGraphicsMin = db.Graphics_min.findAll();
+            let promGraphicsRec = db.Graphics_rec.findAll();
 
         Promise
         .all([promGames, promCreators, promGameGroups, promCategories, promPlatforms, promOsMin, promOsRec, 
@@ -138,7 +139,7 @@ const controllerAdmin = {
               
                 .then(()=> {
                
-              
+                 //console.log(req.body.age)
                  return res.redirect('/admin')})            
                 .catch(error => res.send(error))
             }  
@@ -148,21 +149,22 @@ const controllerAdmin = {
     
 
     edit: (req, res)=>{
-        let id_game = req.params.id;
-        let promGames = db.Game.findByPk(id_game, {include: ['category', 'game_group', 'platform','graphics_min', 'graphics_rec', 'processor_min', 'processor_rec', 'os_min', 'os_rec', 'storage_min', 'storage_rec', 'creator'] });
-        let promCategories = db.Category.findAll();
-        let promGameGroups = db.Game_group.findAll();
-        let promPlatforms = db.Platform.findAll();
-        let promGraphicsMin = db.Graphics_min.findAll();
-        let promGraphicsRec = db.Graphics_rec.findAll();
-        let promProcessorMin = db.Processor_min.findAll();
-        let promProcessorRec = db.Processor_rec.findAll();
-        let promOsMin = db.Os_min.findAll();
-        let promOsRec = db.Os_rec.findAll();
-        let promStorageMin = db.Storage_min.findAll();
-        let promStorageRec = db.Storage_rec.findAll();
-        let promCreators = db.Creator.findAll();
-       
+
+            let id_game = req.params.id;
+            let promGames = db.Game.findByPk(id_game, {include: ['category', 'game_group', 'platform','graphics_min', 'graphics_rec', 'processor_min', 'processor_rec', 'os_min', 'os_rec', 'storage_min', 'storage_rec', 'creator'] });
+            let promCategories = db.Category.findAll();
+            let promGameGroups = db.Game_group.findAll();
+            let promPlatforms = db.Platform.findAll();
+            let promGraphicsMin = db.Graphics_min.findAll();
+            let promGraphicsRec = db.Graphics_rec.findAll();
+            let promProcessorMin = db.Processor_min.findAll();
+            let promProcessorRec = db.Processor_rec.findAll();
+            let promOsMin = db.Os_min.findAll();
+            let promOsRec = db.Os_rec.findAll();
+            let promStorageMin = db.Storage_min.findAll();
+            let promStorageRec = db.Storage_rec.findAll();
+            let promCreators = db.Creator.findAll();
+        
         
         Promise
         .all([promGames, promCategories, promGameGroups, promPlatforms, 
@@ -180,8 +182,7 @@ const controllerAdmin = {
             {gameToEdit, allCategories, allGameGroups, allPlatforms,
                 allGraphicsmin, allGraphicsrec, allProcessormin, allProcessorec,
                 allOsmin, allOsrec, allStoragemin, allStoragerec, allCreators
-              
-            })
+                 })
             }) 
             
         .catch(error => res.send(error))
@@ -189,6 +190,52 @@ const controllerAdmin = {
     },
 
     update: (req,res)=>{
+
+        const resultValidations = validationResult(req)
+        
+        if(resultValidations.errors.length > 0){
+
+            let id_game = req.params.id;
+            let promGames = db.Game.findByPk(id_game, {include: ['category', 'game_group', 'platform','graphics_min', 'graphics_rec', 'processor_min', 'processor_rec', 'os_min', 'os_rec', 'storage_min', 'storage_rec', 'creator'] });
+            let promCategories = db.Category.findAll();
+            let promGameGroups = db.Game_group.findAll();
+            let promPlatforms = db.Platform.findAll();
+            let promGraphicsMin = db.Graphics_min.findAll();
+            let promGraphicsRec = db.Graphics_rec.findAll();
+            let promProcessorMin = db.Processor_min.findAll();
+            let promProcessorRec = db.Processor_rec.findAll();
+            let promOsMin = db.Os_min.findAll();
+            let promOsRec = db.Os_rec.findAll();
+            let promStorageMin = db.Storage_min.findAll();
+            let promStorageRec = db.Storage_rec.findAll();
+            let promCreators = db.Creator.findAll();
+
+            Promise
+            .all([promGames, promCategories, promGameGroups, promPlatforms, 
+                promGraphicsMin, promGraphicsRec, promProcessorMin, promProcessorRec,
+                promOsMin, promOsRec, promStorageMin, promStorageRec, promCreators
+               
+            ]) 
+    
+            .then(([gameToEdit, allCategories, allGameGroups, allPlatforms, 
+                allGraphicsmin, allGraphicsrec, allProcessormin, allProcessorec,
+                allOsmin, allOsrec, allStoragemin, allStoragerec, allCreators
+               
+            ]) => { 
+             //console.log(resultValidations.mapped())
+              return res.render(path.resolve(__dirname, '..', 'views', 'admin' ,'edit'), 
+              
+                    {errors: resultValidations.mapped(),  gameToEdit, allCategories, allGameGroups, allPlatforms,
+                    allGraphicsmin, allGraphicsrec, allProcessormin, allProcessorec,
+                    allOsmin, allOsrec, allStoragemin, allStoragerec, allCreators,
+                    
+                    oldData: req.body
+                    })
+                }) 
+                
+            .catch(error => res.send(error))
+        } else {
+
 
         //CONVIERTE CUALQUIER URL DE YOUTUBE Y EXTRAE EL VIDEO ID (CODIGO DE VIDEO) y los guarda en sendos video_1 y miniatura
         url = req.body.video_1
@@ -230,10 +277,7 @@ const controllerAdmin = {
                 id_graphics_min: req.body.graphics_min,
                 id_graphics_rec: req.body.graphics_rec,
                 age: req.body.age
-            },
-            {
-                where: {id_game: id_game}
-            },
+            },{where: {id_game:id_game}},
            
             )
 
@@ -241,7 +285,9 @@ const controllerAdmin = {
             return res.redirect('/admin')})            
         .catch(error => res.send(error))
 
-    }, 
+        }
+    }
+    ,
 
     viewDestroy:(req,res)=>{
         let id_game = req.params.id;

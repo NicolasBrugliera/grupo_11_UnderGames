@@ -5,8 +5,7 @@
   <%- include('../partials/head.ejs') %>
     <link rel="stylesheet" href="/css/style_Admin_Edit.css">
     <link rel="stylesheet" href="/css/search_bar.css">
-    <script src="/js/textAreaCounters.js"></script>
-</head>
+  
 
 <body class="bodyEdit">
   <header>
@@ -24,7 +23,13 @@
     <div class="contCreateImg__create">
       <img class="img_Admin_Edit" src="<%= gameToEdit.img_1 %>" alt="">
     </div>
-    <form action="/admin/edit/<%= gameToEdit.id_game%>?_method=PUT" method="POST" enctype="multipart/form-data">
+    <form class="form"  action="/admin/edit/<%= gameToEdit.id_game%>?_method=PUT" method="POST" enctype="multipart/form-data">
+      <br>
+      <div class="errors">
+        <ul>
+          
+        </ul>
+      </div>  
 
       <div class="contTxt_Admin_Edit">
         <div class="con1_Admin_Edit">
@@ -34,6 +39,11 @@
           <img class="imgEdit_Edit" src="<%= gameToEdit.img_1 %>" alt="">
           <input class="textArea_Admin_Edit" type="file" name="img_1" placeholder="image 1" value="img_1"
             accept=".jpg, .jpeg .png" />
+            <% if(locals.errors && errors.img_1){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= gameToEdit.img_1 %> <!-- HAY QUE SEGUIR TRABAJANDO PARA VER QUE MUESTRE LA IMAGEN SELECCIONADO ANTERIORMENTE -->
+              </p>
+            <% } %>
 
 
           <input type="hidden" name="oldImage2" value="<%= gameToEdit.img_2 %>" />
@@ -41,24 +51,44 @@
           <img class="imgEdit_Edit" src="<%= gameToEdit.img_2 %>" alt="">
           <input class="textArea_Admin_Edit" type="file" name="img_2" placeholder="image 2" value="2"
             accept=".jpg, .jpeg .png" />
+            <% if(locals.errors && errors.img_2){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= errors.img_2.msg %>
+              </p>
+            <% } %>
 
           <input type="hidden" name="oldImage3" value="<%= gameToEdit.img_2 %>" />
           <p class="Edit_Edit">Current Image 3</p>
           <img class="imgEdit_Edit" src="<%= gameToEdit.img_3 %>" alt="">
           <input class="textArea_Admin_Edit" type="file" name="img_3" placeholder="image 3" value="3"
             accept=".jpg, .jpeg .png" />
+            <% if(locals.errors && errors.img_3){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= errors.img_3.msg %>
+              </p>
+            <% } %>
 
           <input type="hidden" name="oldImage4" value="<%= gameToEdit.img_4 %>" />
           <p class="Edit_Edit">Current Image 4</p>
           <img class="imgEdit_Edit" src="<%= gameToEdit.img_4 %>" alt="">
           <input class="textArea_Admin_Edit" type="file" name="img_4" placeholder="image 4" value="4"
             accept=".jpg, .jpeg .png" />
+            <% if(locals.errors && errors.img_4){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= errors.img_4.msg %>
+              </p>
+            <% } %>
 
           <input type="hidden" name="oldImage5" value="<%= gameToEdit.img_5 %>" />
           <p class="Edit_Edit">Current Image 5</p>
           <img class="imgEdit_Edit" src="<%= gameToEdit.img_5 %>" alt="">
           <input class="textArea_Admin_Edit" type="file" name="img_5" placeholder="image 5" value="5"
             accept=".jpg, .jpeg .png" />
+            <% if(locals.errors && errors.img_5){ %>
+              <p class="table_Admin_Edit_Error">
+                <%= errors.img_5.msg %>
+              </p>
+            <% } %>
         </div>
 
 
@@ -319,14 +349,9 @@
         <% } %> 
 
 
-        <label class="combo-form_titles_edit" for="age">Age</label>
-        <input class="textArea_Admin_Edit" type="number" name="age" placeholder="Age Restriction"
-          min="1" max="110" value="<%=gameToEdit.age%>" />
-        <% if(locals.errors && errors.age){ %>
-          <p class="table_Admin_Edit_Error">
-            <%= errors.age.msg %>
-          </p>
-        <% } %>
+
+
+
         </div>
       </div>
 
@@ -341,6 +366,8 @@
     <%- include('../partials/footer.ejs') %>
   </footer>
 
+  <script src="/js/textAreaCounters.js"></script>
+  <script src="/js/productsEditValidate.js"></script>   
   <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 </body>

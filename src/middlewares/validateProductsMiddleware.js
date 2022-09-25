@@ -9,8 +9,7 @@ const { body } = require('express-validator');
 	body("long_descr").notEmpty().withMessage('Long Description field must be complete').isLength({ min: 100 }, { min: 300 }).withMessage('Must contain from 100 to 300 letter words').bail(),
 	body("game_group").notEmpty().withMessage('Game Group field must be complete'),
 	body("category").notEmpty().withMessage('Category field must be complete'),
-	//body("creator").notEmpty().withMessage('Creator field must be complete'),
-	body("video_1").notEmpty().withMessage('Please enter Youtube video code or link'),
+	body("video_1").notEmpty().withMessage('Please enter Youtube link'),
 	body("launch_date").notEmpty().withMessage('Launch Date field must be complete'),
 	body("platform").notEmpty().withMessage('Platform/s field must be complete'),
 	body("os_min").notEmpty().withMessage('Minimum OS field must be complete'),
@@ -21,7 +20,7 @@ const { body } = require('express-validator');
 	body("storage_rec").notEmpty().withMessage('Recommended Storage field must be complete'),
 	body("graphics_min").notEmpty().withMessage('Minimum Graphics field must be complete'),
 	body("graphics_rec").notEmpty().withMessage('Recommended Graphics field must be complete'),  
-	body("age").isInt().withMessage('Age field cannot be empty and must be a number'),
+	//body("age").notEmpty().withMessage('Age field cannot be empty'),
 	
 	
 
