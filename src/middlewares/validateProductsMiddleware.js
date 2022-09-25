@@ -20,92 +20,47 @@ const { body } = require('express-validator');
 	body("storage_rec").notEmpty().withMessage('Recommended Storage field must be complete'),
 	body("graphics_min").notEmpty().withMessage('Minimum Graphics field must be complete'),
 	body("graphics_rec").notEmpty().withMessage('Recommended Graphics field must be complete'),  
-	//body("age").notEmpty().withMessage('Age field cannot be empty'),
+
 	
 	
 
 
 	body("img_1").custom((value, {req}) => {
 	  let file = req.files.img_1;
-	  let acceptedExtensions = [".png", ".jpeg", ".jpg"]
-	  if (!file) {
+	  if (file == undefined && req.body.oldImage1 == undefined) {
 		  throw new Error("Please choose an image")
-	  }else if(file.size > (10 * 1024 * 1024)){
-		  fs.unlink(file.path, (err) => {
-			  if (err) {
-				  console.log(err)
-			  }
-		  })
-		  throw new Error("Image must be less than 15mb")
 	  }
 	  return true
   }),
+	body("img_1").custom((value, {req}) => {
+	  let file = req.files.img_2;
+	  if (file == undefined && req.body.oldImage2 == undefined) {
+		  throw new Error("Please choose an image")
+	  }
+	  return true
+  }),
+	body("img_1").custom((value, {req}) => {
+	  let file = req.files.img_3;
+	  if (file == undefined && req.body.oldImage3 == undefined) {
+		  throw new Error("Please choose an image")
+	  }
+	  return true
+  }),
+	body("img_1").custom((value, {req}) => {
+	  let file = req.files.img_4;
+	  if (file == undefined && req.body.oldImage4 == undefined) {
+		  throw new Error("Please choose an image")
+	  }
+	  return true
+  }),
+	body("img_1").custom((value, {req}) => {
+	  let file = req.files.img_5;
+	  if (file == undefined && req.body.oldImage5 == undefined) {
+		  throw new Error("Please choose an image")
+	  }
+	  return true
+  })
 
-
-  body("img_2").custom((value, {req}) => {
-	let file = req.files.img_2;
-	let acceptedExtensions = [".png", ".jpeg", ".jpg"]
-	if (!file) {
-		throw new Error("Please choose an image")
-	}else if(file.size > (10 * 1024 * 1024)){
-		fs.unlink(file.path, (err) => {
-			if (err) {
-				console.log(err)
-			}
-		})
-		throw new Error("Image must be less than 15mb")
-	}
-	return true
-}), 
- 
-  body("img_3").custom((value, {req}) => {
-	let file = req.files.img_3;
-	let acceptedExtensions = [".png", ".jpeg", ".jpg"]
-	if (!file) {
-		throw new Error("Please choose an image")
-	}else if(file.size > (10 * 1024 * 1024)){
-		fs.unlink(file.path, (err) => {
-			if (err) {
-				console.log(err)
-			}
-		})
-		throw new Error("Image must be betweem 1920 x 1080 and 2560 x 1440")
-	}
-	return true
-}),
-
-
-body("img_4").custom((value, {req}) => {
-	let file = req.files.img_4;
-	let acceptedExtensions = [".png", ".jpeg", ".jpg"]
-	if (!file) {
-		throw new Error("Please choose an image")
-	}else if(file.size > (10 * 1024 * 1024)){
-		fs.unlink(file.path, (err) => {
-			if (err) {
-				console.log(err)
-			}
-		})
-		throw new Error("Image must be betweem 1920 x 1080 and 2560 x 1440")
-	}
-	return true
-}),
-
-	body("img_5").custom((value, {req}) => {
-	let file = req.files.img_5;
-	let acceptedExtensions = [".png", ".jpeg", ".jpg"]
-	if (!file) {
-		throw new Error("Please choose an image")
-	}else if(file.size > (10 * 1024 * 1024)){
-		fs.unlink(file.path, (err) => {
-			if (err) {
-				console.log(err)
-			}
-		})
-		throw new Error("Image must be betweem 1920 x 1080 and 2560 x 1440")
-	}
-	return true
-	}), 
 
 ]
 

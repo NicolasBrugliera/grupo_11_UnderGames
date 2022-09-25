@@ -232,11 +232,22 @@ window.onload = function(){
     if (graphics_rec.value == "") {
         errors.push('El campo Gráficos Recomendados no puede estar vacio!')
         graphics_rec.classList.add('is-invalid_create')
+     //   setErrorFor(graphics_rec, 'Gráfico recomendado no puede estar vacío');
+       
     } else {
         graphics_rec.classList.add('is-valid_create')
         graphics_rec.classList.remove('is-invalid_create')
     }
 
+
+/*     function setErrorFor(input, mensaje) {
+        const formControl = input.parentElement;
+        const small = formControl.querySelector('small');
+        formControl.className = 'is-invalid_create';
+        small.innerText = mensaje;
+        console.log(formControl)
+    } */
+    
 
     let ulErrors = document.querySelector('.errors');
     ulErrors.classList.add('alert-warning_create')

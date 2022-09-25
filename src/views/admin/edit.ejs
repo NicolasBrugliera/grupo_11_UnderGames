@@ -35,15 +35,15 @@
         <div class="con1_Admin_Edit">
           <h3 class="Image_Upload_Admin_Edit">Image Edit</h3>
           <input type="hidden" name="oldImage1" value="<%= gameToEdit.img_1 %>" />
-          <p class="Edit_Edit">Current Image 1</p>
+          <p class="Edit_Edit">Imagen principal</p>
           <img class="imgEdit_Edit" src="<%= gameToEdit.img_1 %>" alt="">
-          <input class="textArea_Admin_Edit" type="file" name="img_1" placeholder="image 1" value="img_1"
-            accept=".jpg, .jpeg .png" />
-            <% if(locals.errors && errors.img_1){ %>
-              <p class="table_Admin_Edit_Error">
-                <%= gameToEdit.img_1 %> <!-- HAY QUE SEGUIR TRABAJANDO PARA VER QUE MUESTRE LA IMAGEN SELECCIONADO ANTERIORMENTE -->
-              </p>
-            <% } %>
+          <input class="textArea_Admin_Edit" type="file" name="img_1" placeholder="image 1" value="1" 
+          accept=".jpg, .jpeg .png" />
+          <% if(locals.errors && errors.img_1){ %>
+            <p class="table_Admin_Edit_Error">
+              <%= errors.img_1.msg %>
+            </p>
+          <% } %>
 
 
           <input type="hidden" name="oldImage2" value="<%= gameToEdit.img_2 %>" />

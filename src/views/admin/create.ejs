@@ -4,7 +4,7 @@
     <%- include('../partials/head.ejs')  %> 
     <link rel="stylesheet" href="/css/style_create.css">
     <link rel="stylesheet" href="/css/search_bar.css">
-
+    <script src="https://kit.fontawesome.com/d2152a5308.js" crossorigin="anonymous"></script>
   </head>
  
 <body class="bodyCreate">
@@ -23,42 +23,53 @@
         </div>
         <div class="contTxtCreate__create">
           <div class="con1__create">
+
             <h3 class="Image_Upload__Create">Image upload</h3>
             <input class="textArea__Create" type="file" name="img_1" placeholder="image 1"  accept= ".jpg, .jpeg .png" value="" /> 
             <% if(locals.errors && errors.img_1){ %>
               <p class="tableAdmin_Error"><%= errors.img_1.msg  %>  </p>
             <% } %>
+
+
+
             <input class="textArea__Create" type="file" name="img_2" placeholder="image 2" accept= ".jpg, .jpeg .png"  value="" /> 
             <% if(locals.errors && errors.img_2){ %>
               <p class="tableAdmin_Error"><%= errors.img_2.msg  %>  </p>
             <% } %>   
+
+
+
             <input class="textArea__Create" type="file" name="img_3" placeholder="image 3" accept= ".jpg, .jpeg .png"  value="" />  
             <% if(locals.errors && errors.img_3){ %>
               <p class="tableAdmin_Error"><%= errors.img_3.msg  %> </p>
             <% } %>
+
+
             <input class="textArea__Create" type="file" name="img_4" placeholder="image 4" accept= ".jpg, .jpeg .png"  value="" /> 
             <% if(locals.errors && errors.img_4){ %>
               <p class="tableAdmin_Error"><%= errors.img_4.msg  %> </p>
             <% } %>
+
+
             <input class="textArea__Create" type="file" name="img_5" placeholder="image 5" accept= ".jpg, .jpeg .png"  value="" /> 
             <% if(locals.errors && errors.img_5){ %>
               <p class="tableAdmin_Error"><%= errors.img_5.msg  %>  </p>
             <% } %>
-            </div>
+
+          </div>
           
           <div class="con2__create">
             
+          
             <h3 class="title__Description__Create">Description</h3>
             <label class="combo-form_titles_create" for="title">Title</label>
           <input class="textArea__Create" type="text" name="title" placeholder="Title" value="<%= locals.oldData ? locals.oldData.title : null %>"/>
           <% if(locals.errors && errors.title){ %>
             <p class="tableAdmin_Error"><%= errors.title.msg  %>  </p>
           <% } %>
+          <small></small>
+     
 
-
-
-        
- 
 
 
 
@@ -67,8 +78,14 @@
           value="<%= locals.oldData ? locals.oldData.one_word_descr : null%>"/>
           <% if(locals.errors && errors.one_word_descr){ %>
             <p class="tableAdmin_Error"><%= errors.one_word_descr.msg  %>  </p>
-          <% } %>          
-        
+          <% } %> 
+          <small></small>
+
+          
+          
+
+
+
         <label class="combo-form_titles_create" for="short_desc">Short Description</label>
         <textarea   minlength="20" maxlength="100" class="textArea2__Create_shortDesc" type="text" name="short_descr" rows="4" cols="40" placeholder="Please write a description from 20 to 100 words"><%= locals.oldData ? locals.oldData.short_descr : null %></textarea>
         <div id="the-count__Create_shortDesc">
@@ -80,7 +97,10 @@
         <% if(locals.errors && errors.short_descr){ %>
           <p class="tableAdmin_Error"><%= errors.short_descr.msg%></p>
         <% } %>
- 
+        <small></small>
+
+
+
         <label class="combo-form_titles_create" for="long_desc">Long Description</label>
         <textarea   minlength="100" maxlength="300" class="textArea2__Create" type="text" name="long_descr" rows="8" cols="40" placeholder="Please write a description from 100 to 300 words"><%= locals.oldData ? locals.oldData.long_descr : null %></textarea>
         <div id="the-count__Create">
@@ -92,6 +112,9 @@
         <% if(locals.errors && errors.long_descr){ %>
           <p class="tableAdmin_Error"><%= errors.long_descr.msg%></p>
         <% } %>
+        <small></small>
+
+
 
 
 
@@ -114,6 +137,10 @@
         <% if(locals.errors && errors.game_group){ %>
           <p class="tableAdmin_Error"><%= errors.game_group.msg  %>  </p>
         <% } %> 
+        <small></small>
+
+
+
 
 
 
@@ -136,6 +163,9 @@
         <% if(locals.errors && errors.category){ %>
           <p class="tableAdmin_Error"><%= errors.category.msg  %></p>
         <% } %> 
+        <small></small>
+
+
 
 
 
@@ -146,6 +176,8 @@
           <% if(locals.errors && errors.original_price){ %>
             <p class="tableAdmin_Error"><%= errors.original_price.msg  %>  </p>
           <% } %>
+        
+
 
         <label class="combo-form_titles_create" for="price_w_discount">Price With Discount</label>
           <input class="textArea__Create" type="text" name="price_w_discount" placeholder="Price With Discount" value="<%= locals.oldData ? locals.oldData.price_w_discount : null%>"/>
@@ -153,17 +185,24 @@
             <p class="tableAdmin_Error"><%= errors.price_w_discount.msg  %>  </p>
           <% } %>
 
+
+
         <label class="combo-form_titles_create" for="discount">Discount</label>
           <input class="textArea__Create" type="text" name="discount" placeholder="Discount" value="<%= locals.oldData ? locals.oldData.discount : null%>"/>
           <% if(locals.errors && errors.discount){ %>
             <p class="tableAdmin_Error"><%= errors.discount.msg  %>  </p>
           <% } %>
 
+
+
         <label class="combo-form_titles_create" for="video_1">Youtube Video</label>
           <input class="textArea__Create" type="text" name="video_1" placeholder="Youtube URL" value="<%= locals.oldData ? locals.oldData.video_1 : null%>"/> 
           <% if(locals.errors && errors.video_1){ %>
             <p class="tableAdmin_Error"><%= errors.video_1.msg  %>  </p>
           <% } %>
+          <small></small>
+
+
 
         <label class="combo-form_titles_create" for="miniatura"></label>
          <!--  <input class="textArea__Create" type="text" name="miniatura" placeholder="https://img.youtube.com/vi/ + Video ID + mqdefault.jpg" value="<%= locals.oldData ? locals.oldData.miniatura : null%>"/>  -->
@@ -180,6 +219,8 @@
             <% if(locals.errors && errors.launch_date){ %>
               <p class="tableAdmin_Error"><%= errors.launch_date.msg  %>  </p>
             <% } %>
+
+
 
             <label class="combo-form_titles_create" for="platform">Platform</label>
             <% if(locals.oldData){ %> 
@@ -200,6 +241,8 @@
             <% if(locals.errors && errors.platform){ %>
               <p class="tableAdmin_Error"><%= errors.platform.msg  %></p>
             <% } %> 
+
+
     
 
     
@@ -222,6 +265,8 @@
             <% if(locals.errors && errors.os_min){ %>
               <p class="tableAdmin_Error"><%= errors.os_min.msg  %></p>
             <% } %> 
+
+
             
 
             <label class="combo-form_titles_create" for="os_rec">OS Recommended Requirement</label>
@@ -243,6 +288,8 @@
             <% if(locals.errors && errors.os_rec){ %>
               <p class="tableAdmin_Error"><%= errors.os_rec.msg  %></p>
             <% } %> 
+
+
         
 
             <label class="combo-form_titles_create" for="processor_min">Minimum Processor</label>
@@ -266,6 +313,8 @@
             <% } %> 
 
 
+
+
           <label class="combo-form_titles_create" for="processor_rec">Recommended Processor</label>
           <% if(locals.oldData){ %> 
             <select name="processor_rec" class="textArea__Create" > 
@@ -285,6 +334,8 @@
           <% if(locals.errors && errors.processor_rec){ %>
             <p class="tableAdmin_Error"><%= errors.processor_rec.msg  %></p>
           <% } %> 
+
+
       
           <label class="combo-form_titles_create" for="storage_min">Recommended Minimum Storage</label>
           <% if(locals.oldData){ %> 
@@ -305,6 +356,8 @@
           <% if(locals.errors && errors.storage_min){ %>
             <p class="tableAdmin_Error"><%= errors.storage_min.msg  %></p>
           <% } %> 
+
+
           
       
           <label class="combo-form_titles_create" for="storage_rec">Recommended Storage</label>
@@ -326,6 +379,8 @@
           <% if(locals.errors && errors.storage_rec){ %>
             <p class="tableAdmin_Error"><%= errors.storage_rec.msg  %></p>
           <% } %> 
+
+
           
 
 
@@ -350,6 +405,8 @@
           <% } %> 
 
 
+
+
             
           <label class="combo-form_titles_create" for="graphics_rec">Graphics Recommended </label>
           <% if(locals.oldData){ %> 
@@ -370,15 +427,10 @@
           <% if(locals.errors && errors.graphics_rec){ %>
             <p class="tableAdmin_Error"><%= errors.graphics_rec.msg  %></p>
           <% } %> 
-
-
-        
-
         </div>
         
         </div>
             <button class="btn__create" type="submit">Add Game</button>
-            
         </div>
     </form>
   </div>

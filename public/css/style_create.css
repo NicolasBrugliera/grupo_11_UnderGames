@@ -113,7 +113,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;    
-    width: 350px; 
+    width: 420px; 
     background-color: rgb(42, 42, 42);
     border: white solid 1px;
     height: 100vh;
@@ -123,7 +123,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 350px; 
+    width: 420px; 
     background-color: rgb(42, 42, 42);
     border: white solid 1px;
     height: 100vh;
@@ -134,7 +134,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    width: 350px;
+    width: 420px;
     background-color: rgb(42, 42, 42);
     border: white solid 1px;
     height: 100vh;
@@ -324,6 +324,7 @@ p.tableAdmin_Error{
     padding: 5px;
     border: white solid 1px;
     color: white;
+   
 }
 .textArea2__Create_shortDesc::placeholder{
     color: white;
@@ -361,18 +362,25 @@ p.tableAdmin_Error{
 }
 
 .is-valid_create {
- 
 border: #15b800 1.5px solid
 }
 
+.is-valid_create i.fa-check-circle{
+     color: #15b800;
+     visibility: visible;
+}
+
 .is-valid_edit {
- 
 border: #15b800 1.5px solid
 }
 
 .is-invalid_create {
-    
     border: red 1.5px solid
+}
+
+.is-invalid_create i.fa-exclamation-circle{
+    color: red;
+    visibility: visible;
 }
 
 .is-invalid_edit {
@@ -413,6 +421,50 @@ border: #15b800 1.5px solid
 h3 {
     color: white;
 }
+
+.form-control_create i{
+   
+    position: relative;
+    bottom: 5.5rem;
+    left: 9rem;
+    color: #15b800 
+}
+.form-control_create_con2 {
+    position: relative;
+    bottom: 2rem;
+    left: 9rem;
+    color: #15b800 ;
+}
+
+.form-control_create_con3 {
+    position: relative;
+    bottom: 2rem;
+    left: 9rem;
+    color: #15b800 ;
+}
+
+.form-control_create {
+  
+    bottom: 5.5rem;
+    left: 19rem;
+    color: #15b800 ;
+}
+.form-control_create_con2 {
+    width: 100%;
+    max-width: fit-content;
+    bottom: 2rem;
+    left: 21rem;
+    color: #15b800 ;
+}
+
+.form-control_create_con3 {
+    width: 100%;
+    max-width: fit-content;
+    bottom: 2rem;
+    left: 21rem;
+    color: #15b800 ;
+}
+
 @media (min-width: 0px) and (max-width: 480px) {
     .formDelete {
         width: 100%;
