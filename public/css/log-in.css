@@ -24,7 +24,30 @@
   color: #ffffff;
   font-family: 'Roboto', sans-serif;
 }
-
+.errorMail{
+  display: none;
+}
+.errorPassword{
+  display: none;
+}
+.errorPasswordlength{
+  display: none;
+}
+.errormailTrue{
+  color: #e4314f;
+  display:flex;
+  justify-content: center;
+}
+.errorPasswordTrue{
+  color: #e4314f;
+  display:flex;
+  justify-content: center;
+}
+.errorPasswordlengthTrue{
+  color: #e4314f;
+  display:flex;
+  justify-content: center;
+}
 .log-in-form{
   width: 85%;
   height: 80% ;
@@ -119,6 +142,7 @@ border: #15b800 1.5px solid !important
 }
 
 .errors.alert-warning_login {
+  display: none;
   margin: auto;
   text-align: center;
   background-color: black;

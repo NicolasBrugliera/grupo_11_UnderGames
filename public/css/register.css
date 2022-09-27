@@ -45,7 +45,7 @@
     background-color: #353535;
 }
 .form-ns-styler-register{
-    margin-bottom: 20px;
+    margin-bottom: 10px;
     margin-top: 30px;
     display:flex;
     justify-content: center;
@@ -118,7 +118,7 @@
     border: 3px solid #1f2227;
     padding:5px;
     background-color: black;
-    margin-bottom: 3vh;
+    /* margin-bottom: 3vh; */
     border-radius: 10px;
     height: 4.5vh;
     text-align: center;
@@ -129,6 +129,7 @@
     display: flex;
     justify-content: center;
     padding: 20px;
+    
 }
 #reg-button{
     width: 38vw;
@@ -186,7 +187,7 @@
     padding-right: 5px;
     padding-top: 2px;
     margin-left: 5.5rem;
-    margin-bottom: 2rem;
+    /* margin-bottom: 2rem; */
 }
 
 
@@ -221,6 +222,7 @@
     box-shadow: 0px 0px 0px 0px transparent !important;
 }
 .errors.alert-warning_register {
+    display: none;
     margin: auto;
     text-align: center;
     background-color: black;
@@ -240,7 +242,142 @@
     text-align: center;
     border-radius: 10px;
 }
+.errorNameSurname{
+    
+    display: flex;
+    width: 73vw;
+    height: 2em;
+    /* flex-direction: column; */
+    justify-content: center;
+    margin: auto;
+    margin-top: 0px;
+    /* border: 3px solid red; */
+}
+.div1 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
 
+
+}
+
+.div2 {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+
+}
+/* .imgRegister{
+    border: 3px solid red;
+} */
+.errorMail{
+    align-items: center;
+}
+
+.lierror1 {
+    display: none;
+    text-align: center;
+}
+
+.lierror2 {
+    display: none;
+}
+.smallEmailError {
+    display: none;
+}
+.smallGamerTagError{
+    display: none;
+}
+.smallErrorPassword {
+    display: none;
+    margin: 0px!important;
+}
+.smallErrorPassword2{
+    display: none;
+}
+.smallErrorPassword3{
+    display: none;
+}
+.smallErrorPassword4{
+    display: none;
+}
+.smallErrorPassword5{
+    display: none;
+}
+.smallErrorPassword6{
+    display: none;
+}
+.errorImgReg{
+    display:none;
+}
+.errorPassword{
+    /* display: flex; */
+    align-self: center;
+    text-align: center;
+    margin-top: 0px !important;
+}
+.lierror1True {
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+    
+}
+
+.lierror2True {
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.smallEmailErrortrue{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.smallGamerTagErrortrue{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.smallErrorPasswordTrue{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.smallErrorPassword2True{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.smallErrorPassword3True{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.smallErrorPassword6True{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.smallErrorPassword4True{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.smallErrorPassword5True{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+}
+.imgRegErrorTrue{
+    color: #e4314f;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 1em; 
+}
 @media  (max-width: 480px) {
     .register-form{
         width: 80%;
@@ -320,7 +457,9 @@
     ::placeholder{
         font-size: 18px;
     }
-
+.errorNameSurname{
+    width: 44vw;
+}
 #name{
     width: 20vw;
 }

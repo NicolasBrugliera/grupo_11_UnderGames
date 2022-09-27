@@ -11,8 +11,11 @@ window.onload = function () {
         e.preventDefault()
         let errors = []
 
-        let email = document.querySelector('[name="email"]')        
+        let email = document.querySelector('[name="email"]')   
+        let emailError = document.querySelector('[name="emailError"]')      
         let password = document.querySelector('[name="password"]')
+        let errorPassword = document.querySelector('[name="errorPassword"]')
+        let errorPasswordlength = document.querySelector('[name="errorPasswordlength"]')
        
         
 
@@ -20,6 +23,7 @@ window.onload = function () {
         if (email.value == '') {
             errors.push('El campo email no puede estar vacio!')
             email.classList.add('is-invalid_login')
+            emailError.classList.add ('errormailTrue')
 
         }
         
@@ -27,30 +31,35 @@ window.onload = function () {
 
             email.classList.add('is-valid_login')
             email.classList.remove('is-invalid_login')
+            emailError.classList.remove ('errormailTrue')
         }
 
         //validacion Password
         if (password.value == '') {
             errors.push('El campo password no puede estar vacio!')
             password.classList.add('is-invalid_login')
+            errorPassword.classList.add ('errorPasswordTrue')
         }
         
 
         else {
             password.classList.add('is-valid_login')
             password.classList.remove('is-invalid_login')
+            errorPassword.classList.remove ('errorPasswordTrue')
         }
         
         //validacion password length
         if (password.value.length <= 5 ) {
             errors.push('La contraseña deben tener 6 caracteres como minimo')
             password.classList.add('is-invalid_login')
+            errorPasswordlength.classList.add('errorPasswordlengthTrue')
         }
         
 
         else {
             password.classList.add('is-valid_login')
             password.classList.remove('is-invalid_login')
+            errorPasswordlength.classList.remove('errorPasswordlengthTrue')
         }
     
         
