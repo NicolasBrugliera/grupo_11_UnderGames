@@ -15,8 +15,9 @@ const reducer = (map, val) => {
 		list: (req, res)=>{
 			db.Game.findAll({
 				include: [{association: "category"}],
-				attributes: [['id_game', 'id'], ['title', 'name'], ['short_descr', 'description'], 
-				[sequelize.fn('concat', (req.protocol + "://"+ req.get('Host') ) , "/api/products/detail/" , sequelize.col('id_game')), 'detail']]
+				attributes: [['id_game', 'id'], ['title', 'name'], ['short_descr', 'description'],
+				[sequelize.fn('concat', (req.protocol + "://" + req.get('Host') ) ,  sequelize.col('img_1')), 'img_1'],
+				[sequelize.fn('concat', (req.protocol + "://"+ req.get('Host') ) , "/productDetail/" , sequelize.col('id_game')), 'detail']]
 				})
 								
 			.then(products => {
