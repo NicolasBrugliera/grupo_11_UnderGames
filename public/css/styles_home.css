@@ -43,7 +43,7 @@
   margin-top: 1vh;
   margin-left: 0.5vw;
   margin-right: 0.5px;
-  background-color: #000000;
+  background-color: #161616;
   border: white solid 1px;
   border-radius: 15px;
   padding: 2%;
@@ -53,7 +53,9 @@
   padding: 5px;
 
 }
-
+.imghome{
+  border-radius: 7px;
+}
 
 .text_gallery_right0{
   display: flex;
@@ -86,14 +88,14 @@
 
 }
 .carousel-cell {
-background-color: #000000;
+background-color: #161616;
 border: white solid 1px;
 margin-left: 3rem;
 border-radius: 10%;
 }
 .carousel-cell-top {
   margin-left: 3rem;
-  background-color: #000000;
+  background-color: #161616;
   border: #ffffff solid 1px;
   border-radius: 15px;
   padding: 3.5%;
@@ -113,7 +115,7 @@ border-radius: 10%;
 
 
   .carousel-cell-creators {
-    background-color: #000000;
+    background-color: #161616;
     border: white solid 1px;
     border-radius: 7%;
     margin-left: 3rem;
@@ -250,7 +252,7 @@ border-radius: 10%;
   position: absolute;
   bottom: 0.5px;
   left: 0.5px;
-  background-color:#000000;
+  background-color:#161616;
   color: #ffffff;
   padding-left: 2px;
   padding-right: 2px;
@@ -332,7 +334,7 @@ outline: 0;
 display: inline-block;
 padding: 8px;
 color: white;
-background-color: #000;
+background-color: #161616;
 text-align: center;
 cursor: pointer;
 width: 50%;
