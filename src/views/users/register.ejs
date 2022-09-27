@@ -20,7 +20,7 @@
                 </div>
 
                 <div class="form-ns-styler-register">
-                    <input type="text" name="name" id="name" placeholder="Nombre" required
+                    <input type="text" name="name" id="name" placeholder="Nombre" 
                     class="form-control  <%= locals.errors && errors.name ? 'is-invalid' : null %>" 
                     value="<%= locals.oldData ? oldData.name : null %>"
                     > <!--validar nombre clase del CSS form-control-->
@@ -29,7 +29,7 @@
                             <%= errors.name.msg %> 
                         </div>
                     <% } %>
-                    <input type="text" name="surname" id="surname" placeholder="Apellido" required
+                    <input type="text" name="surname" id="surname" placeholder="Apellido" 
                     class="form-control  <%= locals.errors && errors.surname ? 'is-invalid' : null %>" 
                     value="<%= locals.oldData ? oldData.surname : null %>"
                     > <!--validar nombre clase del CSS form-control-->
@@ -49,7 +49,7 @@
                     </div>
                 </div>
                 <div class="form-styler-register">
-                    <input type="email" name="email" id="email" placeholder="E-mail" required
+                    <input type="email" name="email" id="email" placeholder="E-mail" 
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
                     value="<%= locals.oldData ? oldData.email : null %>"
                 > <!--validar nombre clase del CSS form-control-->
@@ -64,13 +64,13 @@
                 </div>
                 <!--seguiremos teniendo gamertag? de ser asi, se valida? -->
                 <div class="form-styler-register">
-                    <input type="text" name="gamertag" id="gamertag" placeholder="Gamertag" required>
+                    <input type="text" name="gamertag" id="gamertag" placeholder="Gamertag" >
                 </div>
                 <div class="errorGamerTag">
                     <small class="smallGamerTagError" name="smallGamerTagError">Gamertag no puede estar vacio</small>
                 </div>
                 <div class="form-styler-register">
-                    <input type="password" name="password" id="password" placeholder="Contraseña" required
+                    <input type="password" name="password" id="password" placeholder="Contraseña" 
                     class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
                     > <!--validar nombre clase del CSS form-control-->
                     <% if (locals.errors && errors.password) { %>
@@ -87,7 +87,7 @@
                 </div>
                 <!--falta validar que password y repeted passwords sean iguales-->
                 <div class="form-styler-register">
-                    <input type="password" name="repeted-password" id="repeted-password" placeholder="Repetir contraseña" required>
+                    <input type="password" name="repeted-password" id="repeted-password" placeholder="Repetir contraseña" >
                 </div>
 
                 <div class="errorPassword">
@@ -103,7 +103,7 @@
                         id="upload-img-btn"
                         type="file" 
                         name="avatar"
-                        class="form-control imgRegister"<%= locals.errors && errors.avatar ? 'is-invalid' : null %>" required
+                        class="form-control imgRegister"<%= locals.errors && errors.avatar ? 'is-invalid' : null %>" 
                         
                     ><!--validar nombre clase del CSS form-control-->
                     <% if (locals.errors && errors.avatar) { %>

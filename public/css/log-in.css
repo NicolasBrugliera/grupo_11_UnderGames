@@ -75,11 +75,13 @@
     border-radius: 10px;
     height: 4.5vh;
     margin-top: 20px;
-    margin-bottom: 20px;
+    margin-bottom: 10px; 
     text-align: center;
     color: white
 }
-
+.errorMail {
+  margin-bottom: 1.5em;
+}
 #login-button{
   width: 17vw;
   height: 50px;
@@ -170,6 +172,19 @@ border: #15b800 1.5px solid !important
     width: 40vw;
     height: 40px;
     padding: 1px;
+  }
+  .form-styler-login{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+ 
+   
+  }
+  #password{
+    margin: auto;
+    align-self: center !important;
   }
   .ca-styler-login{
     font-size: 12px;
