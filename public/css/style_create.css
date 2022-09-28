@@ -465,6 +465,10 @@ h3 {
     color: #15b800 ;
 }
 
+textarea{
+    resize: none;
+}
+
 @media (min-width: 0px) and (max-width: 480px) {
     .formDelete {
         width: 100%;
