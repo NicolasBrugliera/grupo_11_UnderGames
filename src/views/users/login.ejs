@@ -15,15 +15,20 @@
             <h3 class="h3-login">Ingresa tus datos</h3>
             <div class="errors">
                 <ul>
-                  
+            
                 </ul>
-              </div>
+            </div>
             <div class="form-styler-login">
-                <input type="email" name="email" placeholder="Email" class="input-styler-login" id="email" required>
+                <input type="email" name="email" placeholder="Email" class="input-styler-login" id="email" required >
+                
+                <small class="errorMail" name="emailError" >Email no puede estar vacio</small>
+               
             </div>
 
             <div class="form-styler-login">
                 <input type="password" name="password" placeholder="Password" class="input-styler-login" id="password" required>
+                 <small class="errorPassword" name="errorPassword" >Password no puede estar vacio</small>
+                 <small class="errorPasswordlength" name="errorPasswordlength" >Password minimo 6 caracteres Por Favor</small> 
             </div>
 
             <div class="rm-login">

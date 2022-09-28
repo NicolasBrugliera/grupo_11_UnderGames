@@ -37,9 +37,17 @@
                         <div class="text-danger">   <!--agregar esta clase al CSS?? -->
                             <%= errors.surname.msg %> 
                         </div>
-                    <% } %>    
+                    <% } %>
+                        
                 </div>
-
+                <div class="errorNameSurname">
+                    <div class="div1">
+                        <small class="lierror1" name="lierror1">Nombre no puede estar vacio</small>
+                    </div>
+                    <div class="div2">
+                        <small class="lierror2" name="lierror2">Apellido no puede estar vacio</small>
+                    </div>
+                </div>
                 <div class="form-styler-register">
                     <input type="email" name="email" id="email" placeholder="E-mail" required
                     class="form-control <%= locals.errors && errors.email ? 'is-invalid' : null %>"
@@ -51,12 +59,16 @@
                     </div>
                 <% } %>                    
                 </div>
-
+                <div class="errorMail">
+                    <small class="smallEmailError" name="smallEmailError">Email no puede estar vacio</small>
+                </div>
                 <!--seguiremos teniendo gamertag? de ser asi, se valida? -->
                 <div class="form-styler-register">
                     <input type="text" name="gamertag" id="gamertag" placeholder="Gamertag" required>
                 </div>
-
+                <div class="errorGamerTag">
+                    <small class="smallGamerTagError" name="smallGamerTagError">Gamertag no puede estar vacio</small>
+                </div>
                 <div class="form-styler-register">
                     <input type="password" name="password" id="password" placeholder="Contraseña" required
                     class="form-control <%= locals.errors && errors.password ? 'is-invalid' : null %>"
@@ -68,9 +80,20 @@
                     <% } %>    
                     
                 </div>
+                <div class="errorPassword">
+                    <small class="smallErrorPassword" name="smallErrorPassword">Password no puede estar vacio</small><br>
+                    <small class="smallErrorPassword2" name="smallErrorPassword2">Password no puede ser menor a 6 digitos</small><br>
+                    <small class="smallErrorPassword3" name="smallErrorPassword3">passwords deben ser iguales</small>
+                </div>
                 <!--falta validar que password y repeted passwords sean iguales-->
                 <div class="form-styler-register">
                     <input type="password" name="repeted-password" id="repeted-password" placeholder="Repetir contraseña" required>
+                </div>
+
+                <div class="errorPassword">
+                    <small class="smallErrorPassword4" name="smallErrorPassword4">Repeted Password no puede estar vacio</small><br>
+                    <small class="smallErrorPassword5" name="smallErrorPassword5">Repeted Password no puede ser menor a 6 digitos</small><br>
+                    <small class="smallErrorPassword6" name="smallErrorPassword6">passwords deben ser iguales</small>
                 </div>
 
                 <div class="form-styler-register">
@@ -80,14 +103,18 @@
                         id="upload-img-btn"
                         type="file" 
                         name="avatar"
-                        class="form-control <%= locals.errors && errors.avatar ? 'is-invalid' : null %>"
+                        class="form-control imgRegister"<%= locals.errors && errors.avatar ? 'is-invalid' : null %>" required
+                        
                     ><!--validar nombre clase del CSS form-control-->
                     <% if (locals.errors && errors.avatar) { %>
                         <div class="text-danger"> <!--agregar esta clase al CSS?? -->
                             <%= errors.avatar.msg %>
+                           
                         </div>
-                    <% } %>
+                        
+                    <% } %>                    
                 </div>
+                <small class="errorImgReg"name="errorImgReg">Debe seleccionar Imagen formato JPG</small>                
                 
                 <input type="submit" value= "Registrate" id= "reg-button" >
                 <div class="news-styler-register">
