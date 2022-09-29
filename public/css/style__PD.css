@@ -217,7 +217,7 @@ p.read-more-wrap {
   color: #aaaaaa;
   }
 .cart-section__PD  table tbody tr td:last-child {
-  color: #6b5e41;
+  color: #a59269;
 }
 .cart-section__PD  table tbody tr td:first-child {
   text-transform: uppercase;
@@ -242,7 +242,7 @@ p.read-more-wrap {
 }
 
 tr:nth-child(odd):not(:nth-child(1)):not(td.specs_title_PD){
-  color: #6b5e41;
+  color: #a59269;
  
  
 

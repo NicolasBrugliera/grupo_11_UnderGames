@@ -369,17 +369,17 @@
           
 
 
-          <label class="combo-form_titles_create" for="graphics_min">Graphics Recommended </label>
+          <label class="combo-form_titles_create" for="graphics_min">Minimum Graphics</label>
           <% if(locals.oldData){ %> 
             <select name="graphics_min" class="textArea__Create" > 
-            <option value="" disabled selected>  Minimum Requirements</option>
+            <option value="" disabled selected> Minimum Requirements</option>
               <% allGraphicsmin.forEach(graphics_min => { %>
               <option  <% if (graphics_min.id_graphics_min == locals.oldData.graphics_min) { %><%= 'selected' %><% }; %>  value="<%= graphics_min.id_graphics_min %>"><%= graphics_min.graphics_min %></option>
               <% }) %>
             </select>
           <%  } else { %> 
             <select name="graphics_min" class="textArea__Create" > 
-            <option value="" disabled selected>Graphics Recommended </option>
+            <option value="" disabled selected>Minimum Graphics</option>
               <% allGraphicsmin.forEach(graphics_min => { %>
               <option value="<%= graphics_min.id_graphics_min %>"><%= graphics_min.graphics_min %></option>
               <% }) %>
