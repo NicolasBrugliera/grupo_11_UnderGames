@@ -97,6 +97,7 @@
           <label class="combo-form_titles_edit" for="title">Title</label>
           <input class="textArea_Admin_Edit" type="text" name="title" placeholder="Title"
             value="<%= gameToEdit.title %>" />
+          <small id="title" class="text-danger__Create__EditVal"></small>
           <% if(locals.errors && errors.title){ %>
             <p class="table_Admin_Edit_Error">
               <%= errors.title.msg%>
@@ -106,6 +107,7 @@
           <label class="combo-form_titles_edit" for="one_word_descr">One Word Description</label>
           <input class="textArea_Admin_Edit" type="text" name="one_word_descr" placeholder="One Word Description"
             value="<%=gameToEdit.one_word_descr%>" />
+          <small id="oneWord" class="text-danger__Create__EditVal"></small>
           <% if(locals.errors && errors.one_word_descr){ %>
             <p class="table_Admin_Edit_Error">
               <%= errors.one_word_descr.msg %>
@@ -120,6 +122,7 @@
             <span>/</span>
             <span id="maximum_shortDesc">100</span>
           </div> 
+          <small id="shortDesc" class="text-danger__Create__EditVal"></small>
           <% if(locals.errors && errors.short_descr){ %>
             <p class="table_Admin_Edit_Error">
               <%= errors.short_descr.msg%>
@@ -134,6 +137,7 @@
               <span>/</span>
               <span id="maximum">300</span>
             </div> 
+            <small id="longDesc" class="text-danger__Create__EditVal"></small>
             <% if(locals.errors && errors.long_descr){ %>
               <p class="table_Admin_Edit_Error">
                 <%= errors.long_descr.msg%>
@@ -179,7 +183,7 @@
             </p>
           <% } %>
 
-      <label class="combo-form_titles_edit" for="price_w_discount">Price With Discount</label>
+   <!--    <label class="combo-form_titles_edit" for="price_w_discount">Price With Discount</label>
           <input class="textArea_Admin_Edit" type="text" name="price_w_discount"
             placeholder="Price With Discount"
             value="<%= gameToEdit.price_w_discount%>" />
@@ -187,7 +191,7 @@
             <p class="table_Admin_Edit_Error">
               <%= errors.price_w_discount.msg%>
             </p>
-            <% } %>
+            <% } %> -->
 
       <label class="combo-form_titles_edit" for="discount">Discount</label>  
           <input class="textArea_Admin_Edit" type="text" name="discount"
@@ -201,6 +205,7 @@
         <label class="combo-form_titles_edit" for="video_1">Youtube URL</label>
           <input class="textArea_Admin_Edit" type="text" name="video_1"
             placeholder="Youtube URL" value="<%= gameToEdit.video_1%>" />
+            <small id="youtube" class="text-danger__Create__EditVal"></small>
           <% if(locals.errors && errors.video_1){ %>
             <p class="table_Admin_Edit_Error">
               <%= errors.video_1.msg %>

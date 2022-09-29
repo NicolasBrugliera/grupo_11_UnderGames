@@ -363,6 +363,28 @@ border: #15b800 1.5px solid
 .text-ok__Create {
     color: #eee;
 }
+small.text-danger__Create__EditVal {
+    color: #e93755;
+}
+
+small#title,
+small#oneWord {
+    position: relative;
+    bottom: 10px;
+}
+small#shortDesc,
+small#longDesc {
+    position: relative;
+    bottom: 36px;
+    right: 40px;
+}
+
+small#youtube {
+    position: relative;
+    bottom: 15px;
+  
+
+}
 
 
 @media screen and (max-width: 768px) {
