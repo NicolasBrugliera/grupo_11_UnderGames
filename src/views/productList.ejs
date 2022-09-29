@@ -38,9 +38,9 @@
                   </div>
                   </a>
                  
-                  <div id="category_plist"><%= products[i].category %></div>
+                  <div id="category_plist"><%= products[i].category.category %></div>
                   <div id="title_box_plist"><%= products[i].title %></div>
-                  <div id="creator_box_plist"><%= products[i].creator %></div>
+                  <div id="creator_box_plist"><%= products[i].creator.nickname %></div>
                   <br>
                   <div class="price_line_plist">
                       <div class="original_price_plist"><del><%= products[i].original_price %></del></div>
@@ -50,7 +50,7 @@
                       <div class="price_w_discount_plist"><%= products[i].price_w_discount %></div>
                       
                   </div>
-                  <div id="game_group"><span><%=products[i].game_group%></span></div>
+                  <div id="game_group"><span><%=products[i].game_group.game_group%></span></div>
     </div> <!-- end content_plist -->
     </div> <!-- end column_plist --> 
     <% } %> 

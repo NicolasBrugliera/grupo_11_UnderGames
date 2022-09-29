@@ -8,14 +8,18 @@ const db = require('../database/models');
 module.exports = {
     productList: function(req,res){
 
-        db.Game.findAll({
-            include: [{association: "category", association: "game_group", association: "platform",
+        db.Game.findAll({ include: { all: true, nested: true }
+})
+        
+                
+
+            /* include: [{association: "category", association: "game_group", association: "platform",
             association: "graphics_min", association: "graphics_rec", 
             association: "processor_min", association: "processor_rec",
             association: "os_min", association: "os_rec",
             association: "storage_min", association: "storage_rec", 
-            association: 'creator'}],
-                    })
+            association: 'creator'}], */
+                    
             .then(function(games){
                 res.render(path.join(__dirname, '../views/productList'),{products:games})
             })
