@@ -75,6 +75,7 @@
     border-radius: 3px;
     border: white solid 1px;
     color: white;
+    position: relative;
 }
 
 .textArea__Create::placeholder{
@@ -165,6 +166,8 @@
 .textArea__Create > .combo-form_titles_create{
     color: #db331d;
 }
+
+
 
 .formCreate__create {
     display: flex;
@@ -310,6 +313,7 @@ p.tableAdmin_Error{
 }
 .textArea2__Create{
     height: 600px;
+    
 }
 .textArea2__Create_shortDesc{
     height: 400px;
@@ -340,10 +344,10 @@ p.tableAdmin_Error{
 
 #the-count__Create,   #the-count__Create_shortDesc  {
     padding: 0.1rem 0 0 0;
-    font-size: 12px;
+    font-size: 14px;
     position: relative;
     bottom: 10px;
-    left: 100px;
+    left: 165px;
     color:#ffffff;
     padding: 5px;
   }
@@ -354,8 +358,9 @@ p.tableAdmin_Error{
 }
 
 .text-danger__Create {
-    color: #e4314f;
+    color: #e93755;
 }
+
 
 .text-ok__Create {
     color: #ffffff;
@@ -411,6 +416,7 @@ border: #15b800 1.5px solid
 
 }
 
+
 .alert-warning_create{
     color:#842029;
     background-color: #F8D7DA;
@@ -465,9 +471,71 @@ h3 {
     color: #15b800 ;
 }
 
-textarea{
-    resize: none;
+small {
+    position: relative;
+    bottom: 63px;
 }
+
+small.reqs{
+    position: relative;
+    bottom: 15px;
+}
+
+small.text-danger__Create-valid {
+    visibility: hidden;
+}
+
+small.text-danger__Create-invalid {
+    color: #e4314f;
+    visibility: visible;
+}
+
+small#title  {
+    position: absolute;
+    bottom: 590px;
+    left: 46%;
+
+}
+
+small#oneWord  {
+    position: absolute;
+    bottom: 525px;
+    left: 45%;
+
+}
+small#shortDesc  {
+    position: absolute;
+    bottom: 355px;  
+    left: 40%;
+
+}
+
+small#longDesc {
+    position: absolute;
+    bottom: 112px;
+    left: 40%;
+
+}
+
+small#gameGroup {
+    position: absolute;
+    bottom: 25px;
+    left: 45%;
+
+}
+small#category {
+    position: absolute;
+    top: 960px;
+    left: 45%;
+
+}
+small#youtube {
+    position: absolute;
+    top: 1150px;
+    left: 45%;
+}
+
+
 
 @media (min-width: 0px) and (max-width: 480px) {
     .formDelete {
@@ -529,10 +597,11 @@ textarea{
         height: 1000px;
         width: 85%;
     }
-    .con1__create{
-        margin-bottom: 3rem;
-        margin-top: 2rem;
-        width: 85%;
+
+.con1__create{
+    margin-bottom: 3rem;
+    margin-top: 2rem;
+    width: 85%;
 }
 .errors.alert-warning_create{
     width: 24rem;
@@ -553,4 +622,19 @@ textarea{
         margin-top: 2rem;
         height: 1000px;
     }
+}
+
+@media  (max-width: 1900px){
+    small#title, 
+    small#oneWord, 
+    small#shortDesc, 
+    small#longDesc, 
+    small#gameGroup, 
+    small#category, 
+    small#youtube 
+    {
+        visibility: hidden;
+    
+    }
+
 }

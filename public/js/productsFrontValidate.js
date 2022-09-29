@@ -32,228 +32,191 @@ window.onload = function(){
     let storage_rec = document.querySelector('[name="storage_rec"]')
     let graphics_min = document.querySelector('[name="graphics_min"]')
     let graphics_rec = document.querySelector('[name="graphics_rec"]')
-    //let age = document.querySelector('[name="age"]')
+
   
 
+ 
 
 
-    //Vaidación de campos imagen
-    if (img_1.value =="") {
+    function setErrorFor(input, id, message) { 
         errors.push('El campo imagen no puede estar vacio')
-        img_1.classList.add('is-invalid_create')
-    } else {
-        img_1.classList.add('is-valid_create')
-        img_1.classList.remove('is-invalid_create')
-    }
+        input.classList.add('is-invalid_create')
+        let small = document.querySelector(id)
+        small.innerHTML = message
+} 
 
+function setClear (input, id){
+        let small = document.querySelector(id)
+        small.innerHTML = ""
+        input.classList.remove('is-invalid_create')
+        input.classList.add('is-valid_create')
+    } 
+ 
+     if (img_1.value =="") {
+
+        setErrorFor(img_1, "#img_1", "Imagen Principal no puede estar vacío")
+    } else{
+        setClear(img_1, "#img_1")
+    }
+ 
 
     if (img_2.value =="") {
-        errors.push('El campo imagen no puede estar vacio')
-        img_2.classList.add('is-invalid_create')
+        setErrorFor(img_2, "#img_2", "Campo Imagen no puede estar vacío")
     } else {
-        img_2.classList.add('is-valid_create')
-        img_2.classList.remove('is-invalid_create')
+        setClear(img_2, "#img_2")
     }
 
 
     if (img_3.value =="") {
-        errors.push('El campo imagen no puede estar vacio')
-        img_3.classList.add('is-invalid_create')
+        setErrorFor(img_3, "#img_3", "Campo Imagen no puede estar vacío")
+       
     } else {
-        img_3.classList.add('is-valid_create')
-        img_3.classList.remove('is-invalid_create')
+        setClear(img_3, "#img_3")
     }
 
 
     if (img_4.value =="") {
-        errors.push('El campo imagen no puede estar vacio')
-        img_4.classList.add('is-invalid_create')
+        setErrorFor(img_4, "#img_4", "Campo Imagen no puede estar vacío")
     } else {
-        img_4.classList.add('is-valid_create')
-        img_4.classList.remove('is-invalid_create')
+        setClear(img_4, "#img_4")
     }
 
     if (img_5.value =="") {
-        errors.push('El campo imagen no puede estar vacio')
-        img_5.classList.add('is-invalid_create')
+        setErrorFor(img_5, "#img_5", "Campo Imagen no puede estar vacío")
     } else {
-        img_5.classList.add('is-valid_create')
-        img_5.classList.remove('is-invalid_create')
+        setClear(img_5, "#img_5")
     }
 
 
 
     //validación Titulo de juego
     if (title.value =="") {
-        errors.push('El campo titulo no puede estar vacio')
-        title.classList.add('is-invalid_create')
+        setErrorFor(title, "#title", "titulo no puede estar vacío")
     } else {
-        title.classList.add('is-valid_create')
-        title.classList.remove('is-invalid_create')
+        setClear(title, "#title")
     }
     /// VALIDACION Descripción One Word
     if (one_word_descr.value =="") {
-        errors.push('Para el campo "One word description" debe ingresar un valor entre 0 y 10')
-        one_word_descr.classList.add('is-invalid_create')
+        setErrorFor(one_word_descr, "#oneWord", "Este campo no puede estar vacío")
     } else {
-        one_word_descr.classList.add('is-valid_create')
-        one_word_descr.classList.remove('is-invalid_create')
+        setClear(one_word_descr, "#oneWord")
     }
     /// VALIDACION short_descr 
     if (short_descr.value == "") {
-        errors.push('El campo Descripción corta debe tener entre 30 y 100 palabras')
-        short_descr.classList.add('is-invalid_create')
+        setErrorFor(short_descr, "#shortDesc", "Descripción Corta no puede estar vacía")
     } else {
-        short_descr.classList.add('is-valid_create')
-        short_descr.classList.remove('is-invalid_create')
+        setClear(short_descr, "#shortDesc")
     }
     /// VALIDACION Long Description
     if (long_descr.value =="") {
-        errors.push('El campo Descripción larga debe tener entre 100 y 300 palabras')
-        long_descr.classList.add('is-invalid_create')
+        setErrorFor(long_descr, "#longDesc", "Descripción Larga no puede estar vacía")
     } else {
-        long_descr.classList.add('is-valid_create')
-        long_descr.classList.remove('is-invalid_create')
+        setClear(long_descr, "#longDesc")
     }
     /// VALIDACION Game Group
     if (game_group.value == "") {
-        errors.push('El campo Game Group no puede estar vacio!')
-        game_group.classList.add('is-invalid_create')
+        setErrorFor(game_group, "#gameGroup", "Game Group no puede estar vacía")
     } else {
-        game_group.classList.add('is-valid_create')
-        game_group.classList.remove('is-invalid_create')
+        setClear(game_group, "#gameGroup")
         
     }
     /// VALIDACION Categoría
     if (category.value =="") {
-        errors.push('El campo category no puede estar vacio!')
-        category.classList.add('is-invalid_create')
+        setErrorFor(category, "#category", "Categoría no puede estar vacía")
     } else {
-        category.classList.remove('is-invalid_create')
-        category.classList.add('is-valid_create')
+        setClear(category, "#category")
     }
+
     /// VALIDACION youtube url
     if (video_1.value =="") {
-        errors.push('El campo URL youtube no puede estar vacio')
-        video_1.classList.add('is-invalid_create')
+        setErrorFor(video_1, "#youtube", "URL youtube no puede estar vacío")
     } else {
         let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=|\?v=)([^#\&\?]*).*/;
         let matchUrl = video_1.value.match(regExp);
         
             if(matchUrl==null){
-                errors.push('No es una URL válida de youtube')
+                errors.push('URL inválida')
+                setErrorFor(video_1, "#youtube", "URL inválida")
                 video_1.classList.add('is-invalid_create')
                 video_1.classList.remove('is-valid_create')
-                
-                
             } else {
+            setClear(video_1, "#youtube")
             video_1.classList.add('is-valid_create')
             video_1.classList.remove('is-invalid_create')
-          
         } 
-       
-        
     }
         
-    /// VALIDACION Fecha
+
     if (launch_date.value =="") {
-        errors.push('El campo category no puede estar vacio!')
-        launch_date.classList.add('is-invalid_create')
+        setErrorFor(launch_date, "#launchDate", "Debe colocar una fecha")
+ 
     } else {
-        launch_date.classList.remove('is-invalid_create')
-        launch_date.classList.add('is-valid_create')
+        setClear(launch_date, "#launchDate")
     }
 
-    /// VALIDACION Plataformas
+
    if (platform.value == "") {
-        errors.push('El campo Platform no puede estar vacio!')
-        platform.classList.add('is-invalid_create')
+        setErrorFor(platform, "#platform", "Plataformas no puede estar vacía")
     } else {
-        platform.classList.add('is-valid_create')
-        platform.classList.remove('is-invalid_create')
+        setClear(platform, "#platform")
     } 
-    /// VALIDACION Sistema Operativo Req.Min
+
+
      if (os_min.value == "") {
-        errors.push('El campo OS mínimo no puede estar vacio!')
-        os_min.classList.add('is-invalid_create')
+        setErrorFor(os_min, "#osMin", "Sist. Operativo no puede estar vacío")
     } else {
-        os_min.classList.add('is-valid_create')
-        os_min.classList.remove('is-invalid_create')
+        setClear(os_min, "#osMin")
     }
-    /// VALIDACION Sistema Operativo Req. Recomendado
+
+
     if (os_rec.value == "") {
-        errors.push('El campo Os recomendado no puede estar vacio!')
-        os_rec.classList.add('is-invalid_create')
+        setErrorFor(os_rec, "#osRec", "Sist. Operativo no puede estar vacío")
     } else {
-        os_rec.classList.add('is-valid_create')
-        os_rec.classList.remove('is-invalid_create')
+        setClear(os_rec, "#osRec")
     }
-    /// VALIDACION Procesador Req. Minimo
+
     if (processor_min.value == "") {
-        errors.push('El campo Procesador Mínimo no puede estar vacio!')
-        processor_min.classList.add('is-invalid_create')
+        setErrorFor(processor_min, "#processorMin", "Procesador no puede estar vacío")
     } else {
-        processor_min.classList.add('is-valid_create')
-        processor_min.classList.remove('is-invalid_create')
+        setClear(processor_min, "#processorMin")
     }
-    /// VALIDACION Procesador Recomendado
+
     if (processor_rec.value == "") {
-        errors.push('El campo Procesador Recomendado no puede estar vacio!')
-        processor_rec.classList.add('is-invalid_create')
+        setErrorFor(processor_rec, "#processoRec", "Procesador no puede estar vacío")
     } else {
-        processor_rec.classList.add('is-valid_create')
-        processor_rec.classList.remove('is-invalid_create')
+        setClear(processor_rec, "#processoRec")
     }
-    /// VALIDACION Almacenamiento Mínimo
+
     if (storage_min.value == "") {
-        errors.push('El campo Almacenamiento Mínimo no puede estar vacio!')
-        storage_min.classList.add('is-invalid_create')
+        setErrorFor(storage_min, "#storageMin", "Almacenamiento no puede estar vacío")
     } else {
-        storage_min.classList.add('is-valid_create')
-        storage_min.classList.remove('is-invalid_create')
+        setClear(storage_min, "#storageMin")
     }
-    /// VALIDACION Almacenamiento Recomendado
+
     if (storage_rec.value == "") {
-        errors.push('El campo Almacenamiento Recomendado no puede estar vacio!')
-        storage_rec.classList.add('is-invalid_create')
+        setErrorFor(storage_rec, "#storageRec", "Almacenamiento no puede estar vacío")
     } else {
-        storage_rec.classList.add('is-valid_create')
-        storage_rec.classList.remove('is-invalid_create')
+        setClear(storage_rec, "#storageRec")
     }
-    /// VALIDACION Gráficos Mínimos
+
     if (graphics_min.value == "") {
-        errors.push('El campo Gráficos mínimos no puede estar vacio!')
-        graphics_min.classList.add('is-invalid_create')
+        setErrorFor(graphics_min, "#graphicsMin", "Gráficos no puede estar vacía")
     } else {
-        graphics_min.classList.add('is-valid_create')
-        graphics_min.classList.remove('is-invalid_create')
+        setClear(graphics_min, "#graphicsMin")
     }
-    /// VALIDACION Gráficos Recomendados
+ 
     if (graphics_rec.value == "") {
-        errors.push('El campo Gráficos Recomendados no puede estar vacio!')
-        graphics_rec.classList.add('is-invalid_create')
-     //   setErrorFor(graphics_rec, 'Gráfico recomendado no puede estar vacío');
-       
+        setErrorFor(graphics_rec, "#graphicsRec", "Gráficos no puede estar vacía")
     } else {
-        graphics_rec.classList.add('is-valid_create')
-        graphics_rec.classList.remove('is-invalid_create')
+        setClear(graphics_rec, "#graphicsRec")
     }
 
-
-/*     function setErrorFor(input, mensaje) {
-        const formControl = input.parentElement;
-        const small = formControl.querySelector('small');
-        formControl.className = 'is-invalid_create';
-        small.innerText = mensaje;
-        console.log(formControl)
-    } */
-    
 
     let ulErrors = document.querySelector('.errors');
-    ulErrors.classList.add('alert-warning_create')
+
     ulErrors.innerHTML = '';
     if (errors.length > 0) {
-        console.log(errors)
+        
         ulErrors.innerHTML = '';
         Swal.fire({
             icon: 'error',
@@ -261,11 +224,8 @@ window.onload = function(){
             text: 'Revise los errores!',
            
         })
-        for (let i = 0; i < errors.length; i++) {
-            ulErrors.innerHTML += `<li > ${errors[i]} </li>`
-        }
-    } else {
 
+    } else {
         form.submit()
     }
   }
